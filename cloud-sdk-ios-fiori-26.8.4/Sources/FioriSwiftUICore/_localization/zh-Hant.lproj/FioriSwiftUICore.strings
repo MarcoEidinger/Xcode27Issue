@@ -1,0 +1,753 @@
+/* XMSG: Placeholder text in chart when there is no data */
+"No Data" = "無資料";
+
+/* XBUT: Save action in inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Save" = "儲存";
+
+/* XBUT: Re-enter action available in saved state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Re-enter Signature" = "重新輸入簽名";
+
+/* XBUT: Clear action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Clear" = "清除";
+
+/* XBUT: Cancel action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Cancel" = "取消";
+
+/* XTIT: Title of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Signature" = "簽名";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Tap to Sign" = "點擊以簽名";
+
+/* XACT: The accessibility label for the signature area */
+"Signature Area" = "簽名區域";
+
+/* XACT: The accessibility hint for the signature area */
+"Double tap and drag to sign" = "點兩下並拖曳以簽名";
+
+/* XACT: The accessibility label for the signature image */
+"Signature Image" = "簽名圖像";
+
+/* XACT: The accessibility label for the signature line */
+"Signature Line" = "簽名行";
+
+/* XACT: The accessibility label for the mandatory field */
+"Required Field" = "必要欄位";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Canceled" = "已取消";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Next" = "下一個";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Ok" = "確定";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Status" = "狀態";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"User canceled Onboarding" = "使用者已取消登錄";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Without consent you will not be able to continue onboarding." = "若無同意，您將無法繼續登錄。";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Give Consent" = "同意";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Quit" = "結束";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Back" = "返回";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Step" = "步驟";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"of" = "/";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Are you sure you want to quit the onboarding process?" = "您確定要結束登錄程序嗎？";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Want Data Privacy?" = "是否需要資料隱私？";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Be wise about your data" = "明智處理資料";
+
+/* XBUT: Not Now action title in UserConsentForm */
+"Not Now" = "現在不要";
+
+/* XBUT: Allow action title in UserConsentForm */
+"Allow" = "允許";
+
+/* XBUT: Deny action title in UserConsentForm */
+"Deny" = "拒絕";
+
+/* XBUT: Agree action title in EULAView */
+"Agree" = "同意";
+
+/* XBUT: Disagree action title in EULAView */
+"Disagree" = "不同意";
+
+/* XMSG: Placeholder text in DataTable for loading state */
+"Loading..." = "正在載入...";
+
+/* XMSG: Placeholder text in DataTable when there is no data */
+"There is nothing to display yet" = "尚無可顯示的內容";
+
+/* XBUT: Default duration formatter in DataTable */
+"%d Hrs %d Min" = "%d 小時 %d 分鐘";
+
+/* XBUT: Done action in keyboard toolbar for a Textfield in DataTable */
+"Done" = "完成";
+
+/* XBUT: Error messages shown to users in DataTable */
+"There are %d errors in the data table." = "資料表格中有 %d 個錯誤。";
+
+/* XBUT: voice over label for row header in DataTable */
+"row header" = "列表頭";
+
+/* XBUT: voice over label for row %d in DataTable */
+"row %d" = "列 %d";
+
+/* XBUT: voice over label for column %d in DataTable */
+"column %d" = "欄 %d";
+
+/* XBUT: voice over label for cell type of `leading accessory` in DataTable */
+"leading accessory" = "前置配件";
+
+/* XBUT: voice over label for cell type of `trailing accessory` in DataTable */
+"trailing accessory" = "後置配件";
+
+/* XBUT: voice over label for cell type of `text` in DataTable */
+"text" = "內文";
+
+/* XBUT: voice over label for cell type of `image` in DataTable */
+"image" = "圖像";
+
+/* XBUT: voice over label for cell type of `date` in DataTable */
+"date" = "日期";
+
+/* XBUT: voice over label for cell type of `time` in DataTable */
+"time" = "時間";
+
+/* XBUT: voice over label for cell type of `duration` in DataTable */
+"duration" = "持續期";
+
+/* XBUT: voice over label for cell type of `list item` in DataTable */
+"list item" = "清單項目";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"selected" = "已選擇";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"not selected" = "未選擇";
+
+/* Default value for DateTimePicker */
+"No date selected" = "未選擇日期";
+
+/* Default value for DateRangePicker */
+"No range selected" = "未選擇範圍";
+
+/* DateRangePicker press space to set a range value */
+"PressSpaceToSelectRangeKey" = "按下空白鍵以設定範圍值";
+
+/* XBUT: calendar time component label */
+"Time" = "時間";
+
+/* XBUT: slider default value label formatter for integer */
+"Value: %d" = "值：%d";
+
+/* XMSG: a toast message for read-only cell in DataTable */
+"Tapped cell is read-only." = "點擊的儲存格為唯讀。";
+
+/* Default hint text for Read-only Field for NoteFormView and TextFieldFormView */
+"Read-only field" = "唯讀欄位";
+
+/* Default error text for when the character count reaches the maximum limit for NoteFormView and TextFieldFormView */
+"No more characters remaining" = "沒有剩餘更多字元";
+
+/* Default error text for when the character count exceeds the maximum limit for NoteFormView and TextFieldFormView */
+"Reduce the number of characters" = "減少字元數量";
+
+/* XBUT: voice over label for decrement action in stepper */
+"Stepper decrease" = "控制值減少";
+
+/* XBUT: voice over description for decrement action in stepper */
+"Decrease the value by %d" = "按 %d 減少值";
+
+/* XBUT: voice over label for increment action in stepper */
+"Stepper increase" = "控制值增加";
+
+/* XBUT: voice over description for increment action in stepper */
+"Increase the value by %d" = "按 %d 增加值";
+
+/* XBUT: voice over label for test field in stepper */
+"Select specific value" = "選擇特定值";
+
+/* XBUT: View all action in MenuSelection */
+"View All (%d)" = "全部檢視 (%d)";
+
+/* XACT: RatingControl accessibility label */
+"%d out of %d stars" = "%d/%d 顆星";
+
+/* XBUT: timeline preview component see all label */
+"See All (%d)" = "查看全部 (%d)";
+
+/* XACT: Timeline preview items accessibility label */
+"See All" = "查看全部";
+
+/* XACT: Timeline preview items accessibility value */
+"%d items" = "%d 個項目";
+
+/* XACT: Timeline preview items accessibility hint */
+"Shows all timeline items in a list" = "在清單中顯示所有時間表項目";
+
+/* XACT: Timeline preview item status: current accessibility value */
+"Current" = "目前";
+
+/* XACT: Timeline preview item status: future accessibility value */
+"Future" = "未來";
+
+/* XACT: Timeline preview item status: past accessibility value */
+"Past" = "過去";
+
+/* XACT: Timeline preview item accessibility value */
+"Item %d of %d, %@, %@, %@" = "項目 %d/%d、%@、%@、%@";
+
+/* XACT: Timeline preview item node type: Start accessibility value */
+"Start" = "開始";
+
+/* XACT: Timeline preview item node type: End accessibility value */
+"End" = "結束";
+
+/* XACT: Timeline preview item node type: Completed accessibility value */
+"Completed" = "已完成";
+
+/* XACT: Timeline preview item node type: Open accessibility value */
+"Open" = "未結";
+
+/* XACT: Timeline preview item node type: Task accessibility value */
+"Task" = "工作細項";
+
+/* XACT: Timeline preview item accessibility label */
+"Item %d of %d" = "項目 %d，共 %d 個項目";
+
+/* XBUT: timeline preview component timestamp label */
+"Today, %@" = "今天 %@";
+
+/* XFLD: RatingControl value label format */
+"%d of %d" = "%d/%d";
+
+/* XFLD: RatingControl review count format */
+"%d reviews" = "%d 個評核";
+
+/* XFLD: RatingControl review count over ceiling format */
+"%d+ reviews" = "%d+ 個評核";
+
+/* XACT: RatingControl accessibility label */
+"Rating Control %d of %d" = "評分控制 %d/%d";
+
+/* XACT: read-only RatingControl accessibility label: rating with review count */
+"Rating Control, rating %d of %d, %d reviews" = "評分控制，評分 %d/%d，%d 個評核";
+
+/* XACT: read-only RatingControl accessibility label: average rating only */
+"Rating Control, average rating %.1f of %d" = "評分控制，平均評分 %.1f/%d";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count */
+"Rating Control, average rating %.1f of %d, %d reviews" = "評分控制，平均評分 %.1f/%d，%d 個評核";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count over ceiling */
+"Rating Control, average rating %.1f of %d, %d plus reviews" = "評分控制，平均評分 %.1f/%d，%d 個其他評核";
+
+/* XBUT: View all messages in message banner sheet */
+"All" = "全部";
+
+/* XBUT: messages count in the message banner sheet */
+"Messages (%d)" = "訊息 (%d)";
+
+/* XBUT: view details in the message banner */
+"View Details" = "檢視明細";
+
+/* XBUT: view different message in the message banner sheet item */
+"View %@" = "檢視 %@";
+
+/* XBUT: banner message type desc, message */
+"message" = "訊息";
+
+/* XBUT: banner message type desc, information */
+"information" = "資訊";
+
+/* XBUT: banner message type desc, confirmation */
+"confirmation" = "確認";
+
+/* XBUT: banner message type desc, warning */
+"warning" = "警告";
+
+/* XBUT: banner message type desc, error */
+"error" = "錯誤";
+
+/* XBUT: banner message type desc, error */
+"AI notice" = "AI 通知";
+
+/* XMSG: banner message type desc, offline */
+"offline" = "離線";
+
+/* XMSG: information view style type, success */
+"success" = "成功";
+
+/* XBUT: Reset action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Reset" = "重設";
+
+/* XBUT: Apply action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Apply" = "套用";
+
+/* XTIT: The alert message for `ListPickerDestination` pulldown dismissal */
+"Are you sure you want to discard your selections?" = "是否要捨棄選擇？";
+
+/* XBUT: The alert Discard Changes action title for `ListPickerDestination` pulldown dismissal */
+"Discard Changes" = "捨棄更改";
+
+/* XBUT: The alert Keep Editing action title for `ListPickerDestination` pulldown dismissal */
+"Keep Editing" = "繼續編輯";
+
+/* XBUT: The \"Select All\" button title on the List Picker header */
+"Select All" = "全選";
+
+/* XBUT: The \"Deselect All\" button title on the List Picker header */
+"Deselect All" = "取消全選";
+
+/* XBUT: The \"Selected\" title on the List Picker header */
+"Selected" = "已選擇";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"Text field, Double tap to edit" = "內文欄位，點兩下以編輯";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d character left" = "剩餘 %d 個字元。";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d characters left" = "剩餘 %d 個字元。";
+
+/* XACT: The accessibility hint for Text Input Views, editing */
+"Text field, is editing" = "內文欄位 (編輯模式)";
+
+/* XACT: The accessibility hint for Text Input Views, editing, with clear button */
+"Text field, is editing. Double tap to clear text" = "內文欄位，編輯中。點兩下以清除內文";
+
+/* XACT: The default accessibility label for the custom action in TextFieldFormView if none was specified */
+"Custom Action" = "自訂動作";
+
+/* XBUT: Error messages shown to users in DocumentScannerView */
+"Failed to create PDF page from images" = "無法自圖像建立 PDF 頁面。";
+
+/* XBUT: Cancel message shown to users in DocumentScannerView */
+"User cancelled the scan" = "使用者已取消掃描。";
+
+/* Progress Indicator accessibility label: processing */
+"Processing" = "處理中";
+
+/* Progress Indicator accessibility label: loading pausable with indicator progress */
+"In progress with option to pause, %.0f" = "進行中 (含暫停選項)，%.0f";
+
+/* Progress Indicator accessibility label: loading stoppable with indicator progress */
+"In progress with option to stop, %.0f" = "進行中 (含停止選項)，%.0f";
+
+/* Progress Indicator accessibility label: progress halted with indicator progress */
+"Progress halted, %.0f" = "進度暫停，%.0f";
+
+/* XACT: Slider accessibility label */
+"This is %@ slider whose maximum value is %@ and minimum value is %@" = "此為 %@ 滑動軸，最大值為 %@ 且最小值為 %@";
+
+/* XACT: Slider accessibility value */
+"Current value is %@" = "目前值為 %@";
+
+/* XACT: Range Slider lower thumb accessibility label */
+"lower range slider thumb, current value is" = "下限範圍滑動軸縮圖，目前值為";
+
+/* XACT: Range Slider lower thumb accessibility hint */
+"you can swipe up or down to change the lower value" = "您可上下滑動來更改下限值";
+
+/* XACT: Range Slider upper thumb accessibility label */
+"upper range slider thumb, current value is" = "上限範圍滑動軸縮圖，目前值為";
+
+/* XACT: Range Slider upper thumb accessibility hint */
+"you can swipe up or down to change the upper value" = "您可上下滑動來更改上限值";
+
+/* XACT: Single editable Slider thumb accessibility label */
+"slider thumb, current value is" = "滑動軸縮圖，目前值為";
+
+/* XACT: Single editable Slider thumb accessibility hint */
+"you can swipe up or down to change the value" = "您可上下滑動來更改值";
+
+/* XACT: Single Slider accessibility label */
+"This is a slider, the minimum value is %@ and the maximum value is %@" = "此為滑動軸，最小值為 %@ 而最大值為 %@";
+
+/* XACT: Range Slider accessibility label */
+"This is a range slider, the minimum value is %@ and the maximum value is %@" = "此為範圍滑動軸，最小值為 %@ 而最大值為 %@";
+
+/* XACT: Single editable Slider accessibility label */
+"This is a slider that is editable, the minimum value is %@ and the maximum value is %@" = "此為可編輯的滑動軸，最小值為 %@ 而最大值為 %@";
+
+/* XACT: Single non-editable Slider accessibility label */
+"This is a slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "此為無法編輯的滑動軸，最小值為 %@ 而最大值為 %@";
+
+/* XACT: Range editable Slider accessibility label */
+"This is a range slider that is editable, the minimum value is %@ and the maximum value is %@" = "此為可編輯的範圍滑動軸，最小值為 %@ 而最大值為 %@";
+
+/* XACT: Range non-editable Slider accessibility label */
+"This is a range slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "此為無法編輯的範圍滑動軸，最小值為 %@ 而最大值為 %@";
+
+/* XACT: Single editable Slider Text Field accessibility label */
+"slider value text field" = "滑動軸值內文欄位";
+
+/* XACT: Range editable Slider Lower Value Text Field accessibility label */
+"lower value text field" = "下限值內文欄位";
+
+/* XACT: Range editable Slider Upper Value Text Field accessibility label */
+"upper value text field" = "上限值內文欄位";
+
+/* XACT: Editable Slider Text Field accessibility hint */
+"You can double tap to input a specific value" = "您可點兩下輸入特定值";
+
+/* XACT: Editable Slider Text Field accessibility value */
+"current value is %@" = "目前值為 %@";
+
+/* XACT: Range Editable Slider accessibility value */
+"current lower value is %@, upper value is %@" = "目前下限值為 %@，上限值為 %@";
+
+/* XTIT: Title of step progress indicator, see https://experience.sap.com/fiori-design-ios/article/step-progress-indicator/#adaptive-design */
+"All Steps" = "全部步驟";
+
+/* XMSG: AI Notice message */
+"Suggested by AI. Verify before use. " = "由 AI 所建立，使用前請驗證。 ";
+
+/* XBUT: Attachment operation menu item - Photos, which stands for Photo Library */
+"Photos" = "照片";
+
+/* XBUT: Attachment operation menu item - Files, which stands for documents available for upload residing in Files */
+"Files" = "檔案";
+
+/* XBUT: Attachment operation menu item - Camera, which can be used for taking photos and movies */
+"Camera" = "相機";
+
+/* XBUT: Attachment operation menu item - Scan. Use camera as scanner and generate PDF files */
+"Scan" = "掃描";
+
+/* XACT: The accessibility preview action for the attachment */
+"Preview" = "預覽";
+
+/* XTIT: Attachment title of deletion confirmation */
+"Delete Attachment?" = "是否刪除附件？";
+
+/* XBUT: Attachment deletion confirmation button */
+"Delete" = "刪除";
+
+/* XBUT: Attachment add button */
+"Add attachment" = "新增附件";
+
+/* XACT: The accessibility hint for add button */
+"Double tap to add attachment" = "點兩下以新增附件";
+
+/* XMSG: attachment section add new file successfully announcement */
+"New attachment added successfully" = "已成功新增附件";
+
+/* XMSG: attachment section add new file failed announcement */
+"File failed to attach" = "無法附加檔案";
+
+/* XACT: The accessibility hint for attachment section */
+"read only" = "唯讀";
+
+/* XACT: The accessibility hint for attachment section */
+"actions available" = "可用動作";
+
+/* XMSG: Attachment thumbnail */
+"Thumbnail" = "縮圖";
+
+/* XMSG: Attachment uploading */
+"Attachment uploading" = "正在上傳 %@，請稍候...";
+
+/* XMSG: Attachment error */
+"Attachment error" = "%@ 上傳失敗。錯誤訊息：%@";
+
+/* XBUT: Sign In Action in the Authentication */
+"Sign In" = "登入";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"username" = "使用者名稱";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"password" = "密碼";
+
+/* XBUT: Submit action title in AI User Feedback */
+"Submit" = "提交";
+
+/* XMSG: Submission failed title in AI User Feedback */
+"Submission failed" = "提交失敗";
+
+/* XMSG: Submission failed description in AI User Feedback */
+"An error has occurred. Please try again later." = "發生錯誤，請稍後再試一次。";
+
+/* XBUT: Retry action title in AI User Feedback */
+"Retry" = "重試";
+
+/* XACT: The accessibility label for the like button in AI User Feedback */
+"Positive feedback" = "正向回饋";
+
+/* XACT: The accessibility label for the dislike button in AI User Feedback */
+"Negative feedback" = "反向回饋";
+
+/* XACT: The accessibility label for the vote buttons in AI User Feedback */
+"enabled" = "已啟用";
+
+/* XMSG: Onboarding scan view title for scan unsuccessful */
+"Scan Unsuccessful" = "掃描失敗";
+
+/* XMSG: Onboarding scan view hint for scan unsuccessful */
+"Please select a QR code image." = "請選擇 QR 代碼圖像。";
+
+/* XMSG: Onboarding scan view title for invalid QR code */
+"Invalid QR Code" = "QR 代碼無效";
+
+/* XMSG: Onboarding scan view hint for invalid QR code */
+"The QR code was not recognized." = "未識別 QR 代碼。";
+
+/* XTIT: Onboarding scan view title for request access to photos library */
+"Allow Access to Photos" = "允許存取照片";
+
+/* XMSG: Onboarding scan view hint for request access to photos library */
+"To choose a QR code image, please give access to your photos in your device's privacy settings." = "若要選擇 QR 代碼圖像，請在裝置隱私權設定中允許存取您的照片。";
+
+/* XTIT: Onboarding scan view title for request access to camera */
+"Allow Access to Camera" = "允許存取相機";
+
+/* XMSG: Onboarding scan view hint for request access to camera */
+"To scan using the camera, please give access to your camera in your device's privacy settings." = "若要使用相機掃描，請在裝置隱私權設定中提供相機的存取權限。";
+
+/* XBUT: Onboarding scan view action title for the alert when the permission to access camera or photo library was not granted */
+"Settings" = "設定";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"down arrow" = "向下箭頭";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"up arrow" = "向上箭頭";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash deactivated" = "已停用 Flash";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash activated" = "已啟用 Flash";
+
+/* XACT: The accessibility hint for photos in onboarding photo picker view */
+"Photo %d" = "照片 %d";
+
+/* XMSG: Onboarding confirm view success message */
+"Scan succeeded. You will be connected to:" = "掃描成功，您將連線至：";
+
+/* XBUT: Onboarding confirm view action title for continue button */
+"Continue" = "繼續";
+
+/* XTIT: Title for writing assistant */
+"Writing Assistant" = "書寫助手";
+
+/* XMSG: Writing assistant version control */
+"Version %d/%d" = "版本 %d/%d";
+
+/* XBUT: Writing assistant undo action title */
+"Undo" = "復原";
+
+/* XBUT: Writing assistant redo action title */
+"Redo" = "取消復原";
+
+/* XTIT: Writing assistant cancel alert message */
+"Do you want to undo the edits made by the Writing Assistant and revert the text to its original state?" = "您要復原書寫助手所做的編輯內容，並將內文回覆為原始狀態嗎？";
+
+/* XTIT: Writing assistant cancel alert title */
+"Discard all changes?" = "捨棄所有更改內容嗎？";
+
+/* XBUT: Writing assistant cancel alert action title for keep working */
+"Keep Working" = "繼續作業";
+
+/* XBUT: Writing assistant cancel alert action title for discard */
+"Discard" = "捨棄";
+
+/* XMSG: A success toast message for feedback flow in writing assistant */
+"Thank you for your feedback" = "感謝您的反饋。";
+
+/* XTIT: Title for feedback downvote flow in writing assistant */
+"What didn’t you like about this version?" = "您不喜歡關於此版本的哪一部份？";
+
+/* XTIT: Subtitle for feedback downvote flow in writing assistant */
+"Please rate your experience to help us improve." = "請為您的體驗評分來協助我們改善。";
+
+/* XTIT: Navigation bar title for feedback flow */
+"Feedback" = "反饋";
+
+/* XTIT: Footnote text for feedback in writing assistant */
+"How was this response?" = "此回應如何？";
+
+/* XMSG: One date selected for .datesSelection style in Calendar view */
+"%d Date Selected" = "%d 個日期已選擇";
+
+/* XMSG: Multiple dates selected for .datesSelection style in Calendar view */
+"%d Dates Selected" = "%d 個日期已選擇";
+
+/* XMSG: Has event, used in voice over in calendar view */
+"has event" = "有活動";
+
+/* XMSG: Double tap to change the selection, used in voice over in calendar view */
+"Double tap to change the selection" = "點兩下更改選擇";
+
+/* XMSG: Double tap to select, used in voice over in calendar view */
+"Double tap to select" = "點兩下選擇";
+
+/* XMSG: Double tap to unselect, used in voice over in calendar view */
+"Double tap to unselect" = "點兩下取消選擇";
+
+/* XMSG: Date selected, used in voiceOver in calendar view */
+"Date selected" = "已選擇日期";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Today" = "今天";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Disabled date" = "停用日期";
+
+/* XMSG: Drag tips in .expandable style, used in voiceOver in calendar view */
+"Handle to switch from month view to week view" = "處理以從月檢視切換至週檢視";
+
+/* XMSG: Accessibility label for card container */
+"Card" = "卡片";
+
+/* XTIT: Title for card */
+"Card title" = "卡片標題";
+
+/* XTIT: Subtitle for card */
+"Card subtitle" = "卡片子標題";
+
+/* XTIT: HeaderAction for card */
+"Card header action" = "卡片表頭動作";
+
+/* XACT: The accessibility label for the switchItem turn on button in FilterFeedbackBar */
+"Switch Item On" = "點擊以開啟";
+
+/* XACT: The accessibility label for the switchItem turn off button in FilterFeedbackBar */
+"Switch Item Off" = "點擊以關閉";
+
+/* XMSG: Writing assistant panel opening announcement */
+"AI Writing Assistant panel opened. Use provided prompts to refine your text content." = "AI 書寫助手面板已開啟。請使用提供的提示以簡化您的內文內容。";
+
+/* XMSG: Writing assistant activation cell hint for accessibility */
+"Double tap to activate" = "點兩下以啟用";
+
+/* XMSG: Writing assistant options entry cell hint for accessibility */
+"Open to see %@ options" = "開啟以查看 %@ 選項";
+
+/* XMSG: Writing assistant undo announcement */
+"Undo to Version %d of %d" = "復原為版本 %d/%d";
+
+/* XMSG: Writing assistant redo announcement */
+"Redo to Version %d of %d" = "復原為版本 %d/%d";
+
+/* XMSG: Writing assistant version update announcement */
+"Text updated to Version %d of %d" = "內文已更新為版本 %d/%d";
+
+/* XTIT: Writing assistant title accessibility label */
+"AI Writing Assistant" = "AI 書寫助手";
+
+/* XMSG: Writing assistant accessibility instruction for text editing */
+"double tap to open AI Writing Assistant and edit text" = "點兩下以開啟 AI 書寫助手並編輯內文";
+
+/* XBUT: Writing assistant undo accessibility label */
+"Undo change" = "復原更改";
+
+/* XBUT: Writing assistant redo accessibility label */
+"Rodo change" = "重做更改";
+
+/* XBUT: Close button title */
+"Close" = "關閉";
+
+/* XMSG: Accessibility label for completed state in step progress indicator */
+"complete" = "完成";
+
+/* XMSG: Accessibility label for active state in step progress indicator */
+"active" = "啟用中";
+
+/* XMSG: Accessibility label for error active state in step progress indicator */
+"error active" = "錯誤啟用中";
+
+/* XMSG: Accessibility label for read-only state in step progress indicator */
+"read-only" = "唯讀";
+
+/* XACT: The accessibility value for Stepper decrement */
+"Decrease the value by %f" = "按 %f 減少值";
+
+/* XACT: The accessibility value for Stepper increment */
+"Increase the value by %f" = "按 %f 增加值";
+
+/* XMSG: title used in DateRangePickerPopView */
+"Select Range" = "選擇範圍";
+
+/* XMSG: start date, used in DateRangePickerPopView */
+"Start Date" = "開始日期";
+
+/* XMSG: end date, used in DateRangePickerPopView */
+"End Date" = "結束日期";
+
+/* XBUT: title for picker form cell to open */
+"DoubleTapToOpenKey" = "點兩下開啟";
+
+/* XBUT: title for picker form cell to collapse */
+"DoubleTapToCollapseKey" = "點兩下收縮";
+
+/* XTIT: On state for switch */
+"Switch On" = "開啟";
+
+/* XTIT: Off state for switch */
+"Switch Off" = "關閉";
+
+/* Checkout Indicator accessibility label: failed */
+"failed" = "失敗";
+
+/* Checkout Indicator accessibility label: AI processing */
+"AI processing" = "AI 處理中";
+
+/* Checkout Indicator accessibility label: Checkout Indicator */
+"Checkout Indicator" = "簽出指示碼";
+
+/* XMSG: More tag text shown when tags are truncated in MHStack, %d is the count of hidden tags */
+"+%d more" = "+%d 個其他項";
+
+/* XTIT: The title of the empty state view */
+"No Results Found" = "找不到結果";
+
+/* XTIT: The description of the empty state view */
+"Check your search for any spelling errors or try a different search term." = "請檢查搜尋拼字錯誤，或嘗試不同的搜尋條件。";
+
+/* XACT: The accessibility label for the checkbox */
+"Checkbox" = "核取方塊";
+
+/* XMSG: Passcode policy requirement - minimum length, %d is the required number of characters */
+"At least %d characters" = "至少 %d 個字元";
+
+/* XMSG: Passcode policy requirement - minimum number of unique characters, %d is the required count */
+"At least %d unique characters" = "至少 %d 個特殊字元";
+
+/* XMSG: Passcode policy requirement - at least one digit */
+"At least one digit" = "至少一個數字";
+
+/* XMSG: Passcode policy requirement - at least one uppercase letter */
+"At least one uppercase letter" = "至少一個大寫字母";
+
+/* XMSG: Passcode policy requirement - at least one lowercase letter */
+"At least one lowercase letter" = "至少一個小寫字母";
+
+/* XMSG: Passcode policy requirement - at least one special character */
+"At least one special character" = "至少一個特殊字元";
+
+/* XMSG: Passcode policy requirement - digits only */
+"Digits only" = "僅數字";
+

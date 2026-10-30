@@ -1,0 +1,107 @@
+import FioriSwiftUICore
+import SwiftUI
+
+struct LinearProgressIndicatorExample: View {
+    @State var progress1: Double = 0.3
+    @State var progress2: Double = 0.1
+    @State var progress3: Double = 0.0
+    @State var progress4: Double = 1.0
+    
+    var body: some View {
+        ScrollView {
+            Text("Determinate without Label")
+            LinearProgressIndicator(indicatorProgress: self.$progress1)
+                .linearProgressIndicatorStyle(.determinate)
+                .accentColor(Color.red)
+                .padding(.bottom, 20)
+
+            Text("Determinate with custom tint color")
+            LinearProgressIndicator(indicatorProgress: self.$progress1)
+                .linearProgressIndicatorStyle(.determinate)
+                .linearProgressIndicatorTintColor(.orange)
+                .padding(.bottom, 20)
+
+            Text("Indeterminate with custom tint color")
+            LinearProgressIndicator(indicatorProgress: self.$progress1)
+                .linearProgressIndicatorStyle(.indeterminate)
+                .linearProgressIndicatorTintColor(.purple)
+                .padding(.bottom, 20)
+            
+            // Inline anonymous custom style using the closure-based API
+            Text("Custom inline style")
+            LinearProgressIndicator(indicatorProgress: self.$progress1)
+                .linearProgressIndicatorStyle { configuration in
+                    ProgressView(value: configuration.indicatorProgress, total: 1.0)
+                        .tint(.black)
+                }
+                .padding(.bottom, 20)
+
+            Text("Indeterminate without Label")
+            LinearProgressIndicator(indicatorProgress: self.$progress1)
+                .linearProgressIndicatorStyle(.indeterminate)
+                .padding(.bottom, 20)
+            
+            Text("Determinate with Label")
+            LinearProgressIndicatorView(indicatorProgress: self.$progress2, icon: Image(systemName: "heart"), description: AttributedString("Loading..."))
+                .linearProgressIndicatorStyle(.determinate)
+            FioriButton(
+                action: { _ in
+                    if self.progress2 > 0.9 {
+                        self.progress2 = 0
+                    } else {
+                        self.progress2 += 0.1
+                    }
+                },
+                label: { _ in
+                    Text("Increment Progress")
+                }
+            )
+            .disabled(false)
+            .fioriButtonStyle(FioriPrimaryButtonStyle().eraseToAnyFioriButtonStyle())
+            .padding(.bottom, 20)
+            
+            Text("Error style")
+            LinearProgressIndicatorView(indicatorProgress: self.$progress4, description: AttributedString("Loading..."))
+                .linearProgressIndicatorViewStyle(.error)
+                .padding(.bottom, 20)
+            
+            Text("Success style")
+            LinearProgressIndicatorView(indicatorProgress: self.$progress4, description: AttributedString("Loading complete successfully. Please see the user registration view for more detail information."))
+                .linearProgressIndicatorViewStyle(.success)
+                .padding(.bottom, 20)
+            
+            Text("AI Determinate Style")
+            LinearProgressIndicatorView(indicatorProgress: self.$progress2, description: AttributedString("Generating Content..."))
+                .linearProgressIndicatorViewStyle(.determinate)
+                .linearProgressIndicatorViewStyle(.ai)
+                .padding(.bottom, 20)
+            
+            Text("AI style Indeterminate Style")
+            LinearProgressIndicatorView(indicatorProgress: self.$progress4, description: AttributedString("Generating Content..."))
+                .linearProgressIndicatorViewStyle(.indeterminate)
+                .linearProgressIndicatorViewStyle(.ai)
+                .padding(.bottom, 20)
+            
+            Text("Indeterminate with Label")
+            LinearProgressIndicatorView(indicatorProgress: self.$progress3, icon: Image(systemName: "heart"), description: AttributedString("Loading..."))
+                .linearProgressIndicatorStyle(.indeterminate)
+                .padding(.bottom, 20)
+            
+            Text("Indeterminate customized")
+            LinearProgressIndicatorView(indicatorProgress: self.$progress3, icon: Image(systemName: "clock"), description: AttributedString("Downloading..."))
+                .iconStyle { iconConfiguration in
+                    iconConfiguration.icon
+                        .font(.fiori(forTextStyle: .headline)).bold()
+                        .foregroundColor(.green)
+                }
+                .descriptionStyle { descriptionConfiguration in
+                    descriptionConfiguration.description
+                        .font(.fiori(forTextStyle: .headline))
+                        .foregroundColor(.green)
+                }
+                .linearProgressIndicatorStyle(.indeterminate)
+                .padding(.bottom, 20)
+        }
+        .padding()
+    }
+}

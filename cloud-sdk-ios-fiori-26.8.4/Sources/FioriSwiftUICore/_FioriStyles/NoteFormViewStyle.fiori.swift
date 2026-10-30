@@ -1,0 +1,302 @@
+import FioriThemeManager
+import Foundation
+import SwiftUI
+
+/// The base layout style for `NoteFormView`.
+public struct NoteFormViewBaseStyle: NoteFormViewStyle {
+    @FocusState var isFocused: Bool
+    @Environment(\.isLoading) var isLoading
+    @Environment(\.isAILoading) var isAILoading
+
+    @ViewBuilder
+    public func makeBody(_ configuration: NoteFormViewConfiguration) -> some View {
+        nonisolated(unsafe) let configuration = configuration
+        SkeletonLoadingContainer {
+            VStack(alignment: .leading) {
+                self.getPlaceholderTextEditor(configuration)
+                    .focused(self.$isFocused)
+                    .disabled(self.getDisabled(configuration))
+            }
+            .textInputInfoView(isPresented: Binding(get: { self.isInfoViewNeeded(configuration) }, set: { _ in }), description: self.getInfoString(configuration), counter: self.getCounterString(configuration))
+            .modifier(FioriIntrospectModifier<UIScrollView> { scrollView in
+                if self.isLoading, scrollView.contentOffset != .zero {
+                    DispatchQueue.main.async {
+                        scrollView.contentOffset = .zero
+                    }
+                }
+            })
+            .accessibilityRepresentation {
+                // text editor using content as its accessibility value which will read out at last, re-order, read it first.
+                VStack {
+                    Text(configuration.text)
+                    if !configuration.placeholder.isEmpty, configuration.text.isEmpty {
+                        configuration.placeholder
+                    }
+                    TextInputInfoView(icon: nil, description: self.getInfoString(configuration), counter: self.getCounterString(configuration))
+                }
+            }
+            .accessibilityElement(children: .combine)
+            .accessibilityHint(self.getAccessibilityHint(configuration, isFocused: self.isFocused))
+        }
+    }
+
+    func getPlaceholderTextEditor(_ configuration: NoteFormViewConfiguration) -> some View {
+        if self.isLoading {
+            if configuration.text.isEmpty, configuration.placeholder.isEmpty {
+                return PlaceholderTextEditor(.init(text: .constant(""), placeholder: .init(Text("NoteFormView skeleton loading").typeErased)), shouldApplyDefaultStyle: true).typeErased
+            } else {
+                return configuration._placeholderTextEditor.typeErased
+            }
+        } else {
+            return configuration._placeholderTextEditor.typeErased
+        }
+    }
+    
+    func getDisabled(_ configuration: NoteFormViewConfiguration) -> Bool {
+        !TextInputFormViewConfiguration(configuration, isFocused: self.isFocused).getEditable()
+    }
+
+    func getCounterString(_ configuration: NoteFormViewConfiguration) -> AttributedString? {
+        TextInputFormViewConfiguration(configuration, isFocused: self.isFocused).getCounterInfo().string
+    }
+    
+    func getCounterLeft(_ configuration: NoteFormViewConfiguration) -> Int? {
+        TextInputFormViewConfiguration(configuration, isFocused: self.isFocused).getCounterInfo().leftCount
+    }
+
+    func getInfoString(_ configuration: NoteFormViewConfiguration) -> AttributedString? {
+        TextInputFormViewConfiguration(configuration, isFocused: self.isFocused).getInfoString()
+    }
+
+    func isInfoViewNeeded(_ configuration: NoteFormViewConfiguration) -> Bool {
+        TextInputFormViewConfiguration(configuration, isFocused: self.isFocused).isInfoViewNeeded()
+    }
+    
+    func getAccessibilityHint(_ configuration: NoteFormViewConfiguration, isFocused: Bool) -> String {
+        var accHintString = ""
+        if let leftCount = self.getCounterLeft(configuration) {
+            accHintString = leftCount > 1 ? String(format: "%d characters left".localizedFioriString(), leftCount) : String(format: "%d character left".localizedFioriString(), leftCount)
+        }
+        switch configuration.controlState {
+        case .normal:
+            accHintString += " "
+            if isFocused {
+                accHintString += NSLocalizedString("Text field, is editing", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "Text field, is editing")
+            } else {
+                accHintString += NSLocalizedString("Text field, Double tap to edit", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "Text field, Double tap to edit")
+            }
+        default:
+            break
+        }
+        return accHintString
+    }
+}
+
+// Default fiori styles
+extension NoteFormViewFioriStyle {
+    struct ContentFioriStyle: NoteFormViewStyle {
+        @FocusState var isFocused: Bool
+        @Environment(\.isLoading) var isLoading
+        @Environment(\.isCustomizedBorder) var isCustomizedBorder
+        @Environment(\.noteFormViewCornerRadius) var noteFormViewCornerRadius
+        @Environment(\.noteFormViewScrollingEnabled) var noteFormViewScrollingEnabled
+        
+        @ViewBuilder
+        func makeBody(_ configuration: NoteFormViewConfiguration) -> some View {
+            NoteFormView(configuration)
+                .accentColor(self.getCursorColor(configuration))
+                .focused(self.$isFocused)
+                .textInputInfoViewStyle { config in
+                    let isError = self.isErrorStyle(configuration)
+                    let style: any TextInputInfoViewStyle = isError ? .error : .fiori
+                    TextInputInfoView(config)
+                        .textInputInfoViewStyle(style)
+                        .typeErased
+                        .padding(.top, -8)
+                }
+                .placeholderTextEditorStyle { config in
+                    let scrollEnabled = self.noteFormViewScrollingEnabled ?? (configuration.maxTextEditorHeight != nil)
+                    PlaceholderTextEditor(config)
+                        .frame(minHeight: self.getMinHeight(configuration))
+                        .frame(maxHeight: self.getMaxHeight(configuration))
+                        .scrollDisabled(!scrollEnabled)
+                        .background(self.getBackgroundColor(configuration))
+                        .clipShape(RoundedRectangle(cornerRadius: self.noteFormViewCornerRadius))
+                        .overlay(
+                            Group {
+                                if !self.isCustomizedBorder {
+                                    RoundedRectangle(cornerRadius: self.noteFormViewCornerRadius)
+                                        .stroke(self.getBorderColor(configuration), lineWidth: self.getBorderWidth(configuration))
+                                }
+                            }
+                        )
+                        .setOnChange(of: configuration.text, action1: { s in
+                            self.checkCharCount(configuration, textString: s)
+                        }) { _, s in
+                            self.checkCharCount(configuration, textString: s)
+                        }
+                        .padding(.bottom, self.isInfoViewNeeded(configuration) ? 0 : 7)
+                }
+                .textViewStyle { config in
+                    TextView(config)
+                        .foregroundStyle(self.getTextColor(configuration))
+                        .font(.fiori(forTextStyle: .body))
+                }
+                .padding(.top, 7)
+        }
+
+        func getTextColor(_ configuration: NoteFormViewConfiguration) -> Color {
+            TextInputFormViewConfiguration(configuration, isFocused: self.isFocused).getTextColor()
+        }
+
+        func getCursorColor(_ configuration: NoteFormViewConfiguration) -> Color {
+            TextInputFormViewConfiguration(configuration, isFocused: self.isFocused).getCursorColor()
+        }
+        
+        func getBorderColor(_ configuration: NoteFormViewConfiguration) -> Color {
+            TextInputFormViewConfiguration(configuration, isFocused: self.isFocused).getBorderColor()
+        }
+
+        func getBackgroundColor(_ configuration: NoteFormViewConfiguration) -> Color {
+            if self.isLoading {
+                return .clear
+            }
+            return TextInputFormViewConfiguration(configuration, isFocused: self.isFocused).getBackgroundColor()
+        }
+
+        func getBorderWidth(_ configuration: NoteFormViewConfiguration) -> CGFloat {
+            TextInputFormViewConfiguration(configuration, isFocused: self.isFocused).getBorderWidth()
+        }
+
+        func isErrorStyle(_ configuration: NoteFormViewConfiguration) -> Bool {
+            TextInputFormViewConfiguration(configuration, isFocused: self.isFocused).isErrorStyle()
+        }
+
+        func isInfoViewNeeded(_ configuration: NoteFormViewConfiguration) -> Bool {
+            TextInputFormViewConfiguration(configuration, isFocused: self.isFocused).isInfoViewNeeded()
+        }
+
+        func getMinHeight(_ configuration: NoteFormViewConfiguration) -> CGFloat {
+            guard let minHeight = configuration.minTextEditorHeight else {
+                return 88
+            }
+            guard minHeight > 44 else {
+                return 88
+            }
+            return minHeight
+            // The min or max height is just for editor but not the form view, there are extra vertical padding or message view added.
+        }
+
+        func getMaxHeight(_ configuration: NoteFormViewConfiguration) -> CGFloat {
+            guard let maxHeight = configuration.maxTextEditorHeight else {
+                return .infinity
+            }
+            let minHeght = self.getMinHeight(configuration)
+            return maxHeight > minHeght ? maxHeight : minHeght
+        }
+
+        func checkCharCount(_ configuration: NoteFormViewConfiguration, textString: String) {
+            guard let maxTextLength = configuration.maxTextLength, maxTextLength > 0 else {
+                return
+            }
+            if !(configuration.allowsBeyondLimit == true), textString.count > maxTextLength {
+                configuration.text = String(textString.prefix(maxTextLength))
+            }
+        }
+    }
+
+    struct TextViewFioriStyle: TextViewStyle {
+        let noteFormViewConfiguration: NoteFormViewConfiguration
+        
+        func makeBody(_ configuration: TextViewConfiguration) -> some View {
+            TextView(configuration)
+        }
+    }
+
+    struct PlaceholderFioriStyle: PlaceholderStyle {
+        let noteFormViewConfiguration: NoteFormViewConfiguration
+        
+        func makeBody(_ configuration: PlaceholderConfiguration) -> some View {
+            Placeholder(configuration)
+        }
+    }
+
+    struct PlaceholderTextEditorFioriStyle: PlaceholderTextEditorStyle {
+        let noteFormViewConfiguration: NoteFormViewConfiguration
+        
+        func makeBody(_ configuration: PlaceholderTextEditorConfiguration) -> some View {
+            PlaceholderTextEditor(configuration)
+        }
+    }
+
+    struct FormViewFioriStyle: FormViewStyle {
+        let noteFormViewConfiguration: NoteFormViewConfiguration
+        
+        func makeBody(_ configuration: FormViewConfiguration) -> some View {
+            FormView(configuration)
+        }
+    }
+}
+
+// MARK: - NoteFormView Corner Radius
+
+struct NoteFormViewCornerRadiusKey: EnvironmentKey {
+    static let defaultValue: CGFloat = 8.0
+}
+
+public extension EnvironmentValues {
+    /// Corner radius for NoteFormView. Default is 8.
+    var noteFormViewCornerRadius: CGFloat {
+        get { self[NoteFormViewCornerRadiusKey.self] }
+        set { self[NoteFormViewCornerRadiusKey.self] = newValue }
+    }
+}
+
+public extension View {
+    /// Set corner radius for NoteFormView. Default is 8.
+    /// ```swift
+    /// NoteFormView(text: $text, placeholder: "Enter text")
+    ///     .noteFormViewCornerRadius(16)
+    /// ```
+    /// - Parameter cornerRadius: Corner radius for NoteFormView.
+    /// - Returns: A view with specified corner radius.
+    func noteFormViewCornerRadius(_ cornerRadius: CGFloat) -> some View {
+        environment(\.noteFormViewCornerRadius, cornerRadius)
+    }
+}
+
+// MARK: - NoteFormView Scrolling Enabled
+
+struct NoteFormViewScrollingEnabledKey: EnvironmentKey {
+    /// nil means "auto": scroll when maxTextEditorHeight is set, no-scroll otherwise.
+    static let defaultValue: Bool? = nil
+}
+
+public extension EnvironmentValues {
+    /// Controls whether the NoteFormView's text editor scrolls internally.
+    /// - `nil` (default): automatically determined by `maxTextEditorHeight`.
+    ///   - `maxTextEditorHeight` is set → scrolling enabled (editor stays within height limit).
+    ///   - `maxTextEditorHeight` is nil → scrolling disabled (editor expands to fit all content).
+    /// - `true`: always enable scrolling, useful when the editor is inside a height-constrained parent view.
+    /// - `false`: always disable scrolling, editor always expands to fit all content.
+    var noteFormViewScrollingEnabled: Bool? {
+        get { self[NoteFormViewScrollingEnabledKey.self] }
+        set { self[NoteFormViewScrollingEnabledKey.self] = newValue }
+    }
+}
+
+public extension View {
+    /// Controls whether the NoteFormView's text editor scrolls internally.
+    /// ```swift
+    /// // Force scrolling enabled when NoteFormView is inside a height-constrained parent:
+    /// VStack {
+    ///     NoteFormView(text: $text, maxTextEditorHeight: nil)
+    /// }
+    /// .frame(height: 100)
+    /// .noteFormViewScrollingEnabled(true)
+    /// ```
+    /// - Parameter enabled: `true` to enable scrolling, `false` to disable, `nil` for automatic behavior.
+    func noteFormViewScrollingEnabled(_ enabled: Bool?) -> some View {
+        environment(\.noteFormViewScrollingEnabled, enabled)
+    }
+}

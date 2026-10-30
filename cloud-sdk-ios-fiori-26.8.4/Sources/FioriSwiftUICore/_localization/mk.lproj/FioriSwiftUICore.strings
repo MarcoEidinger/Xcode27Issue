@@ -1,0 +1,753 @@
+/* XMSG: Placeholder text in chart when there is no data */
+"No Data" = "Нема податоци";
+
+/* XBUT: Save action in inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Save" = "Зачувај";
+
+/* XBUT: Re-enter action available in saved state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Re-enter Signature" = "Повторно внесете Потпис";
+
+/* XBUT: Clear action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Clear" = "Исчисти";
+
+/* XBUT: Cancel action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Cancel" = "Откажи";
+
+/* XTIT: Title of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Signature" = "Потпис";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Tap to Sign" = "Допрете за да се потпишете";
+
+/* XACT: The accessibility label for the signature area */
+"Signature Area" = "Место за потпис";
+
+/* XACT: The accessibility hint for the signature area */
+"Double tap and drag to sign" = "Допрете двапати и повлечете за да се потпишете";
+
+/* XACT: The accessibility label for the signature image */
+"Signature Image" = "Слика на потпис";
+
+/* XACT: The accessibility label for the signature line */
+"Signature Line" = "Линија за потпис";
+
+/* XACT: The accessibility label for the mandatory field */
+"Required Field" = "Задолжително поле";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Canceled" = "Откажано";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Next" = "Следно";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Ok" = "Во ред";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Status" = "Статус";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"User canceled Onboarding" = "Корисникот го откажа воведувањето во компанијата";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Without consent you will not be able to continue onboarding." = "Без согласност нема да можете да продолжите со воведувањето во компанијата.";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Give Consent" = "Дајте согласност";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Quit" = "Откажи";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Back" = "Назад";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Step" = "Чекор";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"of" = "од";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Are you sure you want to quit the onboarding process?" = "Дали сигурно сакате да го напуштите воведувањето во компанијата?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Want Data Privacy?" = "Сакате приватност на податоците?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Be wise about your data" = "Бидете внимателни со вашите податоци";
+
+/* XBUT: Not Now action title in UserConsentForm */
+"Not Now" = "Не сега";
+
+/* XBUT: Allow action title in UserConsentForm */
+"Allow" = "Дозволи";
+
+/* XBUT: Deny action title in UserConsentForm */
+"Deny" = "Одбиј";
+
+/* XBUT: Agree action title in EULAView */
+"Agree" = "Се согласувам";
+
+/* XBUT: Disagree action title in EULAView */
+"Disagree" = "Не се согласувам";
+
+/* XMSG: Placeholder text in DataTable for loading state */
+"Loading..." = "Се вчитува...";
+
+/* XMSG: Placeholder text in DataTable when there is no data */
+"There is nothing to display yet" = "Сè уште нема ништо за приказ";
+
+/* XBUT: Default duration formatter in DataTable */
+"%d Hrs %d Min" = "%d Часови %d Минути";
+
+/* XBUT: Done action in keyboard toolbar for a Textfield in DataTable */
+"Done" = "Готово";
+
+/* XBUT: Error messages shown to users in DataTable */
+"There are %d errors in the data table." = "Има %d грешки во табелата со податоци.";
+
+/* XBUT: voice over label for row header in DataTable */
+"row header" = "заглавие на редот";
+
+/* XBUT: voice over label for row %d in DataTable */
+"row %d" = "ред %d";
+
+/* XBUT: voice over label for column %d in DataTable */
+"column %d" = "колона %d";
+
+/* XBUT: voice over label for cell type of `leading accessory` in DataTable */
+"leading accessory" = "водечки додаток";
+
+/* XBUT: voice over label for cell type of `trailing accessory` in DataTable */
+"trailing accessory" = "краен додаток";
+
+/* XBUT: voice over label for cell type of `text` in DataTable */
+"text" = "текст";
+
+/* XBUT: voice over label for cell type of `image` in DataTable */
+"image" = "слика";
+
+/* XBUT: voice over label for cell type of `date` in DataTable */
+"date" = "датум";
+
+/* XBUT: voice over label for cell type of `time` in DataTable */
+"time" = "време";
+
+/* XBUT: voice over label for cell type of `duration` in DataTable */
+"duration" = "времетраење";
+
+/* XBUT: voice over label for cell type of `list item` in DataTable */
+"list item" = "ставка од списокот";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"selected" = "избран";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"not selected" = "не е избран";
+
+/* Default value for DateTimePicker */
+"No date selected" = "Не е избран датум";
+
+/* Default value for DateRangePicker */
+"No range selected" = "Не е избран опсег";
+
+/* DateRangePicker press space to set a range value */
+"PressSpaceToSelectRangeKey" = "притиснете Space за да поставите вредност за опсег";
+
+/* XBUT: calendar time component label */
+"Time" = "Време";
+
+/* XBUT: slider default value label formatter for integer */
+"Value: %d" = "Вредност: %d";
+
+/* XMSG: a toast message for read-only cell in DataTable */
+"Tapped cell is read-only." = "Допрената ќелија е само за читање.";
+
+/* Default hint text for Read-only Field for NoteFormView and TextFieldFormView */
+"Read-only field" = "Поле само за читање";
+
+/* Default error text for when the character count reaches the maximum limit for NoteFormView and TextFieldFormView */
+"No more characters remaining" = "Нема преостанати знаци";
+
+/* Default error text for when the character count exceeds the maximum limit for NoteFormView and TextFieldFormView */
+"Reduce the number of characters" = "Намалете го бројот на знаци";
+
+/* XBUT: voice over label for decrement action in stepper */
+"Stepper decrease" = "Намалување на регулаторот на вредности";
+
+/* XBUT: voice over description for decrement action in stepper */
+"Decrease the value by %d" = "Намали ја вредноста за %d";
+
+/* XBUT: voice over label for increment action in stepper */
+"Stepper increase" = "Зголемување на регулаторот на вредности";
+
+/* XBUT: voice over description for increment action in stepper */
+"Increase the value by %d" = "Зголеми ја вредноста за %d";
+
+/* XBUT: voice over label for test field in stepper */
+"Select specific value" = "Изберете конкретна вредност";
+
+/* XBUT: View all action in MenuSelection */
+"View All (%d)" = "Прикажи ги сите (%d)";
+
+/* XACT: RatingControl accessibility label */
+"%d out of %d stars" = "%d од %d ѕвездички";
+
+/* XBUT: timeline preview component see all label */
+"See All (%d)" = "Види ги сите (%d)";
+
+/* XACT: Timeline preview items accessibility label */
+"See All" = "Види ги сите";
+
+/* XACT: Timeline preview items accessibility value */
+"%d items" = "%d ставки";
+
+/* XACT: Timeline preview items accessibility hint */
+"Shows all timeline items in a list" = "Ги покажува сите ставки на временската линија во список";
+
+/* XACT: Timeline preview item status: current accessibility value */
+"Current" = "Тековни";
+
+/* XACT: Timeline preview item status: future accessibility value */
+"Future" = "Идни";
+
+/* XACT: Timeline preview item status: past accessibility value */
+"Past" = "Минати";
+
+/* XACT: Timeline preview item accessibility value */
+"Item %d of %d, %@, %@, %@" = "Ставка %d од %d, %@, %@, %@";
+
+/* XACT: Timeline preview item node type: Start accessibility value */
+"Start" = "Започни";
+
+/* XACT: Timeline preview item node type: End accessibility value */
+"End" = "Заврши";
+
+/* XACT: Timeline preview item node type: Completed accessibility value */
+"Completed" = "Завршено";
+
+/* XACT: Timeline preview item node type: Open accessibility value */
+"Open" = "Отвори";
+
+/* XACT: Timeline preview item node type: Task accessibility value */
+"Task" = "Задача";
+
+/* XACT: Timeline preview item accessibility label */
+"Item %d of %d" = "Ставка %d од %d";
+
+/* XBUT: timeline preview component timestamp label */
+"Today, %@" = "Денес, %@";
+
+/* XFLD: RatingControl value label format */
+"%d of %d" = "%d од %d";
+
+/* XFLD: RatingControl review count format */
+"%d reviews" = "%d прегледи";
+
+/* XFLD: RatingControl review count over ceiling format */
+"%d+ reviews" = "%d+ прегледи";
+
+/* XACT: RatingControl accessibility label */
+"Rating Control %d of %d" = "Контрола за оценување %d од %d";
+
+/* XACT: read-only RatingControl accessibility label: rating with review count */
+"Rating Control, rating %d of %d, %d reviews" = "Контрола за оценување, оцена %d од %d, %d прегледи";
+
+/* XACT: read-only RatingControl accessibility label: average rating only */
+"Rating Control, average rating %.1f of %d" = "Контрола за оценување, просечна оцена %.1f од %d";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count */
+"Rating Control, average rating %.1f of %d, %d reviews" = "Контрола за оценување, просечна оцена %.1f од %d, %d прегледи";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count over ceiling */
+"Rating Control, average rating %.1f of %d, %d plus reviews" = "Контрола за оценување, просечна оцена %.1f од %d, повеќе од %d прегледи";
+
+/* XBUT: View all messages in message banner sheet */
+"All" = "Сите";
+
+/* XBUT: messages count in the message banner sheet */
+"Messages (%d)" = "Пораки (%d)";
+
+/* XBUT: view details in the message banner */
+"View Details" = "Прикажи ги деталите";
+
+/* XBUT: view different message in the message banner sheet item */
+"View %@" = "Прикажи %@";
+
+/* XBUT: banner message type desc, message */
+"message" = "порака";
+
+/* XBUT: banner message type desc, information */
+"information" = "информации";
+
+/* XBUT: banner message type desc, confirmation */
+"confirmation" = "потврда";
+
+/* XBUT: banner message type desc, warning */
+"warning" = "предупредување";
+
+/* XBUT: banner message type desc, error */
+"error" = "грешка";
+
+/* XBUT: banner message type desc, error */
+"AI notice" = "Известување за вештачка интелигенција";
+
+/* XMSG: banner message type desc, offline */
+"offline" = "вонмрежно";
+
+/* XMSG: information view style type, success */
+"success" = "успешно";
+
+/* XBUT: Reset action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Reset" = "Ресетирај";
+
+/* XBUT: Apply action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Apply" = "Примени";
+
+/* XTIT: The alert message for `ListPickerDestination` pulldown dismissal */
+"Are you sure you want to discard your selections?" = "Дали сигурно сакате да ги отфрлите избраните вредности?";
+
+/* XBUT: The alert Discard Changes action title for `ListPickerDestination` pulldown dismissal */
+"Discard Changes" = "Отфрли ги промените";
+
+/* XBUT: The alert Keep Editing action title for `ListPickerDestination` pulldown dismissal */
+"Keep Editing" = "Продолжи со уредување";
+
+/* XBUT: The \"Select All\" button title on the List Picker header */
+"Select All" = "Избери ги сите";
+
+/* XBUT: The \"Deselect All\" button title on the List Picker header */
+"Deselect All" = "Поништи го изборот на сите";
+
+/* XBUT: The \"Selected\" title on the List Picker header */
+"Selected" = "Избраните";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"Text field, Double tap to edit" = "Текстуално поле, допрете двапати за уредување";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d character left" = "Остана %d знак.";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d characters left" = "Останаа %d знаци.";
+
+/* XACT: The accessibility hint for Text Input Views, editing */
+"Text field, is editing" = "Текстуално поле, во режим на уредување";
+
+/* XACT: The accessibility hint for Text Input Views, editing, with clear button */
+"Text field, is editing. Double tap to clear text" = "Текстуално поле, се уредува. Допрете двапати за да го исчистите текстот";
+
+/* XACT: The default accessibility label for the custom action in TextFieldFormView if none was specified */
+"Custom Action" = "Приспособено дејство";
+
+/* XBUT: Error messages shown to users in DocumentScannerView */
+"Failed to create PDF page from images" = "Создавањето PDF-страница од слики е неуспешно.";
+
+/* XBUT: Cancel message shown to users in DocumentScannerView */
+"User cancelled the scan" = "Корисникот го откажа скенирањето.";
+
+/* Progress Indicator accessibility label: processing */
+"Processing" = "Се обработува";
+
+/* Progress Indicator accessibility label: loading pausable with indicator progress */
+"In progress with option to pause, %.0f" = "Во тек со опција за паузирање, %.0f";
+
+/* Progress Indicator accessibility label: loading stoppable with indicator progress */
+"In progress with option to stop, %.0f" = "Во тек со опција за запирање, %.0f";
+
+/* Progress Indicator accessibility label: progress halted with indicator progress */
+"Progress halted, %.0f" = "Напредокот е запрен, %.0f";
+
+/* XACT: Slider accessibility label */
+"This is %@ slider whose maximum value is %@ and minimum value is %@" = "Oва е %@ лизгач чијашто максимална вредност е %@, а минималната вредност е %@";
+
+/* XACT: Slider accessibility value */
+"Current value is %@" = "Тековната вредност е  %@";
+
+/* XACT: Range Slider lower thumb accessibility label */
+"lower range slider thumb, current value is" = "курсор на лизгач во долен опсег, тековната вредност е";
+
+/* XACT: Range Slider lower thumb accessibility hint */
+"you can swipe up or down to change the lower value" = "можете да повлечете нагоре или надолу за да ја промените ниската вредност";
+
+/* XACT: Range Slider upper thumb accessibility label */
+"upper range slider thumb, current value is" = "курсор на лизгач во горен опсег, тековната вредност е";
+
+/* XACT: Range Slider upper thumb accessibility hint */
+"you can swipe up or down to change the upper value" = "можете да повлечете нагоре или надолу за да ја промените горната вредност";
+
+/* XACT: Single editable Slider thumb accessibility label */
+"slider thumb, current value is" = "курсор на лизгач, тековната вредност е";
+
+/* XACT: Single editable Slider thumb accessibility hint */
+"you can swipe up or down to change the value" = "можете да повлечете нагоре или надолу за да ја промените вредноста";
+
+/* XACT: Single Slider accessibility label */
+"This is a slider, the minimum value is %@ and the maximum value is %@" = "Ова е лизгач, минималната вредност е %@, а максималната вредност е %@";
+
+/* XACT: Range Slider accessibility label */
+"This is a range slider, the minimum value is %@ and the maximum value is %@" = "Ова е лизгач на опсегот, минималната вредност е %@, а максималната вредност е %@";
+
+/* XACT: Single editable Slider accessibility label */
+"This is a slider that is editable, the minimum value is %@ and the maximum value is %@" = "Ова е лизгач што може да се уредува, минималната вредност е %@, а максималната вредност е %@";
+
+/* XACT: Single non-editable Slider accessibility label */
+"This is a slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Ова е лизгач што не може да се уредува, минималната вредност е %@, а максималната вредност е %@";
+
+/* XACT: Range editable Slider accessibility label */
+"This is a range slider that is editable, the minimum value is %@ and the maximum value is %@" = "Ова е лизгач за опсег што може да се уредува, минималната вредност е %@, а максималната вредност е %@";
+
+/* XACT: Range non-editable Slider accessibility label */
+"This is a range slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Ова е лизгач за опсег што не може да се уредува, минималната вредност е %@, а максималната вредност е %@";
+
+/* XACT: Single editable Slider Text Field accessibility label */
+"slider value text field" = "поле за текст за вредноста на лизгачот";
+
+/* XACT: Range editable Slider Lower Value Text Field accessibility label */
+"lower value text field" = "поле за текст за долна вредност";
+
+/* XACT: Range editable Slider Upper Value Text Field accessibility label */
+"upper value text field" = "поле за текст за горна вредност";
+
+/* XACT: Editable Slider Text Field accessibility hint */
+"You can double tap to input a specific value" = "Може да допрете двапати за да внесете одредена вредност";
+
+/* XACT: Editable Slider Text Field accessibility value */
+"current value is %@" = "тековната вредност е %@";
+
+/* XACT: Range Editable Slider accessibility value */
+"current lower value is %@, upper value is %@" = "тековната долна вредност е %@, горната вредност е %@";
+
+/* XTIT: Title of step progress indicator, see https://experience.sap.com/fiori-design-ios/article/step-progress-indicator/#adaptive-design */
+"All Steps" = "Сите чекори";
+
+/* XMSG: AI Notice message */
+"Suggested by AI. Verify before use. " = "Предложено од вештачка интелигенција. Потврдете пред употреба. ";
+
+/* XBUT: Attachment operation menu item - Photos, which stands for Photo Library */
+"Photos" = "Фотографии";
+
+/* XBUT: Attachment operation menu item - Files, which stands for documents available for upload residing in Files */
+"Files" = "Датотеки";
+
+/* XBUT: Attachment operation menu item - Camera, which can be used for taking photos and movies */
+"Camera" = "Камера";
+
+/* XBUT: Attachment operation menu item - Scan. Use camera as scanner and generate PDF files */
+"Scan" = "Скенирај";
+
+/* XACT: The accessibility preview action for the attachment */
+"Preview" = "Преглед";
+
+/* XTIT: Attachment title of deletion confirmation */
+"Delete Attachment?" = "Да се избрише прилогот?";
+
+/* XBUT: Attachment deletion confirmation button */
+"Delete" = "Избриши";
+
+/* XBUT: Attachment add button */
+"Add attachment" = "Додај прилог";
+
+/* XACT: The accessibility hint for add button */
+"Double tap to add attachment" = "Допрете двапати за додавање прилог";
+
+/* XMSG: attachment section add new file successfully announcement */
+"New attachment added successfully" = "Новиот прилог е успешно додаден";
+
+/* XMSG: attachment section add new file failed announcement */
+"File failed to attach" = "Додавањето на датотеката не успеа";
+
+/* XACT: The accessibility hint for attachment section */
+"read only" = "само за читање";
+
+/* XACT: The accessibility hint for attachment section */
+"actions available" = "достапни дејства";
+
+/* XMSG: Attachment thumbnail */
+"Thumbnail" = "Сликичка";
+
+/* XMSG: Attachment uploading */
+"Attachment uploading" = "Се поставува %@, почекајте...";
+
+/* XMSG: Attachment error */
+"Attachment error" = "Поставувањето на %@ не успеа. Порака за грешка: %@";
+
+/* XBUT: Sign In Action in the Authentication */
+"Sign In" = "Најави се";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"username" = "корисничко име";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"password" = "лозинка";
+
+/* XBUT: Submit action title in AI User Feedback */
+"Submit" = "Поднеси";
+
+/* XMSG: Submission failed title in AI User Feedback */
+"Submission failed" = "Поднесувањето не успеа";
+
+/* XMSG: Submission failed description in AI User Feedback */
+"An error has occurred. Please try again later." = "Настана грешка. Обидете се повторно подоцна.";
+
+/* XBUT: Retry action title in AI User Feedback */
+"Retry" = "Обиди се повторно";
+
+/* XACT: The accessibility label for the like button in AI User Feedback */
+"Positive feedback" = "Позитивни повратни информации";
+
+/* XACT: The accessibility label for the dislike button in AI User Feedback */
+"Negative feedback" = "Негативни повратни информации";
+
+/* XACT: The accessibility label for the vote buttons in AI User Feedback */
+"enabled" = "овозможено";
+
+/* XMSG: Onboarding scan view title for scan unsuccessful */
+"Scan Unsuccessful" = "Скенирањето не успеа";
+
+/* XMSG: Onboarding scan view hint for scan unsuccessful */
+"Please select a QR code image." = "Изберете слика со QR-код.";
+
+/* XMSG: Onboarding scan view title for invalid QR code */
+"Invalid QR Code" = "Неважечки QR-код";
+
+/* XMSG: Onboarding scan view hint for invalid QR code */
+"The QR code was not recognized." = "QR-кодот не е препознаен.";
+
+/* XTIT: Onboarding scan view title for request access to photos library */
+"Allow Access to Photos" = "Дозволи пристап до фотографии";
+
+/* XMSG: Onboarding scan view hint for request access to photos library */
+"To choose a QR code image, please give access to your photos in your device's privacy settings." = "За да изберете слика со QR-код, овозможете пристап до вашите фотографии во поставките за приватност на уредот.";
+
+/* XTIT: Onboarding scan view title for request access to camera */
+"Allow Access to Camera" = "Дозволи пристап до камерата";
+
+/* XMSG: Onboarding scan view hint for request access to camera */
+"To scan using the camera, please give access to your camera in your device's privacy settings." = "За да скенирате со помош на камерата, овозможете пристап до камерата во поставките за приватност на уредот.";
+
+/* XBUT: Onboarding scan view action title for the alert when the permission to access camera or photo library was not granted */
+"Settings" = "Поставки";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"down arrow" = "стрелка за надолу";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"up arrow" = "стрелка за нагоре";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash deactivated" = "Flash e деактивиран";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash activated" = "Flash e активиран";
+
+/* XACT: The accessibility hint for photos in onboarding photo picker view */
+"Photo %d" = "Фотографија %d";
+
+/* XMSG: Onboarding confirm view success message */
+"Scan succeeded. You will be connected to:" = "Скенирањето успеа. Ќе се поврзете со:";
+
+/* XBUT: Onboarding confirm view action title for continue button */
+"Continue" = "Продолжи";
+
+/* XTIT: Title for writing assistant */
+"Writing Assistant" = "Помошник за пишување";
+
+/* XMSG: Writing assistant version control */
+"Version %d/%d" = "Верзија %d/%d";
+
+/* XBUT: Writing assistant undo action title */
+"Undo" = "Врати";
+
+/* XBUT: Writing assistant redo action title */
+"Redo" = "Повтори";
+
+/* XTIT: Writing assistant cancel alert message */
+"Do you want to undo the edits made by the Writing Assistant and revert the text to its original state?" = "Дали сакате да ги поништите уредувањата направени од Помошникот за пишување и да го вратите текстот во својата првична состојба?";
+
+/* XTIT: Writing assistant cancel alert title */
+"Discard all changes?" = "Отфрлете ги сите промени?";
+
+/* XBUT: Writing assistant cancel alert action title for keep working */
+"Keep Working" = "Продолжи со работа";
+
+/* XBUT: Writing assistant cancel alert action title for discard */
+"Discard" = "Отфрли";
+
+/* XMSG: A success toast message for feedback flow in writing assistant */
+"Thank you for your feedback" = "Ви благодариме за повратните информации";
+
+/* XTIT: Title for feedback downvote flow in writing assistant */
+"What didn’t you like about this version?" = "Што не ви се допаѓа кај оваа верзија?";
+
+/* XTIT: Subtitle for feedback downvote flow in writing assistant */
+"Please rate your experience to help us improve." = "Оценете го искуството за да ни помогнете да се подобриме.";
+
+/* XTIT: Navigation bar title for feedback flow */
+"Feedback" = "Повратни информации";
+
+/* XTIT: Footnote text for feedback in writing assistant */
+"How was this response?" = "Каков беше овој одговор?";
+
+/* XMSG: One date selected for .datesSelection style in Calendar view */
+"%d Date Selected" = "%d избран датум";
+
+/* XMSG: Multiple dates selected for .datesSelection style in Calendar view */
+"%d Dates Selected" = "%d избрани датуми";
+
+/* XMSG: Has event, used in voice over in calendar view */
+"has event" = "има настан";
+
+/* XMSG: Double tap to change the selection, used in voice over in calendar view */
+"Double tap to change the selection" = "Допрете двапати за да го промените изборот";
+
+/* XMSG: Double tap to select, used in voice over in calendar view */
+"Double tap to select" = "Допрете двапати за да изберете";
+
+/* XMSG: Double tap to unselect, used in voice over in calendar view */
+"Double tap to unselect" = "Допрете двапати за да го поништите изборот";
+
+/* XMSG: Date selected, used in voiceOver in calendar view */
+"Date selected" = "Датумот е избран";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Today" = "Денес";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Disabled date" = "Датум на деактивирање";
+
+/* XMSG: Drag tips in .expandable style, used in voiceOver in calendar view */
+"Handle to switch from month view to week view" = "Рачка за префрлање од месечен во неделен приказ";
+
+/* XMSG: Accessibility label for card container */
+"Card" = "Картичка";
+
+/* XTIT: Title for card */
+"Card title" = "Наслов на картичката";
+
+/* XTIT: Subtitle for card */
+"Card subtitle" = "Поднаслов на картичката";
+
+/* XTIT: HeaderAction for card */
+"Card header action" = "Дејство за заглавието на картичката";
+
+/* XACT: The accessibility label for the switchItem turn on button in FilterFeedbackBar */
+"Switch Item On" = "Допрете за да се вклучи";
+
+/* XACT: The accessibility label for the switchItem turn off button in FilterFeedbackBar */
+"Switch Item Off" = "Допрете за да се исклучи";
+
+/* XMSG: Writing assistant panel opening announcement */
+"AI Writing Assistant panel opened. Use provided prompts to refine your text content." = "Панелот за ВИ-помошникот за пишување е отворен. Користете ги дадените барања за да ја подобрите текстуалната содржина.";
+
+/* XMSG: Writing assistant activation cell hint for accessibility */
+"Double tap to activate" = "Допрете двапати за да се активира";
+
+/* XMSG: Writing assistant options entry cell hint for accessibility */
+"Open to see %@ options" = "Отворете за да видите %@ опции";
+
+/* XMSG: Writing assistant undo announcement */
+"Undo to Version %d of %d" = "Врати на верзијата %d од %d";
+
+/* XMSG: Writing assistant redo announcement */
+"Redo to Version %d of %d" = "Повтори на верзијата %d од %d";
+
+/* XMSG: Writing assistant version update announcement */
+"Text updated to Version %d of %d" = "Текстот е ажуриран на верзијата %d од %d";
+
+/* XTIT: Writing assistant title accessibility label */
+"AI Writing Assistant" = "ВИ-помошник за пишување";
+
+/* XMSG: Writing assistant accessibility instruction for text editing */
+"double tap to open AI Writing Assistant and edit text" = "допрете двапати за да го отворите ВИ-помошникот за пишување и да уредувате текст";
+
+/* XBUT: Writing assistant undo accessibility label */
+"Undo change" = "Врати промена";
+
+/* XBUT: Writing assistant redo accessibility label */
+"Rodo change" = "Повторни промена";
+
+/* XBUT: Close button title */
+"Close" = "Затвори";
+
+/* XMSG: Accessibility label for completed state in step progress indicator */
+"complete" = "завршено";
+
+/* XMSG: Accessibility label for active state in step progress indicator */
+"active" = "активно";
+
+/* XMSG: Accessibility label for error active state in step progress indicator */
+"error active" = "активна грешка";
+
+/* XMSG: Accessibility label for read-only state in step progress indicator */
+"read-only" = "само за читање";
+
+/* XACT: The accessibility value for Stepper decrement */
+"Decrease the value by %f" = "Намали ја вредноста за %f";
+
+/* XACT: The accessibility value for Stepper increment */
+"Increase the value by %f" = "Зголеми ја вредноста за %f";
+
+/* XMSG: title used in DateRangePickerPopView */
+"Select Range" = "Избери опсег";
+
+/* XMSG: start date, used in DateRangePickerPopView */
+"Start Date" = "Датум на започнување";
+
+/* XMSG: end date, used in DateRangePickerPopView */
+"End Date" = "Датум на завршување";
+
+/* XBUT: title for picker form cell to open */
+"DoubleTapToOpenKey" = "Допрете двапати за да се отвори";
+
+/* XBUT: title for picker form cell to collapse */
+"DoubleTapToCollapseKey" = "Допрете двапати за да се скрие";
+
+/* XTIT: On state for switch */
+"Switch On" = "Вклучено";
+
+/* XTIT: Off state for switch */
+"Switch Off" = "Исклучено";
+
+/* Checkout Indicator accessibility label: failed */
+"failed" = "неуспешно";
+
+/* Checkout Indicator accessibility label: AI processing */
+"AI processing" = "Обработка со помош на ВИ";
+
+/* Checkout Indicator accessibility label: Checkout Indicator */
+"Checkout Indicator" = "Показател за обработка";
+
+/* XMSG: More tag text shown when tags are truncated in MHStack, %d is the count of hidden tags */
+"+%d more" = "Уште +%d";
+
+/* XTIT: The title of the empty state view */
+"No Results Found" = "Не се најдени резултати";
+
+/* XTIT: The description of the empty state view */
+"Check your search for any spelling errors or try a different search term." = "Проверете дали пребарувањето содржи правописни грешки или обидете се со друг термин за пребарување.";
+
+/* XACT: The accessibility label for the checkbox */
+"Checkbox" = "Поле за означување";
+
+/* XMSG: Passcode policy requirement - minimum length, %d is the required number of characters */
+"At least %d characters" = "Најмалку %d знаци";
+
+/* XMSG: Passcode policy requirement - minimum number of unique characters, %d is the required count */
+"At least %d unique characters" = "Најмалку %d уникатни знаци";
+
+/* XMSG: Passcode policy requirement - at least one digit */
+"At least one digit" = "Најмалку една цифра";
+
+/* XMSG: Passcode policy requirement - at least one uppercase letter */
+"At least one uppercase letter" = "Најмалку една голема буква";
+
+/* XMSG: Passcode policy requirement - at least one lowercase letter */
+"At least one lowercase letter" = "Најмалку една мала буква";
+
+/* XMSG: Passcode policy requirement - at least one special character */
+"At least one special character" = "Најмалку еден специјален знак";
+
+/* XMSG: Passcode policy requirement - digits only */
+"Digits only" = "Само цифри";
+

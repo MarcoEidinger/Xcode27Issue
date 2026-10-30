@@ -1,0 +1,753 @@
+/* XMSG: Placeholder text in chart when there is no data */
+"No Data" = "Không có dữ liệu";
+
+/* XBUT: Save action in inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Save" = "Lưu";
+
+/* XBUT: Re-enter action available in saved state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Re-enter Signature" = "Nhập lại chữ ký";
+
+/* XBUT: Clear action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Clear" = "Xóa";
+
+/* XBUT: Cancel action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Cancel" = "Hủy";
+
+/* XTIT: Title of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Signature" = "Chữ ký";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Tap to Sign" = "Gõ nhẹ để ký";
+
+/* XACT: The accessibility label for the signature area */
+"Signature Area" = "Vùng chữ ký";
+
+/* XACT: The accessibility hint for the signature area */
+"Double tap and drag to sign" = "Chạm hai lần và kéo để ký";
+
+/* XACT: The accessibility label for the signature image */
+"Signature Image" = "Hình ảnh chữ ký";
+
+/* XACT: The accessibility label for the signature line */
+"Signature Line" = "Dòng chữ ký";
+
+/* XACT: The accessibility label for the mandatory field */
+"Required Field" = "Trường bắt buộc";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Canceled" = "Đã hủy";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Next" = "Kế tiếp";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Ok" = "Ok";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Status" = "Trạng thái";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"User canceled Onboarding" = "Tích hợp hủy bởi người dùng";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Without consent you will not be able to continue onboarding." = "Không có thỏa thuận bạn sẽ không thể tiếp tục tích hợp.";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Give Consent" = "Đưa ra thỏa thuận";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Quit" = "Thoát";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Back" = "Quay lại";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Step" = "Bước";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"of" = "của";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Are you sure you want to quit the onboarding process?" = "Bạn có chắc là bạn muốn thoát quy trình tích hợp không?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Want Data Privacy?" = "Muốn quyền riêng tư dữ liệu?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Be wise about your data" = "Hãy khôn ngoan với dữ liệu của bạn";
+
+/* XBUT: Not Now action title in UserConsentForm */
+"Not Now" = "Không phải bây giờ";
+
+/* XBUT: Allow action title in UserConsentForm */
+"Allow" = "Cho phép";
+
+/* XBUT: Deny action title in UserConsentForm */
+"Deny" = "Từ chối";
+
+/* XBUT: Agree action title in EULAView */
+"Agree" = "Đồng ý";
+
+/* XBUT: Disagree action title in EULAView */
+"Disagree" = "Không đồng ý";
+
+/* XMSG: Placeholder text in DataTable for loading state */
+"Loading..." = "Đang tải...";
+
+/* XMSG: Placeholder text in DataTable when there is no data */
+"There is nothing to display yet" = "Chưa có gì để hiển thị";
+
+/* XBUT: Default duration formatter in DataTable */
+"%d Hrs %d Min" = "%d giờ %d phút";
+
+/* XBUT: Done action in keyboard toolbar for a Textfield in DataTable */
+"Done" = "Hoàn tất";
+
+/* XBUT: Error messages shown to users in DataTable */
+"There are %d errors in the data table." = "Có %d lỗi trong bảng dữ liệu.";
+
+/* XBUT: voice over label for row header in DataTable */
+"row header" = "tiêu đề hàng";
+
+/* XBUT: voice over label for row %d in DataTable */
+"row %d" = "hàng %d";
+
+/* XBUT: voice over label for column %d in DataTable */
+"column %d" = "cột %d";
+
+/* XBUT: voice over label for cell type of `leading accessory` in DataTable */
+"leading accessory" = "phụ kiện hàng đầu";
+
+/* XBUT: voice over label for cell type of `trailing accessory` in DataTable */
+"trailing accessory" = "phụ kiện theo sau";
+
+/* XBUT: voice over label for cell type of `text` in DataTable */
+"text" = "văn bản";
+
+/* XBUT: voice over label for cell type of `image` in DataTable */
+"image" = "hình ảnh";
+
+/* XBUT: voice over label for cell type of `date` in DataTable */
+"date" = "ngày";
+
+/* XBUT: voice over label for cell type of `time` in DataTable */
+"time" = "thời gian";
+
+/* XBUT: voice over label for cell type of `duration` in DataTable */
+"duration" = "khoảng thời gian";
+
+/* XBUT: voice over label for cell type of `list item` in DataTable */
+"list item" = "mục danh sách";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"selected" = "đã chọn";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"not selected" = "chưa chọn";
+
+/* Default value for DateTimePicker */
+"No date selected" = "Không chọn ngày";
+
+/* Default value for DateRangePicker */
+"No range selected" = "Không chọn phạm vi";
+
+/* DateRangePicker press space to set a range value */
+"PressSpaceToSelectRangeKey" = "nhấn phím cách để thiết lập giá trị phạm vi";
+
+/* XBUT: calendar time component label */
+"Time" = "Thời gian";
+
+/* XBUT: slider default value label formatter for integer */
+"Value: %d" = "Giá trị: %d";
+
+/* XMSG: a toast message for read-only cell in DataTable */
+"Tapped cell is read-only." = "Ô được nhấn ở chế độ chỉ đọc.";
+
+/* Default hint text for Read-only Field for NoteFormView and TextFieldFormView */
+"Read-only field" = "Trường chỉ đọc";
+
+/* Default error text for when the character count reaches the maximum limit for NoteFormView and TextFieldFormView */
+"No more characters remaining" = "Không còn ký tự nào nữa";
+
+/* Default error text for when the character count exceeds the maximum limit for NoteFormView and TextFieldFormView */
+"Reduce the number of characters" = "Giảm số lượng ký tự";
+
+/* XBUT: voice over label for decrement action in stepper */
+"Stepper decrease" = "Giảm bước";
+
+/* XBUT: voice over description for decrement action in stepper */
+"Decrease the value by %d" = "Giảm giá trị theo %d";
+
+/* XBUT: voice over label for increment action in stepper */
+"Stepper increase" = "Tăng bước";
+
+/* XBUT: voice over description for increment action in stepper */
+"Increase the value by %d" = "Tăng giá trị theo %d";
+
+/* XBUT: voice over label for test field in stepper */
+"Select specific value" = "Chọn giá trị cụ thể";
+
+/* XBUT: View all action in MenuSelection */
+"View All (%d)" = "Xem tất cả (%d)";
+
+/* XACT: RatingControl accessibility label */
+"%d out of %d stars" = "%d trên %d sao";
+
+/* XBUT: timeline preview component see all label */
+"See All (%d)" = "Xem tất cả (%d)";
+
+/* XACT: Timeline preview items accessibility label */
+"See All" = "Xem tất cả";
+
+/* XACT: Timeline preview items accessibility value */
+"%d items" = "%d mục";
+
+/* XACT: Timeline preview items accessibility hint */
+"Shows all timeline items in a list" = "Hiển thị tất cả mục dòng thời gian trong danh sách";
+
+/* XACT: Timeline preview item status: current accessibility value */
+"Current" = "Hiện tại";
+
+/* XACT: Timeline preview item status: future accessibility value */
+"Future" = "Tương lai";
+
+/* XACT: Timeline preview item status: past accessibility value */
+"Past" = "Quá khứ";
+
+/* XACT: Timeline preview item accessibility value */
+"Item %d of %d, %@, %@, %@" = "Mục %d của %d, %@, %@, %@";
+
+/* XACT: Timeline preview item node type: Start accessibility value */
+"Start" = "Bắt đầu";
+
+/* XACT: Timeline preview item node type: End accessibility value */
+"End" = "Kết thúc";
+
+/* XACT: Timeline preview item node type: Completed accessibility value */
+"Completed" = "Đã hoàn tất";
+
+/* XACT: Timeline preview item node type: Open accessibility value */
+"Open" = "Chưa xử lý";
+
+/* XACT: Timeline preview item node type: Task accessibility value */
+"Task" = "Tác vụ";
+
+/* XACT: Timeline preview item accessibility label */
+"Item %d of %d" = "Mục %d trên %d";
+
+/* XBUT: timeline preview component timestamp label */
+"Today, %@" = "Hôm nay, %@";
+
+/* XFLD: RatingControl value label format */
+"%d of %d" = "%d trên %d";
+
+/* XFLD: RatingControl review count format */
+"%d reviews" = "%d lượt đánh giá";
+
+/* XFLD: RatingControl review count over ceiling format */
+"%d+ reviews" = "%d+ lượt đánh giá";
+
+/* XACT: RatingControl accessibility label */
+"Rating Control %d of %d" = "Kiểm soát xếp hạng %d trên %d";
+
+/* XACT: read-only RatingControl accessibility label: rating with review count */
+"Rating Control, rating %d of %d, %d reviews" = "Kiểm soát xếp hạng, xếp hạng %d trên %d, %d lượt đánh giá";
+
+/* XACT: read-only RatingControl accessibility label: average rating only */
+"Rating Control, average rating %.1f of %d" = "Kiểm soát xếp hạng, xếp hạng trung bình %.1f trên %d";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count */
+"Rating Control, average rating %.1f of %d, %d reviews" = "Kiểm soát xếp hạng, xếp hạng trung bình %.1f trên %d, %d lượt đánh giá";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count over ceiling */
+"Rating Control, average rating %.1f of %d, %d plus reviews" = "Kiểm soát xếp hạng, xếp hạng trung bình %.1f trên %d, %d cộng lượt đánh giá";
+
+/* XBUT: View all messages in message banner sheet */
+"All" = "Tất cả";
+
+/* XBUT: messages count in the message banner sheet */
+"Messages (%d)" = "Thông báo (%d)";
+
+/* XBUT: view details in the message banner */
+"View Details" = "Xem chi tiết";
+
+/* XBUT: view different message in the message banner sheet item */
+"View %@" = "Xem %@";
+
+/* XBUT: banner message type desc, message */
+"message" = "thông báo";
+
+/* XBUT: banner message type desc, information */
+"information" = "thông tin";
+
+/* XBUT: banner message type desc, confirmation */
+"confirmation" = "xác nhận";
+
+/* XBUT: banner message type desc, warning */
+"warning" = "cảnh báo";
+
+/* XBUT: banner message type desc, error */
+"error" = "lỗi";
+
+/* XBUT: banner message type desc, error */
+"AI notice" = "thông báo AI";
+
+/* XMSG: banner message type desc, offline */
+"offline" = "Ngoại tuyến";
+
+/* XMSG: information view style type, success */
+"success" = "thành công";
+
+/* XBUT: Reset action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Reset" = "Thiết lập lại";
+
+/* XBUT: Apply action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Apply" = "Áp dụng";
+
+/* XTIT: The alert message for `ListPickerDestination` pulldown dismissal */
+"Are you sure you want to discard your selections?" = "Bạn có chắc là bạn muốn hủy bỏ lựa chọn của bạn không?";
+
+/* XBUT: The alert Discard Changes action title for `ListPickerDestination` pulldown dismissal */
+"Discard Changes" = "Hủy bỏ các thay đổi";
+
+/* XBUT: The alert Keep Editing action title for `ListPickerDestination` pulldown dismissal */
+"Keep Editing" = "Tiếp tục hiệu chỉnh";
+
+/* XBUT: The \"Select All\" button title on the List Picker header */
+"Select All" = "Chọn tất cả";
+
+/* XBUT: The \"Deselect All\" button title on the List Picker header */
+"Deselect All" = "Bỏ chọn tất cả";
+
+/* XBUT: The \"Selected\" title on the List Picker header */
+"Selected" = "Đã chọn";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"Text field, Double tap to edit" = "Trường văn bản, nhập đúp để hiệu chỉnh";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d character left" = "%d ký tự còn lại.";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d characters left" = "%d ký tự còn lại.";
+
+/* XACT: The accessibility hint for Text Input Views, editing */
+"Text field, is editing" = "Trường văn bản, trong chế độ hiệu chỉnh";
+
+/* XACT: The accessibility hint for Text Input Views, editing, with clear button */
+"Text field, is editing. Double tap to clear text" = "Trường văn bản, đang hiệu chỉnh. Nhấp đúp để xóa văn bản";
+
+/* XACT: The default accessibility label for the custom action in TextFieldFormView if none was specified */
+"Custom Action" = "Thao tác tùy chỉnh";
+
+/* XBUT: Error messages shown to users in DocumentScannerView */
+"Failed to create PDF page from images" = "Không thể tạo trang PDF từ hình ảnh.";
+
+/* XBUT: Cancel message shown to users in DocumentScannerView */
+"User cancelled the scan" = "Người dùng đã hủy quét.";
+
+/* Progress Indicator accessibility label: processing */
+"Processing" = "Xử lý";
+
+/* Progress Indicator accessibility label: loading pausable with indicator progress */
+"In progress with option to pause, %.0f" = "Đang tiến hành với tùy chọn tạm dừng, %.0f";
+
+/* Progress Indicator accessibility label: loading stoppable with indicator progress */
+"In progress with option to stop, %.0f" = "Đang tiến hành với tùy chọn dừng, %.0f";
+
+/* Progress Indicator accessibility label: progress halted with indicator progress */
+"Progress halted, %.0f" = "Tiến trình đã dừng, %.0f";
+
+/* XACT: Slider accessibility label */
+"This is %@ slider whose maximum value is %@ and minimum value is %@" = "Đây là thanh trượt %@ có giá trị lớn nhất là %@ và giá trị nhỏ nhất là %@";
+
+/* XACT: Slider accessibility value */
+"Current value is %@" = "Giá trị hiện tại là %@";
+
+/* XACT: Range Slider lower thumb accessibility label */
+"lower range slider thumb, current value is" = "ngón tay cái thanh trượt phạm vi dưới, giá trị hiện tại là";
+
+/* XACT: Range Slider lower thumb accessibility hint */
+"you can swipe up or down to change the lower value" = "bạn có thể vuốt lên hoặc xuống để thay đổi giá trị dưới";
+
+/* XACT: Range Slider upper thumb accessibility label */
+"upper range slider thumb, current value is" = "ngón tay cái thanh trượt phạm vi trên, giá trị hiện tại là";
+
+/* XACT: Range Slider upper thumb accessibility hint */
+"you can swipe up or down to change the upper value" = "bạn có thể vuốt lên hoặc xuống để thay đổi giá trị trên";
+
+/* XACT: Single editable Slider thumb accessibility label */
+"slider thumb, current value is" = "ngón tay cái thanh trượt, giá trị hiện tại là";
+
+/* XACT: Single editable Slider thumb accessibility hint */
+"you can swipe up or down to change the value" = "bạn có thể vuốt lên hoặc xuống để thay đổi giá trị";
+
+/* XACT: Single Slider accessibility label */
+"This is a slider, the minimum value is %@ and the maximum value is %@" = "Đây là thanh trượt, giá trị tối thiểu là %@ và giá trị tối đa là %@";
+
+/* XACT: Range Slider accessibility label */
+"This is a range slider, the minimum value is %@ and the maximum value is %@" = "Đây là thanh trượt phạm vi, giá trị tối thiểu là %@ và giá trị tối đa là %@";
+
+/* XACT: Single editable Slider accessibility label */
+"This is a slider that is editable, the minimum value is %@ and the maximum value is %@" = "Đây là thanh trượt có thể hiệu chỉnh, giá trị tối thiểu là %@ và giá trị tối đa là %@";
+
+/* XACT: Single non-editable Slider accessibility label */
+"This is a slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Đây là thanh trượt không thể hiệu chỉnh được, giá trị tối thiểu là %@ và giá trị tối đa là %@";
+
+/* XACT: Range editable Slider accessibility label */
+"This is a range slider that is editable, the minimum value is %@ and the maximum value is %@" = "Đây là thanh trượt phạm vi có thể hiệu chỉnh, giá trị tối thiểu là %@ và giá trị tối đa là %@";
+
+/* XACT: Range non-editable Slider accessibility label */
+"This is a range slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Đây là thanh trượt phạm vi không thể hiệu chỉnh được, giá trị tối thiểu là %@ và giá trị tối đa là %@";
+
+/* XACT: Single editable Slider Text Field accessibility label */
+"slider value text field" = "trường văn bản giá trị thanh trượt";
+
+/* XACT: Range editable Slider Lower Value Text Field accessibility label */
+"lower value text field" = "trường văn bản giá trị dưới";
+
+/* XACT: Range editable Slider Upper Value Text Field accessibility label */
+"upper value text field" = "trường văn bản giá trị trên";
+
+/* XACT: Editable Slider Text Field accessibility hint */
+"You can double tap to input a specific value" = "Bạn có thể nhấp đúp để nhập giá trị cụ thể";
+
+/* XACT: Editable Slider Text Field accessibility value */
+"current value is %@" = "giá trị hiện tại là %@";
+
+/* XACT: Range Editable Slider accessibility value */
+"current lower value is %@, upper value is %@" = "giá trị dưới hiện tại là %@, giá trị trên là %@";
+
+/* XTIT: Title of step progress indicator, see https://experience.sap.com/fiori-design-ios/article/step-progress-indicator/#adaptive-design */
+"All Steps" = "Tất cả bước";
+
+/* XMSG: AI Notice message */
+"Suggested by AI. Verify before use. " = "Được AI đề xuất. Xác thực trước khi sử dụng. ";
+
+/* XBUT: Attachment operation menu item - Photos, which stands for Photo Library */
+"Photos" = "Ảnh";
+
+/* XBUT: Attachment operation menu item - Files, which stands for documents available for upload residing in Files */
+"Files" = "Tập tin";
+
+/* XBUT: Attachment operation menu item - Camera, which can be used for taking photos and movies */
+"Camera" = "Camera";
+
+/* XBUT: Attachment operation menu item - Scan. Use camera as scanner and generate PDF files */
+"Scan" = "Quét";
+
+/* XACT: The accessibility preview action for the attachment */
+"Preview" = "Xem trước";
+
+/* XTIT: Attachment title of deletion confirmation */
+"Delete Attachment?" = "Xóa phần đính kèm?";
+
+/* XBUT: Attachment deletion confirmation button */
+"Delete" = "Xóa";
+
+/* XBUT: Attachment add button */
+"Add attachment" = "Thêm phần đính kèm";
+
+/* XACT: The accessibility hint for add button */
+"Double tap to add attachment" = "Nhấn đúp để thêm phần đính kèm";
+
+/* XMSG: attachment section add new file successfully announcement */
+"New attachment added successfully" = "Phần đính kèm mới được thêm vào thành công";
+
+/* XMSG: attachment section add new file failed announcement */
+"File failed to attach" = "Tập tin không thể đính kèm";
+
+/* XACT: The accessibility hint for attachment section */
+"read only" = "chỉ đọc";
+
+/* XACT: The accessibility hint for attachment section */
+"actions available" = "hành động khả dụng";
+
+/* XMSG: Attachment thumbnail */
+"Thumbnail" = "Hình thu nhỏ";
+
+/* XMSG: Attachment uploading */
+"Attachment uploading" = "Đang tải lên %@, vui lòng chờ...";
+
+/* XMSG: Attachment error */
+"Attachment error" = "Tải lên %@ không thành công. Thông báo lỗi: %@";
+
+/* XBUT: Sign In Action in the Authentication */
+"Sign In" = "Đăng nhập";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"username" = "tên người dùng";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"password" = "mật khẩu";
+
+/* XBUT: Submit action title in AI User Feedback */
+"Submit" = "Gửi";
+
+/* XMSG: Submission failed title in AI User Feedback */
+"Submission failed" = "Gửi không thành công";
+
+/* XMSG: Submission failed description in AI User Feedback */
+"An error has occurred. Please try again later." = "Đã xảy ra lỗi. Vui lòng thử lại sau.";
+
+/* XBUT: Retry action title in AI User Feedback */
+"Retry" = "Thử lại";
+
+/* XACT: The accessibility label for the like button in AI User Feedback */
+"Positive feedback" = "Phản hồi tích cực";
+
+/* XACT: The accessibility label for the dislike button in AI User Feedback */
+"Negative feedback" = "Phản hồi tiêu cực";
+
+/* XACT: The accessibility label for the vote buttons in AI User Feedback */
+"enabled" = "đã bật";
+
+/* XMSG: Onboarding scan view title for scan unsuccessful */
+"Scan Unsuccessful" = "Quét không thành công";
+
+/* XMSG: Onboarding scan view hint for scan unsuccessful */
+"Please select a QR code image." = "Vui lòng chọn ảnh mã QR.";
+
+/* XMSG: Onboarding scan view title for invalid QR code */
+"Invalid QR Code" = "Mã QR không hợp lệ";
+
+/* XMSG: Onboarding scan view hint for invalid QR code */
+"The QR code was not recognized." = "Mã QR không được nhận dạng.";
+
+/* XTIT: Onboarding scan view title for request access to photos library */
+"Allow Access to Photos" = "Cho phép truy cập vào hình ảnh";
+
+/* XMSG: Onboarding scan view hint for request access to photos library */
+"To choose a QR code image, please give access to your photos in your device's privacy settings." = "Để chọn ảnh mã QR, vui lòng cấp quyền truy cập vào ảnh của bạn trong thiết lập quyền riêng tư của thiết bị.";
+
+/* XTIT: Onboarding scan view title for request access to camera */
+"Allow Access to Camera" = "Cho phép truy cập vào camera";
+
+/* XMSG: Onboarding scan view hint for request access to camera */
+"To scan using the camera, please give access to your camera in your device's privacy settings." = "Để quét bằng cách sử dụng camera, vui lòng cấp quyền truy cập vào camera của bạn trong thiết lập quyền riêng tư của thiết bị.";
+
+/* XBUT: Onboarding scan view action title for the alert when the permission to access camera or photo library was not granted */
+"Settings" = "Thiết lập";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"down arrow" = "mũi tên xuống";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"up arrow" = "mũi tên lên";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash deactivated" = "đã hủy kích hoạt đèn flash";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash activated" = "đã kích hoạt đèn flash";
+
+/* XACT: The accessibility hint for photos in onboarding photo picker view */
+"Photo %d" = "Hình ảnh %d";
+
+/* XMSG: Onboarding confirm view success message */
+"Scan succeeded. You will be connected to:" = "Quét thành công. Bây giờ bạn sẽ được kết nối đến:";
+
+/* XBUT: Onboarding confirm view action title for continue button */
+"Continue" = "Tiếp tục";
+
+/* XTIT: Title for writing assistant */
+"Writing Assistant" = "Trợ lý soạn thảo";
+
+/* XMSG: Writing assistant version control */
+"Version %d/%d" = "Phiên bản %d/%d";
+
+/* XBUT: Writing assistant undo action title */
+"Undo" = "Hoàn tác";
+
+/* XBUT: Writing assistant redo action title */
+"Redo" = "Làm lại";
+
+/* XTIT: Writing assistant cancel alert message */
+"Do you want to undo the edits made by the Writing Assistant and revert the text to its original state?" = "Bạn có muốn hoàn tác các hiệu chỉnh do Trợ lý soạn thảo thực hiện và khôi phục văn bản về trạng thái gốc không?";
+
+/* XTIT: Writing assistant cancel alert title */
+"Discard all changes?" = "Hủy bỏ tất cả thay đổi?";
+
+/* XBUT: Writing assistant cancel alert action title for keep working */
+"Keep Working" = "Tiếp tục làm việc";
+
+/* XBUT: Writing assistant cancel alert action title for discard */
+"Discard" = "Hủy bỏ";
+
+/* XMSG: A success toast message for feedback flow in writing assistant */
+"Thank you for your feedback" = "Cảm ơn phản hồi của bạn";
+
+/* XTIT: Title for feedback downvote flow in writing assistant */
+"What didn’t you like about this version?" = "Bạn không thích điều gì ở phiên bản này?";
+
+/* XTIT: Subtitle for feedback downvote flow in writing assistant */
+"Please rate your experience to help us improve." = "Vui lòng đánh giá trải nghiệm của bạn để giúp chúng tôi cải thiện.";
+
+/* XTIT: Navigation bar title for feedback flow */
+"Feedback" = "Phản hồi";
+
+/* XTIT: Footnote text for feedback in writing assistant */
+"How was this response?" = "Phản hồi này như thế nào?";
+
+/* XMSG: One date selected for .datesSelection style in Calendar view */
+"%d Date Selected" = "%d ngày được chọn";
+
+/* XMSG: Multiple dates selected for .datesSelection style in Calendar view */
+"%d Dates Selected" = "%d ngày được chọn";
+
+/* XMSG: Has event, used in voice over in calendar view */
+"has event" = "có sự kiện";
+
+/* XMSG: Double tap to change the selection, used in voice over in calendar view */
+"Double tap to change the selection" = "Nhấp đúp để thay đổi lựa chọn";
+
+/* XMSG: Double tap to select, used in voice over in calendar view */
+"Double tap to select" = "Nhấp đúp để chọn";
+
+/* XMSG: Double tap to unselect, used in voice over in calendar view */
+"Double tap to unselect" = "Nhấp đúp để bỏ chọn";
+
+/* XMSG: Date selected, used in voiceOver in calendar view */
+"Date selected" = "Ngày được chọn";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Today" = "Hôm nay";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Disabled date" = "Ngày bị vô hiệu hóa";
+
+/* XMSG: Drag tips in .expandable style, used in voiceOver in calendar view */
+"Handle to switch from month view to week view" = "Xử lý để chuyển từ màn hình tháng sang màn hình tuần";
+
+/* XMSG: Accessibility label for card container */
+"Card" = "Thẻ";
+
+/* XTIT: Title for card */
+"Card title" = "Tiêu đề thẻ";
+
+/* XTIT: Subtitle for card */
+"Card subtitle" = "Phụ đề thẻ";
+
+/* XTIT: HeaderAction for card */
+"Card header action" = "Hành động đầu mục thẻ";
+
+/* XACT: The accessibility label for the switchItem turn on button in FilterFeedbackBar */
+"Switch Item On" = "Nhấn để bật";
+
+/* XACT: The accessibility label for the switchItem turn off button in FilterFeedbackBar */
+"Switch Item Off" = "Nhấn để tắt";
+
+/* XMSG: Writing assistant panel opening announcement */
+"AI Writing Assistant panel opened. Use provided prompts to refine your text content." = "Bảng Trợ lý soạn thảo AI đã mở. Sử dụng lời nhắc được cung cấp để tinh chỉnh nội dung văn bản của bạn.";
+
+/* XMSG: Writing assistant activation cell hint for accessibility */
+"Double tap to activate" = "Nhấn đúp để kích hoạt";
+
+/* XMSG: Writing assistant options entry cell hint for accessibility */
+"Open to see %@ options" = "Mở để xem %@ tùy chọn";
+
+/* XMSG: Writing assistant undo announcement */
+"Undo to Version %d of %d" = "Hoàn tác về phiên bản %d trong số %d";
+
+/* XMSG: Writing assistant redo announcement */
+"Redo to Version %d of %d" = "Làm lại phiên bản %d trong số %d";
+
+/* XMSG: Writing assistant version update announcement */
+"Text updated to Version %d of %d" = "Văn bản được cập nhật cho phiên bản %d trong số %d";
+
+/* XTIT: Writing assistant title accessibility label */
+"AI Writing Assistant" = "Trợ lý soạn thảo AI";
+
+/* XMSG: Writing assistant accessibility instruction for text editing */
+"double tap to open AI Writing Assistant and edit text" = "nhấn đúp để mở Trợ lý soạn thảo AI và hiệu chỉnh văn bản";
+
+/* XBUT: Writing assistant undo accessibility label */
+"Undo change" = "Hoàn tác thay đổi";
+
+/* XBUT: Writing assistant redo accessibility label */
+"Rodo change" = "Làm lại thay đổi";
+
+/* XBUT: Close button title */
+"Close" = "Đóng";
+
+/* XMSG: Accessibility label for completed state in step progress indicator */
+"complete" = "hoàn tất";
+
+/* XMSG: Accessibility label for active state in step progress indicator */
+"active" = "đang hoạt động";
+
+/* XMSG: Accessibility label for error active state in step progress indicator */
+"error active" = "lỗi đang hiệu lực";
+
+/* XMSG: Accessibility label for read-only state in step progress indicator */
+"read-only" = "chỉ đọc";
+
+/* XACT: The accessibility value for Stepper decrement */
+"Decrease the value by %f" = "Giảm giá trị theo %f";
+
+/* XACT: The accessibility value for Stepper increment */
+"Increase the value by %f" = "Tăng giá trị theo %f";
+
+/* XMSG: title used in DateRangePickerPopView */
+"Select Range" = "Chọn phạm vi";
+
+/* XMSG: start date, used in DateRangePickerPopView */
+"Start Date" = "Ngày bắt đầu";
+
+/* XMSG: end date, used in DateRangePickerPopView */
+"End Date" = "Ngày kết thúc";
+
+/* XBUT: title for picker form cell to open */
+"DoubleTapToOpenKey" = "Nhấp đúp để mở";
+
+/* XBUT: title for picker form cell to collapse */
+"DoubleTapToCollapseKey" = "Nhấp đúp để thu gọn";
+
+/* XTIT: On state for switch */
+"Switch On" = "Bật";
+
+/* XTIT: Off state for switch */
+"Switch Off" = "Tắt";
+
+/* Checkout Indicator accessibility label: failed */
+"failed" = "không thành công";
+
+/* Checkout Indicator accessibility label: AI processing */
+"AI processing" = "Xử lý bằng AI";
+
+/* Checkout Indicator accessibility label: Checkout Indicator */
+"Checkout Indicator" = "Chỉ báo thanh toán";
+
+/* XMSG: More tag text shown when tags are truncated in MHStack, %d is the count of hidden tags */
+"+%d more" = "+%d mục khác";
+
+/* XTIT: The title of the empty state view */
+"No Results Found" = "Không tìm thấy kết quả";
+
+/* XTIT: The description of the empty state view */
+"Check your search for any spelling errors or try a different search term." = "Kiểm tra tìm kiếm của bạn để xem có bất kỳ lỗi chính tả nào không hoặc thử một thuật ngữ tìm kiếm khác.";
+
+/* XACT: The accessibility label for the checkbox */
+"Checkbox" = "Ô đánh dấu";
+
+/* XMSG: Passcode policy requirement - minimum length, %d is the required number of characters */
+"At least %d characters" = "Ít nhất %d ký tự";
+
+/* XMSG: Passcode policy requirement - minimum number of unique characters, %d is the required count */
+"At least %d unique characters" = "Ít nhất %d ký tự duy nhất";
+
+/* XMSG: Passcode policy requirement - at least one digit */
+"At least one digit" = "Ít nhất một chữ số";
+
+/* XMSG: Passcode policy requirement - at least one uppercase letter */
+"At least one uppercase letter" = "Ít nhất một chữ cái viết hoa";
+
+/* XMSG: Passcode policy requirement - at least one lowercase letter */
+"At least one lowercase letter" = "Ít nhất một chữ cái viết thường";
+
+/* XMSG: Passcode policy requirement - at least one special character */
+"At least one special character" = "Ít nhất một ký tự đặc biệt";
+
+/* XMSG: Passcode policy requirement - digits only */
+"Digits only" = "Chỉ chữ số";
+

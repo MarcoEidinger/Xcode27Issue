@@ -1,0 +1,753 @@
+/* XMSG: Placeholder text in chart when there is no data */
+"No Data" = "데이터 없음";
+
+/* XBUT: Save action in inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Save" = "저장";
+
+/* XBUT: Re-enter action available in saved state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Re-enter Signature" = "서명 다시 입력";
+
+/* XBUT: Clear action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Clear" = "지우기";
+
+/* XBUT: Cancel action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Cancel" = "취소";
+
+/* XTIT: Title of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Signature" = "서명";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Tap to Sign" = "눌러서 로그인";
+
+/* XACT: The accessibility label for the signature area */
+"Signature Area" = "서명 영역";
+
+/* XACT: The accessibility hint for the signature area */
+"Double tap and drag to sign" = "두 번 누른 후 끌어서 서명";
+
+/* XACT: The accessibility label for the signature image */
+"Signature Image" = "서명 이미지";
+
+/* XACT: The accessibility label for the signature line */
+"Signature Line" = "서명란";
+
+/* XACT: The accessibility label for the mandatory field */
+"Required Field" = "필수 필드";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Canceled" = "취소됨";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Next" = "다음";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Ok" = "확인";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Status" = "상태";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"User canceled Onboarding" = "사용자가 온보딩을 취소했습니다.";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Without consent you will not be able to continue onboarding." = "동의하지 않으면 온보딩을 계속할 수 없습니다.";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Give Consent" = "동의";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Quit" = "종료";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Back" = "뒤로";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Step" = "단계";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"of" = "/";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Are you sure you want to quit the onboarding process?" = "온보딩 프로세스를 종료하시겠습니까?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Want Data Privacy?" = "개인정보 보호를 원하십니까?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Be wise about your data" = "데이터에 대해 주의하십시오.";
+
+/* XBUT: Not Now action title in UserConsentForm */
+"Not Now" = "나중에";
+
+/* XBUT: Allow action title in UserConsentForm */
+"Allow" = "허용";
+
+/* XBUT: Deny action title in UserConsentForm */
+"Deny" = "거부";
+
+/* XBUT: Agree action title in EULAView */
+"Agree" = "동의";
+
+/* XBUT: Disagree action title in EULAView */
+"Disagree" = "동의 안 함";
+
+/* XMSG: Placeholder text in DataTable for loading state */
+"Loading..." = "로드하는 중...";
+
+/* XMSG: Placeholder text in DataTable when there is no data */
+"There is nothing to display yet" = "아직 아무것도 표시되지 않았습니다.";
+
+/* XBUT: Default duration formatter in DataTable */
+"%d Hrs %d Min" = "%d시간 %d분";
+
+/* XBUT: Done action in keyboard toolbar for a Textfield in DataTable */
+"Done" = "완료";
+
+/* XBUT: Error messages shown to users in DataTable */
+"There are %d errors in the data table." = "데이터 테이블에 %d개의 오류가 있습니다.";
+
+/* XBUT: voice over label for row header in DataTable */
+"row header" = "행 헤더";
+
+/* XBUT: voice over label for row %d in DataTable */
+"row %d" = "행 %d";
+
+/* XBUT: voice over label for column %d in DataTable */
+"column %d" = "열 %d";
+
+/* XBUT: voice over label for cell type of `leading accessory` in DataTable */
+"leading accessory" = "선행 액세서리";
+
+/* XBUT: voice over label for cell type of `trailing accessory` in DataTable */
+"trailing accessory" = "후행 액세서리";
+
+/* XBUT: voice over label for cell type of `text` in DataTable */
+"text" = "텍스트";
+
+/* XBUT: voice over label for cell type of `image` in DataTable */
+"image" = "이미지";
+
+/* XBUT: voice over label for cell type of `date` in DataTable */
+"date" = "날짜";
+
+/* XBUT: voice over label for cell type of `time` in DataTable */
+"time" = "시간";
+
+/* XBUT: voice over label for cell type of `duration` in DataTable */
+"duration" = "기간";
+
+/* XBUT: voice over label for cell type of `list item` in DataTable */
+"list item" = "리스트 항목";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"selected" = "선택됨";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"not selected" = "선택되지 않음";
+
+/* Default value for DateTimePicker */
+"No date selected" = "선택된 날짜 없음";
+
+/* Default value for DateRangePicker */
+"No range selected" = "선택된 범위 없음";
+
+/* DateRangePicker press space to set a range value */
+"PressSpaceToSelectRangeKey" = "공간을 눌러 범위 값 설정";
+
+/* XBUT: calendar time component label */
+"Time" = "시간";
+
+/* XBUT: slider default value label formatter for integer */
+"Value: %d" = "값: %d";
+
+/* XMSG: a toast message for read-only cell in DataTable */
+"Tapped cell is read-only." = "탭한 셀은 읽기 전용입니다.";
+
+/* Default hint text for Read-only Field for NoteFormView and TextFieldFormView */
+"Read-only field" = "읽기 전용 필드";
+
+/* Default error text for when the character count reaches the maximum limit for NoteFormView and TextFieldFormView */
+"No more characters remaining" = "더 이상 남아 있는 문자가 없습니다.";
+
+/* Default error text for when the character count exceeds the maximum limit for NoteFormView and TextFieldFormView */
+"Reduce the number of characters" = "문자 수를 줄이십시오.";
+
+/* XBUT: voice over label for decrement action in stepper */
+"Stepper decrease" = "스테퍼 감소";
+
+/* XBUT: voice over description for decrement action in stepper */
+"Decrease the value by %d" = "%d만큼 값 감소";
+
+/* XBUT: voice over label for increment action in stepper */
+"Stepper increase" = "스테퍼 증가";
+
+/* XBUT: voice over description for increment action in stepper */
+"Increase the value by %d" = "%d만큼 값 증가";
+
+/* XBUT: voice over label for test field in stepper */
+"Select specific value" = "특정 값 선택";
+
+/* XBUT: View all action in MenuSelection */
+"View All (%d)" = "모두 보기(%d)";
+
+/* XACT: RatingControl accessibility label */
+"%d out of %d stars" = "별 %d개 중 %d개";
+
+/* XBUT: timeline preview component see all label */
+"See All (%d)" = "모두 보기(%d)";
+
+/* XACT: Timeline preview items accessibility label */
+"See All" = "모두 보기";
+
+/* XACT: Timeline preview items accessibility value */
+"%d items" = "%d개의 항목";
+
+/* XACT: Timeline preview items accessibility hint */
+"Shows all timeline items in a list" = "타임라인의 모든 항목을 리스트에 표시";
+
+/* XACT: Timeline preview item status: current accessibility value */
+"Current" = "현재";
+
+/* XACT: Timeline preview item status: future accessibility value */
+"Future" = "미래";
+
+/* XACT: Timeline preview item status: past accessibility value */
+"Past" = "과거";
+
+/* XACT: Timeline preview item accessibility value */
+"Item %d of %d, %@, %@, %@" = "%d, %@, %@, %@의 항목 %d";
+
+/* XACT: Timeline preview item node type: Start accessibility value */
+"Start" = "시작";
+
+/* XACT: Timeline preview item node type: End accessibility value */
+"End" = "종료";
+
+/* XACT: Timeline preview item node type: Completed accessibility value */
+"Completed" = "완료됨";
+
+/* XACT: Timeline preview item node type: Open accessibility value */
+"Open" = "열기";
+
+/* XACT: Timeline preview item node type: Task accessibility value */
+"Task" = "태스크";
+
+/* XACT: Timeline preview item accessibility label */
+"Item %d of %d" = "항목 %d/%d";
+
+/* XBUT: timeline preview component timestamp label */
+"Today, %@" = "오늘, %@";
+
+/* XFLD: RatingControl value label format */
+"%d of %d" = "%d/%d";
+
+/* XFLD: RatingControl review count format */
+"%d reviews" = " %d개 리뷰";
+
+/* XFLD: RatingControl review count over ceiling format */
+"%d+ reviews" = "%d+ 리뷰";
+
+/* XACT: RatingControl accessibility label */
+"Rating Control %d of %d" = "평점 관리 %d/%d";
+
+/* XACT: read-only RatingControl accessibility label: rating with review count */
+"Rating Control, rating %d of %d, %d reviews" = "평점 관리, 평점 %d/%d, %d개 리뷰";
+
+/* XACT: read-only RatingControl accessibility label: average rating only */
+"Rating Control, average rating %.1f of %d" = "평점 관리, 평균 평점 %.1f/%d";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count */
+"Rating Control, average rating %.1f of %d, %d reviews" = "평점 관리, 평균 평점 %.1f/%d, %d개 리뷰";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count over ceiling */
+"Rating Control, average rating %.1f of %d, %d plus reviews" = "평점 관리, 평균 평점 %.1f/%d, %d개 + 리뷰";
+
+/* XBUT: View all messages in message banner sheet */
+"All" = "모두";
+
+/* XBUT: messages count in the message banner sheet */
+"Messages (%d)" = "메시지(%d)";
+
+/* XBUT: view details in the message banner */
+"View Details" = "세부사항 보기";
+
+/* XBUT: view different message in the message banner sheet item */
+"View %@" = "%@ 보기";
+
+/* XBUT: banner message type desc, message */
+"message" = "메시지";
+
+/* XBUT: banner message type desc, information */
+"information" = "정보";
+
+/* XBUT: banner message type desc, confirmation */
+"confirmation" = "확인";
+
+/* XBUT: banner message type desc, warning */
+"warning" = "경고";
+
+/* XBUT: banner message type desc, error */
+"error" = "오류";
+
+/* XBUT: banner message type desc, error */
+"AI notice" = "AI 알림";
+
+/* XMSG: banner message type desc, offline */
+"offline" = "오프라인";
+
+/* XMSG: information view style type, success */
+"success" = "성공";
+
+/* XBUT: Reset action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Reset" = "재설정";
+
+/* XBUT: Apply action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Apply" = "적용";
+
+/* XTIT: The alert message for `ListPickerDestination` pulldown dismissal */
+"Are you sure you want to discard your selections?" = "선택사항을 무시하시겠습니까?";
+
+/* XBUT: The alert Discard Changes action title for `ListPickerDestination` pulldown dismissal */
+"Discard Changes" = "변경사항 무시";
+
+/* XBUT: The alert Keep Editing action title for `ListPickerDestination` pulldown dismissal */
+"Keep Editing" = "계속 편집";
+
+/* XBUT: The \"Select All\" button title on the List Picker header */
+"Select All" = "모두 선택";
+
+/* XBUT: The \"Deselect All\" button title on the List Picker header */
+"Deselect All" = "모두 선택 해제";
+
+/* XBUT: The \"Selected\" title on the List Picker header */
+"Selected" = "선택됨";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"Text field, Double tap to edit" = "텍스트 필드, 더블 탭으로 편집";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d character left" = "%d자 남음";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d characters left" = "%d자 남음";
+
+/* XACT: The accessibility hint for Text Input Views, editing */
+"Text field, is editing" = "텍스트 필드, 편집 모드 상태";
+
+/* XACT: The accessibility hint for Text Input Views, editing, with clear button */
+"Text field, is editing. Double tap to clear text" = "텍스트 필드, 편집 중. 더블 탭으로 텍스트 지우기";
+
+/* XACT: The default accessibility label for the custom action in TextFieldFormView if none was specified */
+"Custom Action" = "사용자 정의 액션";
+
+/* XBUT: Error messages shown to users in DocumentScannerView */
+"Failed to create PDF page from images" = "이미지에서 PDF 페이지를 생성하지 못했습니다.";
+
+/* XBUT: Cancel message shown to users in DocumentScannerView */
+"User cancelled the scan" = "사용자가 스캔을 취소했습니다.";
+
+/* Progress Indicator accessibility label: processing */
+"Processing" = "처리 중";
+
+/* Progress Indicator accessibility label: loading pausable with indicator progress */
+"In progress with option to pause, %.0f" = "처리 중(일시 중지 옵션 있음), %.0f";
+
+/* Progress Indicator accessibility label: loading stoppable with indicator progress */
+"In progress with option to stop, %.0f" = "처리 중(중지 옵션 있음), %.0f";
+
+/* Progress Indicator accessibility label: progress halted with indicator progress */
+"Progress halted, %.0f" = "진행 중단됨, %.0f";
+
+/* XACT: Slider accessibility label */
+"This is %@ slider whose maximum value is %@ and minimum value is %@" = "최대값이 %@이고 최소값이 %@인 %@ 슬라이더입니다.";
+
+/* XACT: Slider accessibility value */
+"Current value is %@" = "현재 값은 %@입니다.";
+
+/* XACT: Range Slider lower thumb accessibility label */
+"lower range slider thumb, current value is" = "하한 슬라이더 썸, 현재 값:";
+
+/* XACT: Range Slider lower thumb accessibility hint */
+"you can swipe up or down to change the lower value" = "위쪽이나 아래쪽으로 쓸어넘겨서 하한 값을 변경할 수 있습니다.";
+
+/* XACT: Range Slider upper thumb accessibility label */
+"upper range slider thumb, current value is" = "상한 슬라이더 썸, 현재 값:";
+
+/* XACT: Range Slider upper thumb accessibility hint */
+"you can swipe up or down to change the upper value" = "위쪽이나 아래쪽으로 쓸어넘겨서 상한 값을 변경할 수 있습니다.";
+
+/* XACT: Single editable Slider thumb accessibility label */
+"slider thumb, current value is" = "슬라이더 썸, 현재 값:";
+
+/* XACT: Single editable Slider thumb accessibility hint */
+"you can swipe up or down to change the value" = "위쪽이나 아래쪽으로 쓸어넘겨서 값을 변경할 수 있습니다.";
+
+/* XACT: Single Slider accessibility label */
+"This is a slider, the minimum value is %@ and the maximum value is %@" = "최소값이 %@이고 최대값이 %@인 슬라이더입니다.";
+
+/* XACT: Range Slider accessibility label */
+"This is a range slider, the minimum value is %@ and the maximum value is %@" = "최소값이 %@이고 최대값이 %@인 범위 슬라이더입니다.";
+
+/* XACT: Single editable Slider accessibility label */
+"This is a slider that is editable, the minimum value is %@ and the maximum value is %@" = "편집할 수 있는 슬라이더입니다. 최소값은 %@이고 최대값은 %@입니다.";
+
+/* XACT: Single non-editable Slider accessibility label */
+"This is a slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "편집할 수 없는 슬라이더입니다. 최소값은 %@이고 최대값은 %@입니다.";
+
+/* XACT: Range editable Slider accessibility label */
+"This is a range slider that is editable, the minimum value is %@ and the maximum value is %@" = "편집할 수 있는 범위 슬라이더입니다. 최소값은 %@이고 최대값은 %@입니다.";
+
+/* XACT: Range non-editable Slider accessibility label */
+"This is a range slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "편집할 수 없는 범위 슬라이더입니다. 최소값은 %@이고 최대값은 %@입니다.";
+
+/* XACT: Single editable Slider Text Field accessibility label */
+"slider value text field" = "슬라이더 값 텍스트 필드";
+
+/* XACT: Range editable Slider Lower Value Text Field accessibility label */
+"lower value text field" = "하한 값 텍스트 필드";
+
+/* XACT: Range editable Slider Upper Value Text Field accessibility label */
+"upper value text field" = "상한 값 텍스트 필드";
+
+/* XACT: Editable Slider Text Field accessibility hint */
+"You can double tap to input a specific value" = "두 번 눌러서 특정 값을 입력할 수 있습니다.";
+
+/* XACT: Editable Slider Text Field accessibility value */
+"current value is %@" = "현재 값은 %@입니다.";
+
+/* XACT: Range Editable Slider accessibility value */
+"current lower value is %@, upper value is %@" = "현재 하한 값은 %@이고, 상한 값은 %@입니다.";
+
+/* XTIT: Title of step progress indicator, see https://experience.sap.com/fiori-design-ios/article/step-progress-indicator/#adaptive-design */
+"All Steps" = "모든 단계";
+
+/* XMSG: AI Notice message */
+"Suggested by AI. Verify before use. " = "AI에 의해 제안되었습니다. 사용하기 전에 확인하십시오. ";
+
+/* XBUT: Attachment operation menu item - Photos, which stands for Photo Library */
+"Photos" = "사진";
+
+/* XBUT: Attachment operation menu item - Files, which stands for documents available for upload residing in Files */
+"Files" = "파일";
+
+/* XBUT: Attachment operation menu item - Camera, which can be used for taking photos and movies */
+"Camera" = "카메라";
+
+/* XBUT: Attachment operation menu item - Scan. Use camera as scanner and generate PDF files */
+"Scan" = "스캔";
+
+/* XACT: The accessibility preview action for the attachment */
+"Preview" = "미리보기";
+
+/* XTIT: Attachment title of deletion confirmation */
+"Delete Attachment?" = "첨부파일을 삭제하시겠습니까?";
+
+/* XBUT: Attachment deletion confirmation button */
+"Delete" = "삭제";
+
+/* XBUT: Attachment add button */
+"Add attachment" = "첨부파일 추가";
+
+/* XACT: The accessibility hint for add button */
+"Double tap to add attachment" = "더블 탭하여 첨부파일 추가";
+
+/* XMSG: attachment section add new file successfully announcement */
+"New attachment added successfully" = "신규 첨부파일이 추가됨";
+
+/* XMSG: attachment section add new file failed announcement */
+"File failed to attach" = "파일 첨부 실패";
+
+/* XACT: The accessibility hint for attachment section */
+"read only" = "읽기 전용";
+
+/* XACT: The accessibility hint for attachment section */
+"actions available" = "사용 가능한 작업";
+
+/* XMSG: Attachment thumbnail */
+"Thumbnail" = "썸네일";
+
+/* XMSG: Attachment uploading */
+"Attachment uploading" = "%@을(를) 업로드 중입니다. 잠시 기다려 주십시오.";
+
+/* XMSG: Attachment error */
+"Attachment error" = "%@ 업로드에 실패했습니다. 오류 메시지: %@";
+
+/* XBUT: Sign In Action in the Authentication */
+"Sign In" = "로그인";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"username" = "사용자 이름";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"password" = "비밀번호";
+
+/* XBUT: Submit action title in AI User Feedback */
+"Submit" = "제출";
+
+/* XMSG: Submission failed title in AI User Feedback */
+"Submission failed" = "제출 실패";
+
+/* XMSG: Submission failed description in AI User Feedback */
+"An error has occurred. Please try again later." = "오류가 발생했습니다. 나중에 다시 시도하십시오.";
+
+/* XBUT: Retry action title in AI User Feedback */
+"Retry" = "재시도";
+
+/* XACT: The accessibility label for the like button in AI User Feedback */
+"Positive feedback" = "긍정적 피드백";
+
+/* XACT: The accessibility label for the dislike button in AI User Feedback */
+"Negative feedback" = "부정적 피드백";
+
+/* XACT: The accessibility label for the vote buttons in AI User Feedback */
+"enabled" = "활성화됨";
+
+/* XMSG: Onboarding scan view title for scan unsuccessful */
+"Scan Unsuccessful" = "스캔 실패";
+
+/* XMSG: Onboarding scan view hint for scan unsuccessful */
+"Please select a QR code image." = "QR 코드 이미지를 선택하십시오.";
+
+/* XMSG: Onboarding scan view title for invalid QR code */
+"Invalid QR Code" = "잘못된 QR 코드";
+
+/* XMSG: Onboarding scan view hint for invalid QR code */
+"The QR code was not recognized." = "QR 코드가 인식되지 않았습니다.";
+
+/* XTIT: Onboarding scan view title for request access to photos library */
+"Allow Access to Photos" = "사진 액세스 허용";
+
+/* XMSG: Onboarding scan view hint for request access to photos library */
+"To choose a QR code image, please give access to your photos in your device's privacy settings." = "QR 코드 이미지를 선택하려면 장치의 개인정보 보호 설정에서 사진에 대한 액세스 권한을 부여하십시오.";
+
+/* XTIT: Onboarding scan view title for request access to camera */
+"Allow Access to Camera" = "카메라 액세스 허용";
+
+/* XMSG: Onboarding scan view hint for request access to camera */
+"To scan using the camera, please give access to your camera in your device's privacy settings." = "카메라를 사용하여 스캔하려면 장치의 개인정보 보호 설정에서 카메라에 대한 액세스 권한을 부여하십시오.";
+
+/* XBUT: Onboarding scan view action title for the alert when the permission to access camera or photo library was not granted */
+"Settings" = "설정";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"down arrow" = "아래쪽 화살표";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"up arrow" = "위쪽 화살표";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash deactivated" = "플래시 비활성화됨";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash activated" = "플래시 활성화됨";
+
+/* XACT: The accessibility hint for photos in onboarding photo picker view */
+"Photo %d" = "사진 %d";
+
+/* XMSG: Onboarding confirm view success message */
+"Scan succeeded. You will be connected to:" = "스캔이 완료되었습니다. 다음에 연결됩니다.";
+
+/* XBUT: Onboarding confirm view action title for continue button */
+"Continue" = "계속";
+
+/* XTIT: Title for writing assistant */
+"Writing Assistant" = "작성 도우미";
+
+/* XMSG: Writing assistant version control */
+"Version %d/%d" = "버전 %d/%d";
+
+/* XBUT: Writing assistant undo action title */
+"Undo" = "실행 취소";
+
+/* XBUT: Writing assistant redo action title */
+"Redo" = "재실행";
+
+/* XTIT: Writing assistant cancel alert message */
+"Do you want to undo the edits made by the Writing Assistant and revert the text to its original state?" = "작성 도우미가 수행한 편집 내용을 취소하고 텍스트를 원래 상태로 되돌리시겠습니까?";
+
+/* XTIT: Writing assistant cancel alert title */
+"Discard all changes?" = "변경사항을 모두 무시하시겠습니까?";
+
+/* XBUT: Writing assistant cancel alert action title for keep working */
+"Keep Working" = "계속 작업";
+
+/* XBUT: Writing assistant cancel alert action title for discard */
+"Discard" = "무시";
+
+/* XMSG: A success toast message for feedback flow in writing assistant */
+"Thank you for your feedback" = "피드백을 주셔서 감사합니다.";
+
+/* XTIT: Title for feedback downvote flow in writing assistant */
+"What didn’t you like about this version?" = "이 버전에서 불만족스러운 부분";
+
+/* XTIT: Subtitle for feedback downvote flow in writing assistant */
+"Please rate your experience to help us improve." = "고객 경험 향상에 도움이 되도록 평가해 주십시오.";
+
+/* XTIT: Navigation bar title for feedback flow */
+"Feedback" = "피드백";
+
+/* XTIT: Footnote text for feedback in writing assistant */
+"How was this response?" = "이 응답에 대한 피드백을 제공해 주십시오.";
+
+/* XMSG: One date selected for .datesSelection style in Calendar view */
+"%d Date Selected" = "%d개의 일자가 선택됨";
+
+/* XMSG: Multiple dates selected for .datesSelection style in Calendar view */
+"%d Dates Selected" = "%d개의 일자가 선택됨";
+
+/* XMSG: Has event, used in voice over in calendar view */
+"has event" = "이벤트 있음";
+
+/* XMSG: Double tap to change the selection, used in voice over in calendar view */
+"Double tap to change the selection" = "두 번 눌러 선택 변경";
+
+/* XMSG: Double tap to select, used in voice over in calendar view */
+"Double tap to select" = "두 번 눌러 선택";
+
+/* XMSG: Double tap to unselect, used in voice over in calendar view */
+"Double tap to unselect" = "두 번 눌러 선택 해제";
+
+/* XMSG: Date selected, used in voiceOver in calendar view */
+"Date selected" = "일자 선택됨";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Today" = "오늘";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Disabled date" = "비활성화된 일자";
+
+/* XMSG: Drag tips in .expandable style, used in voiceOver in calendar view */
+"Handle to switch from month view to week view" = "월간 보기에서 주간 보기로 전환";
+
+/* XMSG: Accessibility label for card container */
+"Card" = "카드";
+
+/* XTIT: Title for card */
+"Card title" = "카드 제목";
+
+/* XTIT: Subtitle for card */
+"Card subtitle" = "카드 부제목";
+
+/* XTIT: HeaderAction for card */
+"Card header action" = "카드 헤더 액션";
+
+/* XACT: The accessibility label for the switchItem turn on button in FilterFeedbackBar */
+"Switch Item On" = "탭하여 켜기";
+
+/* XACT: The accessibility label for the switchItem turn off button in FilterFeedbackBar */
+"Switch Item Off" = "탭하여 끄기";
+
+/* XMSG: Writing assistant panel opening announcement */
+"AI Writing Assistant panel opened. Use provided prompts to refine your text content." = "AI 작성 도우미 패널이 열렸습니다. 제공된 프롬프트를 사용하여 텍스트 컨텐트를 다듬으십시오.";
+
+/* XMSG: Writing assistant activation cell hint for accessibility */
+"Double tap to activate" = "두 번 탭하여 활성화";
+
+/* XMSG: Writing assistant options entry cell hint for accessibility */
+"Open to see %@ options" = "%@ 옵션을 보려면 열기";
+
+/* XMSG: Writing assistant undo announcement */
+"Undo to Version %d of %d" = "%d의 %d 버전으로 되돌리기";
+
+/* XMSG: Writing assistant redo announcement */
+"Redo to Version %d of %d" = "%d의 %d 버전으로 재실행";
+
+/* XMSG: Writing assistant version update announcement */
+"Text updated to Version %d of %d" = "텍스트가 %d의 %d 버전으로 업데이트됨";
+
+/* XTIT: Writing assistant title accessibility label */
+"AI Writing Assistant" = "AI 작성 도우미";
+
+/* XMSG: Writing assistant accessibility instruction for text editing */
+"double tap to open AI Writing Assistant and edit text" = "AI 작성 도우미를 열고 텍스트를 수정하려면 두 번 탭하기";
+
+/* XBUT: Writing assistant undo accessibility label */
+"Undo change" = "변경 취소";
+
+/* XBUT: Writing assistant redo accessibility label */
+"Rodo change" = "변경 재실행";
+
+/* XBUT: Close button title */
+"Close" = "닫기";
+
+/* XMSG: Accessibility label for completed state in step progress indicator */
+"complete" = "완료";
+
+/* XMSG: Accessibility label for active state in step progress indicator */
+"active" = "활성";
+
+/* XMSG: Accessibility label for error active state in step progress indicator */
+"error active" = "오류 활성";
+
+/* XMSG: Accessibility label for read-only state in step progress indicator */
+"read-only" = "읽기 전용";
+
+/* XACT: The accessibility value for Stepper decrement */
+"Decrease the value by %f" = "%f만큼 값 감소";
+
+/* XACT: The accessibility value for Stepper increment */
+"Increase the value by %f" = "%f만큼 값 증가";
+
+/* XMSG: title used in DateRangePickerPopView */
+"Select Range" = "범위 선택";
+
+/* XMSG: start date, used in DateRangePickerPopView */
+"Start Date" = "시작일";
+
+/* XMSG: end date, used in DateRangePickerPopView */
+"End Date" = "종료일";
+
+/* XBUT: title for picker form cell to open */
+"DoubleTapToOpenKey" = "두 번 탭하여 열기";
+
+/* XBUT: title for picker form cell to collapse */
+"DoubleTapToCollapseKey" = "두 번 탭하여 접기";
+
+/* XTIT: On state for switch */
+"Switch On" = "켬";
+
+/* XTIT: Off state for switch */
+"Switch Off" = "끔";
+
+/* Checkout Indicator accessibility label: failed */
+"failed" = "실패";
+
+/* Checkout Indicator accessibility label: AI processing */
+"AI processing" = "AI 처리 중";
+
+/* Checkout Indicator accessibility label: Checkout Indicator */
+"Checkout Indicator" = "체크아웃 지시자";
+
+/* XMSG: More tag text shown when tags are truncated in MHStack, %d is the count of hidden tags */
+"+%d more" = "+%d개 항목 더";
+
+/* XTIT: The title of the empty state view */
+"No Results Found" = "결과가 없습니다.";
+
+/* XTIT: The description of the empty state view */
+"Check your search for any spelling errors or try a different search term." = "철자 오류가 없는지 검색을 확인하거나 다른 검색어를 사용해 보십시오.";
+
+/* XACT: The accessibility label for the checkbox */
+"Checkbox" = "체크박스";
+
+/* XMSG: Passcode policy requirement - minimum length, %d is the required number of characters */
+"At least %d characters" = "%d자 이상";
+
+/* XMSG: Passcode policy requirement - minimum number of unique characters, %d is the required count */
+"At least %d unique characters" = "%d자 이상의 고유 문자";
+
+/* XMSG: Passcode policy requirement - at least one digit */
+"At least one digit" = "하나 이상의 숫자";
+
+/* XMSG: Passcode policy requirement - at least one uppercase letter */
+"At least one uppercase letter" = "하나 이상의 대문자";
+
+/* XMSG: Passcode policy requirement - at least one lowercase letter */
+"At least one lowercase letter" = "하나 이상의 소문자";
+
+/* XMSG: Passcode policy requirement - at least one special character */
+"At least one special character" = "하나 이상의 특수 문자";
+
+/* XMSG: Passcode policy requirement - digits only */
+"Digits only" = "숫자만";
+

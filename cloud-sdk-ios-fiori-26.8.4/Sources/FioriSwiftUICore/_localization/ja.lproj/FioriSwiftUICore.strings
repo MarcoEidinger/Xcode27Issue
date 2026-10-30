@@ -1,0 +1,753 @@
+/* XMSG: Placeholder text in chart when there is no data */
+"No Data" = "データがありません";
+
+/* XBUT: Save action in inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Save" = "保存";
+
+/* XBUT: Re-enter action available in saved state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Re-enter Signature" = "署名を再入力";
+
+/* XBUT: Clear action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Clear" = "消去";
+
+/* XBUT: Cancel action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Cancel" = "キャンセル";
+
+/* XTIT: Title of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Signature" = "署名";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Tap to Sign" = "タップして署名";
+
+/* XACT: The accessibility label for the signature area */
+"Signature Area" = "署名エリア";
+
+/* XACT: The accessibility hint for the signature area */
+"Double tap and drag to sign" = "ダブルタップし、ドラッグして署名します";
+
+/* XACT: The accessibility label for the signature image */
+"Signature Image" = "署名イメージ";
+
+/* XACT: The accessibility label for the signature line */
+"Signature Line" = "署名ライン";
+
+/* XACT: The accessibility label for the mandatory field */
+"Required Field" = "必須フィールド";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Canceled" = "キャンセルされました";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Next" = "次";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Ok" = "OK";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Status" = "ステータス";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"User canceled Onboarding" = "ユーザがオンボーディングをキャンセルしました";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Without consent you will not be able to continue onboarding." = "承諾なしでオンボーディングを続行することはできません。";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Give Consent" = "承諾する";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Quit" = "中止";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Back" = "戻る";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Step" = "ステップ";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"of" = "/";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Are you sure you want to quit the onboarding process?" = "オンボーディングプロセスを中止してよろしいですか";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Want Data Privacy?" = "データプライバシーが必要ですか?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Be wise about your data" = "データについて必要なことを知る";
+
+/* XBUT: Not Now action title in UserConsentForm */
+"Not Now" = "後で";
+
+/* XBUT: Allow action title in UserConsentForm */
+"Allow" = "許可";
+
+/* XBUT: Deny action title in UserConsentForm */
+"Deny" = "拒否";
+
+/* XBUT: Agree action title in EULAView */
+"Agree" = "同意する";
+
+/* XBUT: Disagree action title in EULAView */
+"Disagree" = "同意しない";
+
+/* XMSG: Placeholder text in DataTable for loading state */
+"Loading..." = "ロード中...";
+
+/* XMSG: Placeholder text in DataTable when there is no data */
+"There is nothing to display yet" = "表示する内容がまだありません";
+
+/* XBUT: Default duration formatter in DataTable */
+"%d Hrs %d Min" = "%d 時間 %d 分";
+
+/* XBUT: Done action in keyboard toolbar for a Textfield in DataTable */
+"Done" = "完了";
+
+/* XBUT: Error messages shown to users in DataTable */
+"There are %d errors in the data table." = "データテーブルに %d エラーがあります。";
+
+/* XBUT: voice over label for row header in DataTable */
+"row header" = "行ヘッダ";
+
+/* XBUT: voice over label for row %d in DataTable */
+"row %d" = "行 %d";
+
+/* XBUT: voice over label for column %d in DataTable */
+"column %d" = "列 %d";
+
+/* XBUT: voice over label for cell type of `leading accessory` in DataTable */
+"leading accessory" = "先行アクセサリ";
+
+/* XBUT: voice over label for cell type of `trailing accessory` in DataTable */
+"trailing accessory" = "後続アクセサリ";
+
+/* XBUT: voice over label for cell type of `text` in DataTable */
+"text" = "テキスト";
+
+/* XBUT: voice over label for cell type of `image` in DataTable */
+"image" = "画像";
+
+/* XBUT: voice over label for cell type of `date` in DataTable */
+"date" = "日付";
+
+/* XBUT: voice over label for cell type of `time` in DataTable */
+"time" = "時刻";
+
+/* XBUT: voice over label for cell type of `duration` in DataTable */
+"duration" = "期間";
+
+/* XBUT: voice over label for cell type of `list item` in DataTable */
+"list item" = "リスト項目";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"selected" = "選択済み";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"not selected" = "未選択";
+
+/* Default value for DateTimePicker */
+"No date selected" = "日付未選択";
+
+/* Default value for DateRangePicker */
+"No range selected" = "範囲未選択";
+
+/* DateRangePicker press space to set a range value */
+"PressSpaceToSelectRangeKey" = "スペースを押して範囲値を設定";
+
+/* XBUT: calendar time component label */
+"Time" = "時刻";
+
+/* XBUT: slider default value label formatter for integer */
+"Value: %d" = "値: %d";
+
+/* XMSG: a toast message for read-only cell in DataTable */
+"Tapped cell is read-only." = "タップされたセルは読み込み専用です。";
+
+/* Default hint text for Read-only Field for NoteFormView and TextFieldFormView */
+"Read-only field" = "読み込み専用フィールド";
+
+/* Default error text for when the character count reaches the maximum limit for NoteFormView and TextFieldFormView */
+"No more characters remaining" = "残り文字数がありません";
+
+/* Default error text for when the character count exceeds the maximum limit for NoteFormView and TextFieldFormView */
+"Reduce the number of characters" = "文字数を削減してください";
+
+/* XBUT: voice over label for decrement action in stepper */
+"Stepper decrease" = "ステッパー減少";
+
+/* XBUT: voice over description for decrement action in stepper */
+"Decrease the value by %d" = "値を %d 減らします";
+
+/* XBUT: voice over label for increment action in stepper */
+"Stepper increase" = "ステッパー増加";
+
+/* XBUT: voice over description for increment action in stepper */
+"Increase the value by %d" = "値を %d 増やします";
+
+/* XBUT: voice over label for test field in stepper */
+"Select specific value" = "特定の値を選択";
+
+/* XBUT: View all action in MenuSelection */
+"View All (%d)" = "すべて表示 (%d)";
+
+/* XACT: RatingControl accessibility label */
+"%d out of %d stars" = "%d つ星 (最高 %d つ星)";
+
+/* XBUT: timeline preview component see all label */
+"See All (%d)" = "すべて表示 (%d)";
+
+/* XACT: Timeline preview items accessibility label */
+"See All" = "すべて表示";
+
+/* XACT: Timeline preview items accessibility value */
+"%d items" = "%d 個のアイテム";
+
+/* XACT: Timeline preview items accessibility hint */
+"Shows all timeline items in a list" = "一覧にすべてのタイムラインアイテムを表示";
+
+/* XACT: Timeline preview item status: current accessibility value */
+"Current" = "現在";
+
+/* XACT: Timeline preview item status: future accessibility value */
+"Future" = "将来";
+
+/* XACT: Timeline preview item status: past accessibility value */
+"Past" = "過去";
+
+/* XACT: Timeline preview item accessibility value */
+"Item %d of %d, %@, %@, %@" = "%d、%@、%@、%@ のアイテム %d";
+
+/* XACT: Timeline preview item node type: Start accessibility value */
+"Start" = "開始";
+
+/* XACT: Timeline preview item node type: End accessibility value */
+"End" = "終了";
+
+/* XACT: Timeline preview item node type: Completed accessibility value */
+"Completed" = "完了";
+
+/* XACT: Timeline preview item node type: Open accessibility value */
+"Open" = "開く";
+
+/* XACT: Timeline preview item node type: Task accessibility value */
+"Task" = "タスク";
+
+/* XACT: Timeline preview item accessibility label */
+"Item %d of %d" = "項目 %d/%d";
+
+/* XBUT: timeline preview component timestamp label */
+"Today, %@" = "本日、 %@";
+
+/* XFLD: RatingControl value label format */
+"%d of %d" = "%d/%d";
+
+/* XFLD: RatingControl review count format */
+"%d reviews" = "%d 件のレビュー";
+
+/* XFLD: RatingControl review count over ceiling format */
+"%d+ reviews" = "%d+ レビュー";
+
+/* XACT: RatingControl accessibility label */
+"Rating Control %d of %d" = "評価コントロール %d/%d";
+
+/* XACT: read-only RatingControl accessibility label: rating with review count */
+"Rating Control, rating %d of %d, %d reviews" = "評価コントロール、評価 %d/%d、%d 件のレビュー";
+
+/* XACT: read-only RatingControl accessibility label: average rating only */
+"Rating Control, average rating %.1f of %d" = "評価コントロール、平均評価 %.1f/%d";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count */
+"Rating Control, average rating %.1f of %d, %d reviews" = "評価コントロール、平均評価 %.1f/%d、%d 件のレビュー";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count over ceiling */
+"Rating Control, average rating %.1f of %d, %d plus reviews" = "評価コントロール、平均評価 %.1f/%d、%d 件のプラスレビュー";
+
+/* XBUT: View all messages in message banner sheet */
+"All" = "すべて";
+
+/* XBUT: messages count in the message banner sheet */
+"Messages (%d)" = "メッセージ (%d)";
+
+/* XBUT: view details in the message banner */
+"View Details" = "詳細の表示";
+
+/* XBUT: view different message in the message banner sheet item */
+"View %@" = "%@ の表示";
+
+/* XBUT: banner message type desc, message */
+"message" = "メッセージ";
+
+/* XBUT: banner message type desc, information */
+"information" = "情報";
+
+/* XBUT: banner message type desc, confirmation */
+"confirmation" = "確認";
+
+/* XBUT: banner message type desc, warning */
+"warning" = "注意";
+
+/* XBUT: banner message type desc, error */
+"error" = "エラー";
+
+/* XBUT: banner message type desc, error */
+"AI notice" = "AI 通知";
+
+/* XMSG: banner message type desc, offline */
+"offline" = "オフライン";
+
+/* XMSG: information view style type, success */
+"success" = "正常終了";
+
+/* XBUT: Reset action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Reset" = "リセット";
+
+/* XBUT: Apply action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Apply" = "適用";
+
+/* XTIT: The alert message for `ListPickerDestination` pulldown dismissal */
+"Are you sure you want to discard your selections?" = "選択を破棄してもよろしいですか?";
+
+/* XBUT: The alert Discard Changes action title for `ListPickerDestination` pulldown dismissal */
+"Discard Changes" = "変更の破棄";
+
+/* XBUT: The alert Keep Editing action title for `ListPickerDestination` pulldown dismissal */
+"Keep Editing" = "編集を継続";
+
+/* XBUT: The \"Select All\" button title on the List Picker header */
+"Select All" = "すべて選択";
+
+/* XBUT: The \"Deselect All\" button title on the List Picker header */
+"Deselect All" = "すべて選択解除";
+
+/* XBUT: The \"Selected\" title on the List Picker header */
+"Selected" = "選択済み";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"Text field, Double tap to edit" = "テキストフィールド、ダブルタップすると編集";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d character left" = "%d 文字残っています。";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d characters left" = "%d 文字残っています。";
+
+/* XACT: The accessibility hint for Text Input Views, editing */
+"Text field, is editing" = "テキストフィールド、編集モード";
+
+/* XACT: The accessibility hint for Text Input Views, editing, with clear button */
+"Text field, is editing. Double tap to clear text" = "テキストフィールド、編集中。ダブルタップするとテキストをクリア";
+
+/* XACT: The default accessibility label for the custom action in TextFieldFormView if none was specified */
+"Custom Action" = "ユーザ定義アクション";
+
+/* XBUT: Error messages shown to users in DocumentScannerView */
+"Failed to create PDF page from images" = "イメージからの PDF ページの作成に失敗しました。";
+
+/* XBUT: Cancel message shown to users in DocumentScannerView */
+"User cancelled the scan" = "スキャンがユーザによってキャンセルされました。";
+
+/* Progress Indicator accessibility label: processing */
+"Processing" = "処理中";
+
+/* Progress Indicator accessibility label: loading pausable with indicator progress */
+"In progress with option to pause, %.0f" = "処理中 (一時停止オプションあり)、%.0f";
+
+/* Progress Indicator accessibility label: loading stoppable with indicator progress */
+"In progress with option to stop, %.0f" = "処理中 (停止オプションあり)、%.0f";
+
+/* Progress Indicator accessibility label: progress halted with indicator progress */
+"Progress halted, %.0f" = "処理停止、%.0f";
+
+/* XACT: Slider accessibility label */
+"This is %@ slider whose maximum value is %@ and minimum value is %@" = "これは %@ スライダであり、最大値は %@ 最小値は %@ です";
+
+/* XACT: Slider accessibility value */
+"Current value is %@" = "現在の値は %@ です";
+
+/* XACT: Range Slider lower thumb accessibility label */
+"lower range slider thumb, current value is" = "下限範囲スライダのつまみ、現在の値は";
+
+/* XACT: Range Slider lower thumb accessibility hint */
+"you can swipe up or down to change the lower value" = "上または下にスワイプして下限値を変更できます";
+
+/* XACT: Range Slider upper thumb accessibility label */
+"upper range slider thumb, current value is" = "上限範囲スライダのつまみ、現在の値は";
+
+/* XACT: Range Slider upper thumb accessibility hint */
+"you can swipe up or down to change the upper value" = "上または下にスワイプして上限値を変更できます";
+
+/* XACT: Single editable Slider thumb accessibility label */
+"slider thumb, current value is" = "スライダのつまみ、現在の値は";
+
+/* XACT: Single editable Slider thumb accessibility hint */
+"you can swipe up or down to change the value" = "上または下にスワイプして値を変更できます";
+
+/* XACT: Single Slider accessibility label */
+"This is a slider, the minimum value is %@ and the maximum value is %@" = "これはスライダであり、最小値は %@、最大値は %@ です";
+
+/* XACT: Range Slider accessibility label */
+"This is a range slider, the minimum value is %@ and the maximum value is %@" = "これは範囲スライダであり、最小値は %@、最大値は %@ です";
+
+/* XACT: Single editable Slider accessibility label */
+"This is a slider that is editable, the minimum value is %@ and the maximum value is %@" = "これは編集可能なスライダであり、最小値は %@、最大値は %@ です";
+
+/* XACT: Single non-editable Slider accessibility label */
+"This is a slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "これは編集不可のスライダであり、最小値は %@、最大値は %@ です";
+
+/* XACT: Range editable Slider accessibility label */
+"This is a range slider that is editable, the minimum value is %@ and the maximum value is %@" = "これは編集可能な範囲スライダであり、最小値は %@、最大値は %@ です";
+
+/* XACT: Range non-editable Slider accessibility label */
+"This is a range slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "これは編集不可の範囲スライダであり、最小値は %@、最大値は %@ です";
+
+/* XACT: Single editable Slider Text Field accessibility label */
+"slider value text field" = "スライダ値のテキストフィールド";
+
+/* XACT: Range editable Slider Lower Value Text Field accessibility label */
+"lower value text field" = "下限値のテキストフィールド";
+
+/* XACT: Range editable Slider Upper Value Text Field accessibility label */
+"upper value text field" = "上限値のテキストフィールド";
+
+/* XACT: Editable Slider Text Field accessibility hint */
+"You can double tap to input a specific value" = "ダブルタップして特定の値を入力できます";
+
+/* XACT: Editable Slider Text Field accessibility value */
+"current value is %@" = "現在の値は %@ です";
+
+/* XACT: Range Editable Slider accessibility value */
+"current lower value is %@, upper value is %@" = "現在の下限値は %@、上限値は %@ です";
+
+/* XTIT: Title of step progress indicator, see https://experience.sap.com/fiori-design-ios/article/step-progress-indicator/#adaptive-design */
+"All Steps" = "すべてのステップ";
+
+/* XMSG: AI Notice message */
+"Suggested by AI. Verify before use. " = "AI が提案しました。使用前に確認してください。 ";
+
+/* XBUT: Attachment operation menu item - Photos, which stands for Photo Library */
+"Photos" = "写真";
+
+/* XBUT: Attachment operation menu item - Files, which stands for documents available for upload residing in Files */
+"Files" = "ファイル";
+
+/* XBUT: Attachment operation menu item - Camera, which can be used for taking photos and movies */
+"Camera" = "カメラ";
+
+/* XBUT: Attachment operation menu item - Scan. Use camera as scanner and generate PDF files */
+"Scan" = "スキャン";
+
+/* XACT: The accessibility preview action for the attachment */
+"Preview" = "プレビュー";
+
+/* XTIT: Attachment title of deletion confirmation */
+"Delete Attachment?" = "添付ファイルを削除しますか?";
+
+/* XBUT: Attachment deletion confirmation button */
+"Delete" = "削除";
+
+/* XBUT: Attachment add button */
+"Add attachment" = "添付ファイルを追加";
+
+/* XACT: The accessibility hint for add button */
+"Double tap to add attachment" = "ダブルタップして添付ファイルを追加";
+
+/* XMSG: attachment section add new file successfully announcement */
+"New attachment added successfully" = "新しい添付ファイルが追加されました";
+
+/* XMSG: attachment section add new file failed announcement */
+"File failed to attach" = "ファイルの添付に失敗しました";
+
+/* XACT: The accessibility hint for attachment section */
+"read only" = "読込専用";
+
+/* XACT: The accessibility hint for attachment section */
+"actions available" = "アクション可能";
+
+/* XMSG: Attachment thumbnail */
+"Thumbnail" = "サムネイル";
+
+/* XMSG: Attachment uploading */
+"Attachment uploading" = "%@ をアップロードしています。お待ちください...";
+
+/* XMSG: Attachment error */
+"Attachment error" = "%@ のアップロードに失敗しました。エラーメッセージ: %@";
+
+/* XBUT: Sign In Action in the Authentication */
+"Sign In" = "サインイン";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"username" = "ユーザ名";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"password" = "パスワード";
+
+/* XBUT: Submit action title in AI User Feedback */
+"Submit" = "送信";
+
+/* XMSG: Submission failed title in AI User Feedback */
+"Submission failed" = "送信失敗";
+
+/* XMSG: Submission failed description in AI User Feedback */
+"An error has occurred. Please try again later." = "エラーが発生しました。後で再び試してください。";
+
+/* XBUT: Retry action title in AI User Feedback */
+"Retry" = "再試行";
+
+/* XACT: The accessibility label for the like button in AI User Feedback */
+"Positive feedback" = "肯定的なフィードバック";
+
+/* XACT: The accessibility label for the dislike button in AI User Feedback */
+"Negative feedback" = "否定的なフィードバック";
+
+/* XACT: The accessibility label for the vote buttons in AI User Feedback */
+"enabled" = "有効";
+
+/* XMSG: Onboarding scan view title for scan unsuccessful */
+"Scan Unsuccessful" = "スキャン失敗";
+
+/* XMSG: Onboarding scan view hint for scan unsuccessful */
+"Please select a QR code image." = "QR コードイメージを選択してください。";
+
+/* XMSG: Onboarding scan view title for invalid QR code */
+"Invalid QR Code" = "無効な QR コード";
+
+/* XMSG: Onboarding scan view hint for invalid QR code */
+"The QR code was not recognized." = "QR コードが認識されませんでした。";
+
+/* XTIT: Onboarding scan view title for request access to photos library */
+"Allow Access to Photos" = "写真へのアクセスを許可";
+
+/* XMSG: Onboarding scan view hint for request access to photos library */
+"To choose a QR code image, please give access to your photos in your device's privacy settings." = "QR コードイメージを選択するために、デバイスのプライバシー設定で写真へのアクセスを許可してください。";
+
+/* XTIT: Onboarding scan view title for request access to camera */
+"Allow Access to Camera" = "カメラへのアクセスを許可";
+
+/* XMSG: Onboarding scan view hint for request access to camera */
+"To scan using the camera, please give access to your camera in your device's privacy settings." = "カメラを使用してスキャンするために、デバイスのプライバシー設定でカメラへのアクセスを許可してください。";
+
+/* XBUT: Onboarding scan view action title for the alert when the permission to access camera or photo library was not granted */
+"Settings" = "設定";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"down arrow" = "下矢印";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"up arrow" = "上矢印";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash deactivated" = "フラッシュ無効";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash activated" = "フラッシュ有効";
+
+/* XACT: The accessibility hint for photos in onboarding photo picker view */
+"Photo %d" = "写真 %d";
+
+/* XMSG: Onboarding confirm view success message */
+"Scan succeeded. You will be connected to:" = "スキャンが完了しました。以下の操作に接続されます。";
+
+/* XBUT: Onboarding confirm view action title for continue button */
+"Continue" = "続行";
+
+/* XTIT: Title for writing assistant */
+"Writing Assistant" = "ライティングアシスタント";
+
+/* XMSG: Writing assistant version control */
+"Version %d/%d" = "バージョン %d/%d";
+
+/* XBUT: Writing assistant undo action title */
+"Undo" = "元に戻す";
+
+/* XBUT: Writing assistant redo action title */
+"Redo" = "繰り返す";
+
+/* XTIT: Writing assistant cancel alert message */
+"Do you want to undo the edits made by the Writing Assistant and revert the text to its original state?" = "ライティングアシスタントが行った編集内容を取り消し、テキストを元の状態に戻しますか?";
+
+/* XTIT: Writing assistant cancel alert title */
+"Discard all changes?" = "すべての変更を破棄しますか？";
+
+/* XBUT: Writing assistant cancel alert action title for keep working */
+"Keep Working" = "操作を続ける";
+
+/* XBUT: Writing assistant cancel alert action title for discard */
+"Discard" = "破棄";
+
+/* XMSG: A success toast message for feedback flow in writing assistant */
+"Thank you for your feedback" = "フィードバックをお寄せくださり、ありがとうございました";
+
+/* XTIT: Title for feedback downvote flow in writing assistant */
+"What didn’t you like about this version?" = "本バージョンがお気に召さなかった点は何でしょうか?";
+
+/* XTIT: Subtitle for feedback downvote flow in writing assistant */
+"Please rate your experience to help us improve." = "改善のために、使用感を評価してください。";
+
+/* XTIT: Navigation bar title for feedback flow */
+"Feedback" = "フィードバック";
+
+/* XTIT: Footnote text for feedback in writing assistant */
+"How was this response?" = "この応答はいかがでしたか?";
+
+/* XMSG: One date selected for .datesSelection style in Calendar view */
+"%d Date Selected" = "%d 日付が選択されました";
+
+/* XMSG: Multiple dates selected for .datesSelection style in Calendar view */
+"%d Dates Selected" = "%d 日付が選択されました";
+
+/* XMSG: Has event, used in voice over in calendar view */
+"has event" = "イベントあり";
+
+/* XMSG: Double tap to change the selection, used in voice over in calendar view */
+"Double tap to change the selection" = "ダブルタップで選択を変更";
+
+/* XMSG: Double tap to select, used in voice over in calendar view */
+"Double tap to select" = "ダブルタップして選択";
+
+/* XMSG: Double tap to unselect, used in voice over in calendar view */
+"Double tap to unselect" = "ダブルタップして選択を解除する";
+
+/* XMSG: Date selected, used in voiceOver in calendar view */
+"Date selected" = "選択された日付";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Today" = "本日";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Disabled date" = "無効化された日付";
+
+/* XMSG: Drag tips in .expandable style, used in voiceOver in calendar view */
+"Handle to switch from month view to week view" = "月次ビューから週次ビューに切り替えるハンドル";
+
+/* XMSG: Accessibility label for card container */
+"Card" = "カード";
+
+/* XTIT: Title for card */
+"Card title" = "カードタイトル";
+
+/* XTIT: Subtitle for card */
+"Card subtitle" = "カードのサブタイトル";
+
+/* XTIT: HeaderAction for card */
+"Card header action" = "カードヘッダアクション";
+
+/* XACT: The accessibility label for the switchItem turn on button in FilterFeedbackBar */
+"Switch Item On" = "タップしてオンにする";
+
+/* XACT: The accessibility label for the switchItem turn off button in FilterFeedbackBar */
+"Switch Item Off" = "タップしてオフにする";
+
+/* XMSG: Writing assistant panel opening announcement */
+"AI Writing Assistant panel opened. Use provided prompts to refine your text content." = "AI ライティングアシスタントパネルが表示されました。提示されたプロンプトを使用して、テキストコンテンツを校正してください。";
+
+/* XMSG: Writing assistant activation cell hint for accessibility */
+"Double tap to activate" = "ダブルタップして有効化する";
+
+/* XMSG: Writing assistant options entry cell hint for accessibility */
+"Open to see %@ options" = "開いて %@ オプションを表示する";
+
+/* XMSG: Writing assistant undo announcement */
+"Undo to Version %d of %d" = "バージョン %d / %d を元に戻す";
+
+/* XMSG: Writing assistant redo announcement */
+"Redo to Version %d of %d" = "バージョン %d / %d をやり直す";
+
+/* XMSG: Writing assistant version update announcement */
+"Text updated to Version %d of %d" = "バージョン %d / %d にテキストが反映されました";
+
+/* XTIT: Writing assistant title accessibility label */
+"AI Writing Assistant" = "AI ライティングアシスタント";
+
+/* XMSG: Writing assistant accessibility instruction for text editing */
+"double tap to open AI Writing Assistant and edit text" = "ダブルタップして AI ライティングアシスタントを開き、テキストを編集します";
+
+/* XBUT: Writing assistant undo accessibility label */
+"Undo change" = "変更を元に戻す";
+
+/* XBUT: Writing assistant redo accessibility label */
+"Rodo change" = "変更をやり直す";
+
+/* XBUT: Close button title */
+"Close" = "閉じる";
+
+/* XMSG: Accessibility label for completed state in step progress indicator */
+"complete" = "完了";
+
+/* XMSG: Accessibility label for active state in step progress indicator */
+"active" = "有効";
+
+/* XMSG: Accessibility label for error active state in step progress indicator */
+"error active" = "エラー有効";
+
+/* XMSG: Accessibility label for read-only state in step progress indicator */
+"read-only" = "読み込み専用";
+
+/* XACT: The accessibility value for Stepper decrement */
+"Decrease the value by %f" = "値を %f 減らします";
+
+/* XACT: The accessibility value for Stepper increment */
+"Increase the value by %f" = "値を %f 増やします";
+
+/* XMSG: title used in DateRangePickerPopView */
+"Select Range" = "範囲を選択";
+
+/* XMSG: start date, used in DateRangePickerPopView */
+"Start Date" = "開始日付";
+
+/* XMSG: end date, used in DateRangePickerPopView */
+"End Date" = "終了日付";
+
+/* XBUT: title for picker form cell to open */
+"DoubleTapToOpenKey" = "ダブルタップして開く";
+
+/* XBUT: title for picker form cell to collapse */
+"DoubleTapToCollapseKey" = "ダブルタップして折りたたむ";
+
+/* XTIT: On state for switch */
+"Switch On" = "オン";
+
+/* XTIT: Off state for switch */
+"Switch Off" = "オフ";
+
+/* Checkout Indicator accessibility label: failed */
+"failed" = "失敗";
+
+/* Checkout Indicator accessibility label: AI processing */
+"AI processing" = "AI 処理";
+
+/* Checkout Indicator accessibility label: Checkout Indicator */
+"Checkout Indicator" = "チェックアウト区分";
+
+/* XMSG: More tag text shown when tags are truncated in MHStack, %d is the count of hidden tags */
+"+%d more" = "%d 件追加";
+
+/* XTIT: The title of the empty state view */
+"No Results Found" = "結果が見つかりません";
+
+/* XTIT: The description of the empty state view */
+"Check your search for any spelling errors or try a different search term." = "誤った綴りで検索していないかどうかを確認するか、または別の検索語句を試してください。";
+
+/* XACT: The accessibility label for the checkbox */
+"Checkbox" = "チェックボックス";
+
+/* XMSG: Passcode policy requirement - minimum length, %d is the required number of characters */
+"At least %d characters" = "%d 文字以上";
+
+/* XMSG: Passcode policy requirement - minimum number of unique characters, %d is the required count */
+"At least %d unique characters" = "異なる文字が %d 文字以上";
+
+/* XMSG: Passcode policy requirement - at least one digit */
+"At least one digit" = "少なくとも 1 つの数字";
+
+/* XMSG: Passcode policy requirement - at least one uppercase letter */
+"At least one uppercase letter" = "少なくとも 1 つの大文字";
+
+/* XMSG: Passcode policy requirement - at least one lowercase letter */
+"At least one lowercase letter" = "少なくとも 1 つの小文字";
+
+/* XMSG: Passcode policy requirement - at least one special character */
+"At least one special character" = "少なくとも 1 つの特殊文字";
+
+/* XMSG: Passcode policy requirement - digits only */
+"Digits only" = "数字のみ";
+

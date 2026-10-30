@@ -1,0 +1,753 @@
+/* XMSG: Placeholder text in chart when there is no data */
+"No Data" = "Fără date";
+
+/* XBUT: Save action in inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Save" = "Salvare";
+
+/* XBUT: Re-enter action available in saved state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Re-enter Signature" = "Reintroducere semnătură";
+
+/* XBUT: Clear action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Clear" = "Ștergere";
+
+/* XBUT: Cancel action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Cancel" = "Anulare";
+
+/* XTIT: Title of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Signature" = "Semnătură";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Tap to Sign" = "Atingeți pentru a semna";
+
+/* XACT: The accessibility label for the signature area */
+"Signature Area" = "Zonă de semnătură";
+
+/* XACT: The accessibility hint for the signature area */
+"Double tap and drag to sign" = "Atingeți de două ori și trageți pentru a semna";
+
+/* XACT: The accessibility label for the signature image */
+"Signature Image" = "Imagine de semnătură";
+
+/* XACT: The accessibility label for the signature line */
+"Signature Line" = "Linie de semnătură";
+
+/* XACT: The accessibility label for the mandatory field */
+"Required Field" = "Câmp obligatoriu";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Canceled" = "Anulat";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Next" = "Următor";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Ok" = "OK";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Status" = "Stare";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"User canceled Onboarding" = "Utilizatorul a anulat integrarea";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Without consent you will not be able to continue onboarding." = "Fără consimțământ, nu veți putea continua integrarea.";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Give Consent" = "Oferiți-vă acordul";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Quit" = "Ieșire";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Back" = "Înapoi";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Step" = "Etapă";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"of" = "din";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Are you sure you want to quit the onboarding process?" = "Sigur doriți să ieșiți din procesul de integrare?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Want Data Privacy?" = "Doriți confidențialitatea datelor?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Be wise about your data" = "Fiți înțelepți privind datele dvs.";
+
+/* XBUT: Not Now action title in UserConsentForm */
+"Not Now" = "Nu acum";
+
+/* XBUT: Allow action title in UserConsentForm */
+"Allow" = "Permitere";
+
+/* XBUT: Deny action title in UserConsentForm */
+"Deny" = "Respingere";
+
+/* XBUT: Agree action title in EULAView */
+"Agree" = "Sunt de acord";
+
+/* XBUT: Disagree action title in EULAView */
+"Disagree" = "Nu sunt de acord";
+
+/* XMSG: Placeholder text in DataTable for loading state */
+"Loading..." = "Încărcare...";
+
+/* XMSG: Placeholder text in DataTable when there is no data */
+"There is nothing to display yet" = "Deocamdată nu există nimic de afișat";
+
+/* XBUT: Default duration formatter in DataTable */
+"%d Hrs %d Min" = "%d ore %d min.";
+
+/* XBUT: Done action in keyboard toolbar for a Textfield in DataTable */
+"Done" = "Efectuat";
+
+/* XBUT: Error messages shown to users in DataTable */
+"There are %d errors in the data table." = "Există %d erori în tabelul de date.";
+
+/* XBUT: voice over label for row header in DataTable */
+"row header" = "antet linie";
+
+/* XBUT: voice over label for row %d in DataTable */
+"row %d" = "linia %d";
+
+/* XBUT: voice over label for column %d in DataTable */
+"column %d" = "coloana %d";
+
+/* XBUT: voice over label for cell type of `leading accessory` in DataTable */
+"leading accessory" = "accesoriu principal";
+
+/* XBUT: voice over label for cell type of `trailing accessory` in DataTable */
+"trailing accessory" = "accesoriu final";
+
+/* XBUT: voice over label for cell type of `text` in DataTable */
+"text" = "text";
+
+/* XBUT: voice over label for cell type of `image` in DataTable */
+"image" = "imagine";
+
+/* XBUT: voice over label for cell type of `date` in DataTable */
+"date" = "dată";
+
+/* XBUT: voice over label for cell type of `time` in DataTable */
+"time" = "oră";
+
+/* XBUT: voice over label for cell type of `duration` in DataTable */
+"duration" = "durată";
+
+/* XBUT: voice over label for cell type of `list item` in DataTable */
+"list item" = "element de listă";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"selected" = "selectat";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"not selected" = "neselectat";
+
+/* Default value for DateTimePicker */
+"No date selected" = "Nicio dată selectată";
+
+/* Default value for DateRangePicker */
+"No range selected" = "Niciun interval selectat";
+
+/* DateRangePicker press space to set a range value */
+"PressSpaceToSelectRangeKey" = "apăsați spațiu pentru a seta o valoare de interval";
+
+/* XBUT: calendar time component label */
+"Time" = "Timp";
+
+/* XBUT: slider default value label formatter for integer */
+"Value: %d" = "Valoare: %d";
+
+/* XMSG: a toast message for read-only cell in DataTable */
+"Tapped cell is read-only." = "Celulă atinsă este doar în citire.";
+
+/* Default hint text for Read-only Field for NoteFormView and TextFieldFormView */
+"Read-only field" = "Câmp doar în citire";
+
+/* Default error text for when the character count reaches the maximum limit for NoteFormView and TextFieldFormView */
+"No more characters remaining" = "Nu mai sunt caractere rămase";
+
+/* Default error text for when the character count exceeds the maximum limit for NoteFormView and TextFieldFormView */
+"Reduce the number of characters" = "Reduceți numărul de caractere";
+
+/* XBUT: voice over label for decrement action in stepper */
+"Stepper decrease" = "Scădere control în trepte";
+
+/* XBUT: voice over description for decrement action in stepper */
+"Decrease the value by %d" = "Scădere valoare cu %d";
+
+/* XBUT: voice over label for increment action in stepper */
+"Stepper increase" = "Creștere control în trepte";
+
+/* XBUT: voice over description for increment action in stepper */
+"Increase the value by %d" = "Creștere valoare cu %d";
+
+/* XBUT: voice over label for test field in stepper */
+"Select specific value" = "Selectați o anumită valoare";
+
+/* XBUT: View all action in MenuSelection */
+"View All (%d)" = "Vizualizare toate (%d)";
+
+/* XACT: RatingControl accessibility label */
+"%d out of %d stars" = "%d din %d stele";
+
+/* XBUT: timeline preview component see all label */
+"See All (%d)" = "Afișare tot (%d)";
+
+/* XACT: Timeline preview items accessibility label */
+"See All" = "Afișare tot";
+
+/* XACT: Timeline preview items accessibility value */
+"%d items" = "%d elemente";
+
+/* XACT: Timeline preview items accessibility hint */
+"Shows all timeline items in a list" = "Afișează toate elementele de cronologie într-o listă";
+
+/* XACT: Timeline preview item status: current accessibility value */
+"Current" = "Prezent";
+
+/* XACT: Timeline preview item status: future accessibility value */
+"Future" = "Viitor";
+
+/* XACT: Timeline preview item status: past accessibility value */
+"Past" = "Trecut";
+
+/* XACT: Timeline preview item accessibility value */
+"Item %d of %d, %@, %@, %@" = "Elementul %d din %d, %@, %@, %@";
+
+/* XACT: Timeline preview item node type: Start accessibility value */
+"Start" = "Început";
+
+/* XACT: Timeline preview item node type: End accessibility value */
+"End" = "Sfârșit";
+
+/* XACT: Timeline preview item node type: Completed accessibility value */
+"Completed" = "Terminat";
+
+/* XACT: Timeline preview item node type: Open accessibility value */
+"Open" = "Deschis";
+
+/* XACT: Timeline preview item node type: Task accessibility value */
+"Task" = "Sarcină";
+
+/* XACT: Timeline preview item accessibility label */
+"Item %d of %d" = "Elementul %d din %d";
+
+/* XBUT: timeline preview component timestamp label */
+"Today, %@" = "Astăzi, %@";
+
+/* XFLD: RatingControl value label format */
+"%d of %d" = "%d din %d";
+
+/* XFLD: RatingControl review count format */
+"%d reviews" = "%d recenzii";
+
+/* XFLD: RatingControl review count over ceiling format */
+"%d+ reviews" = "+%d recenzii";
+
+/* XACT: RatingControl accessibility label */
+"Rating Control %d of %d" = "Control evaluare %d din %d";
+
+/* XACT: read-only RatingControl accessibility label: rating with review count */
+"Rating Control, rating %d of %d, %d reviews" = "Control evaluare, evaluarea %d din %d, %d recenzii";
+
+/* XACT: read-only RatingControl accessibility label: average rating only */
+"Rating Control, average rating %.1f of %d" = "Control evaluare, evaluare medie %.1f din %d";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count */
+"Rating Control, average rating %.1f of %d, %d reviews" = "Control evaluare, evaluare medie %.1f din %d, %d recenzii";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count over ceiling */
+"Rating Control, average rating %.1f of %d, %d plus reviews" = "Control evaluare, evaluare medie %.1f din %d, +%d recenzii";
+
+/* XBUT: View all messages in message banner sheet */
+"All" = "Tot";
+
+/* XBUT: messages count in the message banner sheet */
+"Messages (%d)" = "Mesaje (%d)";
+
+/* XBUT: view details in the message banner */
+"View Details" = "Vizualizare detalii";
+
+/* XBUT: view different message in the message banner sheet item */
+"View %@" = "Vizualizare %@";
+
+/* XBUT: banner message type desc, message */
+"message" = "mesaj";
+
+/* XBUT: banner message type desc, information */
+"information" = "informații";
+
+/* XBUT: banner message type desc, confirmation */
+"confirmation" = "confirmare";
+
+/* XBUT: banner message type desc, warning */
+"warning" = "avertizare";
+
+/* XBUT: banner message type desc, error */
+"error" = "eroare";
+
+/* XBUT: banner message type desc, error */
+"AI notice" = "Notă despre AI";
+
+/* XMSG: banner message type desc, offline */
+"offline" = "offline";
+
+/* XMSG: information view style type, success */
+"success" = "reușit";
+
+/* XBUT: Reset action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Reset" = "Resetare";
+
+/* XBUT: Apply action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Apply" = "Aplicare";
+
+/* XTIT: The alert message for `ListPickerDestination` pulldown dismissal */
+"Are you sure you want to discard your selections?" = "Sigur doriți să renunțați la selecțiile dvs.?";
+
+/* XBUT: The alert Discard Changes action title for `ListPickerDestination` pulldown dismissal */
+"Discard Changes" = "Renunțare la modificări";
+
+/* XBUT: The alert Keep Editing action title for `ListPickerDestination` pulldown dismissal */
+"Keep Editing" = "Continuare editare";
+
+/* XBUT: The \"Select All\" button title on the List Picker header */
+"Select All" = "Selectare tot";
+
+/* XBUT: The \"Deselect All\" button title on the List Picker header */
+"Deselect All" = "Deselectare tot";
+
+/* XBUT: The \"Selected\" title on the List Picker header */
+"Selected" = "Selectat";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"Text field, Double tap to edit" = "Câmp de text, atingeți de două ori pentru editare";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d character left" = "%d caracter rămas.";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d characters left" = "%d caractere rămase.";
+
+/* XACT: The accessibility hint for Text Input Views, editing */
+"Text field, is editing" = "Câmp de text, în modul de editare";
+
+/* XACT: The accessibility hint for Text Input Views, editing, with clear button */
+"Text field, is editing. Double tap to clear text" = "Câmp de text, se editează. Atingeți de două ori pentru a reseta textul";
+
+/* XACT: The default accessibility label for the custom action in TextFieldFormView if none was specified */
+"Custom Action" = "Acțiune definită de utilizator";
+
+/* XBUT: Error messages shown to users in DocumentScannerView */
+"Failed to create PDF page from images" = "Eroare la crearea paginii PDF de la imagini.";
+
+/* XBUT: Cancel message shown to users in DocumentScannerView */
+"User cancelled the scan" = "Utilizatorul a anulat scanarea.";
+
+/* Progress Indicator accessibility label: processing */
+"Processing" = "În curs de prelucrare";
+
+/* Progress Indicator accessibility label: loading pausable with indicator progress */
+"In progress with option to pause, %.0f" = "În desfășurare cu opțiune de pauză, %.0f";
+
+/* Progress Indicator accessibility label: loading stoppable with indicator progress */
+"In progress with option to stop, %.0f" = "În desfășurare cu opțiune de oprire, %.0f";
+
+/* Progress Indicator accessibility label: progress halted with indicator progress */
+"Progress halted, %.0f" = "Progres întrerupt, %.0f";
+
+/* XACT: Slider accessibility label */
+"This is %@ slider whose maximum value is %@ and minimum value is %@" = "Acesta este cursorul de reglare %@ a cărui valoare maximă este %@ și valoarea minimă este %@";
+
+/* XACT: Slider accessibility value */
+"Current value is %@" = "Valoarea curentă este %@";
+
+/* XACT: Range Slider lower thumb accessibility label */
+"lower range slider thumb, current value is" = "indicator pe cursor interval inferior, valoarea curentă este";
+
+/* XACT: Range Slider lower thumb accessibility hint */
+"you can swipe up or down to change the lower value" = "puteți glisa în sus sau în jos pentru a modifica valoarea inferioară";
+
+/* XACT: Range Slider upper thumb accessibility label */
+"upper range slider thumb, current value is" = "indicator pe cursor interval superior, valoarea curentă este";
+
+/* XACT: Range Slider upper thumb accessibility hint */
+"you can swipe up or down to change the upper value" = "puteți glisa în sus sau în jos pentru a modifica valoarea superioară";
+
+/* XACT: Single editable Slider thumb accessibility label */
+"slider thumb, current value is" = "indicator pe cursor, valoarea curentă este";
+
+/* XACT: Single editable Slider thumb accessibility hint */
+"you can swipe up or down to change the value" = "puteți glisa în sus sau în jos pentru a modifica valoarea";
+
+/* XACT: Single Slider accessibility label */
+"This is a slider, the minimum value is %@ and the maximum value is %@" = "Acesta este un cursor, valoarea minimă este %@ și valoarea maximă este %@";
+
+/* XACT: Range Slider accessibility label */
+"This is a range slider, the minimum value is %@ and the maximum value is %@" = "Acesta este un cursor de interval, valoarea minimă este %@ și valoarea maximă este %@";
+
+/* XACT: Single editable Slider accessibility label */
+"This is a slider that is editable, the minimum value is %@ and the maximum value is %@" = "Acest cursor este editabil; valoarea minimă este %@ și valoarea maximă este %@";
+
+/* XACT: Single non-editable Slider accessibility label */
+"This is a slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Acest cursor nu poate fi editat; valoarea minimă este %@ și valoarea maximă este %@";
+
+/* XACT: Range editable Slider accessibility label */
+"This is a range slider that is editable, the minimum value is %@ and the maximum value is %@" = "Acest cursor de interval este editabil, valoarea minimă este %@ și valoarea maximă este %@";
+
+/* XACT: Range non-editable Slider accessibility label */
+"This is a range slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Acest cursor de interval nu poate fi editat; valoarea minimă este %@ și valoarea maximă este %@";
+
+/* XACT: Single editable Slider Text Field accessibility label */
+"slider value text field" = "câmp de text valoare cursor";
+
+/* XACT: Range editable Slider Lower Value Text Field accessibility label */
+"lower value text field" = "câmp de text valoare inferioară";
+
+/* XACT: Range editable Slider Upper Value Text Field accessibility label */
+"upper value text field" = "câmp de text valoare superioară";
+
+/* XACT: Editable Slider Text Field accessibility hint */
+"You can double tap to input a specific value" = "Puteți tasta dublu pentru a introduce o anumită valoare";
+
+/* XACT: Editable Slider Text Field accessibility value */
+"current value is %@" = "valoarea curentă este %@";
+
+/* XACT: Range Editable Slider accessibility value */
+"current lower value is %@, upper value is %@" = "valoarea inferioară curentă este %@, valoarea superioară este %@";
+
+/* XTIT: Title of step progress indicator, see https://experience.sap.com/fiori-design-ios/article/step-progress-indicator/#adaptive-design */
+"All Steps" = "Toate etapele";
+
+/* XMSG: AI Notice message */
+"Suggested by AI. Verify before use. " = "Sugerat de AI. Verificați înainte de utilizare. ";
+
+/* XBUT: Attachment operation menu item - Photos, which stands for Photo Library */
+"Photos" = "Fotografii";
+
+/* XBUT: Attachment operation menu item - Files, which stands for documents available for upload residing in Files */
+"Files" = "Fișiere";
+
+/* XBUT: Attachment operation menu item - Camera, which can be used for taking photos and movies */
+"Camera" = "Cameră";
+
+/* XBUT: Attachment operation menu item - Scan. Use camera as scanner and generate PDF files */
+"Scan" = "Scanare";
+
+/* XACT: The accessibility preview action for the attachment */
+"Preview" = "Previzualizare";
+
+/* XTIT: Attachment title of deletion confirmation */
+"Delete Attachment?" = "Ștergeți anexa?";
+
+/* XBUT: Attachment deletion confirmation button */
+"Delete" = "Ștergere";
+
+/* XBUT: Attachment add button */
+"Add attachment" = "Adăugare anexă";
+
+/* XACT: The accessibility hint for add button */
+"Double tap to add attachment" = "Atingeți de două ori pentru a adăuga anexă";
+
+/* XMSG: attachment section add new file successfully announcement */
+"New attachment added successfully" = "Anexă nouă adăugată cu succes";
+
+/* XMSG: attachment section add new file failed announcement */
+"File failed to attach" = "Fișierul nu a putut fi anexat";
+
+/* XACT: The accessibility hint for attachment section */
+"read only" = "doar în citire";
+
+/* XACT: The accessibility hint for attachment section */
+"actions available" = "acțiuni disponibile";
+
+/* XMSG: Attachment thumbnail */
+"Thumbnail" = "Miniatură";
+
+/* XMSG: Attachment uploading */
+"Attachment uploading" = "Se încarcă %@, așteptați...";
+
+/* XMSG: Attachment error */
+"Attachment error" = "Încărcare %@ nereușită. Mesaj de eroare: %@";
+
+/* XBUT: Sign In Action in the Authentication */
+"Sign In" = "Conectare";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"username" = "nume de utilizator";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"password" = "parolă";
+
+/* XBUT: Submit action title in AI User Feedback */
+"Submit" = "Transmitere";
+
+/* XMSG: Submission failed title in AI User Feedback */
+"Submission failed" = "Transmitere nereușită";
+
+/* XMSG: Submission failed description in AI User Feedback */
+"An error has occurred. Please try again later." = "A apărut o eroare. Încercați din nou mai târziu.";
+
+/* XBUT: Retry action title in AI User Feedback */
+"Retry" = "Reîncercare";
+
+/* XACT: The accessibility label for the like button in AI User Feedback */
+"Positive feedback" = "Feedback pozitiv";
+
+/* XACT: The accessibility label for the dislike button in AI User Feedback */
+"Negative feedback" = "Feedback negativ";
+
+/* XACT: The accessibility label for the vote buttons in AI User Feedback */
+"enabled" = "activat";
+
+/* XMSG: Onboarding scan view title for scan unsuccessful */
+"Scan Unsuccessful" = "Scanare nereușită";
+
+/* XMSG: Onboarding scan view hint for scan unsuccessful */
+"Please select a QR code image." = "Selectați o imagine pentru codul QR.";
+
+/* XMSG: Onboarding scan view title for invalid QR code */
+"Invalid QR Code" = "Cod QR nevalabil";
+
+/* XMSG: Onboarding scan view hint for invalid QR code */
+"The QR code was not recognized." = "Codul QR nu a fost recunoscut.";
+
+/* XTIT: Onboarding scan view title for request access to photos library */
+"Allow Access to Photos" = "Permitere acces la fotografii";
+
+/* XMSG: Onboarding scan view hint for request access to photos library */
+"To choose a QR code image, please give access to your photos in your device's privacy settings." = "Pentru a alege o imagine pentru codul QR, oferiți acces la fotografiile dvs. în setările de confidențialitate ale dispozitivului.";
+
+/* XTIT: Onboarding scan view title for request access to camera */
+"Allow Access to Camera" = "Permitere acces la cameră";
+
+/* XMSG: Onboarding scan view hint for request access to camera */
+"To scan using the camera, please give access to your camera in your device's privacy settings." = "Pentru a scana utilizând camera, oferiți acces la camera dvs. în setările de confidențialitate ale dispozitivului.";
+
+/* XBUT: Onboarding scan view action title for the alert when the permission to access camera or photo library was not granted */
+"Settings" = "Setări";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"down arrow" = "săgeată jos";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"up arrow" = "săgeată sus";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash deactivated" = "flash dezactivat";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash activated" = "flash activat";
+
+/* XACT: The accessibility hint for photos in onboarding photo picker view */
+"Photo %d" = "Fotografie %d";
+
+/* XMSG: Onboarding confirm view success message */
+"Scan succeeded. You will be connected to:" = "Scanare reușită. Veți fi conectat la:";
+
+/* XBUT: Onboarding confirm view action title for continue button */
+"Continue" = "Continuare";
+
+/* XTIT: Title for writing assistant */
+"Writing Assistant" = "Asistent de scriere";
+
+/* XMSG: Writing assistant version control */
+"Version %d/%d" = "Versiune %d/%d";
+
+/* XBUT: Writing assistant undo action title */
+"Undo" = "Anulare";
+
+/* XBUT: Writing assistant redo action title */
+"Redo" = "Restaurare";
+
+/* XTIT: Writing assistant cancel alert message */
+"Do you want to undo the edits made by the Writing Assistant and revert the text to its original state?" = "Doriți să anulați editările efectuate de asistentul de scriere și să readuceți textul la starea sa originală?";
+
+/* XTIT: Writing assistant cancel alert title */
+"Discard all changes?" = "Renunțați la toate modificările?";
+
+/* XBUT: Writing assistant cancel alert action title for keep working */
+"Keep Working" = "Continuare activitate";
+
+/* XBUT: Writing assistant cancel alert action title for discard */
+"Discard" = "Renunțare";
+
+/* XMSG: A success toast message for feedback flow in writing assistant */
+"Thank you for your feedback" = "Vă mulțumim pentru feedback!";
+
+/* XTIT: Title for feedback downvote flow in writing assistant */
+"What didn’t you like about this version?" = "Ce nu v-a plăcut în privința acestei versiuni?";
+
+/* XTIT: Subtitle for feedback downvote flow in writing assistant */
+"Please rate your experience to help us improve." = "Evaluați experiența dvs. pentru a ne ajuta să ne îmbunătățim.";
+
+/* XTIT: Navigation bar title for feedback flow */
+"Feedback" = "Feedback";
+
+/* XTIT: Footnote text for feedback in writing assistant */
+"How was this response?" = "Cum a fost acest răspuns?";
+
+/* XMSG: One date selected for .datesSelection style in Calendar view */
+"%d Date Selected" = "%d dată selectată";
+
+/* XMSG: Multiple dates selected for .datesSelection style in Calendar view */
+"%d Dates Selected" = "%d termene selectate";
+
+/* XMSG: Has event, used in voice over in calendar view */
+"has event" = "are eveniment";
+
+/* XMSG: Double tap to change the selection, used in voice over in calendar view */
+"Double tap to change the selection" = "Atingeți de două ori pentru a modifica selecția";
+
+/* XMSG: Double tap to select, used in voice over in calendar view */
+"Double tap to select" = "Atingeți de două ori pentru selectare";
+
+/* XMSG: Double tap to unselect, used in voice over in calendar view */
+"Double tap to unselect" = "Atingeți de două ori pentru deselectare";
+
+/* XMSG: Date selected, used in voiceOver in calendar view */
+"Date selected" = "Dată selectată";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Today" = "Astăzi";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Disabled date" = "Dată dezactivată";
+
+/* XMSG: Drag tips in .expandable style, used in voiceOver in calendar view */
+"Handle to switch from month view to week view" = "Nume de identificare pentru comutare de la imagine lună la imagine săptămână";
+
+/* XMSG: Accessibility label for card container */
+"Card" = "Card";
+
+/* XTIT: Title for card */
+"Card title" = "Titlu card";
+
+/* XTIT: Subtitle for card */
+"Card subtitle" = "Subtitlu card";
+
+/* XTIT: HeaderAction for card */
+"Card header action" = "Acțiune antet card";
+
+/* XACT: The accessibility label for the switchItem turn on button in FilterFeedbackBar */
+"Switch Item On" = "Atingeți pentru activare";
+
+/* XACT: The accessibility label for the switchItem turn off button in FilterFeedbackBar */
+"Switch Item Off" = "Atingeți pentru dezactivare";
+
+/* XMSG: Writing assistant panel opening announcement */
+"AI Writing Assistant panel opened. Use provided prompts to refine your text content." = "Panoul Asistent de scriere AI a fost deschis. Utilizați prompturile furnizate pentru a rafina conținutul textului dvs.";
+
+/* XMSG: Writing assistant activation cell hint for accessibility */
+"Double tap to activate" = "Atingeți de două ori pentru a activa";
+
+/* XMSG: Writing assistant options entry cell hint for accessibility */
+"Open to see %@ options" = "Deschideți pentru a vedea opțiunile %@";
+
+/* XMSG: Writing assistant undo announcement */
+"Undo to Version %d of %d" = "Renunțare la versiunea %d din %d";
+
+/* XMSG: Writing assistant redo announcement */
+"Redo to Version %d of %d" = "Restaurare versiunea %d din %d";
+
+/* XMSG: Writing assistant version update announcement */
+"Text updated to Version %d of %d" = "Text actualizat la versiunea %d din %d";
+
+/* XTIT: Writing assistant title accessibility label */
+"AI Writing Assistant" = "Asistent de scriere AI";
+
+/* XMSG: Writing assistant accessibility instruction for text editing */
+"double tap to open AI Writing Assistant and edit text" = "atingeți de două ori pentru a deschide Asistentul de scriere AI și pentru a edita textul";
+
+/* XBUT: Writing assistant undo accessibility label */
+"Undo change" = "Renunțare la modificare";
+
+/* XBUT: Writing assistant redo accessibility label */
+"Rodo change" = "Restaurare modificare";
+
+/* XBUT: Close button title */
+"Close" = "Închidere";
+
+/* XMSG: Accessibility label for completed state in step progress indicator */
+"complete" = "terminat";
+
+/* XMSG: Accessibility label for active state in step progress indicator */
+"active" = "activ";
+
+/* XMSG: Accessibility label for error active state in step progress indicator */
+"error active" = "activ cu erori";
+
+/* XMSG: Accessibility label for read-only state in step progress indicator */
+"read-only" = "doar în citire";
+
+/* XACT: The accessibility value for Stepper decrement */
+"Decrease the value by %f" = "Scădere valoare cu %f";
+
+/* XACT: The accessibility value for Stepper increment */
+"Increase the value by %f" = "Creștere valoare cu %f";
+
+/* XMSG: title used in DateRangePickerPopView */
+"Select Range" = "Selectare interval";
+
+/* XMSG: start date, used in DateRangePickerPopView */
+"Start Date" = "Dată de început";
+
+/* XMSG: end date, used in DateRangePickerPopView */
+"End Date" = "Dată de sfârșit";
+
+/* XBUT: title for picker form cell to open */
+"DoubleTapToOpenKey" = "Atingeți de două ori pentru deschidere";
+
+/* XBUT: title for picker form cell to collapse */
+"DoubleTapToCollapseKey" = "Atingeți de două ori pentru comprimare";
+
+/* XTIT: On state for switch */
+"Switch On" = "Activat";
+
+/* XTIT: Off state for switch */
+"Switch Off" = "Dezactivat";
+
+/* Checkout Indicator accessibility label: failed */
+"failed" = "nereușit";
+
+/* Checkout Indicator accessibility label: AI processing */
+"AI processing" = "Prelucrare AI";
+
+/* Checkout Indicator accessibility label: Checkout Indicator */
+"Checkout Indicator" = "Indicator check-out";
+
+/* XMSG: More tag text shown when tags are truncated in MHStack, %d is the count of hidden tags */
+"+%d more" = "+ încă %d";
+
+/* XTIT: The title of the empty state view */
+"No Results Found" = "Niciun rezultat găsit";
+
+/* XTIT: The description of the empty state view */
+"Check your search for any spelling errors or try a different search term." = "Verificați dacă există greșeli de ortografie în căutare sau încercați cu un termen de căutare diferit.";
+
+/* XACT: The accessibility label for the checkbox */
+"Checkbox" = "Casetă de marcaj";
+
+/* XMSG: Passcode policy requirement - minimum length, %d is the required number of characters */
+"At least %d characters" = "Cel puțin %d caractere";
+
+/* XMSG: Passcode policy requirement - minimum number of unique characters, %d is the required count */
+"At least %d unique characters" = "Cel puțin %d caractere univoce";
+
+/* XMSG: Passcode policy requirement - at least one digit */
+"At least one digit" = "Cel puțin o cifră";
+
+/* XMSG: Passcode policy requirement - at least one uppercase letter */
+"At least one uppercase letter" = "Cel puțin o literă majusculă";
+
+/* XMSG: Passcode policy requirement - at least one lowercase letter */
+"At least one lowercase letter" = "Cel puțin o literă minusculă";
+
+/* XMSG: Passcode policy requirement - at least one special character */
+"At least one special character" = "Cel puțin un caracter special";
+
+/* XMSG: Passcode policy requirement - digits only */
+"Digits only" = "Numai cifre";
+

@@ -1,0 +1,753 @@
+/* XMSG: Placeholder text in chart when there is no data */
+"No Data" = "Нет данных";
+
+/* XBUT: Save action in inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Save" = "Сохранить";
+
+/* XBUT: Re-enter action available in saved state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Re-enter Signature" = "Введите подпись повторно";
+
+/* XBUT: Clear action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Clear" = "Очистить";
+
+/* XBUT: Cancel action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Cancel" = "Отменить";
+
+/* XTIT: Title of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Signature" = "Подпись";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Tap to Sign" = "Коснитесь, чтобы подписать";
+
+/* XACT: The accessibility label for the signature area */
+"Signature Area" = "Область подписи";
+
+/* XACT: The accessibility hint for the signature area */
+"Double tap and drag to sign" = "Нажмите дважды и перетащите подпись";
+
+/* XACT: The accessibility label for the signature image */
+"Signature Image" = "Изображение подписи";
+
+/* XACT: The accessibility label for the signature line */
+"Signature Line" = "Строка подписи";
+
+/* XACT: The accessibility label for the mandatory field */
+"Required Field" = "Обязательное поле";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Canceled" = "Отменено";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Next" = "Дальше";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Ok" = "ОК";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Status" = "Статус";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"User canceled Onboarding" = "Пользователь отменил установку соединения";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Without consent you will not be able to continue onboarding." = "Без согласия вы не сможете продолжить установку соединения.";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Give Consent" = "Дать согласие";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Quit" = "Выйти";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Back" = "Назад";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Step" = "Шаг";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"of" = "из";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Are you sure you want to quit the onboarding process?" = "Действительно выйти из процесса установки соединения?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Want Data Privacy?" = "Защитить данные?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Be wise about your data" = "Защитите свои данные";
+
+/* XBUT: Not Now action title in UserConsentForm */
+"Not Now" = "Не сейчас";
+
+/* XBUT: Allow action title in UserConsentForm */
+"Allow" = "Разрешить";
+
+/* XBUT: Deny action title in UserConsentForm */
+"Deny" = "Отклонить";
+
+/* XBUT: Agree action title in EULAView */
+"Agree" = "Принимаю";
+
+/* XBUT: Disagree action title in EULAView */
+"Disagree" = "Не принимаю";
+
+/* XMSG: Placeholder text in DataTable for loading state */
+"Loading..." = "Загрузка...";
+
+/* XMSG: Placeholder text in DataTable when there is no data */
+"There is nothing to display yet" = "Нет элементов для отображения";
+
+/* XBUT: Default duration formatter in DataTable */
+"%d Hrs %d Min" = "%d ч. %d мин.";
+
+/* XBUT: Done action in keyboard toolbar for a Textfield in DataTable */
+"Done" = "Готово";
+
+/* XBUT: Error messages shown to users in DataTable */
+"There are %d errors in the data table." = "В таблице данных есть ошибки: %d.";
+
+/* XBUT: voice over label for row header in DataTable */
+"row header" = "заголовок строки";
+
+/* XBUT: voice over label for row %d in DataTable */
+"row %d" = "строка %d";
+
+/* XBUT: voice over label for column %d in DataTable */
+"column %d" = "столбец %d";
+
+/* XBUT: voice over label for cell type of `leading accessory` in DataTable */
+"leading accessory" = "ведущий элемент";
+
+/* XBUT: voice over label for cell type of `trailing accessory` in DataTable */
+"trailing accessory" = "конечный элемент";
+
+/* XBUT: voice over label for cell type of `text` in DataTable */
+"text" = "текст";
+
+/* XBUT: voice over label for cell type of `image` in DataTable */
+"image" = "изображение";
+
+/* XBUT: voice over label for cell type of `date` in DataTable */
+"date" = "дата";
+
+/* XBUT: voice over label for cell type of `time` in DataTable */
+"time" = "время";
+
+/* XBUT: voice over label for cell type of `duration` in DataTable */
+"duration" = "длительность";
+
+/* XBUT: voice over label for cell type of `list item` in DataTable */
+"list item" = "пункт списка";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"selected" = "выбрано";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"not selected" = "не выбрано";
+
+/* Default value for DateTimePicker */
+"No date selected" = "Не выбрана дата";
+
+/* Default value for DateRangePicker */
+"No range selected" = "Диапазон не выбран";
+
+/* DateRangePicker press space to set a range value */
+"PressSpaceToSelectRangeKey" = "нажмите пробел, чтобы установить значение диапазона";
+
+/* XBUT: calendar time component label */
+"Time" = "Время";
+
+/* XBUT: slider default value label formatter for integer */
+"Value: %d" = "Значение: %d";
+
+/* XMSG: a toast message for read-only cell in DataTable */
+"Tapped cell is read-only." = "Ячейка только для чтения.";
+
+/* Default hint text for Read-only Field for NoteFormView and TextFieldFormView */
+"Read-only field" = "Поле только для чтения";
+
+/* Default error text for when the character count reaches the maximum limit for NoteFormView and TextFieldFormView */
+"No more characters remaining" = "Достигнут лимит символов";
+
+/* Default error text for when the character count exceeds the maximum limit for NoteFormView and TextFieldFormView */
+"Reduce the number of characters" = "Уменьшите число символов";
+
+/* XBUT: voice over label for decrement action in stepper */
+"Stepper decrease" = "Уменьшение стрелки";
+
+/* XBUT: voice over description for decrement action in stepper */
+"Decrease the value by %d" = "Уменьшите число на %d";
+
+/* XBUT: voice over label for increment action in stepper */
+"Stepper increase" = "Увеличение стрелки";
+
+/* XBUT: voice over description for increment action in stepper */
+"Increase the value by %d" = "Увеличьте число на %d";
+
+/* XBUT: voice over label for test field in stepper */
+"Select specific value" = "Выберите определенное значение";
+
+/* XBUT: View all action in MenuSelection */
+"View All (%d)" = "Просмотреть все (%d)";
+
+/* XACT: RatingControl accessibility label */
+"%d out of %d stars" = "%d из %d звезд";
+
+/* XBUT: timeline preview component see all label */
+"See All (%d)" = "Просмотреть все (%d)";
+
+/* XACT: Timeline preview items accessibility label */
+"See All" = "Смотреть все";
+
+/* XACT: Timeline preview items accessibility value */
+"%d items" = "%d эл.";
+
+/* XACT: Timeline preview items accessibility hint */
+"Shows all timeline items in a list" = "Показывает список всех элементов шкалы времени";
+
+/* XACT: Timeline preview item status: current accessibility value */
+"Current" = "Текущее";
+
+/* XACT: Timeline preview item status: future accessibility value */
+"Future" = "Будущее";
+
+/* XACT: Timeline preview item status: past accessibility value */
+"Past" = "Прошлое";
+
+/* XACT: Timeline preview item accessibility value */
+"Item %d of %d, %@, %@, %@" = "Элемент %d из %d, %@, %@, %@";
+
+/* XACT: Timeline preview item node type: Start accessibility value */
+"Start" = "Начало";
+
+/* XACT: Timeline preview item node type: End accessibility value */
+"End" = "Конец";
+
+/* XACT: Timeline preview item node type: Completed accessibility value */
+"Completed" = "Завершено";
+
+/* XACT: Timeline preview item node type: Open accessibility value */
+"Open" = "Открыть";
+
+/* XACT: Timeline preview item node type: Task accessibility value */
+"Task" = "Задача";
+
+/* XACT: Timeline preview item accessibility label */
+"Item %d of %d" = "Элемент %d из %d";
+
+/* XBUT: timeline preview component timestamp label */
+"Today, %@" = "Сегодня, %@";
+
+/* XFLD: RatingControl value label format */
+"%d of %d" = "%d из %d";
+
+/* XFLD: RatingControl review count format */
+"%d reviews" = "Рецензий: %d";
+
+/* XFLD: RatingControl review count over ceiling format */
+"%d+ reviews" = "Рецензий: %d+";
+
+/* XACT: RatingControl accessibility label */
+"Rating Control %d of %d" = "Контроль оценки %d из %d";
+
+/* XACT: read-only RatingControl accessibility label: rating with review count */
+"Rating Control, rating %d of %d, %d reviews" = "Контроль оценки, оценка %d из %d, рецензий: %d";
+
+/* XACT: read-only RatingControl accessibility label: average rating only */
+"Rating Control, average rating %.1f of %d" = "Контроль оценки, средняя оценка %.1f из %d";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count */
+"Rating Control, average rating %.1f of %d, %d reviews" = "Контроль оценки, средняя оценка %.1f из %d, рецензий: %d";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count over ceiling */
+"Rating Control, average rating %.1f of %d, %d plus reviews" = "Контроль оценки, средняя оценка %.1f из %d, рецензий: более %d";
+
+/* XBUT: View all messages in message banner sheet */
+"All" = "Все";
+
+/* XBUT: messages count in the message banner sheet */
+"Messages (%d)" = "Сообщения (%d)";
+
+/* XBUT: view details in the message banner */
+"View Details" = "Просмотреть сведения";
+
+/* XBUT: view different message in the message banner sheet item */
+"View %@" = "Просмотреть %@";
+
+/* XBUT: banner message type desc, message */
+"message" = "сообщение";
+
+/* XBUT: banner message type desc, information */
+"information" = "информация";
+
+/* XBUT: banner message type desc, confirmation */
+"confirmation" = "подтверждение";
+
+/* XBUT: banner message type desc, warning */
+"warning" = "предупреждение";
+
+/* XBUT: banner message type desc, error */
+"error" = "ошибка";
+
+/* XBUT: banner message type desc, error */
+"AI notice" = "Уведомление ИИ";
+
+/* XMSG: banner message type desc, offline */
+"offline" = "офлайн";
+
+/* XMSG: information view style type, success */
+"success" = "успешно";
+
+/* XBUT: Reset action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Reset" = "Сбросить";
+
+/* XBUT: Apply action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Apply" = "Применить";
+
+/* XTIT: The alert message for `ListPickerDestination` pulldown dismissal */
+"Are you sure you want to discard your selections?" = "Действительно сбросить выбор?";
+
+/* XBUT: The alert Discard Changes action title for `ListPickerDestination` pulldown dismissal */
+"Discard Changes" = "Сбросить изменения";
+
+/* XBUT: The alert Keep Editing action title for `ListPickerDestination` pulldown dismissal */
+"Keep Editing" = "Продолжить редактирование";
+
+/* XBUT: The \"Select All\" button title on the List Picker header */
+"Select All" = "Выбрать все";
+
+/* XBUT: The \"Deselect All\" button title on the List Picker header */
+"Deselect All" = "Отменить выбор всех";
+
+/* XBUT: The \"Selected\" title on the List Picker header */
+"Selected" = "Выбрано";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"Text field, Double tap to edit" = "Текстовое поле, дважды щелкните для редактирования";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d character left" = "Остался %d символ.";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d characters left" = "Осталось символов: %d.";
+
+/* XACT: The accessibility hint for Text Input Views, editing */
+"Text field, is editing" = "Текстовое поле, в режиме редактирования";
+
+/* XACT: The accessibility hint for Text Input Views, editing, with clear button */
+"Text field, is editing. Double tap to clear text" = "Текстовое поле, редактируется. Дважды щелкните для очистки текста";
+
+/* XACT: The default accessibility label for the custom action in TextFieldFormView if none was specified */
+"Custom Action" = "Пользовательская операция";
+
+/* XBUT: Error messages shown to users in DocumentScannerView */
+"Failed to create PDF page from images" = "Не удалось создать страницу PDF из изображений.";
+
+/* XBUT: Cancel message shown to users in DocumentScannerView */
+"User cancelled the scan" = "Сканирование отменено пользователем.";
+
+/* Progress Indicator accessibility label: processing */
+"Processing" = "Обработка";
+
+/* Progress Indicator accessibility label: loading pausable with indicator progress */
+"In progress with option to pause, %.0f" = "Выполняется с опцией приостановки, %.0f";
+
+/* Progress Indicator accessibility label: loading stoppable with indicator progress */
+"In progress with option to stop, %.0f" = "Выполняется с опцией остановки, %.0f";
+
+/* Progress Indicator accessibility label: progress halted with indicator progress */
+"Progress halted, %.0f" = "Выполнение остановлено, %.0f";
+
+/* XACT: Slider accessibility label */
+"This is %@ slider whose maximum value is %@ and minimum value is %@" = "Это ползунок %@ с максимальным значением %@ и минимальным значением %@";
+
+/* XACT: Slider accessibility value */
+"Current value is %@" = "Текущее значение - %@";
+
+/* XACT: Range Slider lower thumb accessibility label */
+"lower range slider thumb, current value is" = "нижний бегунок ползунка диапазона, текущее значение";
+
+/* XACT: Range Slider lower thumb accessibility hint */
+"you can swipe up or down to change the lower value" = "смахните вверх или вниз, чтобы изменить нижнее значение";
+
+/* XACT: Range Slider upper thumb accessibility label */
+"upper range slider thumb, current value is" = "верхний бегунок ползунка диапазона, текущее значение";
+
+/* XACT: Range Slider upper thumb accessibility hint */
+"you can swipe up or down to change the upper value" = "смахните вверх или вниз, чтобы изменить верхнее значение";
+
+/* XACT: Single editable Slider thumb accessibility label */
+"slider thumb, current value is" = "бегунок ползунка, текущее значение";
+
+/* XACT: Single editable Slider thumb accessibility hint */
+"you can swipe up or down to change the value" = "смахните вверх или вниз, чтобы изменить значение";
+
+/* XACT: Single Slider accessibility label */
+"This is a slider, the minimum value is %@ and the maximum value is %@" = "Это ползунок с минимальным значением %@ и максимальным значением %@";
+
+/* XACT: Range Slider accessibility label */
+"This is a range slider, the minimum value is %@ and the maximum value is %@" = "Это ползунок диапазона с минимальным значением %@ и максимальным значением %@";
+
+/* XACT: Single editable Slider accessibility label */
+"This is a slider that is editable, the minimum value is %@ and the maximum value is %@" = "Это редактируемый ползунок с минимальным значением %@ и максимальным значением %@";
+
+/* XACT: Single non-editable Slider accessibility label */
+"This is a slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Это нередактируемый ползунок с минимальным значением %@ и максимальным значением %@";
+
+/* XACT: Range editable Slider accessibility label */
+"This is a range slider that is editable, the minimum value is %@ and the maximum value is %@" = "Это редактируемый ползунок диапазона с минимальным значением %@ и максимальным значением %@";
+
+/* XACT: Range non-editable Slider accessibility label */
+"This is a range slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Это нередактируемый ползунок диапазона с минимальным значением %@ и максимальным значением %@";
+
+/* XACT: Single editable Slider Text Field accessibility label */
+"slider value text field" = "текстовое поле значения ползунка";
+
+/* XACT: Range editable Slider Lower Value Text Field accessibility label */
+"lower value text field" = "текстовое поле нижнего значения";
+
+/* XACT: Range editable Slider Upper Value Text Field accessibility label */
+"upper value text field" = "текстовое поле верхнего значение";
+
+/* XACT: Editable Slider Text Field accessibility hint */
+"You can double tap to input a specific value" = "Нажмите дважды, чтобы ввести специфичное значение";
+
+/* XACT: Editable Slider Text Field accessibility value */
+"current value is %@" = "текущее значение %@";
+
+/* XACT: Range Editable Slider accessibility value */
+"current lower value is %@, upper value is %@" = "текущее нижнее значение %@, верхнее значение %@";
+
+/* XTIT: Title of step progress indicator, see https://experience.sap.com/fiori-design-ios/article/step-progress-indicator/#adaptive-design */
+"All Steps" = "Все шаги";
+
+/* XMSG: AI Notice message */
+"Suggested by AI. Verify before use. " = "Предложено ИИ. Проверьте перед использованием. ";
+
+/* XBUT: Attachment operation menu item - Photos, which stands for Photo Library */
+"Photos" = "Фотографии";
+
+/* XBUT: Attachment operation menu item - Files, which stands for documents available for upload residing in Files */
+"Files" = "Файлы";
+
+/* XBUT: Attachment operation menu item - Camera, which can be used for taking photos and movies */
+"Camera" = "Камера";
+
+/* XBUT: Attachment operation menu item - Scan. Use camera as scanner and generate PDF files */
+"Scan" = "Сканировать";
+
+/* XACT: The accessibility preview action for the attachment */
+"Preview" = "Предпросмотр";
+
+/* XTIT: Attachment title of deletion confirmation */
+"Delete Attachment?" = "Удалить вложение?";
+
+/* XBUT: Attachment deletion confirmation button */
+"Delete" = "Удалить";
+
+/* XBUT: Attachment add button */
+"Add attachment" = "Добавить вложение";
+
+/* XACT: The accessibility hint for add button */
+"Double tap to add attachment" = "Нажмите дважды, чтобы добавить вложение";
+
+/* XMSG: attachment section add new file successfully announcement */
+"New attachment added successfully" = "Новое вложение успешно добавлено";
+
+/* XMSG: attachment section add new file failed announcement */
+"File failed to attach" = "Не удалось вложить файл";
+
+/* XACT: The accessibility hint for attachment section */
+"read only" = "только чтение";
+
+/* XACT: The accessibility hint for attachment section */
+"actions available" = "действия доступны";
+
+/* XMSG: Attachment thumbnail */
+"Thumbnail" = "Миниатюра";
+
+/* XMSG: Attachment uploading */
+"Attachment uploading" = "%@ загружается, подождите...";
+
+/* XMSG: Attachment error */
+"Attachment error" = "Не удалось загрузить %@. Сообщение об ошибке: %@";
+
+/* XBUT: Sign In Action in the Authentication */
+"Sign In" = "Войти";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"username" = "Имя пользователя";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"password" = "Пароль";
+
+/* XBUT: Submit action title in AI User Feedback */
+"Submit" = "Отправить";
+
+/* XMSG: Submission failed title in AI User Feedback */
+"Submission failed" = "Ошибка отправки";
+
+/* XMSG: Submission failed description in AI User Feedback */
+"An error has occurred. Please try again later." = "Произошла ошибка. Повторите попытку позднее.";
+
+/* XBUT: Retry action title in AI User Feedback */
+"Retry" = "Повторить";
+
+/* XACT: The accessibility label for the like button in AI User Feedback */
+"Positive feedback" = "Положительный отзыв";
+
+/* XACT: The accessibility label for the dislike button in AI User Feedback */
+"Negative feedback" = "Отрицательный отзыв";
+
+/* XACT: The accessibility label for the vote buttons in AI User Feedback */
+"enabled" = "активировано";
+
+/* XMSG: Onboarding scan view title for scan unsuccessful */
+"Scan Unsuccessful" = "Сканирование не выполнено";
+
+/* XMSG: Onboarding scan view hint for scan unsuccessful */
+"Please select a QR code image." = "Выберите изображение QR-кода.";
+
+/* XMSG: Onboarding scan view title for invalid QR code */
+"Invalid QR Code" = "Недействительный QR-код";
+
+/* XMSG: Onboarding scan view hint for invalid QR code */
+"The QR code was not recognized." = "QR-код не распознан.";
+
+/* XTIT: Onboarding scan view title for request access to photos library */
+"Allow Access to Photos" = "Разрешить доступ к фотографиям";
+
+/* XMSG: Onboarding scan view hint for request access to photos library */
+"To choose a QR code image, please give access to your photos in your device's privacy settings." = "Чтобы выбрать изображение QR-кода, разрешите доступ к вашим фотографиям в настройках конфиденциальности устройства.";
+
+/* XTIT: Onboarding scan view title for request access to camera */
+"Allow Access to Camera" = "Разрешить доступ к камере";
+
+/* XMSG: Onboarding scan view hint for request access to camera */
+"To scan using the camera, please give access to your camera in your device's privacy settings." = "Чтобы сканировать с помощью камеры, разрешите доступ к камере в настройках конфиденциальности устройства.";
+
+/* XBUT: Onboarding scan view action title for the alert when the permission to access camera or photo library was not granted */
+"Settings" = "Настройки";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"down arrow" = "стрелка вниз";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"up arrow" = "стрелка вверх";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash deactivated" = "вспышка деактивирована";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash activated" = "вспышка активирована";
+
+/* XACT: The accessibility hint for photos in onboarding photo picker view */
+"Photo %d" = "Фотография %d";
+
+/* XMSG: Onboarding confirm view success message */
+"Scan succeeded. You will be connected to:" = "Сканирование выполнено. Вы будете подключены к:";
+
+/* XBUT: Onboarding confirm view action title for continue button */
+"Continue" = "Продолжить";
+
+/* XTIT: Title for writing assistant */
+"Writing Assistant" = "Мастер заполнения";
+
+/* XMSG: Writing assistant version control */
+"Version %d/%d" = "Версия %d/%d";
+
+/* XBUT: Writing assistant undo action title */
+"Undo" = "Отменить";
+
+/* XBUT: Writing assistant redo action title */
+"Redo" = "Повторить";
+
+/* XTIT: Writing assistant cancel alert message */
+"Do you want to undo the edits made by the Writing Assistant and revert the text to its original state?" = "Хотите отменить изменения, внесенные Помощником по написанию текста, и вернуть текст в исходное состояние?";
+
+/* XTIT: Writing assistant cancel alert title */
+"Discard all changes?" = "Сбросить все изменения?";
+
+/* XBUT: Writing assistant cancel alert action title for keep working */
+"Keep Working" = "Продолжить работу";
+
+/* XBUT: Writing assistant cancel alert action title for discard */
+"Discard" = "Сбросить";
+
+/* XMSG: A success toast message for feedback flow in writing assistant */
+"Thank you for your feedback" = "Спасибо за ваш отзыв";
+
+/* XTIT: Title for feedback downvote flow in writing assistant */
+"What didn’t you like about this version?" = "Что вам не понравилось в этой версии?";
+
+/* XTIT: Subtitle for feedback downvote flow in writing assistant */
+"Please rate your experience to help us improve." = "Оцените работу мастера, это поможет нам улучшить его.";
+
+/* XTIT: Navigation bar title for feedback flow */
+"Feedback" = "Отзыв";
+
+/* XTIT: Footnote text for feedback in writing assistant */
+"How was this response?" = "Каков был этот ответ?";
+
+/* XMSG: One date selected for .datesSelection style in Calendar view */
+"%d Date Selected" = "Выбраны даты: %d";
+
+/* XMSG: Multiple dates selected for .datesSelection style in Calendar view */
+"%d Dates Selected" = "Выбраны даты: %d";
+
+/* XMSG: Has event, used in voice over in calendar view */
+"has event" = "есть событие";
+
+/* XMSG: Double tap to change the selection, used in voice over in calendar view */
+"Double tap to change the selection" = "Нажмите дважды, чтобы изменить выбор";
+
+/* XMSG: Double tap to select, used in voice over in calendar view */
+"Double tap to select" = "Нажмите дважды, чтобы выбрать";
+
+/* XMSG: Double tap to unselect, used in voice over in calendar view */
+"Double tap to unselect" = "Нажмите дважды, чтобы отменить выбор";
+
+/* XMSG: Date selected, used in voiceOver in calendar view */
+"Date selected" = "Дата выбрана";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Today" = "Сегодня";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Disabled date" = "Деактивированная дата";
+
+/* XMSG: Drag tips in .expandable style, used in voiceOver in calendar view */
+"Handle to switch from month view to week view" = "Кнопка для переключения с ракурса месяца на ракурс недели";
+
+/* XMSG: Accessibility label for card container */
+"Card" = "Карта";
+
+/* XTIT: Title for card */
+"Card title" = "Название карты";
+
+/* XTIT: Subtitle for card */
+"Card subtitle" = "Подзаголовок карты";
+
+/* XTIT: HeaderAction for card */
+"Card header action" = "Действие заголовка карты";
+
+/* XACT: The accessibility label for the switchItem turn on button in FilterFeedbackBar */
+"Switch Item On" = "Нажмите, чтобы включить";
+
+/* XACT: The accessibility label for the switchItem turn off button in FilterFeedbackBar */
+"Switch Item Off" = "Нажмите, чтобы выключить";
+
+/* XMSG: Writing assistant panel opening announcement */
+"AI Writing Assistant panel opened. Use provided prompts to refine your text content." = "Панель ИИ-мастера заполнения открыта. Используйте предлагаемые запросы, чтобы уточнить текстовый контент.";
+
+/* XMSG: Writing assistant activation cell hint for accessibility */
+"Double tap to activate" = "Нажмите дважды, чтобы активировать";
+
+/* XMSG: Writing assistant options entry cell hint for accessibility */
+"Open to see %@ options" = "Откройте, чтобы просмотреть опции %@";
+
+/* XMSG: Writing assistant undo announcement */
+"Undo to Version %d of %d" = "Отменить до версии %d - %d";
+
+/* XMSG: Writing assistant redo announcement */
+"Redo to Version %d of %d" = "Вернуть до версии %d - %d";
+
+/* XMSG: Writing assistant version update announcement */
+"Text updated to Version %d of %d" = "Текст обновлен до версии %d - %d";
+
+/* XTIT: Writing assistant title accessibility label */
+"AI Writing Assistant" = "ИИ-мастер заполнения";
+
+/* XMSG: Writing assistant accessibility instruction for text editing */
+"double tap to open AI Writing Assistant and edit text" = "нажмите дважды, чтобы открыть ИИ-мастер заполнения и отредактировать текст";
+
+/* XBUT: Writing assistant undo accessibility label */
+"Undo change" = "Отменить изменение";
+
+/* XBUT: Writing assistant redo accessibility label */
+"Rodo change" = "Вернуть изменение";
+
+/* XBUT: Close button title */
+"Close" = "Закрыть";
+
+/* XMSG: Accessibility label for completed state in step progress indicator */
+"complete" = "завершено";
+
+/* XMSG: Accessibility label for active state in step progress indicator */
+"active" = "активно";
+
+/* XMSG: Accessibility label for error active state in step progress indicator */
+"error active" = "ошибка активно";
+
+/* XMSG: Accessibility label for read-only state in step progress indicator */
+"read-only" = "только для чтения";
+
+/* XACT: The accessibility value for Stepper decrement */
+"Decrease the value by %f" = "Уменьшите число на %f";
+
+/* XACT: The accessibility value for Stepper increment */
+"Increase the value by %f" = "Увеличьте число на %f";
+
+/* XMSG: title used in DateRangePickerPopView */
+"Select Range" = "Выбрать диапазон";
+
+/* XMSG: start date, used in DateRangePickerPopView */
+"Start Date" = "Дата начала";
+
+/* XMSG: end date, used in DateRangePickerPopView */
+"End Date" = "Дата окончания";
+
+/* XBUT: title for picker form cell to open */
+"DoubleTapToOpenKey" = "Нажмите дважды, чтобы открыть";
+
+/* XBUT: title for picker form cell to collapse */
+"DoubleTapToCollapseKey" = "Нажмите дважды, чтобы свернуть";
+
+/* XTIT: On state for switch */
+"Switch On" = "Вкл.";
+
+/* XTIT: Off state for switch */
+"Switch Off" = "Выкл.";
+
+/* Checkout Indicator accessibility label: failed */
+"failed" = "неудачно";
+
+/* Checkout Indicator accessibility label: AI processing */
+"AI processing" = "ИИ-обработка";
+
+/* Checkout Indicator accessibility label: Checkout Indicator */
+"Checkout Indicator" = "Индикатор чек-аута";
+
+/* XMSG: More tag text shown when tags are truncated in MHStack, %d is the count of hidden tags */
+"+%d more" = "+ еще %d";
+
+/* XTIT: The title of the empty state view */
+"No Results Found" = "Результаты не найдены";
+
+/* XTIT: The description of the empty state view */
+"Check your search for any spelling errors or try a different search term." = "Проверьте критерий поиска на орфографические ошибки или попробуйте другой критерий.";
+
+/* XACT: The accessibility label for the checkbox */
+"Checkbox" = "Флажок";
+
+/* XMSG: Passcode policy requirement - minimum length, %d is the required number of characters */
+"At least %d characters" = "Минимум символов: %d";
+
+/* XMSG: Passcode policy requirement - minimum number of unique characters, %d is the required count */
+"At least %d unique characters" = "Минимум различных символов: %d";
+
+/* XMSG: Passcode policy requirement - at least one digit */
+"At least one digit" = "Минимум одна цифра";
+
+/* XMSG: Passcode policy requirement - at least one uppercase letter */
+"At least one uppercase letter" = "Минимум одна прописная буква";
+
+/* XMSG: Passcode policy requirement - at least one lowercase letter */
+"At least one lowercase letter" = "Минимум одна строчная буква";
+
+/* XMSG: Passcode policy requirement - at least one special character */
+"At least one special character" = "Минимум один специальный символ";
+
+/* XMSG: Passcode policy requirement - digits only */
+"Digits only" = "Только цифры";
+

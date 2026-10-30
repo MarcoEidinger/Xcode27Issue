@@ -1,0 +1,753 @@
+/* XMSG: Placeholder text in chart when there is no data */
+"No Data" = "لا توجد بيانات";
+
+/* XBUT: Save action in inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Save" = "حفظ";
+
+/* XBUT: Re-enter action available in saved state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Re-enter Signature" = "إعادة إدخال التوقيع";
+
+/* XBUT: Clear action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Clear" = "مسح";
+
+/* XBUT: Cancel action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Cancel" = "إلغاء";
+
+/* XTIT: Title of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Signature" = "التوقيع";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Tap to Sign" = "النقر للتسجيل";
+
+/* XACT: The accessibility label for the signature area */
+"Signature Area" = "منطقة التوقيع";
+
+/* XACT: The accessibility hint for the signature area */
+"Double tap and drag to sign" = "انقر نقرًا مزدوجًا واسحب للتوقيع";
+
+/* XACT: The accessibility label for the signature image */
+"Signature Image" = "صورة التوقيع";
+
+/* XACT: The accessibility label for the signature line */
+"Signature Line" = "سطر التوقيع";
+
+/* XACT: The accessibility label for the mandatory field */
+"Required Field" = "حقل مطلوب";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Canceled" = "ملغى";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Next" = "التالي";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Ok" = "موافق";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Status" = "الحالة";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"User canceled Onboarding" = "قام المستخدم بإلغاء بدء التشغيل";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Without consent you will not be able to continue onboarding." = "دون الموافقة لن تصبح قادرًا على متابعة بدء التشغيل.";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Give Consent" = "منح الموافقة";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Quit" = "إنهاء";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Back" = "الخلف";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Step" = "الخطوة";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"of" = "من";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Are you sure you want to quit the onboarding process?" = "هل تريد بالتأكيد الخروج من عملية بدء التشغيل؟";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Want Data Privacy?" = "هل تريد خصوصية البيانات؟";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Be wise about your data" = "كن حكيمًا بشأن بياناتك";
+
+/* XBUT: Not Now action title in UserConsentForm */
+"Not Now" = "ليس الآن";
+
+/* XBUT: Allow action title in UserConsentForm */
+"Allow" = "سماح";
+
+/* XBUT: Deny action title in UserConsentForm */
+"Deny" = "رفض";
+
+/* XBUT: Agree action title in EULAView */
+"Agree" = "أوافق";
+
+/* XBUT: Disagree action title in EULAView */
+"Disagree" = "لا أوافق";
+
+/* XMSG: Placeholder text in DataTable for loading state */
+"Loading..." = "جارٍ التحميل...";
+
+/* XMSG: Placeholder text in DataTable when there is no data */
+"There is nothing to display yet" = "لا يوجد شيء لعرضه حتى الآن";
+
+/* XBUT: Default duration formatter in DataTable */
+"%d Hrs %d Min" = "%d من الساعات %d من الدقائق";
+
+/* XBUT: Done action in keyboard toolbar for a Textfield in DataTable */
+"Done" = "تم";
+
+/* XBUT: Error messages shown to users in DataTable */
+"There are %d errors in the data table." = "هناك %d من الأخطاء في جدول البيانات.";
+
+/* XBUT: voice over label for row header in DataTable */
+"row header" = "مقدمة الصف";
+
+/* XBUT: voice over label for row %d in DataTable */
+"row %d" = "صف %d";
+
+/* XBUT: voice over label for column %d in DataTable */
+"column %d" = "عمود %d";
+
+/* XBUT: voice over label for cell type of `leading accessory` in DataTable */
+"leading accessory" = "ملحق بادئ";
+
+/* XBUT: voice over label for cell type of `trailing accessory` in DataTable */
+"trailing accessory" = "ملحق لاحق";
+
+/* XBUT: voice over label for cell type of `text` in DataTable */
+"text" = "نص";
+
+/* XBUT: voice over label for cell type of `image` in DataTable */
+"image" = "صورة";
+
+/* XBUT: voice over label for cell type of `date` in DataTable */
+"date" = "تاريخ";
+
+/* XBUT: voice over label for cell type of `time` in DataTable */
+"time" = "وقت";
+
+/* XBUT: voice over label for cell type of `duration` in DataTable */
+"duration" = "مدة";
+
+/* XBUT: voice over label for cell type of `list item` in DataTable */
+"list item" = "عنصر قائمة";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"selected" = "محدد";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"not selected" = "غير محدد";
+
+/* Default value for DateTimePicker */
+"No date selected" = "لم يتم تحديد تاريخ";
+
+/* Default value for DateRangePicker */
+"No range selected" = "لم يتم تحديد النطاق";
+
+/* DateRangePicker press space to set a range value */
+"PressSpaceToSelectRangeKey" = "اضغط على مفتاح المسافة لتعيين قيمة نطاق";
+
+/* XBUT: calendar time component label */
+"Time" = "الوقت";
+
+/* XBUT: slider default value label formatter for integer */
+"Value: %d" = "القيمة: %d";
+
+/* XMSG: a toast message for read-only cell in DataTable */
+"Tapped cell is read-only." = "الخلية التي تم النقر عليها هي للقراءة فقط.";
+
+/* Default hint text for Read-only Field for NoteFormView and TextFieldFormView */
+"Read-only field" = "حقل للقراءة فقط";
+
+/* Default error text for when the character count reaches the maximum limit for NoteFormView and TextFieldFormView */
+"No more characters remaining" = "لا تتبقى حروف أخرى";
+
+/* Default error text for when the character count exceeds the maximum limit for NoteFormView and TextFieldFormView */
+"Reduce the number of characters" = "تقليل عدد الحروف";
+
+/* XBUT: voice over label for decrement action in stepper */
+"Stepper decrease" = "انخفاض شريط تحديد القيم";
+
+/* XBUT: voice over description for decrement action in stepper */
+"Decrease the value by %d" = "تخفيض القيمة بمقدار %d";
+
+/* XBUT: voice over label for increment action in stepper */
+"Stepper increase" = "زيادة شريط تحديد القيم";
+
+/* XBUT: voice over description for increment action in stepper */
+"Increase the value by %d" = "زيادة القيمة بمقدار %d";
+
+/* XBUT: voice over label for test field in stepper */
+"Select specific value" = "تحديد قيمة محددة";
+
+/* XBUT: View all action in MenuSelection */
+"View All (%d)" = "عرض الكل (%d)";
+
+/* XACT: RatingControl accessibility label */
+"%d out of %d stars" = "%d من أصل %d من النجوم";
+
+/* XBUT: timeline preview component see all label */
+"See All (%d)" = "عرض الكل (%d)";
+
+/* XACT: Timeline preview items accessibility label */
+"See All" = "عرض الكل";
+
+/* XACT: Timeline preview items accessibility value */
+"%d items" = "%d من العناصر";
+
+/* XACT: Timeline preview items accessibility hint */
+"Shows all timeline items in a list" = "إظهار كل عناصر المخطط الزمني في قائمة";
+
+/* XACT: Timeline preview item status: current accessibility value */
+"Current" = "الحالي";
+
+/* XACT: Timeline preview item status: future accessibility value */
+"Future" = "المستقبل";
+
+/* XACT: Timeline preview item status: past accessibility value */
+"Past" = "الماضي";
+
+/* XACT: Timeline preview item accessibility value */
+"Item %d of %d, %@, %@, %@" = "عناصر %d من %d، %@، %@، %@";
+
+/* XACT: Timeline preview item node type: Start accessibility value */
+"Start" = "بدء";
+
+/* XACT: Timeline preview item node type: End accessibility value */
+"End" = "انتهاء";
+
+/* XACT: Timeline preview item node type: Completed accessibility value */
+"Completed" = "مكتمل";
+
+/* XACT: Timeline preview item node type: Open accessibility value */
+"Open" = "مفتوح";
+
+/* XACT: Timeline preview item node type: Task accessibility value */
+"Task" = "مهمة";
+
+/* XACT: Timeline preview item accessibility label */
+"Item %d of %d" = "البند %d من %d";
+
+/* XBUT: timeline preview component timestamp label */
+"Today, %@" = "اليوم، %@";
+
+/* XFLD: RatingControl value label format */
+"%d of %d" = "%d من %d";
+
+/* XFLD: RatingControl review count format */
+"%d reviews" = "%d من التقييمات";
+
+/* XFLD: RatingControl review count over ceiling format */
+"%d+ reviews" = "%d+ من التقييمات";
+
+/* XACT: RatingControl accessibility label */
+"Rating Control %d of %d" = "التحكم في المعدل %d من %d";
+
+/* XACT: read-only RatingControl accessibility label: rating with review count */
+"Rating Control, rating %d of %d, %d reviews" = "التحكم في المعدل، المعدل %d من %d، %d من التقييمات";
+
+/* XACT: read-only RatingControl accessibility label: average rating only */
+"Rating Control, average rating %.1f of %d" = "التحكم في المعدل، متوسط المعدل %.1f من %d";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count */
+"Rating Control, average rating %.1f of %d, %d reviews" = "التحكم في المعدل، متوسط المعدل %.1f من %d، %d من التقييمات";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count over ceiling */
+"Rating Control, average rating %.1f of %d, %d plus reviews" = "التحكم في المعدل، متوسط المعدل %.1f من %d، %d من التقييمات الإضافية";
+
+/* XBUT: View all messages in message banner sheet */
+"All" = "الكل";
+
+/* XBUT: messages count in the message banner sheet */
+"Messages (%d)" = "الرسائل (%d)";
+
+/* XBUT: view details in the message banner */
+"View Details" = "عرض التفاصيل";
+
+/* XBUT: view different message in the message banner sheet item */
+"View %@" = "عرض %@";
+
+/* XBUT: banner message type desc, message */
+"message" = "رسالة";
+
+/* XBUT: banner message type desc, information */
+"information" = "المعلومات";
+
+/* XBUT: banner message type desc, confirmation */
+"confirmation" = "تأكيد";
+
+/* XBUT: banner message type desc, warning */
+"warning" = "تحذير";
+
+/* XBUT: banner message type desc, error */
+"error" = "خطأ";
+
+/* XBUT: banner message type desc, error */
+"AI notice" = "إشعار الذكاء الاصطناعي";
+
+/* XMSG: banner message type desc, offline */
+"offline" = "غير متصل";
+
+/* XMSG: information view style type, success */
+"success" = "تم بنجاح";
+
+/* XBUT: Reset action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Reset" = "إعادة تعيين";
+
+/* XBUT: Apply action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Apply" = "تطبيق";
+
+/* XTIT: The alert message for `ListPickerDestination` pulldown dismissal */
+"Are you sure you want to discard your selections?" = "هل تريد بالتأكيد تجاهل تحديداتك؟";
+
+/* XBUT: The alert Discard Changes action title for `ListPickerDestination` pulldown dismissal */
+"Discard Changes" = "تجاهل التغييرات";
+
+/* XBUT: The alert Keep Editing action title for `ListPickerDestination` pulldown dismissal */
+"Keep Editing" = "مواصلة التحرير";
+
+/* XBUT: The \"Select All\" button title on the List Picker header */
+"Select All" = "تحديد الكل";
+
+/* XBUT: The \"Deselect All\" button title on the List Picker header */
+"Deselect All" = "إلغاء تحديد الكل";
+
+/* XBUT: The \"Selected\" title on the List Picker header */
+"Selected" = "محدد";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"Text field, Double tap to edit" = "حقل النص، انقر مرتين للتحرير";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d character left" = "متبقٍ %d حرف.";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d characters left" = "متبقٍ %d من الحروف.";
+
+/* XACT: The accessibility hint for Text Input Views, editing */
+"Text field, is editing" = "حقل النص، في نمط التحرير";
+
+/* XACT: The accessibility hint for Text Input Views, editing, with clear button */
+"Text field, is editing. Double tap to clear text" = "حقل النص، قيد التحرير. انقر مرتين لمسح النص";
+
+/* XACT: The default accessibility label for the custom action in TextFieldFormView if none was specified */
+"Custom Action" = "إجراء مخصص";
+
+/* XBUT: Error messages shown to users in DocumentScannerView */
+"Failed to create PDF page from images" = "فشل في إنشاء صفحة PDF من الصور.";
+
+/* XBUT: Cancel message shown to users in DocumentScannerView */
+"User cancelled the scan" = "ألغى المستخدم المسح الضوئي.";
+
+/* Progress Indicator accessibility label: processing */
+"Processing" = "قيد المعالجة";
+
+/* Progress Indicator accessibility label: loading pausable with indicator progress */
+"In progress with option to pause, %.0f" = "قيد التنفيذ مع خيار الإيقاف المؤقت، %.0f";
+
+/* Progress Indicator accessibility label: loading stoppable with indicator progress */
+"In progress with option to stop, %.0f" = "قيد التنفيذ مع خيار الإيقاف، %.0f";
+
+/* Progress Indicator accessibility label: progress halted with indicator progress */
+"Progress halted, %.0f" = "توقف التنفيذ، %.0f";
+
+/* XACT: Slider accessibility label */
+"This is %@ slider whose maximum value is %@ and minimum value is %@" = "هذا مربع تمرير %@ حيث يكون الحد الأقصى للقيمة %@ والحد الأدنى للقيمة %@";
+
+/* XACT: Slider accessibility value */
+"Current value is %@" = "القيمة الحالية هي %@";
+
+/* XACT: Range Slider lower thumb accessibility label */
+"lower range slider thumb, current value is" = "إبهام مربع تمرير أدنى نطاق، القيمة الحالية هي";
+
+/* XACT: Range Slider lower thumb accessibility hint */
+"you can swipe up or down to change the lower value" = "يمكنك التمرير لأعلى أو لأسفل لتغيير أدنى قيمة";
+
+/* XACT: Range Slider upper thumb accessibility label */
+"upper range slider thumb, current value is" = "إبهام مربع تمرير أعلى نطاق، القيمة الحالية هي";
+
+/* XACT: Range Slider upper thumb accessibility hint */
+"you can swipe up or down to change the upper value" = "يمكنك التمرير لأعلى أو لأسفل لتغيير أعلى قيمة";
+
+/* XACT: Single editable Slider thumb accessibility label */
+"slider thumb, current value is" = "إبهام مربع التمرير، القيمة الحالية هي";
+
+/* XACT: Single editable Slider thumb accessibility hint */
+"you can swipe up or down to change the value" = "يمكنك التمرير لأعلى أو لأسفل لتغيير القيمة";
+
+/* XACT: Single Slider accessibility label */
+"This is a slider, the minimum value is %@ and the maximum value is %@" = "هذا مربع تمرير، الحد الأدنى للقيمة هو %@ والحد الأقصى للقيمة هو %@";
+
+/* XACT: Range Slider accessibility label */
+"This is a range slider, the minimum value is %@ and the maximum value is %@" = "هذا مربع تمرير نطاق، الحد الأدنى للقيمة هو %@ والحد الأقصى للقيمة هو %@";
+
+/* XACT: Single editable Slider accessibility label */
+"This is a slider that is editable, the minimum value is %@ and the maximum value is %@" = "هذا مربع تمرير قابل للتحرير، الحد الأدنى للقيمة هو %@ والحد الأقصى للقيمة هو %@";
+
+/* XACT: Single non-editable Slider accessibility label */
+"This is a slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "هذا مربع تمرير لا يمكن تحريره، الحد الأدنى للقيمة هو %@ والحد الأقصى للقيمة هو %@";
+
+/* XACT: Range editable Slider accessibility label */
+"This is a range slider that is editable, the minimum value is %@ and the maximum value is %@" = "هذا مربع تمرير نطاق قابل للتحرير، الحد الأدنى للقيمة هو %@ والحد الأقصى للقيمة هو %@";
+
+/* XACT: Range non-editable Slider accessibility label */
+"This is a range slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "هذا مربع تمرير نطاق لا يمكن تحريره، الحد الأدنى للقيمة هو %@ والحد الأقصى للقيمة هو %@";
+
+/* XACT: Single editable Slider Text Field accessibility label */
+"slider value text field" = "حقل نصي لقيمة مربع تمرير";
+
+/* XACT: Range editable Slider Lower Value Text Field accessibility label */
+"lower value text field" = "حقل نصي لأدنى قيمة";
+
+/* XACT: Range editable Slider Upper Value Text Field accessibility label */
+"upper value text field" = "حقل نصي لأعلى قيمة";
+
+/* XACT: Editable Slider Text Field accessibility hint */
+"You can double tap to input a specific value" = "يمكنك النقر نقرًا مزدوجًا لإدخال قيمة معينة";
+
+/* XACT: Editable Slider Text Field accessibility value */
+"current value is %@" = "القيمة الحالية هي %@";
+
+/* XACT: Range Editable Slider accessibility value */
+"current lower value is %@, upper value is %@" = "الحد الأدنى للقيمة هو%@، الحد الأقصى للقيمة هو %@";
+
+/* XTIT: Title of step progress indicator, see https://experience.sap.com/fiori-design-ios/article/step-progress-indicator/#adaptive-design */
+"All Steps" = "كل الخطوات";
+
+/* XMSG: AI Notice message */
+"Suggested by AI. Verify before use. " = "مقترح بواسطة الذكاء الاصطناعي. تحقق قبل الاستخدام. ";
+
+/* XBUT: Attachment operation menu item - Photos, which stands for Photo Library */
+"Photos" = "الصور";
+
+/* XBUT: Attachment operation menu item - Files, which stands for documents available for upload residing in Files */
+"Files" = "الملفات";
+
+/* XBUT: Attachment operation menu item - Camera, which can be used for taking photos and movies */
+"Camera" = "الكاميرا";
+
+/* XBUT: Attachment operation menu item - Scan. Use camera as scanner and generate PDF files */
+"Scan" = "مسح ضوئي";
+
+/* XACT: The accessibility preview action for the attachment */
+"Preview" = "معاينة";
+
+/* XTIT: Attachment title of deletion confirmation */
+"Delete Attachment?" = "هل تريد حذف المرفق؟";
+
+/* XBUT: Attachment deletion confirmation button */
+"Delete" = "حذف";
+
+/* XBUT: Attachment add button */
+"Add attachment" = "إضافة مرفق";
+
+/* XACT: The accessibility hint for add button */
+"Double tap to add attachment" = "انقر نقرًا مزدوجًا لإضافة مرفق";
+
+/* XMSG: attachment section add new file successfully announcement */
+"New attachment added successfully" = "تمت إضافة مرفق جديد بنجاح";
+
+/* XMSG: attachment section add new file failed announcement */
+"File failed to attach" = "فشل إرفاق الملف";
+
+/* XACT: The accessibility hint for attachment section */
+"read only" = "للقراءة فقط";
+
+/* XACT: The accessibility hint for attachment section */
+"actions available" = "تتوفر إجراءات";
+
+/* XMSG: Attachment thumbnail */
+"Thumbnail" = "صورة مصغرة";
+
+/* XMSG: Attachment uploading */
+"Attachment uploading" = "جارٍ تحميل %@، يرجى الانتظار...";
+
+/* XMSG: Attachment error */
+"Attachment error" = "فشل تحميل %@. رسالة الخطأ: %@";
+
+/* XBUT: Sign In Action in the Authentication */
+"Sign In" = "تسجيل الدخول";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"username" = "اسم المستخدم";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"password" = "كلمة المرور";
+
+/* XBUT: Submit action title in AI User Feedback */
+"Submit" = "تقديم";
+
+/* XMSG: Submission failed title in AI User Feedback */
+"Submission failed" = "فشل التقديم";
+
+/* XMSG: Submission failed description in AI User Feedback */
+"An error has occurred. Please try again later." = "حدث خطأ. يرجى المحاولة مجددًا لاحقًا.";
+
+/* XBUT: Retry action title in AI User Feedback */
+"Retry" = "إعادة المحاولة";
+
+/* XACT: The accessibility label for the like button in AI User Feedback */
+"Positive feedback" = "ملاحظات إيجابية";
+
+/* XACT: The accessibility label for the dislike button in AI User Feedback */
+"Negative feedback" = "ملاحظات سلبية";
+
+/* XACT: The accessibility label for the vote buttons in AI User Feedback */
+"enabled" = "ممكَّن";
+
+/* XMSG: Onboarding scan view title for scan unsuccessful */
+"Scan Unsuccessful" = "المسح الضوئي غير ناجح";
+
+/* XMSG: Onboarding scan view hint for scan unsuccessful */
+"Please select a QR code image." = "يُرجى تحديد صورة رمز استجابة سريعة (QR).";
+
+/* XMSG: Onboarding scan view title for invalid QR code */
+"Invalid QR Code" = "رمز الاستجابة السريعة (QR) غير صالح";
+
+/* XMSG: Onboarding scan view hint for invalid QR code */
+"The QR code was not recognized." = "لم يتم التعرف على رمز الاستجابة السريعة (QR).";
+
+/* XTIT: Onboarding scan view title for request access to photos library */
+"Allow Access to Photos" = "السماح بالوصول إلى الصور";
+
+/* XMSG: Onboarding scan view hint for request access to photos library */
+"To choose a QR code image, please give access to your photos in your device's privacy settings." = "لاختيار صورة رمز الاستجابة السريعة (QR)، يُرجى السماح بالوصول إلى صورك من إعدادات خصوصية جهازك.";
+
+/* XTIT: Onboarding scan view title for request access to camera */
+"Allow Access to Camera" = "السماح بالوصول إلى الكاميرا";
+
+/* XMSG: Onboarding scan view hint for request access to camera */
+"To scan using the camera, please give access to your camera in your device's privacy settings." = "لإجراء المسح الضوئي باستخدام الكاميرا، يُرجى السماح بالوصول إلى الكاميرا من إعدادات خصوصية جهازك.";
+
+/* XBUT: Onboarding scan view action title for the alert when the permission to access camera or photo library was not granted */
+"Settings" = "الإعدادات";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"down arrow" = "سهم لأسفل";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"up arrow" = "سهم لأعلى";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash deactivated" = "تم إلغاء تنشيط flash";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash activated" = "تم تنشيط flash";
+
+/* XACT: The accessibility hint for photos in onboarding photo picker view */
+"Photo %d" = "صورة %d";
+
+/* XMSG: Onboarding confirm view success message */
+"Scan succeeded. You will be connected to:" = "نجح المسح الضوئي. سيتم توصيلك بـ:";
+
+/* XBUT: Onboarding confirm view action title for continue button */
+"Continue" = "متابعة";
+
+/* XTIT: Title for writing assistant */
+"Writing Assistant" = "مساعد الكتابة";
+
+/* XMSG: Writing assistant version control */
+"Version %d/%d" = "الإصدار %d/%d";
+
+/* XBUT: Writing assistant undo action title */
+"Undo" = "تراجع";
+
+/* XBUT: Writing assistant redo action title */
+"Redo" = "إعادة";
+
+/* XTIT: Writing assistant cancel alert message */
+"Do you want to undo the edits made by the Writing Assistant and revert the text to its original state?" = "هل تريد التراجع عن عمليات التحرير التي أجراها مساعد الكتابة وإعادة النص إلى حالته الأصلية؟";
+
+/* XTIT: Writing assistant cancel alert title */
+"Discard all changes?" = "هل تريد تجاهل كل التغييرات؟";
+
+/* XBUT: Writing assistant cancel alert action title for keep working */
+"Keep Working" = "متابعة العمل";
+
+/* XBUT: Writing assistant cancel alert action title for discard */
+"Discard" = "تجاهل";
+
+/* XMSG: A success toast message for feedback flow in writing assistant */
+"Thank you for your feedback" = "شكرًا لك على ملاحظاتك";
+
+/* XTIT: Title for feedback downvote flow in writing assistant */
+"What didn’t you like about this version?" = "ما الذي لم يعجبك في هذا الإصدار؟";
+
+/* XTIT: Subtitle for feedback downvote flow in writing assistant */
+"Please rate your experience to help us improve." = "يرجى تقييم تجربتك لمساعدتنا في التحسين.";
+
+/* XTIT: Navigation bar title for feedback flow */
+"Feedback" = "الملاحظات";
+
+/* XTIT: Footnote text for feedback in writing assistant */
+"How was this response?" = "كيف تجد هذه الاستجابة؟";
+
+/* XMSG: One date selected for .datesSelection style in Calendar view */
+"%d Date Selected" = "تم تحديد %d تاريخ";
+
+/* XMSG: Multiple dates selected for .datesSelection style in Calendar view */
+"%d Dates Selected" = "تم تحديد %d من التواريخ";
+
+/* XMSG: Has event, used in voice over in calendar view */
+"has event" = "له حدث";
+
+/* XMSG: Double tap to change the selection, used in voice over in calendar view */
+"Double tap to change the selection" = "انقر نقرًا مزدوجًا لتغيير التحديد";
+
+/* XMSG: Double tap to select, used in voice over in calendar view */
+"Double tap to select" = "نقر مزدوج للتحديد";
+
+/* XMSG: Double tap to unselect, used in voice over in calendar view */
+"Double tap to unselect" = "نقر مزدوج لإلغاء التحديد";
+
+/* XMSG: Date selected, used in voiceOver in calendar view */
+"Date selected" = "البيانات المحددة";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Today" = "اليوم";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Disabled date" = "تاريخ التعطيل";
+
+/* XMSG: Drag tips in .expandable style, used in voiceOver in calendar view */
+"Handle to switch from month view to week view" = "مؤشر التبديل من عرض الشهر إلى عرض الأسبوع";
+
+/* XMSG: Accessibility label for card container */
+"Card" = "البطاقة";
+
+/* XTIT: Title for card */
+"Card title" = "عنوان البطاقة";
+
+/* XTIT: Subtitle for card */
+"Card subtitle" = "العنوان الفرعي للبطاقة";
+
+/* XTIT: HeaderAction for card */
+"Card header action" = "إجراء مقدمة البطاقة";
+
+/* XACT: The accessibility label for the switchItem turn on button in FilterFeedbackBar */
+"Switch Item On" = "اضغط للتشغيل";
+
+/* XACT: The accessibility label for the switchItem turn off button in FilterFeedbackBar */
+"Switch Item Off" = "اضغط لإيقاف التشغيل";
+
+/* XMSG: Writing assistant panel opening announcement */
+"AI Writing Assistant panel opened. Use provided prompts to refine your text content." = "تم فتح لوحة مساعد الكتابة بالذكاء الاصطناعي. استخدم الطلبات الفورية المقدمة لتنقيح محتوى نصك.";
+
+/* XMSG: Writing assistant activation cell hint for accessibility */
+"Double tap to activate" = "انقر نقرًا مزدوجًا للتنشيط";
+
+/* XMSG: Writing assistant options entry cell hint for accessibility */
+"Open to see %@ options" = "افتح لعرض %@ من الخيارات";
+
+/* XMSG: Writing assistant undo announcement */
+"Undo to Version %d of %d" = "التراجع عن إصدار %d من%d";
+
+/* XMSG: Writing assistant redo announcement */
+"Redo to Version %d of %d" = "إعادة إصدار %d من %d";
+
+/* XMSG: Writing assistant version update announcement */
+"Text updated to Version %d of %d" = "تم تحديث النص إلى الإصدار %d من %d";
+
+/* XTIT: Writing assistant title accessibility label */
+"AI Writing Assistant" = "مساعد الكتابة بالذكاء الاصطناعي";
+
+/* XMSG: Writing assistant accessibility instruction for text editing */
+"double tap to open AI Writing Assistant and edit text" = "انقر نقرًا مزدوجًا لفتح مساعد الكتابة بالذكاء الاصطناعي وتحرير النص";
+
+/* XBUT: Writing assistant undo accessibility label */
+"Undo change" = "التراجع عن التغيير";
+
+/* XBUT: Writing assistant redo accessibility label */
+"Rodo change" = "إعادة التغيير";
+
+/* XBUT: Close button title */
+"Close" = "إغلاق";
+
+/* XMSG: Accessibility label for completed state in step progress indicator */
+"complete" = "مكتمل";
+
+/* XMSG: Accessibility label for active state in step progress indicator */
+"active" = "نشط";
+
+/* XMSG: Accessibility label for error active state in step progress indicator */
+"error active" = "خطأ نشط";
+
+/* XMSG: Accessibility label for read-only state in step progress indicator */
+"read-only" = "للقراءة فقط";
+
+/* XACT: The accessibility value for Stepper decrement */
+"Decrease the value by %f" = "تخفيض القيمة بمقدار %f";
+
+/* XACT: The accessibility value for Stepper increment */
+"Increase the value by %f" = "زيادة القيمة بمقدار %f";
+
+/* XMSG: title used in DateRangePickerPopView */
+"Select Range" = "تحديد النطاق";
+
+/* XMSG: start date, used in DateRangePickerPopView */
+"Start Date" = "تاريخ البدء";
+
+/* XMSG: end date, used in DateRangePickerPopView */
+"End Date" = "تاريخ الانتهاء";
+
+/* XBUT: title for picker form cell to open */
+"DoubleTapToOpenKey" = "نقر مزدوج للفتح";
+
+/* XBUT: title for picker form cell to collapse */
+"DoubleTapToCollapseKey" = "نقر مزدوج للطي";
+
+/* XTIT: On state for switch */
+"Switch On" = "تشغيل";
+
+/* XTIT: Off state for switch */
+"Switch Off" = "إيقاف التشغيل";
+
+/* Checkout Indicator accessibility label: failed */
+"failed" = "فشل";
+
+/* Checkout Indicator accessibility label: AI processing */
+"AI processing" = "معالجة بالذكاء الاصطناعي";
+
+/* Checkout Indicator accessibility label: Checkout Indicator */
+"Checkout Indicator" = "مؤشر تسجيل الخروج";
+
+/* XMSG: More tag text shown when tags are truncated in MHStack, %d is the count of hidden tags */
+"+%d more" = "+%d إضافية";
+
+/* XTIT: The title of the empty state view */
+"No Results Found" = "لم يتم العثور على أي نتائج";
+
+/* XTIT: The description of the empty state view */
+"Check your search for any spelling errors or try a different search term." = "تحقق من بحثك عن أي أخطاء إملائية أو حاول استخدام مصطلح بحث مختلف.";
+
+/* XACT: The accessibility label for the checkbox */
+"Checkbox" = "خانة الاختيار";
+
+/* XMSG: Passcode policy requirement - minimum length, %d is the required number of characters */
+"At least %d characters" = "على الأقل %d من الأحرف";
+
+/* XMSG: Passcode policy requirement - minimum number of unique characters, %d is the required count */
+"At least %d unique characters" = "على الأقل %d من الأحرف الفريدة";
+
+/* XMSG: Passcode policy requirement - at least one digit */
+"At least one digit" = "رقم واحد على الأقل";
+
+/* XMSG: Passcode policy requirement - at least one uppercase letter */
+"At least one uppercase letter" = "حرف كبير واحد على الأقل";
+
+/* XMSG: Passcode policy requirement - at least one lowercase letter */
+"At least one lowercase letter" = "حرف صغير واحد على الأقل";
+
+/* XMSG: Passcode policy requirement - at least one special character */
+"At least one special character" = "حرف خاص واحد على الأقل";
+
+/* XMSG: Passcode policy requirement - digits only */
+"Digits only" = "أرقام فقط";
+

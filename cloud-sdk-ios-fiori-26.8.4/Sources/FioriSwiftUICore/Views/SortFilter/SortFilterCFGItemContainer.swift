@@ -1,0 +1,788 @@
+import FioriThemeManager
+import SwiftUI
+
+/// :nodoc:
+public struct SortFilterCFGItemContainer {
+    @EnvironmentObject var context: SortFilterContext
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @Environment(\.sortFilterContentHeight) var sortFilterContentHeight
+    
+    @Binding var _items: [[SortFilterItem]]
+    /// The frame of the view toggle to show this view.
+    var btnFrame: CGRect = .zero
+    var showSubList: ((Bool) -> Void)?
+    @State var stepperViewHeight: CGFloat = 110
+    @State private var onErrorMessage = ""
+    @State private var sliderDescType: SliderValueChangeHandler.SliderInformationType = .fiori
+    @State var orderPickerHeight: CGFloat = 0.0
+
+    /// Create a SortFilterCFGItemContainer view.
+    /// - Parameters:
+    ///   - items: Option views in the list.
+    ///   - btnFrame: The frame of the view toggle to show this view.
+    public init(items: Binding<[[SortFilterItem]]>, btnFrame: CGRect = .zero) {
+        self.__items = items
+        self.btnFrame = btnFrame
+    }
+}
+
+extension SortFilterCFGItemContainer: View {
+    /// :nodoc:
+    public var body: some View {
+        List {
+            ForEach(0 ..< self._items.count, id: \.self) { r in
+                Section {
+                    ForEach(0 ..< self._items[r].count, id: \.self) { c in
+                        self.rowView(row: r, column: c)
+                            .listRowSeparator(c == self._items[r].count - 1 ? .hidden : .visible, edges: .all)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding([.leading, .trailing], self.horizontalSizeClass == .regular ? 13 : 16)
+                    }
+                    #if !os(visionOS)
+                        Rectangle().fill(Color.preferredColor(.primaryGroupedBackground))
+                            .frame(height: 30)
+                            .listRowInsets(EdgeInsets())
+                    #endif
+                }
+                .listSectionSeparator(.hidden, edges: .all)
+                .listRowInsets(EdgeInsets())
+                #if !os(visionOS)
+                    .listRowBackground(Color.preferredColor(.secondaryGroupedBackground))
+                #else
+                    .listRowBackground(Color.clear)
+                #endif
+            }
+        }
+        .listRowSpacing(0)
+        .listStyle(.plain)
+        #if !os(visionOS)
+            .listRowBackground(Color.preferredColor(.secondaryGroupedBackground))
+        #else
+            .listRowBackground(Color.clear)
+        #endif
+            .environment(\.defaultMinListRowHeight, 0)
+            .environment(\.defaultMinListHeaderHeight, 0)
+            .setOnChange(of: self._items) {
+                self.checkUpdateButtonState()
+            }
+            .onAppear {
+                self.context.isPickerListShown = false
+                self.context.isSearchBarHidden = true
+            
+                self.context.handleCancel = {
+                    for r in 0 ..< self._items.count {
+                        for c in 0 ..< self._items[r].count {
+                            self._items[r][c].cancel()
+                        }
+                    }
+                }
+
+                self.context.handleReset = {
+                    for r in 0 ..< self._items.count {
+                        for c in 0 ..< self._items[r].count {
+                            switch self._items[r][c] {
+                            case .picker:
+                                var pickerItem: SortFilterItem.PickerItem = self._items[r][c].picker
+                                switch pickerItem.resetButtonConfiguration.type {
+                                case .reset:
+                                    pickerItem.reset()
+                                case .clearAll:
+                                    pickerItem.clearAll()
+                                case .deactivate:
+                                    pickerItem.deactivate()
+                                    self._items[r][c].picker = pickerItem
+                                }
+                            default:
+                                self._items[r][c].reset()
+                            }
+                        }
+                    }
+                }
+
+                self.context.handleApply = {
+                    for r in 0 ..< self._items.count {
+                        for c in 0 ..< self._items[r].count {
+                            self._items[r][c].apply()
+                        }
+                    }
+                }
+
+                self.checkUpdateButtonState()
+            }
+    }
+    
+    func checkUpdateButtonState() {
+        var isApplyButtonEnabled = false
+        var isResetButtonEnabled = false
+        
+        for item in self._items.joined() {
+            if !isApplyButtonEnabled, item.isChanged {
+                isApplyButtonEnabled = true
+                print("Enable apply button.")
+            }
+            if !isResetButtonEnabled, !item.isOriginal {
+                isResetButtonEnabled = true
+                print("Enable reset button.")
+            }
+        }
+        self.context.isApplyButtonEnabled = isApplyButtonEnabled
+        self.context.isResetButtonEnabled = isResetButtonEnabled
+    }
+    
+    @ViewBuilder
+    func rowView(row r: Int, column c: Int) -> some View {
+        switch self._items[r][c] {
+        case .picker:
+            if self._items[r][c].picker.displayMode == .list || (self._items[r][c].picker.displayMode == .automatic && self._items[r][c].picker.valueOptions.count > 8) {
+                self.navigationLink(row: r, column: c)
+            } else {
+                self.picker(row: r, column: c)
+                    .padding([.top, .bottom], 12)
+            }
+        case .filterfeedback:
+            self.filterfeedback(row: r, column: c)
+                .padding([.top, .bottom], 12)
+        case .switch:
+            self.switcher(row: r, column: c)
+                .accessibilityElement(children: .combine)
+                .accessibilityLabel(self._items[r][c].switch.name)
+                .accessibilityValue(self._items[r][c].switch.isChecked ?
+                    NSLocalizedString("selected", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "selected") :
+                    NSLocalizedString("not selected", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "not selected"))
+                .accessibilityHint(self._items[r][c].switch.hint ?? "")
+        case .slider:
+            self.slider(row: r, column: c)
+                .padding([.top], 12)
+        case .datetime:
+            self.datetimePicker(row: r, column: c)
+                .padding([.top, .bottom], 12)
+        case .stepper:
+            self.stepper(row: r, column: c)
+                .padding([.top, .bottom], 12)
+        case .title:
+            self.titleForm(row: r, column: c)
+                .padding([.top, .bottom], 12)
+        case .note:
+            self.noteForm(row: r, column: c)
+                .padding([.top, .bottom], 12)
+        case .durationPicker:
+            self.durationPicker(row: r, column: c)
+                .padding([.top, .bottom], 12)
+        case .orderPicker:
+            self.orderPicker(row: r, column: c)
+                .padding([.top, .bottom], 12)
+        }
+    }
+    
+    func navigationLink(row r: Int, column c: Int) -> some View {
+        ListPickerItem(title: {
+            Text(self._items[r][c].picker.name)
+                .font(.fiori(forTextStyle: .subheadline, weight: .bold, isItalic: false, isCondensed: false))
+                .foregroundColor(Color.preferredColor(.primaryLabel))
+        }, value: {
+            let workingValue = Binding<[Int]>(get: { self._items[r][c].picker.workingValue }, set: { self._items[r][c].picker.workingValue = $0 })
+            if workingValue.count == 1 {
+                switch self._items[r][c].picker.barItemDisplayMode {
+                case .name:
+                    Text(self._items[r][c].picker.name)
+                        .accessibilityElement()
+                        .accessibilityHint("Double tap to change the selection".localizedFioriString())
+                case .value:
+                    Text(self._items[r][c].picker.valueOptions[workingValue.wrappedValue[0]])
+                        .accessibilityHint("Double tap to change the selection".localizedFioriString())
+                case .nameAndValue:
+                    Text(self._items[r][c].picker.name + ": " + self._items[r][c].picker.valueOptions[workingValue.wrappedValue[0]])
+                        .accessibilityHint("Double tap to change the selection".localizedFioriString())
+                }
+            } else {
+                if self._items[r][c].picker.allowsMultipleSelection, workingValue.count >= 1 {
+                    Text("\(self._items[r][c].picker.name) (\(workingValue.count))")
+                        .accessibilityHint("Double tap to change the selection".localizedFioriString())
+                } else {
+                    Text(self._items[r][c].picker.name)
+                        .accessibilityHint("Double tap to change the selection".localizedFioriString())
+                }
+            }
+        }, axis: .horizontal, destination: {
+            self.listPickerDestination(row: r, column: c)
+                .onDisappear {
+                    self.sortFilterContentHeight.wrappedValue = 0
+                }
+        })
+        #if !os(visionOS)
+        .listRowBackground(Color.preferredColor(.secondaryGroupedBackground))
+        #else
+        .listRowBackground(Color.clear)
+        #endif
+        .frame(minHeight: 44)
+    }
+    
+    func listPickerDestination(row r: Int, column c: Int) -> some View {
+        let filter: ((SortFilterItem.PickerItem.ValueOptionModel, String) -> Bool) = { f, s in
+            if !s.isEmpty {
+                if let customFilter = self._items[r][c].picker.configuration?.searchFilter {
+                    return customFilter(f.value, s)
+                }
+                return f.value.localizedCaseInsensitiveContains(s)
+            } else {
+                return true
+            }
+        }
+
+        let rowContentBuilder: (SortFilterItem.PickerItem.ValueOptionModel) -> AnyView = { e in
+            if let provider = self._items[r][c].picker.configuration?.rowContentProvider {
+                return AnyView(provider(e.index))
+            } else {
+                return AnyView(Text(e.value))
+            }
+        }
+
+        let allowsMultipleSelection = self._items[r][c].picker.allowsMultipleSelection
+
+        if allowsMultipleSelection {
+            return ListPickerDestination(self._items[r][c].picker.uuidValueOptions,
+                                         id: \.id,
+                                         selections: Binding<Set<UUID>>(get: { self._items[r][c].picker.workingValueSet }, set: { self._items[r][c].picker.workingValueSet = $0 }),
+                                         allowEmpty: self._items[r][c].picker.allowsEmptySelection,
+                                         isTrackingLiveChanges: true,
+                                         searchFilter: self._items[r][c].picker.isSearchBarHidden == false ? filter : nil)
+            { e in
+                let baseView = rowContentBuilder(e)
+                if e.index == self._items[r][c].picker.uuidValueOptions.count - 1,
+                   self._items[r][c].picker.configuration?.hasMoreData == true
+                {
+                    AnyView(baseView.onAppear {
+                        self._items[r][c].picker.configuration?.onLoadMore?()
+                    })
+                } else {
+                    baseView
+                }
+            }
+            .disableEntriesSection(self._items[r][c].picker.disableListEntriesSection)
+            .disableContentSection(self._items[r][c].picker.disableListContentSection)
+            .listStyle(.plain)
+            .scrollContentBackground(.hidden)
+            .environment(\.defaultMinListRowHeight, 0)
+            .environment(\.defaultMinListHeaderHeight, 0)
+            .isFilterFeedbackBarListPickerStyle(true)
+            .onChange(of: self._items[r][c].picker.workingValueSet) {
+                self._items[r][c].picker.workingValue = self._items[r][c].picker.workingValueSet.flatMap { selectedId in
+                    self._items[r][c].picker.uuidValueOptions.filter { $0.id == selectedId }.map(\.index)
+                }
+            }
+            .modifier(FioriIntrospectModifier<UIScrollView> { scrollView in
+                DispatchQueue.main.async {
+                    let calculateHeight = max(scrollView.contentSize.height + scrollView.adjustedContentInset.top, 88)
+                    self.sortFilterContentHeight.wrappedValue = calculateHeight
+                }
+            })
+            .selectedEntriesSectionTitleStyle { _ in
+                if self._items[r][c].picker.allowsDisplaySelectionCount {
+                    Text(NSLocalizedString("Selected", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "") + " " + "(\(self._items[r][c].picker.workingValue.count))")
+                        .foregroundStyle(Color.preferredColor(.secondaryLabel))
+                        .font(.fiori(forTextStyle: .subheadline, weight: .regular))
+                } else {
+                    Text(NSLocalizedString("Selected", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: ""))
+                        .foregroundStyle(Color.preferredColor(.secondaryLabel))
+                        .font(.fiori(forTextStyle: .subheadline, weight: .regular))
+                }
+            }
+            .allEntriesSectionTitleStyle { _ in
+                Text(NSLocalizedString("All", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: ""))
+                    .foregroundStyle(Color.preferredColor(.secondaryLabel))
+                    .font(.fiori(forTextStyle: .subheadline, weight: .regular))
+            }
+            .ifApply(!self._items[r][c].picker.resetButtonConfiguration.isHidden, content: { v in
+                self.toolbarForListPicker(v: v, row: r, column: c)
+            })
+        } else {
+            let singleSelection = Binding<UUID?>(
+                get: { self._items[r][c].picker.workingValueSet.first },
+                set: { newValue in
+                    self._items[r][c].picker.workingValueSet = newValue.map { [$0] } ?? []
+                }
+            )
+            return ListPickerDestination(self._items[r][c].picker.uuidValueOptions,
+                                         id: \.id,
+                                         selection: singleSelection,
+                                         isTrackingLiveChanges: true,
+                                         searchFilter: self._items[r][c].picker.isSearchBarHidden == false ? filter : nil)
+            { e in
+                let baseView = rowContentBuilder(e)
+                if e.index == self._items[r][c].picker.uuidValueOptions.count - 1,
+                   self._items[r][c].picker.configuration?.hasMoreData == true
+                {
+                    AnyView(baseView.onAppear {
+                        self._items[r][c].picker.configuration?.onLoadMore?()
+                    })
+                } else {
+                    baseView
+                }
+            }
+            .disableEntriesSection(self._items[r][c].picker.disableListEntriesSection)
+            .disableContentSection(self._items[r][c].picker.disableListContentSection)
+            .listStyle(.plain)
+            .scrollContentBackground(.hidden)
+            .environment(\.defaultMinListRowHeight, 0)
+            .environment(\.defaultMinListHeaderHeight, 0)
+            .isFilterFeedbackBarListPickerStyle(true)
+            .onChange(of: self._items[r][c].picker.workingValueSet) {
+                self._items[r][c].picker.workingValue = self._items[r][c].picker.workingValueSet.flatMap { selectedId in
+                    self._items[r][c].picker.uuidValueOptions.filter { $0.id == selectedId }.map(\.index)
+                }
+            }
+            .modifier(FioriIntrospectModifier<UIScrollView> { scrollView in
+                DispatchQueue.main.async {
+                    let calculateHeight = max(scrollView.contentSize.height + scrollView.adjustedContentInset.top, 88)
+                    self.sortFilterContentHeight.wrappedValue = calculateHeight
+                }
+            })
+            .selectedEntriesSectionTitleStyle { _ in
+                if self._items[r][c].picker.allowsDisplaySelectionCount {
+                    Text(NSLocalizedString("Selected", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "") + " " + "(\(self._items[r][c].picker.workingValue.count))")
+                        .foregroundStyle(Color.preferredColor(.secondaryLabel))
+                        .font(.fiori(forTextStyle: .subheadline, weight: .regular))
+                } else {
+                    Text(NSLocalizedString("Selected", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: ""))
+                        .foregroundStyle(Color.preferredColor(.secondaryLabel))
+                        .font(.fiori(forTextStyle: .subheadline, weight: .regular))
+                }
+            }
+            .allEntriesSectionTitleStyle { _ in
+                Text(NSLocalizedString("All", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: ""))
+                    .foregroundStyle(Color.preferredColor(.secondaryLabel))
+                    .font(.fiori(forTextStyle: .subheadline, weight: .regular))
+            }
+            .ifApply(!self._items[r][c].picker.resetButtonConfiguration.isHidden, content: { v in
+                self.toolbarForListPicker(v: v, row: r, column: c)
+            })
+        }
+    }
+    
+    private func toolbarForListPicker(v: some View, row r: Int, column c: Int) -> some View {
+        v.toolbar {
+            var item = self._items[r][c].picker
+            ToolbarItem(placement: .topBarTrailing) {
+                if item.resetButtonConfiguration.isHidden {
+                    EmptyView()
+                } else {
+                    _Action(actionText: item.resetButtonConfiguration.title, didSelectAction: {
+                        switch item.resetButtonConfiguration.type {
+                        case .reset:
+                            item.reset()
+                        case .clearAll:
+                            item.clearAll()
+                        case .deactivate:
+                            item.deactivate()
+                            self._items[r][c].picker = item
+                        }
+                    })
+                    .buttonStyle(ResetButtonStyle())
+                    .disabled({
+                        switch item.resetButtonConfiguration.type {
+                        case .reset:
+                            return item.isOriginal
+                        case .clearAll:
+                            return item.workingValue.isEmpty
+                        case .deactivate:
+                            return !item.isChecked
+                        }
+                    }())
+                }
+            }
+        }
+    }
+    
+    func picker(row r: Int, column c: Int) -> some View {
+        VStack {
+            HStack {
+                Text(self._items[r][c].picker.name)
+                    .font(.fiori(forTextStyle: .subheadline, weight: .bold, isItalic: false, isCondensed: false))
+                    .foregroundColor(Color.preferredColor(.primaryLabel))
+                Spacer()
+            }
+            switch self._items[r][c].picker.displayMode {
+            case .automatic:
+                if self._items[r][c].picker.valueOptions.count > 8 {
+                    self.navigationLink(row: r, column: c)
+                } else {
+                    self.filterFormCell(row: r, column: c)
+                }
+            case .filterFormCell:
+                self.filterFormCell(row: r, column: c)
+            case .menu:
+                self.filterFormCell(row: r, column: c)
+            case .list:
+                self.navigationLink(row: r, column: c)
+            }
+        }
+    }
+    
+    func filterfeedback(row r: Int, column c: Int) -> some View {
+        VStack {
+            HStack {
+                Text(self._items[r][c].filterfeedback.name)
+                    .font(.fiori(forTextStyle: .subheadline, weight: .bold, isItalic: false, isCondensed: false))
+                    .foregroundColor(Color.preferredColor(.primaryLabel))
+                Spacer()
+            }
+            
+            FilterFormView(title: {
+                EmptyView()
+            }, options: self._items[r][c].filterfeedback.valueOptions.map { AttributedString($0) }, isEnabled: true, allowsMultipleSelection: self._items[r][c].filterfeedback.allowsMultipleSelection, allowsEmptySelection: self._items[r][c].filterfeedback.allowsEmptySelection, value: Binding<[Int]>(get: { self._items[r][c].filterfeedback.workingValue }, set: { self._items[r][c].filterfeedback.workingValue = $0 }), buttonSize: self._items[r][c].filterfeedback.itemLayout == .flexible ? .flexible : .fixed, isSingleLine: false) { _ in
+            }
+            .filterFormOptionsLineSpacing(10)
+            .padding(.top, 8)
+        }
+    }
+    
+    func switcher(row r: Int, column c: Int) -> some View {
+        SwitchView(title: AttributedString(self._items[r][c].switch.name), isOn: Binding<Bool>(get: { self._items[r][c].switch.workingValue ?? false }, set: { self._items[r][c].switch.workingValue = $0 }))
+            .titleStyle(content: { config in
+                config.title
+                    .font(.fiori(forTextStyle: .subheadline, weight: .bold, isItalic: false, isCondensed: false))
+                    .foregroundColor(Color.preferredColor(.primaryLabel))
+            })
+            .padding([.top, .bottom], 6.5)
+    }
+    
+    func slider(row r: Int, column c: Int) -> some View {
+        VStack {
+            HStack {
+                Text(self._items[r][c].slider.name)
+                    .font(.fiori(forTextStyle: .subheadline, weight: .bold, isItalic: false, isCondensed: false))
+                    .foregroundColor(Color.preferredColor(.primaryLabel))
+                Spacer()
+            }
+            
+            let titleView: any View = self._items[r][c].slider.formatter != nil ? Text(self._items[r][c].slider.formatter ?? "") : EmptyView()
+            if self._items[r][c].slider.sliderMode == .single {
+                FioriSlider(
+                    titleView: { titleView },
+                    value: Binding<Double>(get: { self._items[r][c].slider.workingValue ?? self._items[r][c].slider.minimumValue }, set: { self._items[r][c].slider.workingValue = $0 }),
+                    range: self._items[r][c].slider.range,
+                    step: self._items[r][c].slider.step,
+                    decimalPlaces: self._items[r][c].slider.decimalPlaces,
+                    description: self._items[r][c].slider.hint.attributedString,
+                    showsValueLabel: true
+                )
+            } else {
+                FioriSlider(
+                    titleView: { titleView },
+                    lowerValue: Binding<Double>(get: { self._items[r][c].slider.workingLowerValue ?? self._items[r][c].slider.minimumValue }, set: { self._items[r][c].slider.workingLowerValue = $0 }),
+                    upperValue: Binding<Double>(get: { self._items[r][c].slider.workingUpperValue ?? self._items[r][c].slider.maximumValue }, set: { self._items[r][c].slider.workingUpperValue = $0 }),
+                    range: self._items[r][c].slider.range,
+                    step: self._items[r][c].slider.step,
+                    decimalPlaces: self._items[r][c].slider.decimalPlaces,
+                    description: self.onErrorMessage == "" ? self._items[r][c].slider.hint.attributedString : self.onErrorMessage.attributedString,
+                    onRangeValueChange: { isEditing, lowerValue, upperValue in
+                        if !isEditing {
+                            guard let onValueChange = self._items[r][c].slider.onValueChange else {
+                                self.sliderDescType = .fiori
+                                self.onErrorMessage = ""
+                                return
+                            }
+                            let (type, message) = onValueChange.onValueChange(lowerValue, upperValue)
+                            self.sliderDescType = type
+                            self.onErrorMessage = message
+                        }
+                    }
+                )
+                .ifApply(self.sliderDescType == .error, content: { v in
+                    v.leadingAccessoryStyle(textFieldStyle: FioriSliderTextFieldStyle(borderColor: self.lowerTextFieldBorderColor(item: self._items[r][c].slider), focusedBorderColor: self.lowerTextFieldBorderColor(item: self._items[r][c].slider), borderWidth: 0.5, focusedBorderWidth: 2.0))
+                        .trailingAccessoryStyle(textFieldStyle: FioriSliderTextFieldStyle(borderColor: self.upperTextFieldBorderColor(item: self._items[r][c].slider), focusedBorderColor: self.upperTextFieldBorderColor(item: self._items[r][c].slider), borderWidth: 0.5, focusedBorderWidth: 2.0))
+                })
+                .informationViewStyle(self.getInfoStyle()).typeErased
+            }
+        }
+        .padding([.leading, .trailing], 0)
+    }
+    
+    @ViewBuilder func datetimePicker(row r: Int, column c: Int) -> some View {
+        VStack {
+            HStack {
+                Text(self._items[r][c].datetime.name)
+                    .font(.fiori(forTextStyle: .subheadline, weight: .bold, isItalic: false, isCondensed: false))
+                    .foregroundColor(Color.preferredColor(.primaryLabel))
+                Spacer()
+            }
+            .padding(.horizontal, self.horizontalSizeClass == .regular ? 13 : 16)
+            if self._items[r][c].datetime.components.contains(.hourAndMinute) {
+                HStack {
+                    Text(NSLocalizedString("Time", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: ""))
+                        .font(.fiori(forTextStyle: .subheadline, weight: .bold, isItalic: false, isCondensed: false))
+                        .foregroundColor(Color.preferredColor(.primaryLabel))
+                    Spacer()
+                    DatePicker(
+                        "",
+                        selection: Binding<Date>(get: { self._items[r][c].datetime.workingValue ?? Date() }, set: { self._items[r][c].datetime.workingValue = $0 }),
+                        displayedComponents: [.hourAndMinute]
+                    )
+                    .labelsHidden()
+                }
+                .padding(.horizontal, self.horizontalSizeClass == .regular ? 13 : 16)
+            }
+            if self._items[r][c].datetime.components.contains(.date) {
+                DatePicker(
+                    "",
+                    selection: Binding<Date>(get: { self._items[r][c].datetime.workingValue ?? Date() }, set: { self._items[r][c].datetime.workingValue = $0 }),
+                    displayedComponents: [.date]
+                )
+                .datePickerStyle(.graphical)
+                .labelsHidden()
+                .padding(.horizontal, self.horizontalSizeClass == .regular ? 13 : 16)
+                .clipped()
+            }
+        }
+    }
+    
+    private func filterFormCell(row r: Int, column c: Int) -> some View {
+        FilterFormView(title: {
+            EmptyView()
+        }, options: self._items[r][c].picker.valueOptions.map { AttributedString($0) }, isEnabled: true, allowsMultipleSelection: self._items[r][c].picker.allowsMultipleSelection, allowsEmptySelection: self._items[r][c].picker.allowsEmptySelection, value: Binding<[Int]>(get: { self._items[r][c].picker.workingValue }, set: { self._items[r][c].picker.workingValue = $0 }), buttonSize: self._items[r][c].picker.itemLayout == .flexible ? .flexible : .fixed, isSingleLine: false) { _ in
+        }
+        .filterFormOptionsLineSpacing(10)
+        .padding(.top, 8)
+    }
+    
+    private func menuView(row r: Int, column c: Int) -> some View {
+        HStack {
+            Menu {
+                ForEach(self._items[r][c].picker.valueOptions.indices, id: \.self) { idx in
+                    if self._items[r][c].picker.isOptionSelected(index: idx) {
+                        Button {
+                            self._items[r][c].picker.onTap(option: self._items[r][c].picker.valueOptions[idx])
+                            self._items[r][c].picker.apply()
+                        } label: {
+                            Label {
+                                if let provider = self._items[r][c].picker.configuration?.rowContentProvider {
+                                    provider(idx)
+                                } else {
+                                    Text(self._items[r][c].picker.valueOptions[idx])
+                                }
+                            } icon: { Image(fioriName: "fiori.accept") }
+                        }
+                    } else {
+                        Button {
+                            self._items[r][c].picker.onTap(option: self._items[r][c].picker.valueOptions[idx])
+                            self._items[r][c].picker.apply()
+                        } label: {
+                            if let provider = self._items[r][c].picker.configuration?.rowContentProvider {
+                                provider(idx)
+                            } else {
+                                Text(self._items[r][c].picker.valueOptions[idx])
+                            }
+                        }
+                    }
+                }
+            } label: {
+                FilterFeedbackBarItem(icon: self.icon(name: self._items[r][c].picker.icon, isVisible: true), title: AttributedString(self._items[r][c].picker.label), isSelected: self._items[r][c].picker.isChecked)
+            }
+        }
+    }
+    
+    private func stepper(row r: Int, column c: Int) -> some View {
+        VStack {
+            HStack {
+                Text(self._items[r][c].stepper.name)
+                    .font(.fiori(forTextStyle: .subheadline, weight: .bold, isItalic: false, isCondensed: false))
+                    .foregroundColor(Color.preferredColor(.primaryLabel))
+                Spacer()
+            }
+            
+            StepperView(
+                title: { Text(self._items[r][c].stepper.stepperTitle) },
+                text: Binding<String>(get: {
+                    let v = self._items[r][c].stepper.workingValue ?? self._items[r][c].stepper.stepRange.lowerBound
+                    return self._items[r][c].stepper.isDecimalSupported
+                        ? String(describing: v)
+                        : String(describing: Int(v))
+                }, set: { newText in
+                    if newText.isEmpty {
+                        self._items[r][c].stepper.workingValue = nil
+                    } else {
+                        self._items[r][c].stepper.workingValue = Double(newText)
+                    }
+                }),
+                step: self._items[r][c].stepper.step,
+                stepRange: self._items[r][c].stepper.stepRange,
+                isDecimalSupported: self._items[r][c].stepper.isDecimalSupported,
+                icon: {
+                    if let stepperIcon = self._items[r][c].stepper.stepperIcon {
+                        Image(uiImage: stepperIcon)
+                    } else {
+                        EmptyView()
+                    }
+                },
+                description: {
+                    if let description = self._items[r][c].stepper.description {
+                        Text(description)
+                    } else {
+                        EmptyView()
+                    }
+                }
+            )
+            .ifApply(!self._items[r][c].stepper.decrementActionActive) { v in
+                v.decrementActionStyle(.deactivate)
+            }
+            .ifApply(!self._items[r][c].stepper.incrementActionActive) { v in
+                v.incrementActionStyle(.deactivate)
+            }
+            .frame(minHeight: self.stepperViewHeight)
+            .sizeReader { s in
+                self.stepperViewHeight = max(self.stepperViewHeight, s.height)
+            }
+        }
+    }
+    
+    private func titleForm(row r: Int, column c: Int) -> some View {
+        VStack {
+            HStack {
+                Text(self._items[r][c].title.name)
+                    .font(.fiori(forTextStyle: .subheadline, weight: .bold, isItalic: false, isCondensed: false))
+                    .foregroundColor(Color.preferredColor(.primaryLabel))
+                Spacer()
+            }
+            
+            TitleFormView(text: Binding<String>(get: { self._items[r][c].title.workingText }, set: { self._items[r][c].title.workingText = $0 }),
+                          isSecureEnabled: self._items[r][c].title.isSecureEnabled,
+                          placeholder: self._items[r][c].title.placeholder?.attributedString,
+                          controlState: self._items[r][c].title.controlState,
+                          errorMessage: self._items[r][c].title.errorMessage?.attributedString,
+                          maxTextLength: self._items[r][c].title.maxTextLength,
+                          hintText: self._items[r][c].title.hintText?.attributedString,
+                          hidesReadOnlyHint: self._items[r][c].title.hidesReadOnlyHint,
+                          isCharCountEnabled: self._items[r][c].title.isCharCountEnabled,
+                          allowsBeyondLimit: self._items[r][c].title.allowsBeyondLimit,
+                          charCountReachLimitMessage: self._items[r][c].title.charCountReachLimitMessage,
+                          charCountBeyondLimitMsg: self._items[r][c].title.charCountBeyondLimitMsg)
+        }
+    }
+    
+    private func noteForm(row r: Int, column c: Int) -> some View {
+        VStack {
+            HStack {
+                Text(self._items[r][c].note.name)
+                    .font(.fiori(forTextStyle: .subheadline, weight: .bold, isItalic: false, isCondensed: false))
+                    .foregroundColor(Color.preferredColor(.primaryLabel))
+                Spacer()
+            }
+            
+            NoteFormView(text: Binding<String>(get: { self._items[r][c].note.workingText }, set: { self._items[r][c].note.workingText = $0 }),
+                         placeholder: self._items[r][c].note.placeholder?.attributedString,
+                         controlState: self._items[r][c].note.controlState,
+                         errorMessage: self._items[r][c].note.errorMessage?.attributedString,
+                         minTextEditorHeight: self._items[r][c].note.minTextEditorHeight,
+                         maxTextEditorHeight: self._items[r][c].note.maxTextEditorHeight,
+                         maxTextLength: self._items[r][c].note.maxTextLength,
+                         hintText: self._items[r][c].note.hintText?.attributedString,
+                         hidesReadOnlyHint: self._items[r][c].note.hidesReadOnlyHint,
+                         isCharCountEnabled: self._items[r][c].note.isCharCountEnabled,
+                         allowsBeyondLimit: self._items[r][c].note.allowsBeyondLimit,
+                         charCountReachLimitMessage: self._items[r][c].note.charCountReachLimitMessage,
+                         charCountBeyondLimitMsg: self._items[r][c].note.charCountBeyondLimitMsg)
+        }
+    }
+    
+    private func durationPicker(row r: Int, column c: Int) -> some View {
+        VStack {
+            HStack {
+                Text(self._items[r][c].durationPicker.name)
+                    .font(.fiori(forTextStyle: .subheadline, weight: .bold, isItalic: false, isCondensed: false))
+                    .foregroundColor(Color.preferredColor(.primaryLabel))
+                Spacer()
+            }
+            
+            DurationPickerViewWrapper(selection: Binding<Int>(
+                get: { self._items[r][c].durationPicker.workingValue ?? 0 },
+                set: { self._items[r][c].durationPicker.workingValue = $0 }
+            ), maximumMinutes: self._items[r][c].durationPicker.maximumMinutes, minimumMinutes: self._items[r][c].durationPicker.minimumMinutes, minuteInterval: self._items[r][c].durationPicker.minuteInterval, measurementFormatter: self._items[r][c].durationPicker.measurementFormatter)
+                .frame(height: 204)
+                .foregroundColor(Color.preferredColor(.primaryLabel))
+        }
+    }
+    
+    private func orderPicker(row r: Int, column c: Int) -> some View {
+        VStack {
+            HStack {
+                Text(self._items[r][c].orderPicker.name)
+                    .font(.fiori(forTextStyle: .subheadline, weight: .bold, isItalic: false, isCondensed: false))
+                    .foregroundColor(Color.preferredColor(.primaryLabel))
+                Spacer()
+            }
+            
+            OrderPicker(
+                optionalTitle: "Information",
+                data: self.$_items[r][c].orderPicker.workingValue,
+                isAtLeastOneSelected: self._items[r][c].orderPicker.isAtLeastOneSelected,
+                onChangeHandler: { _, newModel in
+                    self._items[r][c].orderPicker.workingValue = newModel
+                },
+                controlState: self._items[r][c].orderPicker.controlState
+            )
+            .modifier(FioriIntrospectModifier<UIScrollView> { scrollView in
+                DispatchQueue.main.async {
+                    if self.orderPickerHeight != scrollView.contentSize.height {
+                        self.orderPickerHeight = scrollView.contentSize.height
+                    }
+                }
+            })
+            .frame(minHeight: self.orderPickerHeight > 0 ? self.orderPickerHeight : 88.0)
+            .background(Color.preferredColor(.primaryBackground))
+            .foregroundColor(Color.preferredColor(.primaryLabel))
+        }
+    }
+    
+    private func icon(name: String?, isVisible: Bool) -> Image? {
+        if isVisible {
+            if let name {
+                return Image(systemName: name)
+            }
+        }
+        return nil
+    }
+    
+    private func getSafeAreaInsets() -> UIEdgeInsets {
+        guard let keyWindow = UIApplication.shared.connectedScenes
+            .first(where: { $0.activationState == .foregroundActive })
+            .flatMap({ $0 as? UIWindowScene })?.windows
+            .first(where: \.isKeyWindow)
+        else {
+            return .zero
+        }
+        return keyWindow.safeAreaInsets
+    }
+    
+    private func lowerTextFieldBorderColor(item: SortFilterItem.SliderItem) -> Color? {
+        let workingLowerValue = item.workingLowerValue ?? item.minimumValue
+        let workingUpperValue = item.workingUpperValue ?? item.maximumValue
+        if !(item.range ~= workingLowerValue) || workingLowerValue > workingUpperValue {
+            return Color.preferredColor(.negativeLabel)
+        }
+        return nil
+    }
+    
+    private func upperTextFieldBorderColor(item: SortFilterItem.SliderItem) -> Color? {
+        let workingLowerValue = item.workingLowerValue ?? item.minimumValue
+        let workingUpperValue = item.workingUpperValue ?? item.maximumValue
+        if !(item.range ~= workingUpperValue) || workingLowerValue > workingUpperValue {
+            return Color.preferredColor(.negativeLabel)
+        }
+        return nil
+    }
+    
+    private func getInfoStyle() -> any InformationViewStyle {
+        switch self.sliderDescType {
+        case .error:
+            return InformationViewErrorStyle.error
+        case .fiori:
+            return InformationViewFioriStyle.fiori
+        case .informational:
+            return InformationViewInformationalStyle.informational
+        case .success:
+            return InformationViewSuccessStyle.success
+        case .warning:
+            return InformationViewWarningStyle.warning
+        }
+    }
+}

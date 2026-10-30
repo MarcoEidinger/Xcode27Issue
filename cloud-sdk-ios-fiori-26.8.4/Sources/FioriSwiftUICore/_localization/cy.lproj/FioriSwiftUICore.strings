@@ -1,0 +1,753 @@
+/* XMSG: Placeholder text in chart when there is no data */
+"No Data" = "Dim Data";
+
+/* XBUT: Save action in inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Save" = "Cadw";
+
+/* XBUT: Re-enter action available in saved state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Re-enter Signature" = "Rhoi'r Llofnod eto";
+
+/* XBUT: Clear action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Clear" = "Clirio";
+
+/* XBUT: Cancel action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Cancel" = "Canslo";
+
+/* XTIT: Title of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Signature" = "Llofnod";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Tap to Sign" = "Tapio i Lofnodi";
+
+/* XACT: The accessibility label for the signature area */
+"Signature Area" = "Man Llofnodi";
+
+/* XACT: The accessibility hint for the signature area */
+"Double tap and drag to sign" = "Tapiwch ddwywaith a llusgo i lofnodi";
+
+/* XACT: The accessibility label for the signature image */
+"Signature Image" = "Delwedd Llofnod";
+
+/* XACT: The accessibility label for the signature line */
+"Signature Line" = "Llinell Llofnodi";
+
+/* XACT: The accessibility label for the mandatory field */
+"Required Field" = "Maes Gofynnol";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Canceled" = "Wedi canslo";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Next" = "Nesaf";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Ok" = "Iawn";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Status" = "Statws";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"User canceled Onboarding" = "Y defnyddiwr wedi canslo proses Cynefino";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Without consent you will not be able to continue onboarding." = "Heb ganiatâd, fydd dim modd i chi fwrw ymlaen â'r broses cynefino.";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Give Consent" = "Rhoi caniatâd";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Quit" = "Gadael";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Back" = "Yn ôl";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Step" = "Cam";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"of" = "o";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Are you sure you want to quit the onboarding process?" = "Ydych chi'n siŵr eich bod am adael y broses cynefino?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Want Data Privacy?" = "Eisiau Preifatrwydd Data?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Be wise about your data" = "Byddwch yn ddoeth gyda'ch data";
+
+/* XBUT: Not Now action title in UserConsentForm */
+"Not Now" = "Dim nawr";
+
+/* XBUT: Allow action title in UserConsentForm */
+"Allow" = "Caniatáu";
+
+/* XBUT: Deny action title in UserConsentForm */
+"Deny" = "Gwrthod";
+
+/* XBUT: Agree action title in EULAView */
+"Agree" = "Cytuno";
+
+/* XBUT: Disagree action title in EULAView */
+"Disagree" = "Anghytuno";
+
+/* XMSG: Placeholder text in DataTable for loading state */
+"Loading..." = "Wrthi'n llwytho...";
+
+/* XMSG: Placeholder text in DataTable when there is no data */
+"There is nothing to display yet" = "Does dim i'w ddangos eto";
+
+/* XBUT: Default duration formatter in DataTable */
+"%d Hrs %d Min" = "%d Awr %d Mun";
+
+/* XBUT: Done action in keyboard toolbar for a Textfield in DataTable */
+"Done" = "Wedi gwneud";
+
+/* XBUT: Error messages shown to users in DataTable */
+"There are %d errors in the data table." = "Mae %d gwall yn y tabl data.";
+
+/* XBUT: voice over label for row header in DataTable */
+"row header" = "pennyn rhes";
+
+/* XBUT: voice over label for row %d in DataTable */
+"row %d" = "rhes %d";
+
+/* XBUT: voice over label for column %d in DataTable */
+"column %d" = "colofn %d";
+
+/* XBUT: voice over label for cell type of `leading accessory` in DataTable */
+"leading accessory" = "ategolyn arweiniol";
+
+/* XBUT: voice over label for cell type of `trailing accessory` in DataTable */
+"trailing accessory" = "ategolyn ôl";
+
+/* XBUT: voice over label for cell type of `text` in DataTable */
+"text" = "testun";
+
+/* XBUT: voice over label for cell type of `image` in DataTable */
+"image" = "delwedd";
+
+/* XBUT: voice over label for cell type of `date` in DataTable */
+"date" = "dyddiad";
+
+/* XBUT: voice over label for cell type of `time` in DataTable */
+"time" = "amser";
+
+/* XBUT: voice over label for cell type of `duration` in DataTable */
+"duration" = "hyd";
+
+/* XBUT: voice over label for cell type of `list item` in DataTable */
+"list item" = "eitem rhestr";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"selected" = "wedi dewis";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"not selected" = "heb ei ddewis";
+
+/* Default value for DateTimePicker */
+"No date selected" = "Dim data wedi'i ddewis";
+
+/* Default value for DateRangePicker */
+"No range selected" = "Dim ystod wedi'i ddewis";
+
+/* DateRangePicker press space to set a range value */
+"PressSpaceToSelectRangeKey" = "pwyswch space i osod gwerth ystod";
+
+/* XBUT: calendar time component label */
+"Time" = "Amser";
+
+/* XBUT: slider default value label formatter for integer */
+"Value: %d" = "Gwerth: %d";
+
+/* XMSG: a toast message for read-only cell in DataTable */
+"Tapped cell is read-only." = "Mae'r gell a gafodd ei thapio yn darllen-yn-unig";
+
+/* Default hint text for Read-only Field for NoteFormView and TextFieldFormView */
+"Read-only field" = "Maes darllen-yn-unig";
+
+/* Default error text for when the character count reaches the maximum limit for NoteFormView and TextFieldFormView */
+"No more characters remaining" = "Dim nodau ar ôl";
+
+/* Default error text for when the character count exceeds the maximum limit for NoteFormView and TextFieldFormView */
+"Reduce the number of characters" = "Lleihau nifer y nodau";
+
+/* XBUT: voice over label for decrement action in stepper */
+"Stepper decrease" = "Gostwng y camwr";
+
+/* XBUT: voice over description for decrement action in stepper */
+"Decrease the value by %d" = "Tynnu %d o'r gwerth";
+
+/* XBUT: voice over label for increment action in stepper */
+"Stepper increase" = "Cynyddu'r camwr";
+
+/* XBUT: voice over description for increment action in stepper */
+"Increase the value by %d" = "Ychwanegu %d at y gwerth";
+
+/* XBUT: voice over label for test field in stepper */
+"Select specific value" = "Dewiswch werth penodol";
+
+/* XBUT: View all action in MenuSelection */
+"View All (%d)" = "Gweld y Cyfan (%d)";
+
+/* XACT: RatingControl accessibility label */
+"%d out of %d stars" = "%d allan o %d seren";
+
+/* XBUT: timeline preview component see all label */
+"See All (%d)" = "Gweld pob un (%d)";
+
+/* XACT: Timeline preview items accessibility label */
+"See All" = "Gweld y Cyfan";
+
+/* XACT: Timeline preview items accessibility value */
+"%d items" = "%d eitem";
+
+/* XACT: Timeline preview items accessibility hint */
+"Shows all timeline items in a list" = "Mae'n dangos yr holl eitemau amser llinell mewn rhestr";
+
+/* XACT: Timeline preview item status: current accessibility value */
+"Current" = "Cyfredol";
+
+/* XACT: Timeline preview item status: future accessibility value */
+"Future" = "Dyfodol";
+
+/* XACT: Timeline preview item status: past accessibility value */
+"Past" = "Gorffennol";
+
+/* XACT: Timeline preview item accessibility value */
+"Item %d of %d, %@, %@, %@" = "Eitem %d 0 %d, %@, %@, %@";
+
+/* XACT: Timeline preview item node type: Start accessibility value */
+"Start" = "Dechrau";
+
+/* XACT: Timeline preview item node type: End accessibility value */
+"End" = "Gorffen";
+
+/* XACT: Timeline preview item node type: Completed accessibility value */
+"Completed" = "Wedi Cwblhau";
+
+/* XACT: Timeline preview item node type: Open accessibility value */
+"Open" = "Agor";
+
+/* XACT: Timeline preview item node type: Task accessibility value */
+"Task" = "Tasg";
+
+/* XACT: Timeline preview item accessibility label */
+"Item %d of %d" = "Eitem %d o %d";
+
+/* XBUT: timeline preview component timestamp label */
+"Today, %@" = "Heddiw, %@";
+
+/* XFLD: RatingControl value label format */
+"%d of %d" = "%d o %d";
+
+/* XFLD: RatingControl review count format */
+"%d reviews" = "%d adolygiad";
+
+/* XFLD: RatingControl review count over ceiling format */
+"%d+ reviews" = "%d+ adolygiad";
+
+/* XACT: RatingControl accessibility label */
+"Rating Control %d of %d" = "Sgorio Rheolaeth %d o %d";
+
+/* XACT: read-only RatingControl accessibility label: rating with review count */
+"Rating Control, rating %d of %d, %d reviews" = "Sgorio Rheolaeth, sgôr %d o %d, %d adolygiad";
+
+/* XACT: read-only RatingControl accessibility label: average rating only */
+"Rating Control, average rating %.1f of %d" = "Sgorio Rheolaeth, sgôr cyfartalog %.1f o %d";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count */
+"Rating Control, average rating %.1f of %d, %d reviews" = "Sgorio Rheolaeth, sgôr cyfartalog %.1f o %d, %d adolygiad";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count over ceiling */
+"Rating Control, average rating %.1f of %d, %d plus reviews" = "Sgorio Rheolaeth, sgôr cyfartalog %.1f o %d, %d ac adolygiad";
+
+/* XBUT: View all messages in message banner sheet */
+"All" = "Pob un";
+
+/* XBUT: messages count in the message banner sheet */
+"Messages (%d)" = "Negeseuon (%d)";
+
+/* XBUT: view details in the message banner */
+"View Details" = "Gweld Manylion";
+
+/* XBUT: view different message in the message banner sheet item */
+"View %@" = "Gweld %@";
+
+/* XBUT: banner message type desc, message */
+"message" = "neges";
+
+/* XBUT: banner message type desc, information */
+"information" = "gwybodaeth";
+
+/* XBUT: banner message type desc, confirmation */
+"confirmation" = "cadarnhad";
+
+/* XBUT: banner message type desc, warning */
+"warning" = "rhybudd";
+
+/* XBUT: banner message type desc, error */
+"error" = "gwall";
+
+/* XBUT: banner message type desc, error */
+"AI notice" = "Hysbysiad AI";
+
+/* XMSG: banner message type desc, offline */
+"offline" = "all-lein";
+
+/* XMSG: information view style type, success */
+"success" = "llwyddiant";
+
+/* XBUT: Reset action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Reset" = "Ailosod";
+
+/* XBUT: Apply action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Apply" = "Rhoi ar waith";
+
+/* XTIT: The alert message for `ListPickerDestination` pulldown dismissal */
+"Are you sure you want to discard your selections?" = "Ydych chi'n siŵr eich bod chi eisiau gwaredu eich dewisiadau?";
+
+/* XBUT: The alert Discard Changes action title for `ListPickerDestination` pulldown dismissal */
+"Discard Changes" = "Gwaredu Newidiadau";
+
+/* XBUT: The alert Keep Editing action title for `ListPickerDestination` pulldown dismissal */
+"Keep Editing" = "Parhau i Olygu";
+
+/* XBUT: The \"Select All\" button title on the List Picker header */
+"Select All" = "Dewis Pob Un";
+
+/* XBUT: The \"Deselect All\" button title on the List Picker header */
+"Deselect All" = "Dad-ddewis Pob Un";
+
+/* XBUT: The \"Selected\" title on the List Picker header */
+"Selected" = "Wedi dewis";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"Text field, Double tap to edit" = "Maes testun, Cliciwch ddwywaith i olygu";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d character left" = "%d nod yn weddill.";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d characters left" = "%d o nodau yn weddill.";
+
+/* XACT: The accessibility hint for Text Input Views, editing */
+"Text field, is editing" = "Maes testun, yn y modd golygu";
+
+/* XACT: The accessibility hint for Text Input Views, editing, with clear button */
+"Text field, is editing. Double tap to clear text" = "Maes testun, wrthi'n golygu. Cliciwch ddwywaith i gael gwared ar y testun";
+
+/* XACT: The default accessibility label for the custom action in TextFieldFormView if none was specified */
+"Custom Action" = "Gweithred Personol";
+
+/* XBUT: Error messages shown to users in DocumentScannerView */
+"Failed to create PDF page from images" = "Wedi methu creu tudalen PDF o'r delweddau.";
+
+/* XBUT: Cancel message shown to users in DocumentScannerView */
+"User cancelled the scan" = "Y defnyddiwr wedi canslo'r broses sganio.";
+
+/* Progress Indicator accessibility label: processing */
+"Processing" = "Wrthi’n prosesu";
+
+/* Progress Indicator accessibility label: loading pausable with indicator progress */
+"In progress with option to pause, %.0f" = "Ar waith gydag opsiwn i oedi, %.0f";
+
+/* Progress Indicator accessibility label: loading stoppable with indicator progress */
+"In progress with option to stop, %.0f" = "Ar waith gydag opsiwn i stopio, %.0f";
+
+/* Progress Indicator accessibility label: progress halted with indicator progress */
+"Progress halted, %.0f" = "Datblygiad ar stop, %.0f";
+
+/* XACT: Slider accessibility label */
+"This is %@ slider whose maximum value is %@ and minimum value is %@" = "Dyma lithrydd %@ a'i werth uchaf yw %@ a'i werth isaf yw %@";
+
+/* XACT: Slider accessibility value */
+"Current value is %@" = "Y gwerth presennol yw %@";
+
+/* XACT: Range Slider lower thumb accessibility label */
+"lower range slider thumb, current value is" = "bawd lithrydd ystod isaf, y gwerth presennol yw";
+
+/* XACT: Range Slider lower thumb accessibility hint */
+"you can swipe up or down to change the lower value" = "gallwch symud i fyny neu i lawr i newid y gwerth isaf";
+
+/* XACT: Range Slider upper thumb accessibility label */
+"upper range slider thumb, current value is" = "bawd lithrydd ystod uchaf, y gwerth presennol yw";
+
+/* XACT: Range Slider upper thumb accessibility hint */
+"you can swipe up or down to change the upper value" = "gallwch symud i fyny neu i lawr i newid y gwerth uchaf";
+
+/* XACT: Single editable Slider thumb accessibility label */
+"slider thumb, current value is" = "bawd llithrydd, y gwerth presennol yw";
+
+/* XACT: Single editable Slider thumb accessibility hint */
+"you can swipe up or down to change the value" = "gallwch symud i fyny neu i lawr i newid y gwerth";
+
+/* XACT: Single Slider accessibility label */
+"This is a slider, the minimum value is %@ and the maximum value is %@" = "Llithrydd yw hwn, y gwerth isaf yw %@ a'r gwerth uchaf yw %@";
+
+/* XACT: Range Slider accessibility label */
+"This is a range slider, the minimum value is %@ and the maximum value is %@" = "Llithrydd ystod yw hwn, y gwerth isaf yw %@ a'r gwerth uchaf yw %@";
+
+/* XACT: Single editable Slider accessibility label */
+"This is a slider that is editable, the minimum value is %@ and the maximum value is %@" = "Llithrydd yw hwn y mae modd ei olygu, y gwerth isaf yw %@ a'r gwerth uchaf yw %@";
+
+/* XACT: Single non-editable Slider accessibility label */
+"This is a slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Llithrydd yw hwn nad oes modd ei olygu, y gwerth isaf yw %@ a'r gwerth uchaf yw %@";
+
+/* XACT: Range editable Slider accessibility label */
+"This is a range slider that is editable, the minimum value is %@ and the maximum value is %@" = "Llithrydd ystod yw hwn y mae modd ei olygu, y gwerth isaf yw %@ a'r gwerth uchaf yw %@";
+
+/* XACT: Range non-editable Slider accessibility label */
+"This is a range slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Llithrydd ystod yw hwn nad oes modd ei olygu, y gwerth isaf yw %@ a'r gwerth uchaf yw %@";
+
+/* XACT: Single editable Slider Text Field accessibility label */
+"slider value text field" = "maes testun gwerth llithrydd";
+
+/* XACT: Range editable Slider Lower Value Text Field accessibility label */
+"lower value text field" = "maes testun gwerth isaf";
+
+/* XACT: Range editable Slider Upper Value Text Field accessibility label */
+"upper value text field" = "maes testun gwerth uchaf";
+
+/* XACT: Editable Slider Text Field accessibility hint */
+"You can double tap to input a specific value" = "Tapiwch ddwywaith er mwyn mewnbynnu gwerth penodol";
+
+/* XACT: Editable Slider Text Field accessibility value */
+"current value is %@" = "y gwerth presennol yw %@";
+
+/* XACT: Range Editable Slider accessibility value */
+"current lower value is %@, upper value is %@" = "y gwerth isaf presennol yw %@, y gwerth uchaf yw %@";
+
+/* XTIT: Title of step progress indicator, see https://experience.sap.com/fiori-design-ios/article/step-progress-indicator/#adaptive-design */
+"All Steps" = "Pob cam";
+
+/* XMSG: AI Notice message */
+"Suggested by AI. Verify before use. " = "Awgrymwyd gan AI. Dilysu cyn defnyddio. ";
+
+/* XBUT: Attachment operation menu item - Photos, which stands for Photo Library */
+"Photos" = "Lluniau";
+
+/* XBUT: Attachment operation menu item - Files, which stands for documents available for upload residing in Files */
+"Files" = "Ffeiliau";
+
+/* XBUT: Attachment operation menu item - Camera, which can be used for taking photos and movies */
+"Camera" = "Camera";
+
+/* XBUT: Attachment operation menu item - Scan. Use camera as scanner and generate PDF files */
+"Scan" = "Sganio";
+
+/* XACT: The accessibility preview action for the attachment */
+"Preview" = "Gweld Rhagolwg";
+
+/* XTIT: Attachment title of deletion confirmation */
+"Delete Attachment?" = "Dileu'r Atodiad?";
+
+/* XBUT: Attachment deletion confirmation button */
+"Delete" = "Dileu";
+
+/* XBUT: Attachment add button */
+"Add attachment" = "Ychwanegu atodiad";
+
+/* XACT: The accessibility hint for add button */
+"Double tap to add attachment" = "Tapiwch ddwywaith i ychwanegu atodiad";
+
+/* XMSG: attachment section add new file successfully announcement */
+"New attachment added successfully" = "Wedi llwyddo i ychwanegu atodiad";
+
+/* XMSG: attachment section add new file failed announcement */
+"File failed to attach" = "Wedi methu atodi'r ffeil";
+
+/* XACT: The accessibility hint for attachment section */
+"read only" = "darllen-yn-unig";
+
+/* XACT: The accessibility hint for attachment section */
+"actions available" = "camau gweithredu sydd ar gael";
+
+/* XMSG: Attachment thumbnail */
+"Thumbnail" = "Mân-lun";
+
+/* XMSG: Attachment uploading */
+"Attachment uploading" = "Wrthi'n uwchlwytho %@, arhoswch...";
+
+/* XMSG: Attachment error */
+"Attachment error" = "Wedi methu uwchlwytho %@. Neges wall: %@";
+
+/* XBUT: Sign In Action in the Authentication */
+"Sign In" = "Mewngofnodi";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"username" = "enw defnyddiwr";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"password" = "cyfrinair";
+
+/* XBUT: Submit action title in AI User Feedback */
+"Submit" = "Cyflwyno";
+
+/* XMSG: Submission failed title in AI User Feedback */
+"Submission failed" = "Wedi methu cyflwyno";
+
+/* XMSG: Submission failed description in AI User Feedback */
+"An error has occurred. Please try again later." = "Gwall wedi codi. Rhowch gynnig arall arni yn nes ymlaen.";
+
+/* XBUT: Retry action title in AI User Feedback */
+"Retry" = "Ailgynnig";
+
+/* XACT: The accessibility label for the like button in AI User Feedback */
+"Positive feedback" = "Adborth cadarnhaol";
+
+/* XACT: The accessibility label for the dislike button in AI User Feedback */
+"Negative feedback" = "Adborth negyddol";
+
+/* XACT: The accessibility label for the vote buttons in AI User Feedback */
+"enabled" = "wedi galluogi";
+
+/* XMSG: Onboarding scan view title for scan unsuccessful */
+"Scan Unsuccessful" = "Heb Lwyddo i Sganio";
+
+/* XMSG: Onboarding scan view hint for scan unsuccessful */
+"Please select a QR code image." = "Dewiswch ddelwedd cod QR.";
+
+/* XMSG: Onboarding scan view title for invalid QR code */
+"Invalid QR Code" = "Cod QR Annilys";
+
+/* XMSG: Onboarding scan view hint for invalid QR code */
+"The QR code was not recognized." = "Heb adnabod y cod QR.";
+
+/* XTIT: Onboarding scan view title for request access to photos library */
+"Allow Access to Photos" = "Caniatáu Mynediad at Luniau";
+
+/* XMSG: Onboarding scan view hint for request access to photos library */
+"To choose a QR code image, please give access to your photos in your device's privacy settings." = "I ddewis delwedd cod QR, rhowch fynediad at eich lluniau yng ngosodiadau preifatrwydd eich dyfais.";
+
+/* XTIT: Onboarding scan view title for request access to camera */
+"Allow Access to Camera" = "Caniatáu Mynediad at Gamera";
+
+/* XMSG: Onboarding scan view hint for request access to camera */
+"To scan using the camera, please give access to your camera in your device's privacy settings." = "I sganio gyda'r camera, rhowch fynediad at eich camera yng ngosodiadau preifatrwydd eich dyfais.";
+
+/* XBUT: Onboarding scan view action title for the alert when the permission to access camera or photo library was not granted */
+"Settings" = "Gosodiadau";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"down arrow" = "saeth i lawr";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"up arrow" = "saeth i fyny";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash deactivated" = "wedi analluogi'r fflach";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash activated" = "wedi galluogi'r fflach";
+
+/* XACT: The accessibility hint for photos in onboarding photo picker view */
+"Photo %d" = "Llun %d";
+
+/* XMSG: Onboarding confirm view success message */
+"Scan succeeded. You will be connected to:" = "Wedi llwyddo i sganio. Byddwch yn cael eich cysylltu â:";
+
+/* XBUT: Onboarding confirm view action title for continue button */
+"Continue" = "Bwrw ymlaen";
+
+/* XTIT: Title for writing assistant */
+"Writing Assistant" = "Cynorthwyydd Ysgrifennu";
+
+/* XMSG: Writing assistant version control */
+"Version %d/%d" = "Fersiwn %d/%d";
+
+/* XBUT: Writing assistant undo action title */
+"Undo" = "Dadwneud";
+
+/* XBUT: Writing assistant redo action title */
+"Redo" = "Ailwneud";
+
+/* XTIT: Writing assistant cancel alert message */
+"Do you want to undo the edits made by the Writing Assistant and revert the text to its original state?" = "Ydych chi eisiau dadwneud y newidiadau a wnaed gan y Cynorthwyydd Ysgrifennu, a newid y testun yn ôl i'w gyflwr gwreiddiol?";
+
+/* XTIT: Writing assistant cancel alert title */
+"Discard all changes?" = "Gwaredu’r holl newidiadau?";
+
+/* XBUT: Writing assistant cancel alert action title for keep working */
+"Keep Working" = "Parhau i Weithio";
+
+/* XBUT: Writing assistant cancel alert action title for discard */
+"Discard" = "Gwaredu";
+
+/* XMSG: A success toast message for feedback flow in writing assistant */
+"Thank you for your feedback" = "Diolch am eich adborth";
+
+/* XTIT: Title for feedback downvote flow in writing assistant */
+"What didn’t you like about this version?" = "Beth wnaethoch chi ddim hoffi am y fersiwn hon?";
+
+/* XTIT: Subtitle for feedback downvote flow in writing assistant */
+"Please rate your experience to help us improve." = "Rhowch sgôr ar eich profiad i'n helpu ni i wella.";
+
+/* XTIT: Navigation bar title for feedback flow */
+"Feedback" = "Adborth";
+
+/* XTIT: Footnote text for feedback in writing assistant */
+"How was this response?" = "Sut oedd yr ymateb hwn?";
+
+/* XMSG: One date selected for .datesSelection style in Calendar view */
+"%d Date Selected" = "%d Dyddiad wedi'i Ddewis";
+
+/* XMSG: Multiple dates selected for .datesSelection style in Calendar view */
+"%d Dates Selected" = "%d Dyddiad wedi'u Dewis";
+
+/* XMSG: Has event, used in voice over in calendar view */
+"has event" = "gyda dyddiad";
+
+/* XMSG: Double tap to change the selection, used in voice over in calendar view */
+"Double tap to change the selection" = "Tapiwch ddwywaith i newid y dewis";
+
+/* XMSG: Double tap to select, used in voice over in calendar view */
+"Double tap to select" = "Tapiwch ddwywaith i ddewis";
+
+/* XMSG: Double tap to unselect, used in voice over in calendar view */
+"Double tap to unselect" = "Tapiwch ddwywaith i ddad-ddewis";
+
+/* XMSG: Date selected, used in voiceOver in calendar view */
+"Date selected" = "Dyddiad wedi'i ddewis";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Today" = "Heddiw";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Disabled date" = "Dyddiad analluogi";
+
+/* XMSG: Drag tips in .expandable style, used in voiceOver in calendar view */
+"Handle to switch from month view to week view" = "Handlen i newid o'r wedd mis i'r wedd wythnos";
+
+/* XMSG: Accessibility label for card container */
+"Card" = "Cerdyn";
+
+/* XTIT: Title for card */
+"Card title" = "Teitl y cerdyn";
+
+/* XTIT: Subtitle for card */
+"Card subtitle" = "Is-deitl y cerdyn";
+
+/* XTIT: HeaderAction for card */
+"Card header action" = "Gweithred pennyn cerdyn";
+
+/* XACT: The accessibility label for the switchItem turn on button in FilterFeedbackBar */
+"Switch Item On" = "Tapiwch i'w droi ymlaen";
+
+/* XACT: The accessibility label for the switchItem turn off button in FilterFeedbackBar */
+"Switch Item Off" = "Tapiwch i'w droi i ffwrdd";
+
+/* XMSG: Writing assistant panel opening announcement */
+"AI Writing Assistant panel opened. Use provided prompts to refine your text content." = "Wedi agor y panel Cynorthwyydd Ysgrifennu AI. Defnyddiwch y sbardunau a ddarperir i fireinio cynnwys eich testun.";
+
+/* XMSG: Writing assistant activation cell hint for accessibility */
+"Double tap to activate" = "Tapiwch ddwywaith i alluogi";
+
+/* XMSG: Writing assistant options entry cell hint for accessibility */
+"Open to see %@ options" = "Agorwch i weld %@ opsiwn";
+
+/* XMSG: Writing assistant undo announcement */
+"Undo to Version %d of %d" = "Dad-wneud i Fersiwn %d o %d";
+
+/* XMSG: Writing assistant redo announcement */
+"Redo to Version %d of %d" = "Ail-wneud i Fersiwn %d o %d";
+
+/* XMSG: Writing assistant version update announcement */
+"Text updated to Version %d of %d" = "Testun wedi'i ddiweddaru i Fersiwn %d o %d";
+
+/* XTIT: Writing assistant title accessibility label */
+"AI Writing Assistant" = "Cynorthwyydd Ysgrifennu AI";
+
+/* XMSG: Writing assistant accessibility instruction for text editing */
+"double tap to open AI Writing Assistant and edit text" = "tapiwch ddwywaith i agor y Cynorthwyydd Ysgrifennu AI a golygu'r testun";
+
+/* XBUT: Writing assistant undo accessibility label */
+"Undo change" = "Dad-wneud y newid";
+
+/* XBUT: Writing assistant redo accessibility label */
+"Rodo change" = "Ail-wneud y newid";
+
+/* XBUT: Close button title */
+"Close" = "Cau";
+
+/* XMSG: Accessibility label for completed state in step progress indicator */
+"complete" = "cwblhau";
+
+/* XMSG: Accessibility label for active state in step progress indicator */
+"active" = "gweithredol";
+
+/* XMSG: Accessibility label for error active state in step progress indicator */
+"error active" = "gwall yn weithredol";
+
+/* XMSG: Accessibility label for read-only state in step progress indicator */
+"read-only" = "darllen-yn-unig";
+
+/* XACT: The accessibility value for Stepper decrement */
+"Decrease the value by %f" = "Tynnu %f o'r gwerth";
+
+/* XACT: The accessibility value for Stepper increment */
+"Increase the value by %f" = "Ychwanegu %f at y gwerth";
+
+/* XMSG: title used in DateRangePickerPopView */
+"Select Range" = "Dewis Ystod";
+
+/* XMSG: start date, used in DateRangePickerPopView */
+"Start Date" = "Dyddiad Cychwyn";
+
+/* XMSG: end date, used in DateRangePickerPopView */
+"End Date" = "Dyddiad Gorffen";
+
+/* XBUT: title for picker form cell to open */
+"DoubleTapToOpenKey" = "Tapiwch ddwywaith i agor";
+
+/* XBUT: title for picker form cell to collapse */
+"DoubleTapToCollapseKey" = "Tapiwch ddwywaith i gwympo";
+
+/* XTIT: On state for switch */
+"Switch On" = "Ymlaen";
+
+/* XTIT: Off state for switch */
+"Switch Off" = "Wedi diffodd";
+
+/* Checkout Indicator accessibility label: failed */
+"failed" = "wedi methu";
+
+/* Checkout Indicator accessibility label: AI processing */
+"AI processing" = "Proses AI";
+
+/* Checkout Indicator accessibility label: Checkout Indicator */
+"Checkout Indicator" = "Dangosydd Sgrin Talu";
+
+/* XMSG: More tag text shown when tags are truncated in MHStack, %d is the count of hidden tags */
+"+%d more" = "+%d arall";
+
+/* XTIT: The title of the empty state view */
+"No Results Found" = "Heb Ddod o Hyd i Ganlyniadau";
+
+/* XTIT: The description of the empty state view */
+"Check your search for any spelling errors or try a different search term." = "Gwiriwch eich chwiliad am unrhyw wallau sillafu neu rhowch gynnig ar derm chwilio gwahanol.";
+
+/* XACT: The accessibility label for the checkbox */
+"Checkbox" = "Blwch ticio";
+
+/* XMSG: Passcode policy requirement - minimum length, %d is the required number of characters */
+"At least %d characters" = "O leiaf %d nod";
+
+/* XMSG: Passcode policy requirement - minimum number of unique characters, %d is the required count */
+"At least %d unique characters" = "O leiaf %d nod unigryw";
+
+/* XMSG: Passcode policy requirement - at least one digit */
+"At least one digit" = "O leiaf un digid";
+
+/* XMSG: Passcode policy requirement - at least one uppercase letter */
+"At least one uppercase letter" = "O leiaf un llythyren fawr";
+
+/* XMSG: Passcode policy requirement - at least one lowercase letter */
+"At least one lowercase letter" = "O leiaf un llythyren fach";
+
+/* XMSG: Passcode policy requirement - at least one special character */
+"At least one special character" = "O leiaf un nod arbennig";
+
+/* XMSG: Passcode policy requirement - digits only */
+"Digits only" = "Digidau'n unig";
+

@@ -1,0 +1,5 @@
+module: FioriSwiftUI
+author: SAP SE
+author_url: https://www.sap.com
+theme: jony
+hide_documentation_coverage: true

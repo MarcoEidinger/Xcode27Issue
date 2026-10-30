@@ -1,0 +1,235 @@
+import FioriThemeManager
+import Foundation
+import SwiftUI
+
+// Base Layout style
+public struct TimelinePreviewBaseStyle: TimelinePreviewStyle {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @Environment(\.headerSeparator) private var separatorConfiguration
+    @State private var itemCount = 0
+    @State private var VSize: CGSize = .zero
+    
+    public func makeBody(_ configuration: TimelinePreviewConfiguration) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            if !configuration.optionalTitle.isEmpty || !configuration.action.isEmpty {
+                BuildHeader(configuration: configuration, itemCount: configuration.items.count)
+                    .accessibilityElement(children: .contain)
+            }
+            BuildTimelinePreviewItem(configuration: configuration, displayItems: self.getDisplayItemCount(VSWidth: self.VSize.width))
+        }
+        .ifApply(self.separatorConfiguration.showSeparator) { content in
+            VStack(spacing: 16) {
+                content
+                self.separatorConfiguration.color
+                    .frame(height: self.separatorConfiguration.lineWidth)
+            }
+        }
+        .readSize { newSize in
+            self.VSize = newSize
+        }
+    }
+    
+    func getDisplayItemCount(VSWidth: CGFloat) -> Int {
+        let itemCount: Int
+        switch self.horizontalSizeClass {
+        case .regular:
+            itemCount = VSWidth > 672 ? 4 : 3
+        default:
+            itemCount = 2
+        }
+        return itemCount
+    }
+}
+
+struct BuildHeader: View {
+    let configuration: TimelinePreviewConfiguration
+    let itemCount: Int
+    
+    var body: some View {
+        HStack {
+            self.configuration.optionalTitle
+                .accessibilityAddTraits(.isHeader)
+                .accessibilitySortPriority(1)
+            Spacer()
+            self.configuration.action
+                .actionStyle(content: { actionConfig in
+                    if actionConfig.action.isEmpty {
+                        let labelFormat = NSLocalizedString("See All (%d)", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "")
+                        let labelString = String(format: labelFormat, self.itemCount)
+                        FioriButton(label: { _ in Label(labelString, systemImage: "chevron.forward").labelStyle(SeeAllActionLabelStyle()) })
+                            .fioriButtonStyle(FioriPlainButtonStyle())
+                            .accessibilityLabel(NSLocalizedString("See All", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: ""))
+                            .accessibilityValue(String(format: NSLocalizedString("%d items", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: ""), self.itemCount))
+                            .accessibilityHint(NSLocalizedString("Shows all timeline items in a list", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: ""))
+                            .accessibilityAddTraits(.isButton)
+                    } else {
+                        self.configuration.action
+                    }
+                })
+        }
+        .padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
+    }
+}
+
+struct BuildTimelinePreviewItem: View {
+    let configuration: TimelinePreviewConfiguration
+    let displayItems: Int
+    @Environment(\.timelinePreviewSortOrder) private var sortOrder
+
+    var body: some View {
+        HStack(alignment: .timelinePreviewAlignmentGuide, spacing: 4) {
+            let filteredItems = self.filterItems(itemsData: self.configuration.items)
+            let totalCount = filteredItems.count
+            
+            ForEach(Array(filteredItems.enumerated()), id: \.element.id) { index, item in
+                let dateString = item.resolvedFormatter.string(from: item.due)
+                let timestampFormat = NSLocalizedString("Today, %@", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "")
+                let timestampString = String(format: timestampFormat, dateString)
+                let isToday = Calendar.current.isDateInToday(item.due)
+                let showsTodayText = isToday && item.showsTodayText
+                let dateAttributedString = AttributedString(showsTodayText ? timestampString : dateString)
+                let a11yTime = showsTodayText
+                    ? NSLocalizedString("Today", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "")
+                    : dateString
+                let isFuture = item.isFuture ?? false
+                let statusDescription = isToday ? NSLocalizedString("Current", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "") : (isFuture ? NSLocalizedString("Future", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "") : NSLocalizedString("Past", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: ""))
+                let typeDescription = self.getNodeDescription(for: item.timelineNode)
+                let combinedStatusInfo = "\(statusDescription) \(typeDescription)"
+                let a11yLabel = item.title
+                let fullA11yLabel = String(format: NSLocalizedString("Item %d of %d, %@, %@, %@", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: ""),
+                                           index + 1,
+                                           totalCount,
+                                           a11yTime,
+                                           combinedStatusInfo,
+                                           a11yLabel)
+
+                TimelinePreviewItem(title: AttributedString(item.title), icon: item.icon, timelineNode: item.timelineNode, timestamp: dateAttributedString, isFuture: isFuture, nodeType: item.timelineNode)
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(fullA11yLabel)
+                    .accessibilityAddTraits(.isButton)
+            }
+        }
+        .accessibilityElement(children: .contain)
+    }
+
+    func getNodeDescription(for nodeType: TimelineNodeType) -> String {
+        switch nodeType {
+        case .start:
+            return NSLocalizedString("Start", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "")
+        case .end:
+            return NSLocalizedString("End", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "")
+        case .complete:
+            return NSLocalizedString("Completed", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "")
+        case .open:
+            return NSLocalizedString("Open", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "")
+        default:
+            return NSLocalizedString("Task", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "")
+        }
+    }
+
+    func filterItems(itemsData: [any TimelinePreviewItemModel]) -> [any TimelinePreviewItemModel] {
+        // flag item with isFuture and isCurrent
+        let updatedItems = itemsData.map { item in
+            var mutableItem = item
+            mutableItem.isFuture = Date.compareTwoDates(first: mutableItem.due, second: Date()) == .orderedDescending
+            mutableItem.isCurrent = Date.compareTwoDates(first: mutableItem.due, second: Date()) == .orderedSame
+            return mutableItem
+        }
+        
+        // sort by due date according to the environment sort order, then limit to displayItems
+        let sorted: [any TimelinePreviewItemModel]
+        switch self.sortOrder {
+        case .ascending:
+            sorted = updatedItems.sorted(by: { $0.due < $1.due })
+        case .descending:
+            sorted = updatedItems.sorted(by: { $0.due > $1.due })
+        }
+        return Array(sorted.prefix(self.displayItems))
+    }
+}
+
+// Default fiori styles
+extension TimelinePreviewFioriStyle {
+    struct ContentFioriStyle: TimelinePreviewStyle {
+        func makeBody(_ configuration: TimelinePreviewConfiguration) -> some View {
+            TimelinePreview(configuration)
+                .fixedSize(horizontal: false, vertical: true)
+                .contentShape(.rect)
+                .padding(EdgeInsets(top: 11, leading: 16, bottom: 16, trailing: 16))
+        }
+    }
+
+    struct OptionalTitleFioriStyle: OptionalTitleStyle {
+        let timelinePreviewConfiguration: TimelinePreviewConfiguration
+    
+        func makeBody(_ configuration: OptionalTitleConfiguration) -> some View {
+            OptionalTitle(configuration)
+                .font(.fiori(forTextStyle: .subheadline))
+                .foregroundColor(Color.preferredColor(.secondaryLabel))
+                .multilineTextAlignment(.leading)
+        }
+    }
+
+    struct ActionFioriStyle: ActionStyle {
+        let timelinePreviewConfiguration: TimelinePreviewConfiguration
+    
+        func makeBody(_ configuration: ActionConfiguration) -> some View {
+            Action(configuration)
+                .font(.fiori(forTextStyle: .subheadline))
+                .fioriButtonStyle(FioriPlainButtonStyle())
+        }
+    }
+}
+
+struct SeeAllActionLabelStyle: LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack(alignment: .center) {
+            configuration.title
+                .font(.fiori(forTextStyle: .subheadline, weight: .semibold))
+                .foregroundColor(Color.preferredColor(.tintColor))
+            configuration.icon
+                .font(.fiori(forTextStyle: .subheadline, weight: .semibold))
+                .foregroundColor(Color.preferredColor(.secondaryLabel))
+        }
+    }
+}
+
+extension Date {
+    static func compareTwoDates(first: Date, second: Date) -> ComparisonResult {
+        let calendar = Calendar.current
+        let components: Set<Calendar.Component> = [Calendar.Component.day, .month, .year, .hour, .minute, .second]
+        let date1Components = calendar.dateComponents(components, from: first)
+        let date2Components = calendar.dateComponents(components, from: second)
+        let date1 = calendar.date(from: date1Components)
+        let date2 = calendar.date(from: date2Components)
+
+        guard let date1, let date2 else {
+            fatalError("Two dates in comparison must have the same component")
+        }
+
+        return date1.compare(date2)
+    }
+}
+
+extension VerticalAlignment {
+    private struct TimelinePreviewAlignment: AlignmentID {
+        static func defaultValue(in context: ViewDimensions) -> CGFloat {
+            context[VerticalAlignment.bottom]
+        }
+    }
+    
+    static let timelinePreviewAlignmentGuide = VerticalAlignment(
+        TimelinePreviewAlignment.self
+    )
+}
+
+extension View {
+    func readSize(onChange: @escaping (CGSize) -> Void) -> some View {
+        background(
+            GeometryReader { geometryProxy in
+                Color.clear.preference(key: SizePreferenceKey.self, value: geometryProxy.size)
+            }
+        )
+        .onPreferenceChange(SizePreferenceKey.self, perform: onChange)
+    }
+}

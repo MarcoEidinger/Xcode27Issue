@@ -1,0 +1,719 @@
+import FioriThemeManager
+import Foundation
+import SwiftUI
+
+// Base Layout style
+public struct ObjectHeaderBaseStyle: ObjectHeaderStyle {
+    @Environment(\.sizeCategory) var sizeCategory
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @Environment(\.headerSeparator) private var separatorConfiguration
+    @Environment(\.isLoading) var isLoading
+    @Environment(\.objectHeaderAdditionalInfoAlignment) private var additionalInfoAlignment
+    @State var rightViewSize: CGSize = .init(width: 120, height: 0)
+    @State var currentTabIndex: Int = 0
+    @State var leftViewSize: CGSize = .init(width: 740, height: 0)
+    @State var mainViewSize: CGSize = .zero
+    @State var statusViewSize: CGSize = .zero
+    @State var middleViewSize: CGSize = .init(width: 312, height: 0)
+    
+    public func makeBody(_ configuration: ObjectHeaderConfiguration) -> some View {
+        SkeletonLoadingContainer {
+            Group {
+                if self.horizontalSizeClass == .compact {
+                    self.compactView(configuration)
+                        .ifApply(self.separatorConfiguration.showSeparator) { content in
+                            VStack(spacing: 16) {
+                                content
+                                self.separatorConfiguration.color
+                                    .frame(height: self.separatorConfiguration.lineWidth)
+                            }
+                        }
+                } else {
+                    self.regularView(configuration)
+                        .ifApply(self.separatorConfiguration.showSeparator) { content in
+                            VStack(spacing: 16) {
+                                content
+                                self.separatorConfiguration.color
+                                    .frame(height: self.separatorConfiguration.lineWidth)
+                            }
+                        }
+                        .padding(.vertical, 18)
+                }
+            }
+            .foregroundColor(.preferredColor(.separator))
+        }
+    }
+    
+    @ViewBuilder
+    func regularView(_ configuration: ObjectHeaderConfiguration) -> some View {
+        if self.additionalInfoAlignment == .leadingEdge, !configuration.detailImage.isEmpty {
+            self.regularViewLeadingEdge(configuration)
+        } else {
+            self.regularViewDefault(configuration)
+        }
+    }
+
+    func regularViewDefault(_ configuration: ObjectHeaderConfiguration) -> some View {
+        HStack(alignment: .top) {
+            configuration.detailImage
+                .frame(width: 70, height: 70)
+                .cornerRadius(6)
+                .clipped()
+                .padding(.trailing)
+            
+            HStack(alignment: .iconStackAlignmentGuide) {
+                HStack {
+                    self.leftViewInRegular(configuration)
+                    Spacer(minLength: 0)
+                }
+                .layoutPriority(0)
+                .frame(minWidth: 120, maxWidth: 740)
+                
+                Spacer(minLength: 48)
+                
+                self.middleViewInRegular(configuration)
+                    .layoutPriority(1)
+                    .onGeometryChange(for: CGSize.self, of: { proxy in
+                        proxy.size
+                    }, action: { newValue in
+                        self.middleViewSize = newValue
+                    })
+                    .frame(width: min(312, self.middleViewSize.width))
+                
+                self.rightViewInRegular(configuration)
+                    .layoutPriority(2)
+                    .onGeometryChange(for: CGSize.self, of: { proxy in
+                        proxy.size
+                    }, action: { newValue in
+                        self.rightViewSize = newValue
+                    })
+                    .frame(width: min(120, self.rightViewSize.width))
+                    .padding(.leading, 40)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    func regularViewLeadingEdge(_ configuration: ObjectHeaderConfiguration) -> some View {
+        VStack(alignment: .leading, spacing: 16) {
+            HStack(alignment: .top) {
+                configuration.detailImage
+                    .frame(width: 70, height: 70)
+                    .cornerRadius(6)
+                    .clipped()
+                    .padding(.trailing)
+
+                HStack(alignment: .iconStackAlignmentGuide) {
+                    HStack {
+                        self.titleAndSubtitleLeftViewInRegular(configuration)
+                        Spacer(minLength: 0)
+                    }
+                    .layoutPriority(0)
+                    .frame(minWidth: 120, maxWidth: 740)
+
+                    Spacer(minLength: 48)
+
+                    self.middleViewInRegular(configuration)
+                        .layoutPriority(1)
+                        .onGeometryChange(for: CGSize.self, of: { proxy in
+                            proxy.size
+                        }, action: { newValue in
+                            self.middleViewSize = newValue
+                        })
+                        .frame(width: min(312, self.middleViewSize.width))
+
+                    self.rightViewInRegular(configuration)
+                        .layoutPriority(2)
+                        .onGeometryChange(for: CGSize.self, of: { proxy in
+                            proxy.size
+                        }, action: { newValue in
+                            self.rightViewSize = newValue
+                        })
+                        .frame(width: min(120, self.rightViewSize.width))
+                        .padding(.leading, 40)
+                }
+            }
+
+            if !configuration.detailContent.isEmpty || !configuration.descriptionText.isEmpty, !self.isAdditionalInfoViewEmpty(configuration) {
+                self.additionalInfoView(configuration)
+            } else if !configuration.detailContent.isEmpty, self.isAdditionalInfoViewEmpty(configuration), !configuration.descriptionText.isEmpty {
+                configuration.descriptionText
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    func titleAndSubtitleLeftViewInRegular(_ configuration: ObjectHeaderConfiguration) -> some View {
+        let baselineAligned = self.isBaselineAligned(configuration)
+        return VStack(alignment: .leading, spacing: 3) {
+            configuration.title
+                .alignmentGuide(.iconStackAlignmentGuide, computeValue: { dimension in
+                    if baselineAligned {
+                        return dimension[VerticalAlignment.firstTextBaseline]
+                    } else {
+                        return dimension[.top]
+                    }
+                })
+            configuration.subtitle
+        }
+    }
+    
+    func leftViewInRegular(_ configuration: ObjectHeaderConfiguration) -> some View {
+        let baselineAligned = self.isBaselineAligned(configuration)
+        return VStack(alignment: .leading, spacing: 3) {
+            configuration.title
+                .alignmentGuide(.iconStackAlignmentGuide, computeValue: { dimension in
+                    if baselineAligned {
+                        return dimension[VerticalAlignment.firstTextBaseline]
+                    } else {
+                        return dimension[.top]
+                    }
+                })
+            configuration.subtitle
+            
+            if !configuration.detailContent.isEmpty || !configuration.descriptionText.isEmpty, !self.isAdditionalInfoViewEmpty(configuration) {
+                Spacer().frame(height: 16)
+                self.additionalInfoView(configuration)
+            } else if !configuration.detailContent.isEmpty, self.isAdditionalInfoViewEmpty(configuration), !configuration.descriptionText.isEmpty {
+                Spacer().frame(height: 16)
+                configuration.descriptionText
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func middleViewInRegular(_ configuration: ObjectHeaderConfiguration) -> some View {
+        if !configuration.detailContent.isEmpty {
+            VStack {
+                Spacer(minLength: 0)
+                configuration.detailContent
+                Spacer(minLength: 0)
+            }
+        } else if !configuration.descriptionText.isEmpty {
+            let baselineAligned = self.isBaselineAligned(configuration)
+            configuration.descriptionText
+                .alignmentGuide(.iconStackAlignmentGuide, computeValue: { dimension in
+                    if baselineAligned {
+                        return dimension[VerticalAlignment.firstTextBaseline]
+                    } else {
+                        return dimension[.top]
+                    }
+                })
+        } else if !self.isAdditionalInfoViewEmpty(configuration) {
+            self.additionalInfoView(configuration)
+        } else {
+            EmptyView()
+        }
+    }
+    
+    func rightViewInRegular(_ configuration: ObjectHeaderConfiguration) -> some View {
+        let baselineAligned = self.isBaselineAligned(configuration)
+        return VStack(alignment: .trailing, spacing: 2) {
+            configuration.status
+                .multilineTextAlignment(.trailing)
+                .alignmentGuide(.iconStackAlignmentGuide, computeValue: { dimension in
+                    if baselineAligned {
+                        return dimension[VerticalAlignment.firstTextBaseline]
+                    } else {
+                        return dimension[.top]
+                    }
+                })
+            
+            configuration.substatus
+                .multilineTextAlignment(.trailing)
+        }
+    }
+    
+    func isBaselineAligned(_ configuration: ObjectHeaderConfiguration) -> Bool {
+        if configuration.detailContent.isEmpty, configuration.descriptionText.isEmpty {
+            return true
+        } else if self.isMiddleViewInRegularEmpty(configuration), !configuration.status.isEmpty {
+            return true
+        }
+        
+        return false
+    }
+    
+    func additionalInfoView(_ configuration: ObjectHeaderConfiguration) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            configuration.tags
+            configuration.bodyText
+            configuration.footnote
+        }
+    }
+    
+    func isMiddleViewInRegularEmpty(_ configuration: ObjectHeaderConfiguration) -> Bool {
+        if configuration.detailContent.isEmpty, configuration.descriptionText.isEmpty, self.isAdditionalInfoViewEmpty(configuration) {
+            return true
+        }
+        
+        return false
+    }
+    
+    func isAdditionalInfoViewEmpty(_ configuration: ObjectHeaderConfiguration) -> Bool {
+        if configuration.tags.isEmpty, configuration.bodyText.isEmpty, configuration.footnote.isEmpty {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func compactView(_ configuration: ObjectHeaderConfiguration) -> some View {
+        VStack {
+            let tabsCount = self.numberOfTabs(configuration)
+            if tabsCount == 1 {
+                Spacer().frame(height: 8)
+            }
+            
+            ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
+                self.tabView(configuration)
+                
+                self.tab1(configuration)
+                    .opacity(0)
+                    .disabled(true)
+                
+                self.tab2(configuration)
+                    .opacity(0)
+                    .disabled(true)
+                
+                self.tab3(configuration)
+                    .opacity(0)
+                    .disabled(true)
+                
+                self.statusViewInCompact(configuration)
+                    .onGeometryChange(for: CGSize.self, of: { proxy in
+                        proxy.size
+                    }, action: { newValue in
+                        self.statusViewSize = newValue
+                    })
+                    .hidden()
+            }
+            
+            if tabsCount > 1 {
+                Spacer().frame(height: 8)
+                
+                HStack {
+                    Spacer(minLength: 0)
+                    
+                    PageIndicator(numberOfPages: tabsCount, currentPage: self.$currentTabIndex)
+                    
+                    Spacer(minLength: 0)
+                }
+            }
+            
+            if tabsCount == 1 {
+                Spacer().frame(height: 8)
+            }
+        }
+        .onGeometryChange(for: CGSize.self, of: { proxy in
+            proxy.size
+        }, action: { newValue in
+            self.mainViewSize = newValue
+        })
+    }
+    
+    func tabView(_ configuration: ObjectHeaderConfiguration) -> some View {
+        TabView(selection: self.$currentTabIndex) {
+            self.tab1(configuration).tag(0)
+            
+            self.tab2(configuration).tag(self.realTabIndex(configuration, for: 1))
+            
+            self.tab3(configuration).tag(self.realTabIndex(configuration, for: 2))
+        }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+    }
+    
+    /// Status will take 1st priority without exceeding its maximum width of 23%.
+    /// The maximum for page controls is 3 pages.
+    /// Chart and description are center-aligned horizontally and vertically in the container.
+    @ViewBuilder
+    func tab1(_ configuration: ObjectHeaderConfiguration) -> some View {
+        if self.sizeCategory > .large {
+            self.tab1WhenSizeCategoryGreatThanLarge(configuration)
+        } else {
+            self.tab1InGeneral(configuration)
+        }
+    }
+    
+    func tab1WhenSizeCategoryGreatThanLarge(_ configuration: ObjectHeaderConfiguration) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .center, spacing: 8) {
+                configuration.detailImage
+                
+                Spacer(minLength: 8)
+                
+                configuration.status.multilineTextAlignment(.trailing)
+                
+                configuration.substatus.multilineTextAlignment(.trailing)
+            }
+            
+            VStack(alignment: .leading, spacing: 3) {
+                configuration.title
+                configuration.subtitle
+            }
+            
+            if !self.isAdditionalInfoViewEmpty(configuration) {
+                Spacer().frame(height: 8)
+                
+                self.additionalInfoView(configuration)
+            } else {
+                if !configuration.descriptionText.isEmpty {
+                    Spacer().frame(height: 8)
+                    
+                    configuration.descriptionText
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func tab1InGeneral(_ configuration: ObjectHeaderConfiguration) -> some View {
+        if self.additionalInfoAlignment == .leadingEdge, !configuration.detailImage.isEmpty {
+            self.tab1InGeneralLeadingEdge(configuration)
+        } else {
+            self.tab1InGeneralDefault(configuration)
+        }
+    }
+
+    func tab1InGeneralDefault(_ configuration: ObjectHeaderConfiguration) -> some View {
+        HStack(alignment: .top, spacing: 0) {
+            configuration.detailImage
+                .frame(minWidth: 16, maxWidth: 60, minHeight: 16, maxHeight: 60)
+                .padding(.trailing, 16)
+            
+            VStack(alignment: .leading, spacing: 16) {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 3) {
+                        configuration.title.multilineTextAlignment(.leading)
+                        configuration.subtitle.multilineTextAlignment(.leading)
+                    }
+                    
+                    Spacer(minLength: 0)
+                    
+                    self.statusViewInCompact(configuration)
+                        .layoutPriority(2)
+                        .frame(width: self.statusViewSize.width == 0 ? nil : min(self.statusViewSize.width, self.mainViewSize.width * 0.23))
+                        .padding(.leading, 8)
+                }
+                
+                if !self.isAdditionalInfoViewEmpty(configuration) {
+                    self.additionalInfoView(configuration)
+                } else {
+                    configuration.descriptionText
+                }
+            }
+            
+            Spacer(minLength: 0)
+        }
+    }
+
+    func tab1InGeneralLeadingEdge(_ configuration: ObjectHeaderConfiguration) -> some View {
+        VStack(alignment: .leading, spacing: 16) {
+            HStack(alignment: .top, spacing: 0) {
+                configuration.detailImage
+                    .frame(minWidth: 16, maxWidth: 60, minHeight: 16, maxHeight: 60)
+                    .padding(.trailing, 16)
+
+                VStack(alignment: .leading, spacing: 3) {
+                    configuration.title.multilineTextAlignment(.leading)
+                    configuration.subtitle.multilineTextAlignment(.leading)
+                }
+
+                Spacer(minLength: 0)
+
+                self.statusViewInCompact(configuration)
+                    .layoutPriority(2)
+                    .frame(width: self.statusViewSize.width == 0 ? nil : min(self.statusViewSize.width, self.mainViewSize.width * 0.23))
+                    .padding(.leading, 8)
+            }
+
+            if !self.isAdditionalInfoViewEmpty(configuration) {
+                self.additionalInfoView(configuration)
+            } else {
+                configuration.descriptionText
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+    
+    func statusViewInCompact(_ configuration: ObjectHeaderConfiguration) -> some View {
+        VStack(alignment: .trailing, spacing: 4) {
+            configuration.status
+                .multilineTextAlignment(.trailing)
+            
+            configuration.substatus
+                .multilineTextAlignment(.trailing)
+        }
+    }
+    
+    func tab2(_ configuration: ObjectHeaderConfiguration) -> some View {
+        configuration.detailContent
+    }
+    
+    @ViewBuilder
+    func tab3(_ configuration: ObjectHeaderConfiguration) -> some View {
+        if !self.isAdditionalInfoViewEmpty(configuration) {
+            configuration.descriptionText
+        }
+    }
+    
+    func numberOfTabs(_ configuration: ObjectHeaderConfiguration) -> Int {
+        var count = 1
+        if !configuration.detailContent.isEmpty {
+            count += 1
+        }
+        
+        if !self.isAdditionalInfoViewEmpty(configuration), !configuration.descriptionText.isEmpty {
+            count += 1
+        }
+        
+        return count
+    }
+    
+    func realTabIndex(_ configuration: ObjectHeaderConfiguration, for index: Int) -> Int {
+        if index == 2 {
+            if !self.isAdditionalInfoViewEmpty(configuration), !configuration.descriptionText.isEmpty {
+                if !configuration.detailContent.isEmpty {
+                    return 2
+                } else {
+                    return 1
+                }
+            }
+        } else if index == 1 {
+            if !configuration.detailContent.isEmpty {
+                return 1
+            }
+        } else if index == 0 {
+            return 0
+        }
+        
+        // invalid value
+        return -1
+    }
+}
+
+// Default fiori styles
+extension ObjectHeaderFioriStyle {
+    struct ContentFioriStyle: ObjectHeaderStyle {
+        func makeBody(_ configuration: ObjectHeaderConfiguration) -> some View {
+            ObjectHeader(configuration)
+        }
+    }
+    
+    struct TitleFioriStyle: TitleStyle {
+        @Environment(\.isLoading) var isLoading
+        let objectHeaderConfiguration: ObjectHeaderConfiguration
+        
+        func makeBody(_ configuration: TitleConfiguration) -> some View {
+            Title(configuration)
+                .font(.fiori(forTextStyle: .title3))
+                .foregroundColor(.preferredColor(self.isLoading ? .separator : .primaryLabel))
+        }
+    }
+    
+    struct SubtitleFioriStyle: SubtitleStyle {
+        let objectHeaderConfiguration: ObjectHeaderConfiguration
+        @Environment(\.isLoading) var isLoading
+        func makeBody(_ configuration: SubtitleConfiguration) -> some View {
+            Subtitle(configuration)
+                .font(.fiori(forTextStyle: .body))
+                .foregroundColor(.preferredColor(self.isLoading ? .separator : .primaryLabel))
+        }
+    }
+    
+    struct TagsFioriStyle: TagsStyle {
+        let objectHeaderConfiguration: ObjectHeaderConfiguration
+        @Environment(\.isLoading) var isLoading
+        func makeBody(_ configuration: TagsConfiguration) -> some View {
+            Tags(configuration)
+                .ifApply(self.isLoading) { content in
+                    content
+                        .foregroundColor(.preferredColor(.separator))
+                }
+        }
+    }
+    
+    struct BodyTextFioriStyle: BodyTextStyle {
+        let objectHeaderConfiguration: ObjectHeaderConfiguration
+        @Environment(\.isLoading) var isLoading
+        func makeBody(_ configuration: BodyTextConfiguration) -> some View {
+            BodyText(configuration)
+                .font(.fiori(forTextStyle: .subheadline))
+                .foregroundColor(.preferredColor(self.isLoading ? .separator : .secondaryLabel))
+        }
+    }
+    
+    struct FootnoteFioriStyle: FootnoteStyle {
+        let objectHeaderConfiguration: ObjectHeaderConfiguration
+        @Environment(\.isLoading) var isLoading
+        func makeBody(_ configuration: FootnoteConfiguration) -> some View {
+            Footnote(configuration)
+                .font(.fiori(forTextStyle: .subheadline))
+                .foregroundColor(.preferredColor(self.isLoading ? .separator : .secondaryLabel))
+                .lineLimit(1)
+        }
+    }
+    
+    struct DescriptionTextFioriStyle: DescriptionTextStyle {
+        let objectHeaderConfiguration: ObjectHeaderConfiguration
+        @Environment(\.isLoading) var isLoading
+        func makeBody(_ configuration: DescriptionTextConfiguration) -> some View {
+            DescriptionText(configuration)
+                .font(.fiori(forTextStyle: .subheadline))
+                .foregroundColor(.preferredColor(self.isLoading ? .separator : .primaryLabel))
+        }
+    }
+    
+    struct StatusFioriStyle: StatusStyle {
+        let objectHeaderConfiguration: ObjectHeaderConfiguration
+        @Environment(\.isLoading) var isLoading
+        func makeBody(_ configuration: StatusConfiguration) -> some View {
+            Status(configuration)
+                .font(.fiori(forTextStyle: .subheadline))
+                .foregroundColor(.preferredColor(self.isLoading ? .separator : .secondaryLabel))
+        }
+    }
+    
+    struct SubstatusFioriStyle: SubstatusStyle {
+        let objectHeaderConfiguration: ObjectHeaderConfiguration
+        @Environment(\.isLoading) var isLoading
+        func makeBody(_ configuration: SubstatusConfiguration) -> some View {
+            Substatus(configuration)
+                .font(.fiori(forTextStyle: .subheadline))
+                .foregroundColor(.preferredColor(self.isLoading ? .separator : .secondaryLabel))
+        }
+    }
+    
+    struct DetailImageFioriStyle: DetailImageStyle {
+        let objectHeaderConfiguration: ObjectHeaderConfiguration
+        @Environment(\.isLoading) var isLoading
+        func makeBody(_ configuration: DetailImageConfiguration) -> some View {
+            DetailImage(configuration)
+                .clipShape(RoundedRectangle(cornerRadius: 6))
+                .ifApply(self.isLoading) { content in
+                    content
+                        .foregroundColor(.preferredColor(.separator))
+                }
+        }
+    }
+    
+    struct DetailContentFioriStyle: DetailContentStyle {
+        let objectHeaderConfiguration: ObjectHeaderConfiguration
+        @Environment(\.isLoading) var isLoading
+        func makeBody(_ configuration: DetailContentConfiguration) -> some View {
+            DetailContent(configuration)
+                .ifApply(self.isLoading) { content in
+                    content
+                        .foregroundColor(.preferredColor(.separator))
+                }
+        }
+    }
+}
+
+/// Controls how the additional info section (`tags`, `bodyText`, `footnote`)
+/// — and `descriptionText` when shown in its place — is horizontally aligned
+/// within `ObjectHeader` when a `detailImage` is present.
+///
+/// `title` and `subtitle` always stay together on the top row next to the
+/// detail image, regardless of this value.
+public enum ObjectHeaderAdditionalInfoAlignment {
+    /// Tags, body text, and footnote indent under the title, past the trailing
+    /// edge of the detail image. This is the default behavior.
+    case alignWithTitle
+
+    /// Tags, body text, and footnote align with the container's leading edge —
+    /// the same edge as the detail image — instead of indenting under the title.
+    case leadingEdge
+}
+
+struct ObjectHeaderAdditionalInfoAlignmentKey: EnvironmentKey {
+    static let defaultValue: ObjectHeaderAdditionalInfoAlignment = .alignWithTitle
+}
+
+extension EnvironmentValues {
+    var objectHeaderAdditionalInfoAlignment: ObjectHeaderAdditionalInfoAlignment {
+        get { self[ObjectHeaderAdditionalInfoAlignmentKey.self] }
+        set { self[ObjectHeaderAdditionalInfoAlignmentKey.self] = newValue }
+    }
+}
+
+public extension View {
+    /// Sets the alignment of the additional info section (`tags`, `bodyText`,
+    /// `footnote`) — and `descriptionText` when shown in its place — inside an
+    /// `ObjectHeader` when a `detailImage` is present.
+    ///
+    /// `title` and `subtitle` are not affected and remain next to the detail image.
+    ///
+    /// - Parameter alignment: `.alignWithTitle` (default) keeps the additional
+    ///   info indented under the title. `.leadingEdge` drops it to align with
+    ///   the container's leading edge (the detail image's left edge).
+    /// - Returns: A view with the applied alignment configuration.
+    ///
+    /// Example usage:
+    /// ```swift
+    /// ObjectHeader(...)
+    ///     .objectHeaderAdditionalInfoAlignment(.leadingEdge)
+    /// ```
+    func objectHeaderAdditionalInfoAlignment(_ alignment: ObjectHeaderAdditionalInfoAlignment) -> some View {
+        self.environment(\.objectHeaderAdditionalInfoAlignment, alignment)
+    }
+}
+
+/// ObjectHeaderSkeletonLoadingPattern provides predefined patterns for ObjectHeader skeleton loading.
+public enum ObjectHeaderSkeletonLoadingPattern {
+    /// Provides a pattern with all fields populated.
+    public static let allField = ObjectHeader(title: {
+        Text("Object Header Title")
+    }, subtitle: {
+        Text("Object Header Subtitle")
+    }, tags: {
+        Tag("Tag1")
+        Tag("Tag2")
+        Tag("Tag3")
+    }, bodyText: {
+        Text("Object Header body text")
+    }, footnote: {
+        Text("footnote text")
+    }, status: {
+        Text("Status")
+    }, substatus: {
+        Text("substatus")
+    }, detailImage: {
+        Image("rw").resizable()
+    })
+    
+    /// Provides a pattern without detail image.
+    public static let noDetailImage = ObjectHeader(title: {
+        Text("Object Header Title")
+    }, subtitle: {
+        Text("Object Header Subtitle")
+    }, tags: {
+        Tag("Tag1")
+        Tag("Tag2")
+        Tag("Tag3")
+    }, bodyText: {
+        Text("Object Header body text")
+    }, footnote: {
+        Text("footnote text")
+    }, status: {
+        Text("Status")
+    }, substatus: {
+        Text("substatus")
+    })
+    
+    /// Provides a pattern without tags.
+    public static let noTag = ObjectHeader(title: {
+        Text("Object Header Title")
+    }, subtitle: {
+        Text("Object Header Subtitle")
+    }, bodyText: {
+        Text("Object Header body text")
+    }, footnote: {
+        Text("footnote text")
+    }, status: {
+        Text("Status")
+    }, substatus: {
+        Text("substatus")
+    }, detailImage: {
+        Image("rw").resizable()
+    })
+}

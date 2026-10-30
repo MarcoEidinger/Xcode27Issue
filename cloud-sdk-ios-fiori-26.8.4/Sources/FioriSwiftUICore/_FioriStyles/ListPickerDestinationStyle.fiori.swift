@@ -1,0 +1,1606 @@
+import FioriThemeManager
+import Foundation
+import SwiftUI
+
+// swiftlint:disable file_length
+
+// Base Layout style
+public struct ListPickerDestinationBaseStyle: ListPickerDestinationStyle {
+    public func makeBody(_ configuration: ListPickerDestinationConfiguration) -> some View {
+        configuration.listPickerContent
+            .listPickerDestinationConfiguration(configuration)
+    }
+}
+
+// Default fiori styles
+extension ListPickerDestinationFioriStyle {
+    struct ContentFioriStyle: ListPickerDestinationStyle {
+        func makeBody(_ configuration: ListPickerDestinationConfiguration) -> some View {
+            ListPickerDestination(configuration)
+        }
+    }
+    
+    struct CancelActionFioriStyle: CancelActionStyle {
+        let listPickerDestinationConfiguration: ListPickerDestinationConfiguration
+        
+        func makeBody(_ configuration: CancelActionConfiguration) -> some View {
+            CancelAction(configuration)
+                .fioriButtonStyle(FioriNavigationButtonStyle())
+        }
+    }
+    
+    struct ApplyActionFioriStyle: ApplyActionStyle {
+        let listPickerDestinationConfiguration: ListPickerDestinationConfiguration
+        
+        func makeBody(_ configuration: ApplyActionConfiguration) -> some View {
+            ApplyAction(configuration)
+                .fioriButtonStyle(FioriNavigationButtonStyle())
+        }
+    }
+    
+    struct SelectedEntriesSectionTitleFioriStyle: SelectedEntriesSectionTitleStyle {
+        let listPickerDestinationConfiguration: ListPickerDestinationConfiguration
+        
+        func makeBody(_ configuration: SelectedEntriesSectionTitleConfiguration) -> some View {
+            SelectedEntriesSectionTitle(configuration)
+        }
+    }
+    
+    struct SelectAllActionFioriStyle: SelectAllActionStyle {
+        let listPickerDestinationConfiguration: ListPickerDestinationConfiguration
+        
+        func makeBody(_ configuration: SelectAllActionConfiguration) -> some View {
+            SelectAllAction(configuration)
+                .fioriButtonStyle(ListPickerDestinationButtonStyle())
+        }
+    }
+    
+    struct DeselectAllActionFioriStyle: DeselectAllActionStyle {
+        let listPickerDestinationConfiguration: ListPickerDestinationConfiguration
+        
+        func makeBody(_ configuration: DeselectAllActionConfiguration) -> some View {
+            DeselectAllAction(configuration)
+                .fioriButtonStyle(ListPickerDestinationButtonStyle())
+        }
+    }
+    
+    struct AllEntriesSectionTitleFioriStyle: AllEntriesSectionTitleStyle {
+        let listPickerDestinationConfiguration: ListPickerDestinationConfiguration
+        
+        func makeBody(_ configuration: AllEntriesSectionTitleConfiguration) -> some View {
+            AllEntriesSectionTitle(configuration)
+        }
+    }
+    
+    struct ListPickerContentFioriStyle: ListPickerContentStyle {
+        let listPickerDestinationConfiguration: ListPickerDestinationConfiguration
+    
+        func makeBody(_ configuration: ListPickerContentConfiguration) -> some View {
+            ListPickerContent(configuration)
+        }
+    }
+    
+    struct PromptFioriStyle: PromptStyle {
+        let listPickerDestinationConfiguration: ListPickerDestinationConfiguration
+
+        func makeBody(_ configuration: PromptConfiguration) -> some View {
+            Prompt(configuration)
+        }
+    }
+}
+
+struct ListPickerDestinationButtonStyle: FioriButtonStyle {
+    enum ButtonPosition {
+        case navigation
+        case header
+    }
+    
+    let buttonPosition: ButtonPosition
+    
+    init(_ buttonPosition: ButtonPosition = .header) {
+        self.buttonPosition = buttonPosition
+    }
+    
+    func makeBody(configuration: Configuration) -> some View {
+        let font: Font
+        let foregroundColor: Color
+        
+        switch configuration.state {
+        case .normal:
+            foregroundColor = .preferredColor(.tintColor)
+        case .highlighted, .selected:
+            foregroundColor = .preferredColor(.tintColor3)
+        default:
+            foregroundColor = .preferredColor(.separator)
+        }
+         
+        switch self.buttonPosition {
+        case .navigation:
+            font = .fiori(forTextStyle: .body).weight(.bold)
+        case .header:
+            font = .fiori(forTextStyle: .subheadline)
+        }
+        let config = FioriButtonConfiguration(foregroundColor: foregroundColor,
+                                              backgroundColor: .clear,
+                                              font: font,
+                                              padding: EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+        return configuration.containerView(.unspecified)
+            .fioriButtonConfiguration(config)
+    }
+}
+
+public extension ListPickerDestination {
+    /// Create a destination for `ListPickerItem`.
+    /// - Parameters:
+    ///   - data: The data for constructing the list picker.
+    ///   - id: The key path to the data model's unique identifier.
+    ///   - children: The key path to the optional property of a data element whose value indicates the children of that element.
+    ///   - selections: A binding to a set which stores the selected items.
+    ///   - isTrackingLiveChanges: A boolean value to indicate to track the changes live or not.
+    ///   - prompt: Attributed text for prompt in destination view.
+    ///   - searchFilter: The closure to filter the `data` in searching process. Request a boolean by the element and the filter key.
+    ///   - rowContent: The view builder which returns the content of each row in the list picker.
+    init<Data: RandomAccessCollection, ID: Hashable>(
+        _ data: Data,
+        id: KeyPath<Data.Element, ID>,
+        children: KeyPath<Data.Element, Data?>? = nil,
+        selection: Binding<ID?>,
+        isTrackingLiveChanges: Bool = true,
+        prompt: AttributedString? = nil,
+        searchPrompt: String? = nil,
+        searchFilter: ((Data.Element, String) -> Bool)? = nil,
+        @ViewBuilder rowContent: @escaping (Data.Element) -> some View
+    ) {
+        let s = Binding<Set<ID>>(get: {
+            if let s = selection.wrappedValue {
+                [s]
+            } else {
+                []
+            }
+        }, set: {
+            selection.wrappedValue = $0.first
+        })
+        let content = ListPickerDestinationContent(
+            data,
+            id: id,
+            children: children,
+            selections: s,
+            isSingleSelection: true,
+            allowEmpty: true,
+            isTrackingLiveChanges: isTrackingLiveChanges,
+            searchPrompt: searchPrompt,
+            searchFilter: searchFilter,
+            rowContent: rowContent
+        )
+        self.init {
+            FioriButton { _ in Text("Cancel".localizedFioriString()) }
+        } listPickerContent: {
+            content
+        } prompt: {
+            if let prompt {
+                Text(prompt)
+            }
+        }
+    }
+    
+    /// Create a destination for `ListPickerItem`.
+    /// - Parameters:
+    ///   - data: The data for constructing the list picker.
+    ///   - id: The key path to the data model's unique identifier.
+    ///   - children: The key path to the optional property of a data element whose value indicates the children of that element.
+    ///   - selection: A binding to an ID which stores the selected items.
+    ///   - isTrackingLiveChanges: A boolean value to indicate to track the changes live or not.
+    ///   - prompt: Attributed text for prompt in destination view.
+    ///   - searchFilter: The closure to filter the `data` in searching process. Request a boolean by the element and the filter key.
+    ///   - rowContent: The view builder which returns the content of each row in the list picker.
+    init<Data: RandomAccessCollection, ID: Hashable>(
+        _ data: Data,
+        id: KeyPath<Data.Element, ID>,
+        children: KeyPath<Data.Element, Data?>? = nil,
+        selection: Binding<ID>,
+        isTrackingLiveChanges: Bool = true,
+        prompt: AttributedString? = nil,
+        searchPrompt: String? = nil,
+        searchFilter: ((Data.Element, String) -> Bool)? = nil,
+        @ViewBuilder rowContent: @escaping (Data.Element) -> some View
+    ) {
+        let s = Binding(get: {
+            Set([selection.wrappedValue])
+        }, set: {
+            if let s = $0.first {
+                selection.wrappedValue = s
+            } else {
+                fatalError("Selection should not be empty.")
+            }
+        })
+        
+        let content = ListPickerDestinationContent(
+            data,
+            id: id,
+            children: children,
+            selections: s,
+            isSingleSelection: true,
+            allowEmpty: false,
+            isTrackingLiveChanges: isTrackingLiveChanges,
+            searchPrompt: searchPrompt,
+            searchFilter: searchFilter,
+            rowContent: rowContent
+        )
+        self.init {
+            FioriButton { _ in Text("Cancel".localizedFioriString()) }
+        } listPickerContent: {
+            content
+        } prompt: {
+            if let prompt {
+                Text(prompt)
+            }
+        }
+    }
+    
+    /// Create a destination for `ListPickerItem`.
+    /// - Parameters:
+    ///   - data: The data for constructing the list picker.
+    ///   - id: The key path to the data model's unique identifier.
+    ///   - children: The key path to the optional property of a data element whose value indicates the children of that element.
+    ///   - selections: A binding to a set which stores the selected items.
+    ///   - isTrackingLiveChanges: A boolean value to indicate to track the changes live or not.
+    ///   - prompt: Attributed text for prompt in destination view.
+    ///   - searchFilter: The closure to filter the `data` in searching process. Request a boolean by the element and the filter key.
+    ///   - rowContent: The view builder which returns the content of each row in the list picker.
+    init<Data: RandomAccessCollection, ID: Hashable>(
+        _ data: Data,
+        id: KeyPath<Data.Element, ID>,
+        children: KeyPath<Data.Element, Data?>? = nil,
+        selections: Binding<Set<ID>?>,
+        isTrackingLiveChanges: Bool = true,
+        prompt: AttributedString? = nil,
+        searchPrompt: String? = nil,
+        searchFilter: ((Data.Element, String) -> Bool)? = nil,
+        @ViewBuilder rowContent: @escaping (Data.Element) -> some View
+    ) {
+        let s = Binding(get: {
+            selections.wrappedValue ?? []
+        }, set: {
+            selections.wrappedValue = $0
+        })
+        let content = ListPickerDestinationContent(
+            data,
+            id: id,
+            children: children,
+            selections: s,
+            isSingleSelection: false,
+            allowEmpty: true,
+            isTrackingLiveChanges: isTrackingLiveChanges,
+            searchPrompt: searchPrompt,
+            searchFilter: searchFilter,
+            rowContent: rowContent
+        )
+        self.init {
+            FioriButton { _ in Text("Cancel".localizedFioriString()) }
+        } listPickerContent: {
+            content
+        } prompt: {
+            if let prompt {
+                Text(prompt)
+            }
+        }
+    }
+    
+    /// Create a destination for `ListPickerItem`.
+    /// - Parameters:
+    ///   - data: The data for constructing the list picker.
+    ///   - id: The key path to the data model's unique identifier.
+    ///   - children: The key path to the optional property of a data element whose value indicates the children of that element.
+    ///   - selections: A binding to a set which stores the non-optional selected items.
+    ///   - allowEmpty: A boolean value to indicate to allow empty selections.
+    ///   - isTrackingLiveChanges: A boolean value to indicate to track the changes live or not.
+    ///   - prompt: Attributed text for prompt in destination view.
+    ///   - searchFilter: The closure to filter the `data` in searching process. Request a boolean by the element and the filter key.
+    ///   - rowContent: The view builder which returns the content of each row in the list picker.
+    init<Data: RandomAccessCollection, ID: Hashable>(
+        _ data: Data,
+        id: KeyPath<Data.Element, ID>,
+        children: KeyPath<Data.Element, Data?>? = nil,
+        selections: Binding<Set<ID>>,
+        allowEmpty: Bool = true,
+        isTrackingLiveChanges: Bool = true,
+        prompt: AttributedString? = nil,
+        searchPrompt: String? = nil,
+        searchFilter: ((Data.Element, String) -> Bool)? = nil,
+        @ViewBuilder rowContent: @escaping (Data.Element) -> some View
+    ) {
+        let content = ListPickerDestinationContent(
+            data,
+            id: id,
+            children: children,
+            selections: selections,
+            isSingleSelection: false,
+            allowEmpty: allowEmpty,
+            isTrackingLiveChanges: isTrackingLiveChanges,
+            searchPrompt: searchPrompt,
+            searchFilter: searchFilter,
+            rowContent: rowContent
+        )
+        self.init {
+            FioriButton { _ in Text("Cancel".localizedFioriString()) }
+        } listPickerContent: {
+            content
+        } prompt: {
+            if let prompt {
+                Text(prompt)
+            }
+        }
+    }
+}
+
+// MARK: - Grouped Initializer
+
+public extension ListPickerDestination {
+    /// Create a destination for `ListPickerItem` with grouped sections. Need Data.Element is a `ListPickerSectionModel`
+    /// - Parameters:
+    ///   - data: The data for constructing the list picker.
+    ///   - id: The key path to the data model's unique identifier.
+    ///   - children: The key path to the optional property of a data element whose value indicates the children of that element.
+    ///   - selections: A binding to a set which stores the selected items.
+    ///   - isTrackingLiveChanges: A boolean value to indicate to track the changes live or not.
+    ///   - prompt: Attributed text for prompt in destination view.
+    ///   - searchFilter: The closure to filter the `data` in searching process. Request a boolean by the element and the filter key.
+    ///   - rowContent: The view builder which returns the content of each row in the list picker.
+    init<Data: RandomAccessCollection, ID: Hashable>(
+        _ data: Data,
+        id: KeyPath<Data.Element.Data.Element, ID>,
+        children: KeyPath<Data.Element.Data.Element, Data.Element.Data?>? = nil,
+        selection: Binding<ID?>,
+        isTrackingLiveChanges: Bool = true,
+        prompt: AttributedString? = nil,
+        searchPrompt: String? = nil,
+        searchFilter: ((Data.Element.Data.Element, String) -> Bool)? = nil,
+        @ViewBuilder rowContent: @escaping (Data.Element.Data.Element) -> some View
+    ) where Data.Element: ListPickerSectionModel {
+        let s = Binding<Set<ID>>(get: {
+            if let s = selection.wrappedValue {
+                [s]
+            } else {
+                []
+            }
+        }, set: {
+            selection.wrappedValue = $0.first
+        })
+        let content = ListPickerDestinationContent(
+            data.map { ($0.title, $0.items) },
+            id: id,
+            children: children,
+            selections: s,
+            isSingleSelection: true,
+            allowEmpty: true,
+            isTrackingLiveChanges: isTrackingLiveChanges,
+            searchPrompt: searchPrompt,
+            searchFilter: searchFilter,
+            rowContent: rowContent
+        )
+        self.init {
+            FioriButton { _ in Text("Cancel".localizedFioriString()) }
+        } listPickerContent: {
+            content
+        } prompt: {
+            if let prompt {
+                Text(prompt)
+            }
+        }
+    }
+    
+    /// Create a destination for `ListPickerItem` with grouped sections. Need Data.Element is a `ListPickerSectionModel`
+    /// - Parameters:
+    ///   - data: The data for constructing the list picker.
+    ///   - id: The key path to the data model's unique identifier.
+    ///   - children: The key path to the optional property of a data element whose value indicates the children of that element.
+    ///   - selection: A binding to an ID which stores the selected items.
+    ///   - isTrackingLiveChanges: A boolean value to indicate to track the changes live or not.
+    ///   - prompt: Attributed text for prompt in destination view.
+    ///   - searchFilter: The closure to filter the `data` in searching process. Request a boolean by the element and the filter key.
+    ///   - rowContent: The view builder which returns the content of each row in the list picker.
+    init<Data: RandomAccessCollection, ID: Hashable>(
+        _ data: Data,
+        id: KeyPath<Data.Element.Data.Element, ID>,
+        children: KeyPath<Data.Element.Data.Element, Data.Element.Data?>? = nil,
+        selection: Binding<ID>,
+        isTrackingLiveChanges: Bool = true,
+        prompt: AttributedString? = nil,
+        searchPrompt: String? = nil,
+        searchFilter: ((Data.Element.Data.Element, String) -> Bool)? = nil,
+        @ViewBuilder rowContent: @escaping (Data.Element.Data.Element) -> some View
+    ) where Data.Element: ListPickerSectionModel {
+        let s = Binding(get: {
+            Set([selection.wrappedValue])
+        }, set: {
+            if let s = $0.first {
+                selection.wrappedValue = s
+            } else {
+                fatalError("Selection should not be empty.")
+            }
+        })
+        
+        let content = ListPickerDestinationContent(
+            data.map { ($0.title, $0.items) },
+            id: id,
+            children: children,
+            selections: s,
+            isSingleSelection: true,
+            allowEmpty: false,
+            isTrackingLiveChanges: isTrackingLiveChanges,
+            searchPrompt: searchPrompt,
+            searchFilter: searchFilter,
+            rowContent: rowContent
+        )
+        self.init {
+            FioriButton { _ in Text("Cancel".localizedFioriString()) }
+        } listPickerContent: {
+            content
+        } prompt: {
+            if let prompt {
+                Text(prompt)
+            }
+        }
+    }
+    
+    /// Create a destination for `ListPickerItem` with grouped sections. Need Data.Element is a `ListPickerSectionModel`
+    /// - Parameters:
+    ///   - data: The data for constructing the list picker.
+    ///   - id: The key path to the data model's unique identifier.
+    ///   - children: The key path to the optional property of a data element whose value indicates the children of that element.
+    ///   - selections: A binding to a set which stores the selected items.
+    ///   - isTrackingLiveChanges: A boolean value to indicate to track the changes live or not.
+    ///   - prompt: Attributed text for prompt in destination view.
+    ///   - searchFilter: The closure to filter the `data` in searching process. Request a boolean by the element and the filter key.
+    ///   - rowContent: The view builder which returns the content of each row in the list picker.
+    init<Data: RandomAccessCollection, ID: Hashable>(
+        _ data: Data,
+        id: KeyPath<Data.Element.Data.Element, ID>,
+        children: KeyPath<Data.Element.Data.Element, Data.Element.Data?>? = nil,
+        selections: Binding<Set<ID>?>,
+        isTrackingLiveChanges: Bool = true,
+        prompt: AttributedString? = nil,
+        searchPrompt: String? = nil,
+        searchFilter: ((Data.Element.Data.Element, String) -> Bool)? = nil,
+        @ViewBuilder rowContent: @escaping (Data.Element.Data.Element) -> some View
+    ) where Data.Element: ListPickerSectionModel {
+        let s = Binding(get: {
+            selections.wrappedValue ?? []
+        }, set: {
+            selections.wrappedValue = $0
+        })
+        let content = ListPickerDestinationContent(
+            data.map { ($0.title, $0.items) },
+            id: id,
+            children: children,
+            selections: s,
+            isSingleSelection: false,
+            allowEmpty: true,
+            isTrackingLiveChanges: isTrackingLiveChanges,
+            searchPrompt: searchPrompt,
+            searchFilter: searchFilter,
+            rowContent: rowContent
+        )
+        self.init {
+            FioriButton { _ in Text("Cancel".localizedFioriString()) }
+        } listPickerContent: {
+            content
+        } prompt: {
+            if let prompt {
+                Text(prompt)
+            }
+        }
+    }
+    
+    /// Create a destination for `ListPickerItem` with grouped sections. Need Data.Element is a `ListPickerSectionModel`
+    /// - Parameters:
+    ///   - data: The data for constructing the list picker.
+    ///   - id: The key path to the data model's unique identifier.
+    ///   - children: The key path to the optional property of a data element whose value indicates the children of that element.
+    ///   - selections: A binding to a set which stores the non-optional selected items.
+    ///   - allowEmpty: A boolean value to indicate to allow empty selections.
+    ///   - isTrackingLiveChanges: A boolean value to indicate to track the changes live or not.
+    ///   - prompt: Attributed text for prompt in destination view.
+    ///   - searchFilter: The closure to filter the `data` in searching process. Request a boolean by the element and the filter key.
+    ///   - rowContent: The view builder which returns the content of each row in the list picker.
+    init<Data: RandomAccessCollection, ID: Hashable>(
+        _ data: Data,
+        id: KeyPath<Data.Element.Data.Element, ID>,
+        children: KeyPath<Data.Element.Data.Element, Data.Element.Data?>? = nil,
+        selections: Binding<Set<ID>>,
+        allowEmpty: Bool = true,
+        isTrackingLiveChanges: Bool = true,
+        prompt: AttributedString? = nil,
+        searchPrompt: String? = nil,
+        searchFilter: ((Data.Element.Data.Element, String) -> Bool)? = nil,
+        @ViewBuilder rowContent: @escaping (Data.Element.Data.Element) -> some View
+    ) where Data.Element: ListPickerSectionModel {
+        let content = ListPickerDestinationContent(
+            data.map { ($0.title, $0.items) },
+            id: id,
+            children: children,
+            selections: selections,
+            isSingleSelection: false,
+            allowEmpty: allowEmpty,
+            isTrackingLiveChanges: isTrackingLiveChanges,
+            searchPrompt: searchPrompt,
+            searchFilter: searchFilter,
+            rowContent: rowContent
+        )
+        self.init {
+            FioriButton { _ in Text("Cancel".localizedFioriString()) }
+        } listPickerContent: {
+            content
+        } prompt: {
+            if let prompt {
+                Text(prompt)
+            }
+        }
+    }
+}
+
+/// Grouped sections data model for `ListPickerDestination`.
+public protocol ListPickerSectionModel {
+    associatedtype Data: RandomAccessCollection
+    /// Title for grouped section in `ListPickerDestination`.
+    var title: String { get }
+    
+    /// Items for grouped section in `ListPickerDestination`.
+    var items: Data { get }
+}
+
+struct ListPickerDestinationContent<Data: RandomAccessCollection, ID: Hashable, RowContent: View>: View {
+    @Environment(\.dismiss) var dismiss
+    @Environment(\.listPickerDestinationConfiguration) var destinationConfiguration
+    @Environment(\.disableEntriesSection) var disableEntriesSection
+    @Environment(\.disableContentSection) var disableContentSection
+    @Environment(\.autoDismissDestination) var autoDismissDestination
+    @Environment(\.isFilterFeedbackBarListPickerStyle) var isFilterFeedbackBarListPickerStyle
+    @Environment(\.confirmationDialogConfiguration) var confirmationDialogConfig
+    
+    @Binding private var selections: Set<ID>
+    private var isSingleSelection: Bool
+    private var allowEmpty: Bool
+    private var isTopLevel: Bool
+    typealias SectionData = [(title: String, items: Data)]
+    
+    let data: SectionData
+    let id: KeyPath<Data.Element, ID>
+    let children: KeyPath<Data.Element, Data?>?
+    let rowContent: (Data.Element) -> RowContent
+    let isTrackingLiveChanges: Bool
+    let searchPrompt: String?
+    let searchFilter: ((Data.Element, String) -> Bool)?
+
+    // MARK: - Internal state
+
+    @State var selectionsPool: Set<ID>
+    @State var searchText = ""
+    @State var confirmationSelections: Bool = false
+    @State var isListContentOutOfView: Bool = false
+
+    @Environment(\.listPickerSearchResultsEmptyView) private var searchResultsEmptyView
+    @Environment(\.listPickerSearchBarDisplayMode) private var searchBarDisplayMode
+    @Environment(\.listPickerDirtyStateBinding) private var dirtyStateBinding
+    
+    init(_ sections: SectionData,
+         id: KeyPath<Data.Element, ID>,
+         children: KeyPath<Data.Element, Data?>?,
+         selections: Binding<Set<ID>>,
+         isSingleSelection: Bool,
+         allowEmpty: Bool,
+         isTrackingLiveChanges: Bool,
+         searchPrompt: String?,
+         searchFilter: ((Data.Element, String) -> Bool)?,
+         isTopLevel: Bool = true,
+         @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent)
+    {
+        self.data = sections
+        self.id = id
+        self.children = children
+        _selections = selections
+        self.isSingleSelection = isSingleSelection
+        self.allowEmpty = allowEmpty
+        self.isTrackingLiveChanges = isTrackingLiveChanges
+        self.searchPrompt = searchPrompt
+        self.searchFilter = searchFilter
+        
+        self.isTopLevel = isTopLevel
+        self.rowContent = rowContent
+                
+        if !isTrackingLiveChanges {
+            _selectionsPool = State(initialValue: selections.wrappedValue)
+        } else {
+            _selectionsPool = State(initialValue: [])
+        }
+        self.postSelectionsUpdated()
+    }
+    
+    init(_ data: Data,
+         id: KeyPath<Data.Element, ID>,
+         children: KeyPath<Data.Element, Data?>?,
+         selections: Binding<Set<ID>>,
+         isSingleSelection: Bool,
+         allowEmpty: Bool,
+         isTrackingLiveChanges: Bool,
+         searchPrompt: String?,
+         searchFilter: ((Data.Element, String) -> Bool)?,
+         isTopLevel: Bool = true,
+         @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent)
+    {
+        self.data = [("", data)]
+        self.id = id
+        self.children = children
+        _selections = selections
+        self.isSingleSelection = isSingleSelection
+        self.allowEmpty = allowEmpty
+        self.isTrackingLiveChanges = isTrackingLiveChanges
+        self.searchPrompt = searchPrompt
+        self.searchFilter = searchFilter
+        
+        self.isTopLevel = isTopLevel
+        self.rowContent = rowContent
+                
+        if !isTrackingLiveChanges {
+            _selectionsPool = State(initialValue: selections.wrappedValue)
+        } else {
+            _selectionsPool = State(initialValue: [])
+        }
+        self.postSelectionsUpdated()
+    }
+
+    var body: some View {
+        Group {
+            if self.searchFilter != nil {
+                if self.isFilterFeedbackBarListPickerStyle {
+                    self.listContentForFilterFeedbackBarListPicker()
+                        .searchable(text: self.$searchText, placement: .navigationBarDrawer(displayMode: self.searchBarDisplayMode == .always ? .always : .automatic), prompt: self.searchPrompt.map { Text($0) })
+                } else {
+                    self.listContent()
+                        .searchable(text: self.$searchText, placement: .navigationBarDrawer(displayMode: self.searchBarDisplayMode == .always ? .always : .automatic), prompt: self.searchPrompt.map { Text($0) })
+                }
+            } else {
+                if self.isFilterFeedbackBarListPickerStyle {
+                    self.listContentForFilterFeedbackBarListPicker()
+                } else {
+                    self.listContent()
+                }
+            }
+        }
+        .setOnChange(of: self.selections) {
+            self.postSelectionsUpdated()
+            self.publishDirtyState()
+        }
+        .setOnChange(of: self.selectionsPool) {
+            self.publishDirtyState()
+        }
+        .onAppear {
+            self.publishDirtyState()
+        }
+        .ifApply(!self.isTrackingLiveChanges && self.isTopLevel) {
+            $0.toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    self.destinationConfiguration?.cancelAction
+                        .fixedSize()
+                        .onSimultaneousTapGesture {
+                            self.cancelActionTapped()
+                        }
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    self.destinationConfiguration?.applyAction
+                        .fixedSize()
+                        .onSimultaneousTapGesture {
+                            self.confirm()
+                            self.dismiss()
+                        }
+                        .disabled(!self.allowEmpty && self.selectionsPool.isEmpty)
+                }
+            }
+            .confirmationDialog(
+                self.dialogTitle,
+                isPresented: self.$confirmationSelections,
+                titleVisibility: .visible,
+                actions: {
+                    if let customActions = self.confirmationDialogConfig?.customActions {
+                        customActions(self.dismiss)
+                    } else {
+                        Button {
+                            self.dismiss()
+                        } label: {
+                            Text("Discard Changes".localizedFioriString())
+                        }
+                        Button("Keep Editing".localizedFioriString(), role: .cancel) {}
+                    }
+                }
+            )
+            .navigationBarBackButtonHidden()
+        }
+    }
+    
+    func postSelectionsUpdated() {
+        // Use async to support
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: Notification.Name.selectionsUpdatedNotification, object: self.selections)
+        }
+    }
+
+    /// Mirror the picker's dirty state (selectionsPool != selections) to an external binding,
+    /// when the consumer has registered one via `.listPickerDirtyState(_:)`.
+    /// Only meaningful when `isTrackingLiveChanges` is false and this is the top-level picker;
+    /// otherwise the binding is kept at false.
+    func publishDirtyState() {
+        guard let binding = self.dirtyStateBinding else { return }
+        let newValue: Bool = (!self.isTrackingLiveChanges && self.isTopLevel) ? (self.selections != self.selectionsPool) : false
+        if binding.wrappedValue != newValue {
+            DispatchQueue.main.async {
+                binding.wrappedValue = newValue
+            }
+        }
+    }
+    
+    func cancelActionTapped() {
+        if !(self.selections == self.selectionsPool) {
+            if self.confirmationDialogConfig?.isDialogDisabled == true {
+                self.confirmationDialogConfig?.discardAction?()
+                self.dismiss()
+            } else {
+                self.confirmationSelections.toggle()
+            }
+        } else {
+            self.dismiss()
+        }
+    }
+
+    private var dialogTitle: String {
+        self.confirmationDialogConfig?.title
+            ?? "Are you sure you want to discard your selections?".localizedFioriString()
+    }
+
+    private func selectedEntriesSectionHeaderIsEmpty() -> Bool {
+        (self.destinationConfiguration?.selectedEntriesSectionTitle.isEmpty ?? true) &&
+            (self.destinationConfiguration?.deselectAllAction.isEmpty ?? true)
+    }
+    
+    private func allEntriesHeaderIsEmpty() -> Bool {
+        let isActionEmpty = (destinationConfiguration?.selectAllAction.isEmpty ?? true) && (self.destinationConfiguration?.deselectAllAction.isEmpty ?? true)
+        return (self.destinationConfiguration?.allEntriesSectionTitle.isEmpty ?? true) && isActionEmpty
+    }
+    
+    private var showSelectedSection: Bool {
+        if self.isSingleSelection {
+            return self.isListContentOutOfView && !self.disableEntriesSection
+        } else {
+            return self.isTopLevel && !self.disableEntriesSection && self.destinationConfiguration != nil && self.searchText.isEmpty
+        }
+    }
+    
+    @ViewBuilder func listContent() -> some View {
+        if !self.searchText.isEmpty, self.filteredSectionDataOnPage().isEmpty {
+            ScrollView {
+                VStack {
+                    Spacer(minLength: 0)
+                    AnyView(self.searchResultsEmptyView())
+                    Spacer(minLength: 0)
+                }
+                .frame(maxWidth: .infinity, minHeight: 400)
+                .padding(10)
+            }
+            
+        } else if #available(iOS 18, *) {
+            listContentView()
+                .onScrollGeometryChange(for: Bool.self) { geo in
+                    geo.contentSize.height > geo.bounds.height
+                } action: { _, newValue in
+                    self.isListContentOutOfView = newValue
+                }
+        } else {
+            self.listContentView()
+        }
+    }
+    
+    @ViewBuilder func listContentView() -> some View {
+        List {
+            if self.showSelectedSection {
+                Section {
+                    self.selectedSection()
+                } header: {
+                    if !self.selectedEntriesSectionHeaderIsEmpty(), self.selectionsCount() > 0 {
+                        HStack {
+                            self.destinationConfiguration?.selectedEntriesSectionTitle
+                            Spacer()
+                            self.destinationConfiguration?.deselectAllAction
+                                .onSimultaneousTapGesture {
+                                    self.deselectAll()
+                                }
+                        }
+                    }
+                }.textCase(.none)
+            }
+            
+            let filteredData = self.filteredSectionDataOnPage()
+            
+            if !(self.data.first?.title.isEmpty ?? true) {
+                // grouped sections, no sdk header support
+                ForEach(0 ..< filteredData.count, id: \.self) { index in
+                    Section {
+                        self.generateSection(by: filteredData[index].1)
+                    } header: {
+                        Text(filteredData[index].0)
+                    } footer: {
+                        if index == filteredData.count - 1 {
+                            self.destinationConfiguration?.prompt
+                                .padding([.top, .bottom])
+                        }
+                    }.textCase(.none)
+                }
+            } else {
+                // single section
+                if let items = filteredData.first?.1 {
+                    Section {
+                        self.generateSection(by: items)
+                    } header: {
+                        if !self.allEntriesHeaderIsEmpty(), !self.disableContentSection, !self.isSingleSelection {
+                            HStack {
+                                self.destinationConfiguration?.allEntriesSectionTitle
+                                Spacer()
+                                if self.areAllVisibleItemsSelected() {
+                                    self.destinationConfiguration?.deselectAllAction
+                                        .onSimultaneousTapGesture {
+                                            self.deselectAll()
+                                        }
+                                } else {
+                                    self.destinationConfiguration?.selectAllAction
+                                        .onSimultaneousTapGesture {
+                                            self.selectAll()
+                                        }
+                                }
+                            }
+                        }
+                    } footer: {
+                        self.destinationConfiguration?.prompt
+                            .padding([.top, .bottom])
+                    }.textCase(.none)
+                } else {
+                    EmptyView()
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder func listContentForFilterFeedbackBarListPicker() -> some View {
+        if !self.searchText.isEmpty, self.filteredSectionDataOnPage().isEmpty {
+            ScrollView {
+                VStack {
+                    Spacer(minLength: 0)
+                    AnyView(self.searchResultsEmptyView())
+                    Spacer(minLength: 0)
+                }
+                .frame(maxWidth: .infinity, minHeight: 400)
+                .padding(10)
+            }
+        } else {
+            List {
+                if self.showSelectedSection {
+                    Section {
+                        if !self.selectedEntriesSectionHeaderIsEmpty(), self.selectionsCount() > 0 {
+                            HStack {
+                                self.destinationConfiguration?.selectedEntriesSectionTitle
+                                Spacer()
+                                self.destinationConfiguration?.deselectAllAction
+                                    .onSimultaneousTapGesture {
+                                        self.deselectAll()
+                                    }
+                            }
+                            .padding([.leading, .trailing], 16)
+                            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                            .alignmentGuide(.listRowSeparatorLeading) { dimensions in
+                                dimensions[.leading] - 16
+                            }
+                            .background(Color.preferredColor(.secondaryGroupedBackground))
+                        
+                            self.selectedSection()
+                                .listRowInsets(EdgeInsets(top: 11, leading: 16, bottom: 11, trailing: 16))
+                        
+                            #if !os(visionOS)
+                                Rectangle().fill(Color.preferredColor(.primaryGroupedBackground))
+                                    .frame(height: 30)
+                                    .listRowInsets(EdgeInsets())
+                                    .alignmentGuide(.listRowSeparatorLeading) { dimensions in
+                                        dimensions[.leading] - 16
+                                    }
+                                    .accessibilityHidden(true)
+                            #endif
+                        }
+                    }.textCase(.none)
+                }
+            
+                let filteredData = self.filteredSectionDataOnPage()
+            
+                if !(self.data.first?.title.isEmpty ?? true) {
+                    // grouped sections, no sdk header support
+                    ForEach(0 ..< filteredData.count, id: \.self) { index in
+                        Section {
+                            Text(filteredData[index].0)
+                                .padding([.leading, .trailing], 16)
+                                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                                .alignmentGuide(.listRowSeparatorLeading) { dimensions in
+                                    dimensions[.leading] - 16
+                                }
+                                .background(Color.preferredColor(.secondaryGroupedBackground))
+                        
+                            self.generateSection(by: filteredData[index].1)
+                                .listRowInsets(EdgeInsets(top: 11, leading: 16, bottom: 11, trailing: 16))
+                        }.textCase(.none)
+                    }
+                } else {
+                    // single section
+                    if let items = filteredData.first?.1 {
+                        Section {
+                            if !self.allEntriesHeaderIsEmpty(), !self.disableContentSection, !self.isSingleSelection {
+                                HStack {
+                                    self.destinationConfiguration?.allEntriesSectionTitle
+                                    Spacer()
+                                    if self.areAllVisibleItemsSelected() {
+                                        self.destinationConfiguration?.deselectAllAction
+                                            .onSimultaneousTapGesture {
+                                                self.deselectAll()
+                                            }
+                                    } else {
+                                        self.destinationConfiguration?.selectAllAction
+                                            .onSimultaneousTapGesture {
+                                                self.selectAll()
+                                            }
+                                    }
+                                }
+                                .padding([.leading, .trailing], 16)
+                                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                                .alignmentGuide(.listRowSeparatorLeading) { dimensions in
+                                    dimensions[.leading] - 16
+                                }
+                                .background(Color.preferredColor(.secondaryGroupedBackground))
+                            }
+                        
+                            self.generateSection(by: items)
+                                .listRowInsets(EdgeInsets(top: 11, leading: 16, bottom: 11, trailing: 16))
+
+                        }.textCase(.none)
+                    } else {
+                        EmptyView()
+                    }
+                }
+            }
+        }
+    }
+
+    @ViewBuilder func generateSection(by serialData: [Data.Element]) -> some View {
+        ForEach(serialData, id: self.id) { element in
+            Group {
+                let id_value = element[keyPath: id]
+                if let children, let childrenData = element[keyPath: children] {
+                    ListPickerItem {
+                        self.rowContent(element)
+                    } value: {
+                        EmptyView()
+                    } destination: {
+                        ListPickerDestinationContent(childrenData,
+                                                     id: self.id,
+                                                     children: children,
+                                                     selections: self.isTrackingLiveChanges ? self.$selections : self.$selectionsPool,
+                                                     isSingleSelection: self.isSingleSelection,
+                                                     allowEmpty: self.allowEmpty,
+                                                     isTrackingLiveChanges: true,
+                                                     searchPrompt: self.searchPrompt,
+                                                     searchFilter: self.searchFilter,
+                                                     isTopLevel: false,
+                                                     rowContent: self.rowContent)
+                    }
+                    .environment(\.listPickerItemIgnoreValue, true)
+                    .destinationDisplayMode(.push)
+                } else {
+                    ListPickerDestinationRow(content: self.rowContent(element),
+                                             isSelected: self.isItemSelected(id_value))
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            self.handleSelections(id_value)
+                        }
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder func selectedSection() -> some View {
+        let selectedData = selectedData()
+        ForEach(selectedData, id: self.id) { element in
+            let id_value = element[keyPath: id]
+            ListPickerDestinationRow(content: self.rowContent(element),
+                                     isSelected: self.isItemSelected(id_value))
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    self.handleSelections(id_value)
+                }
+        }
+    }
+    
+    func selectedData() -> [Data.Element] {
+        let s = self.isTrackingLiveChanges ? self.selections : self.selectionsPool
+        return self.flattenData(data: self.data).filter { s.contains($0[keyPath: self.id]) }
+    }
+
+    func flattenData(data: SectionData) -> [Data.Element] {
+        data.flatMap(\.items).flatMap { element in
+            if let children, let childrenData = element[keyPath: children] {
+                return self.flattenData(data: [("", childrenData)])
+            } else {
+                return [element]
+            }
+        }
+    }
+    
+    func filteredSectionDataOnPage() -> [(String, [Data.Element])] {
+        var filteredResult = [(String, [Data.Element])]()
+        
+        for sectionData in self.data {
+            let filteredValues = sectionData.items.filter { element in
+                if let searchFilter, !searchText.isEmpty {
+                    return searchFilter(element, self.searchText)
+                } else {
+                    return true
+                }
+            }
+            if !filteredValues.isEmpty {
+                filteredResult.append((sectionData.title, filteredValues))
+            }
+        }
+        return filteredResult
+    }
+    
+    func isItemSelected(_ idValue: ID) -> Bool {
+        if self.isTrackingLiveChanges {
+            return self.selections.contains(idValue)
+        } else {
+            return self.selectionsPool.contains(idValue)
+        }
+    }
+
+    func handleSelections(_ idValue: ID) {
+        if self.isTrackingLiveChanges {
+            if self.selections.contains(idValue) {
+                if !self.allowEmpty, self.selections.count == 1 {
+                    // should not remove the last selection
+                    if self.autoDismissDestination {
+                        self.dismiss()
+                    }
+                } else {
+                    self.selections.remove(idValue)
+                }
+            } else {
+                if self.isSingleSelection {
+                    self.selections = Set([idValue])
+                    if self.autoDismissDestination {
+                        self.dismiss()
+                    }
+                } else {
+                    self.selections.insert(idValue)
+                }
+            }
+        } else {
+            if self.selectionsPool.contains(idValue) {
+                if !self.allowEmpty, self.selectionsPool.count == 1 {
+                    // should not remove the last selection
+                } else {
+                    self.selectionsPool.remove(idValue)
+                }
+            } else {
+                if self.isSingleSelection {
+                    self.selectionsPool = Set([idValue])
+                } else {
+                    self.selectionsPool.insert(idValue)
+                }
+            }
+        }
+    }
+
+    func confirm() {
+        self.selections = self.selectionsPool
+    }
+    
+    func selectionsCount() -> Int {
+        self.isTrackingLiveChanges ? self.selections.count : self.selectionsPool.count
+    }
+    
+    func selectAll() {
+        let visibleIDs = self.flattenedVisibleIDs()
+        if self.isTrackingLiveChanges {
+            self.selections.formUnion(visibleIDs)
+        } else {
+            self.selectionsPool.formUnion(visibleIDs)
+        }
+    }
+
+    func deselectAll() {
+        let visibleIDs = self.flattenedVisibleIDs()
+        if self.isTrackingLiveChanges {
+            self.selections.subtract(visibleIDs)
+        } else {
+            self.selectionsPool.subtract(visibleIDs)
+        }
+    }
+
+    /// IDs of items visible after applying the current search filter, recursively flattened across children.
+    private func flattenedVisibleIDs() -> Set<ID> {
+        let visibleItems = self.filteredSectionDataOnPage().flatMap(\.1)
+        return Set(self.flattenItems(visibleItems).map { $0[keyPath: self.id] })
+    }
+
+    private func flattenItems(_ items: [Data.Element]) -> [Data.Element] {
+        items.flatMap { element -> [Data.Element] in
+            if let children, let childrenData = element[keyPath: children] {
+                return self.flattenItems(Array(childrenData))
+            } else {
+                return [element]
+            }
+        }
+    }
+
+    /// True when every item visible under the current search filter is already selected.
+    private func areAllVisibleItemsSelected() -> Bool {
+        let visibleIDs = self.flattenedVisibleIDs()
+        guard !visibleIDs.isEmpty else { return false }
+        let currentSelections = self.isTrackingLiveChanges ? self.selections : self.selectionsPool
+        return visibleIDs.isSubset(of: currentSelections)
+    }
+}
+
+extension ListPickerDestinationContent {
+    /// As content for `ListPickerDestination`
+    init(_ data: Data,
+         id: KeyPath<Data.Element, ID>,
+         children: KeyPath<Data.Element, Data?>? = nil,
+         selection: Binding<ID?>,
+         isTrackingLiveChanges: Bool = true,
+         searchPrompt: String? = nil,
+         searchFilter: ((Data.Element, String) -> Bool)? = nil,
+         @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent)
+    {
+        let s = Binding<Set<ID>>(get: {
+            if let s = selection.wrappedValue {
+                [s]
+            } else {
+                []
+            }
+        }, set: {
+            selection.wrappedValue = $0.first
+        })
+        self.init(data,
+                  id: id,
+                  children: children,
+                  selections: s,
+                  isSingleSelection: true,
+                  allowEmpty: true,
+                  isTrackingLiveChanges: isTrackingLiveChanges,
+                  searchPrompt: searchPrompt,
+                  searchFilter: searchFilter,
+                  rowContent: rowContent)
+    }
+
+    /// As content for `ListPickerDestination`
+    init(_ data: Data,
+         id: KeyPath<Data.Element, ID>,
+         children: KeyPath<Data.Element, Data?>? = nil,
+         selection: Binding<ID>,
+         isTrackingLiveChanges: Bool = true,
+         searchPrompt: String? = nil,
+         searchFilter: ((Data.Element, String) -> Bool)? = nil,
+         @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent)
+    {
+        let s = Binding(get: {
+            Set([selection.wrappedValue])
+        }, set: {
+            if let s = $0.first {
+                selection.wrappedValue = s
+            } else {
+                fatalError("Selection should not be empty.")
+            }
+        })
+        self.init(data,
+                  id: id,
+                  children: children,
+                  selections: s,
+                  isSingleSelection: true,
+                  allowEmpty: false,
+                  isTrackingLiveChanges: isTrackingLiveChanges,
+                  searchPrompt: searchPrompt,
+                  searchFilter: searchFilter,
+                  rowContent: rowContent)
+    }
+
+    /// As content for `ListPickerDestination`
+    init(_ data: Data,
+         id: KeyPath<Data.Element, ID>,
+         children: KeyPath<Data.Element, Data?>? = nil,
+         selections: Binding<Set<ID>?>,
+         isTrackingLiveChanges: Bool = true,
+         searchPrompt: String? = nil,
+         searchFilter: ((Data.Element, String) -> Bool)? = nil,
+         @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent)
+    {
+        let s = Binding(get: {
+            selections.wrappedValue ?? []
+        }, set: {
+            selections.wrappedValue = $0
+        })
+        self.init(data,
+                  id: id,
+                  children: children,
+                  selections: s,
+                  isSingleSelection: false,
+                  allowEmpty: true,
+                  isTrackingLiveChanges: isTrackingLiveChanges,
+                  searchPrompt: searchPrompt,
+                  searchFilter: searchFilter,
+                  rowContent: rowContent)
+    }
+
+    /// As content for `ListPickerDestination`
+    init(_ data: Data,
+         id: KeyPath<Data.Element, ID>,
+         children: KeyPath<Data.Element, Data?>? = nil,
+         selections: Binding<Set<ID>>,
+         isTrackingLiveChanges: Bool = true,
+         searchPrompt: String? = nil,
+         searchFilter: ((Data.Element, String) -> Bool)? = nil,
+         @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent)
+    {
+        self.init(data,
+                  id: id,
+                  children: children,
+                  selections: selections,
+                  isSingleSelection: false,
+                  allowEmpty: true,
+                  isTrackingLiveChanges: isTrackingLiveChanges,
+                  searchPrompt: searchPrompt,
+                  searchFilter: searchFilter,
+                  rowContent: rowContent)
+    }
+}
+
+struct ListPickerDestinationRow: View {
+    var content: any View
+    var isSelected: Bool
+    
+    @State var listBackgroundColor: Color? = nil
+    
+    var body: some View {
+        HStack {
+            self.content.typeErased
+            Spacer()
+            if self.isSelected {
+                Image(systemName: "checkmark")
+                    .foregroundColor(.preferredColor(.tintColor))
+                    .accessibilityHidden(true)
+            }
+        }
+        .onPreferenceChange(DestinationRowBackgroundPreferenceKey.self) { c in
+            self.listBackgroundColor = c
+        }
+        .listRowBackground(self.listBackgroundColor)
+        .accessibilityElement(children: .combine)
+        .accessibilityAddTraits(self.isSelected ? [.isSelected] : [])
+    }
+}
+
+struct ListPickerDestinationConfigurationEnvironment: EnvironmentKey {
+    static let defaultValue: ListPickerDestinationConfiguration? = nil
+}
+
+extension EnvironmentValues {
+    var listPickerDestinationConfiguration: ListPickerDestinationConfiguration? {
+        get { self[ListPickerDestinationConfigurationEnvironment.self] }
+        set { self[ListPickerDestinationConfigurationEnvironment.self] = newValue }
+    }
+}
+
+extension View {
+    func listPickerDestinationConfiguration(_ configuration: ListPickerDestinationConfiguration) -> some View {
+        self.environment(\.listPickerDestinationConfiguration, configuration)
+    }
+}
+
+struct DisableEntriesSectionEnvironment: EnvironmentKey {
+    static let defaultValue: Bool = false
+}
+
+struct DisableContentSectionEnvironment: EnvironmentKey {
+    static let defaultValue: Bool = false
+}
+
+struct AutoDismissDestinationEnvironment: EnvironmentKey {
+    static let defaultValue: Bool = false
+}
+
+struct IsFilterFeedbackBarListPickerStyleEnvironment: EnvironmentKey {
+    static let defaultValue: Bool = false
+}
+
+struct ConfirmationDialogConfigurationEnvironment: EnvironmentKey {
+    static let defaultValue: ConfirmationDialogConfiguration? = nil
+}
+
+struct DestinationRowBackgroundPreferenceKey: PreferenceKey {
+    static var defaultValue: Color? = nil
+
+    static func reduce(value: inout Color?, nextValue: () -> Color?) {
+        value = nextValue()
+    }
+}
+
+struct ListPickerItemIgnoreValueKey: EnvironmentKey {
+    static var defaultValue: Bool = false
+}
+
+struct DestinationDisplayModeKey: EnvironmentKey {
+    static var defaultValue: DestinationDisplayMode = .push
+}
+
+extension EnvironmentValues {
+    var disableEntriesSection: Bool {
+        get { self[DisableEntriesSectionEnvironment.self] }
+        set { self[DisableEntriesSectionEnvironment.self] = newValue }
+    }
+    
+    var autoDismissDestination: Bool {
+        get { self[AutoDismissDestinationEnvironment.self] }
+        set { self[AutoDismissDestinationEnvironment.self] = newValue }
+    }
+    
+    var isFilterFeedbackBarListPickerStyle: Bool {
+        get { self[IsFilterFeedbackBarListPickerStyleEnvironment.self] }
+        set { self[IsFilterFeedbackBarListPickerStyleEnvironment.self] = newValue }
+    }
+    
+    var disableContentSection: Bool {
+        get { self[DisableContentSectionEnvironment.self] }
+        set { self[DisableContentSectionEnvironment.self] = newValue }
+    }
+    
+    var destinationDisplayMode: DestinationDisplayMode {
+        get { self[DestinationDisplayModeKey.self] }
+        set { self[DestinationDisplayModeKey.self] = newValue }
+    }
+    
+    var listPickerItemIgnoreValue: Bool {
+        get { self[ListPickerItemIgnoreValueKey.self] }
+        set { self[ListPickerItemIgnoreValueKey.self] = newValue }
+    }
+
+    var confirmationDialogConfiguration: ConfirmationDialogConfiguration? {
+        get { self[ConfirmationDialogConfigurationEnvironment.self] }
+        set { self[ConfirmationDialogConfigurationEnvironment.self] = newValue }
+    }
+}
+
+public extension View {
+    /// Adds a condition that controls whether entries section can be displayed for `ListPickerDestination`.
+    /// - Parameter disabled: A Boolean value that determines whether entries section can be displayed for `ListPickerDestination`.
+    /// - Returns: A view that controls whether entries section can be displayed for `ListPickerDestination`.
+    func disableEntriesSection(_ disabled: Bool = true) -> some View {
+        self.environment(\.disableEntriesSection, disabled)
+    }
+    
+    /// Adds a condition that controls whether `ListPickerDestination` should be dismissed when selection is made. This is only work for single selection and `isTrackingLiveChanges` is `true`.
+    /// - Parameter dismiss: A Boolean value that determines whether `ListPickerDestination` should be dismissed when selection is made.
+    /// - Returns: A view that controls whether `ListPickerDestination` can be dismissed.
+    func autoDismissDestination(_ dismiss: Bool = true) -> some View {
+        self.environment(\.autoDismissDestination, dismiss)
+    }
+    
+    /// Customize the list style used in the list picker of filter feedbar bar.
+    /// - Parameter value: A Boolean value that determines whether customize the list style.
+    /// - Returns: A view that customized by filter feedback bar list picker style.
+    func isFilterFeedbackBarListPickerStyle(_ value: Bool = false) -> some View {
+        self.environment(\.isFilterFeedbackBarListPickerStyle, value)
+    }
+
+    /// Background color customization for rows in `ListPickerDestination`
+    /// - Parameter color: Background color for rows.
+    /// - Returns: A view with custom background color.
+    func destinationRowBackgroundColor(_ color: Color) -> some View {
+        self.preference(key: DestinationRowBackgroundPreferenceKey.self, value: color)
+    }
+    
+    /// Controls whether the unselected section of `ListPickerDestination` can be displayed
+    /// - Parameter disabled: A Boolean value where true hides the unselected section and false allows it to be displayed
+    /// - Returns: A configured `ListPickerDestination` view with the unselected section's visibility controlled by the parameter
+    func disableContentSection(_ disabled: Bool = true) -> some View {
+        self.environment(\.disableContentSection, disabled)
+    }
+    
+    /// Destination display mode for list picker item.
+    /// - Parameter mode: Mode for showing destination.
+    /// - Returns: A new view with customized destination display mode.
+    func destinationDisplayMode(_ mode: DestinationDisplayMode) -> some View {
+        self.environment(\.destinationDisplayMode, mode)
+    }
+
+    /// Configures the confirmation dialog shown when cancelling a
+    /// `ListPickerDestination` with unsaved selections.
+    /// - Parameter configuration: The dialog configuration.
+    ///   Pass `.disabled` to suppress the dialog entirely.
+    /// - Returns: A view with the customized confirmation dialog behavior.
+    func confirmationDialogConfiguration(_ configuration: ConfirmationDialogConfiguration) -> some View {
+        self.environment(\.confirmationDialogConfiguration, configuration)
+    }
+}
+
+extension Notification.Name {
+    static let selectionsUpdatedNotification = Notification.Name("ListPickerSelectionsUpdatedNotification")
+}
+
+/// Display modes when navigating to destination of list picker item.
+public enum DestinationDisplayMode {
+    /// Push destination from current view.
+    case push
+    
+    /// Present destination as sheet from current view.
+    case sheet
+}
+
+/// The configuration for customizing the confirmation dialog shown when
+/// cancelling a `ListPickerDestination` with unsaved selections.
+public struct ConfirmationDialogConfiguration {
+    /// The title text displayed in the confirmation dialog.
+    public let title: String
+
+    /// The custom actions view for the confirmation dialog.
+    /// When provided, replaces the default "Discard Changes" / "Keep Editing" buttons.
+    /// The closure receives a `dismiss` callback that the consumer must call to dismiss the picker.
+    let customActions: ((DismissAction) -> AnyView)?
+
+    /// An optional closure called when the user taps cancel and there are unsaved changes,
+    /// but the dialog is disabled. Invoked before the view is dismissed.
+    public var discardAction: (() -> Void)?
+
+    /// When `true`, the confirmation dialog is completely suppressed and
+    /// tapping cancel always dismisses immediately, discarding changes.
+    public let isDialogDisabled: Bool
+
+    /// Creates a confirmation dialog configuration with custom actions.
+    /// - Parameters:
+    ///   - title: The dialog title. Defaults to the SDK's localized
+    ///     "Are you sure you want to discard your selections?" string.
+    ///   - isDialogDisabled: When `true`, the dialog is never shown and
+    ///     cancel always dismisses immediately. Defaults to `false`.
+    ///   - discardAction: An optional closure invoked before dismiss when
+    ///     the dialog is disabled and the user taps cancel with unsaved changes.
+    ///   - actions: A `@ViewBuilder` closure that receives a `dismiss` action
+    ///     and returns the dialog's action buttons. Use `Button` with roles
+    ///     like `.destructive` or `.cancel` to control styling.
+    public init(
+        title: String = "Are you sure you want to discard your selections?".localizedFioriString(),
+        isDialogDisabled: Bool = false,
+        discardAction: (() -> Void)? = nil,
+        @ViewBuilder actions: @escaping (_ dismiss: DismissAction) -> some View
+    ) {
+        self.title = title
+        self.isDialogDisabled = isDialogDisabled
+        self.discardAction = discardAction
+        self.customActions = { dismiss in AnyView(actions(dismiss)) }
+    }
+
+    /// Creates a confirmation dialog configuration with default action labels.
+    /// - Parameters:
+    ///   - title: The dialog title.
+    ///   - isDialogDisabled: When `true`, the dialog is never shown.
+    ///   - discardAction: An optional closure invoked before dismiss when
+    ///     the dialog is disabled and the user taps cancel with unsaved changes.
+    public init(
+        title: String = "Are you sure you want to discard your selections?".localizedFioriString(),
+        isDialogDisabled: Bool = false,
+        discardAction: (() -> Void)? = nil
+    ) {
+        self.title = title
+        self.isDialogDisabled = isDialogDisabled
+        self.discardAction = discardAction
+        self.customActions = nil
+    }
+
+    /// A convenience configuration that disables the confirmation dialog entirely.
+    public static let disabled = ConfirmationDialogConfiguration(isDialogDisabled: true)
+}
+
+struct ListPickerSearchResultsEmptyViewKey: EnvironmentKey {
+    static let defaultValue: () -> any View = {
+        IllustratedMessage(
+            detailImage: {
+                FioriIcon.illustrations.noEntriesSmall
+            },
+            title: {
+                Text("No Results Found".localizedFioriString())
+            },
+            description: {
+                Text("Check your search for any spelling errors or try a different search term.".localizedFioriString())
+            },
+            contentAlignment: .center
+        )
+    }
+}
+
+public extension EnvironmentValues {
+    /// A view-builder providing the empty-state view shown in `ListPickerDestination`
+    /// when the user's search yields no results. Defaults to a Fiori `IllustratedMessage`.
+    var listPickerSearchResultsEmptyView: () -> any View {
+        get { self[ListPickerSearchResultsEmptyViewKey.self] }
+        set { self[ListPickerSearchResultsEmptyViewKey.self] = newValue }
+    }
+}
+
+public extension View {
+    /// Override the empty state shown in `ListPickerDestination` when the search yields no results.
+    ///
+    /// - Parameter view: A view-builder producing the view to display when the search returns no matches.
+    /// - Returns: A view with the customized empty-search-results view applied via the environment.
+    func listPickerSearchResultsEmptyView(@ViewBuilder _ view: @escaping () -> some View) -> some View {
+        self.environment(\.listPickerSearchResultsEmptyView) { view() }
+    }
+}
+
+/// Display mode for the search bar in `ListPickerDestination`.
+public enum ListPickerSearchBarDisplayMode {
+    /// The search bar is hidden until the user scrolls. This is the default behavior.
+    case automatic
+    /// The search bar is always visible.
+    case always
+}
+
+struct ListPickerSearchBarDisplayModeKey: EnvironmentKey {
+    static let defaultValue: ListPickerSearchBarDisplayMode = .automatic
+}
+
+public extension EnvironmentValues {
+    /// The display mode of the search bar shown in `ListPickerDestination`. Defaults to `.automatic`.
+    var listPickerSearchBarDisplayMode: ListPickerSearchBarDisplayMode {
+        get { self[ListPickerSearchBarDisplayModeKey.self] }
+        set { self[ListPickerSearchBarDisplayModeKey.self] = newValue }
+    }
+}
+
+public extension View {
+    /// Set the display mode of the search bar shown in `ListPickerDestination`.
+    ///
+    /// - Parameter mode: `.automatic` (default) hides the search bar until the user scrolls; `.always` keeps it visible.
+    /// - Returns: A view with the search bar display mode applied via the environment.
+    func listPickerSearchBarDisplayMode(_ mode: ListPickerSearchBarDisplayMode) -> some View {
+        self.environment(\.listPickerSearchBarDisplayMode, mode)
+    }
+}
+
+struct ListPickerDirtyStateBindingKey: EnvironmentKey {
+    static let defaultValue: Binding<Bool>? = nil
+}
+
+extension EnvironmentValues {
+    var listPickerDirtyStateBinding: Binding<Bool>? {
+        get { self[ListPickerDirtyStateBindingKey.self] }
+        set { self[ListPickerDirtyStateBindingKey.self] = newValue }
+    }
+}
+
+public extension View {
+    /// Mirror the picker's internal "has unsaved changes" state to an external binding.
+    ///
+    /// Useful when `ListPickerDestination` is presented inside a consumer-owned sheet:
+    /// the binding lets the caller drive their own discard-confirmation logic
+    /// (for example, blocking interactive swipe-to-dismiss with `.interactiveDismissDisabled`).
+    ///
+    /// The binding is only meaningful when `isTrackingLiveChanges` is `false` —
+    /// in live-tracking mode every tap is committed immediately, so there is no draft state.
+    /// In live-tracking mode (or for non-top-level pickers) this binding is kept at `false`.
+    ///
+    /// - Parameter isDirty: A binding that receives `true` whenever the picker has
+    ///   uncommitted changes (i.e. the user has toggled selections without tapping Apply).
+    /// - Returns: A view with the dirty-state binding registered via the environment.
+    func listPickerDirtyState(_ isDirty: Binding<Bool>) -> some View {
+        self.environment(\.listPickerDirtyStateBinding, isDirty)
+    }
+}

@@ -1,0 +1,753 @@
+/* XMSG: Placeholder text in chart when there is no data */
+"No Data" = "Ingen data";
+
+/* XBUT: Save action in inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Save" = "Lagre";
+
+/* XBUT: Re-enter action available in saved state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Re-enter Signature" = "Oppgi signatur på nytt";
+
+/* XBUT: Clear action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Clear" = "Tilbakestill";
+
+/* XBUT: Cancel action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Cancel" = "Avbryt";
+
+/* XTIT: Title of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Signature" = "Signatur";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Tap to Sign" = "Trykk for å signere";
+
+/* XACT: The accessibility label for the signature area */
+"Signature Area" = "Signaturområde";
+
+/* XACT: The accessibility hint for the signature area */
+"Double tap and drag to sign" = "Dobbelttrykk og dra for å signere";
+
+/* XACT: The accessibility label for the signature image */
+"Signature Image" = "Signaturbilde";
+
+/* XACT: The accessibility label for the signature line */
+"Signature Line" = "Signaturlinje";
+
+/* XACT: The accessibility label for the mandatory field */
+"Required Field" = "Obligatorisk felt";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Canceled" = "Avbrutt";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Next" = "Neste";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Ok" = "OK";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Status" = "Status";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"User canceled Onboarding" = "Brukeren avsluttet aktiveringsprosessen";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Without consent you will not be able to continue onboarding." = "Du kan ikke fortsette aktiveringsprosessen uten å samtykke.";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Give Consent" = "Gi ditt samtykke";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Quit" = "Avslutt";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Back" = "Tilbake";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Step" = "Trinn";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"of" = "av";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Are you sure you want to quit the onboarding process?" = "Er du sikker på at du vil avslutte aktiveringsprosessen?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Want Data Privacy?" = "Vil du beskytte data?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Be wise about your data" = "Ta kloke valg om dataene dine";
+
+/* XBUT: Not Now action title in UserConsentForm */
+"Not Now" = "Ikke nå";
+
+/* XBUT: Allow action title in UserConsentForm */
+"Allow" = "Tillat";
+
+/* XBUT: Deny action title in UserConsentForm */
+"Deny" = "Avslå";
+
+/* XBUT: Agree action title in EULAView */
+"Agree" = "Godta";
+
+/* XBUT: Disagree action title in EULAView */
+"Disagree" = "Ikke godta";
+
+/* XMSG: Placeholder text in DataTable for loading state */
+"Loading..." = "Laster ...";
+
+/* XMSG: Placeholder text in DataTable when there is no data */
+"There is nothing to display yet" = "Ingenting å vise ennå";
+
+/* XBUT: Default duration formatter in DataTable */
+"%d Hrs %d Min" = "%d timer %d minutter";
+
+/* XBUT: Done action in keyboard toolbar for a Textfield in DataTable */
+"Done" = "Ferdig";
+
+/* XBUT: Error messages shown to users in DataTable */
+"There are %d errors in the data table." = "Det er %d feil i datatabellen.";
+
+/* XBUT: voice over label for row header in DataTable */
+"row header" = "Radoverskrift";
+
+/* XBUT: voice over label for row %d in DataTable */
+"row %d" = "rad %d";
+
+/* XBUT: voice over label for column %d in DataTable */
+"column %d" = "Kolonne %d";
+
+/* XBUT: voice over label for cell type of `leading accessory` in DataTable */
+"leading accessory" = "Hovedtilbehør";
+
+/* XBUT: voice over label for cell type of `trailing accessory` in DataTable */
+"trailing accessory" = "Etterfølgene tilbehør";
+
+/* XBUT: voice over label for cell type of `text` in DataTable */
+"text" = "tekst";
+
+/* XBUT: voice over label for cell type of `image` in DataTable */
+"image" = "bilde";
+
+/* XBUT: voice over label for cell type of `date` in DataTable */
+"date" = "dato";
+
+/* XBUT: voice over label for cell type of `time` in DataTable */
+"time" = "tid";
+
+/* XBUT: voice over label for cell type of `duration` in DataTable */
+"duration" = "Varighet";
+
+/* XBUT: voice over label for cell type of `list item` in DataTable */
+"list item" = "listeelement";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"selected" = "valgt";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"not selected" = "ikke valgt";
+
+/* Default value for DateTimePicker */
+"No date selected" = "Ingen dato valgt";
+
+/* Default value for DateRangePicker */
+"No range selected" = "Intervall er ikke valgt";
+
+/* DateRangePicker press space to set a range value */
+"PressSpaceToSelectRangeKey" = "Klikk på mellomrom for å definere en intervallverdi";
+
+/* XBUT: calendar time component label */
+"Time" = "Tid";
+
+/* XBUT: slider default value label formatter for integer */
+"Value: %d" = "Verdi: %d";
+
+/* XMSG: a toast message for read-only cell in DataTable */
+"Tapped cell is read-only." = "Valgt celle er skrivebeskyttet.";
+
+/* Default hint text for Read-only Field for NoteFormView and TextFieldFormView */
+"Read-only field" = "Skrivebeskyttet felt";
+
+/* Default error text for when the character count reaches the maximum limit for NoteFormView and TextFieldFormView */
+"No more characters remaining" = "Ingen tegn igjen";
+
+/* Default error text for when the character count exceeds the maximum limit for NoteFormView and TextFieldFormView */
+"Reduce the number of characters" = "Reduser antallet tegn";
+
+/* XBUT: voice over label for decrement action in stepper */
+"Stepper decrease" = "Reduksjon i verdiregulator";
+
+/* XBUT: voice over description for decrement action in stepper */
+"Decrease the value by %d" = "Reduser verdien med %d";
+
+/* XBUT: voice over label for increment action in stepper */
+"Stepper increase" = "Økning i verdiregulator";
+
+/* XBUT: voice over description for increment action in stepper */
+"Increase the value by %d" = "Øk verdien med %d";
+
+/* XBUT: voice over label for test field in stepper */
+"Select specific value" = "Velg spesifikk verdi";
+
+/* XBUT: View all action in MenuSelection */
+"View All (%d)" = "Vis alle (%d)";
+
+/* XACT: RatingControl accessibility label */
+"%d out of %d stars" = "%d av %d stjerner";
+
+/* XBUT: timeline preview component see all label */
+"See All (%d)" = "Vis alle (%d)";
+
+/* XACT: Timeline preview items accessibility label */
+"See All" = "Vis alle";
+
+/* XACT: Timeline preview items accessibility value */
+"%d items" = "%d elementer";
+
+/* XACT: Timeline preview items accessibility hint */
+"Shows all timeline items in a list" = "Viser alle tidslinjeelementer i en liste";
+
+/* XACT: Timeline preview item status: current accessibility value */
+"Current" = "Aktuell";
+
+/* XACT: Timeline preview item status: future accessibility value */
+"Future" = "I fremtiden";
+
+/* XACT: Timeline preview item status: past accessibility value */
+"Past" = "I fortiden";
+
+/* XACT: Timeline preview item accessibility value */
+"Item %d of %d, %@, %@, %@" = "Element %d av %d, %@, %@, %@";
+
+/* XACT: Timeline preview item node type: Start accessibility value */
+"Start" = "Start";
+
+/* XACT: Timeline preview item node type: End accessibility value */
+"End" = "Slutt";
+
+/* XACT: Timeline preview item node type: Completed accessibility value */
+"Completed" = "Fullført";
+
+/* XACT: Timeline preview item node type: Open accessibility value */
+"Open" = "Åpen";
+
+/* XACT: Timeline preview item node type: Task accessibility value */
+"Task" = "Oppgave";
+
+/* XACT: Timeline preview item accessibility label */
+"Item %d of %d" = "Element %d av %d";
+
+/* XBUT: timeline preview component timestamp label */
+"Today, %@" = "I dag, %@";
+
+/* XFLD: RatingControl value label format */
+"%d of %d" = "%d av %d";
+
+/* XFLD: RatingControl review count format */
+"%d reviews" = "%d anmeldelser";
+
+/* XFLD: RatingControl review count over ceiling format */
+"%d+ reviews" = "%d+ anmeldelser";
+
+/* XACT: RatingControl accessibility label */
+"Rating Control %d of %d" = "Vurderingskontroll %d av %d";
+
+/* XACT: read-only RatingControl accessibility label: rating with review count */
+"Rating Control, rating %d of %d, %d reviews" = "Vurderingskontroll, vurdering %d av %d, %d anmeldelser";
+
+/* XACT: read-only RatingControl accessibility label: average rating only */
+"Rating Control, average rating %.1f of %d" = "Vurderingskontroll, gjennomsnittlig vurdering %.1f av %d";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count */
+"Rating Control, average rating %.1f of %d, %d reviews" = "Vurderingskontroll, gjennomsnittling vurdering %.1f av %d, %d anmeldelser";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count over ceiling */
+"Rating Control, average rating %.1f of %d, %d plus reviews" = "Vurderingskontroll, gjennomsnittling vurdering %.1f av %d, %d pluss anmeldelser";
+
+/* XBUT: View all messages in message banner sheet */
+"All" = "Alle";
+
+/* XBUT: messages count in the message banner sheet */
+"Messages (%d)" = "Meldinger (%d)";
+
+/* XBUT: view details in the message banner */
+"View Details" = "Vis detaljer";
+
+/* XBUT: view different message in the message banner sheet item */
+"View %@" = "Vis %@";
+
+/* XBUT: banner message type desc, message */
+"message" = "melding";
+
+/* XBUT: banner message type desc, information */
+"information" = "informasjon";
+
+/* XBUT: banner message type desc, confirmation */
+"confirmation" = "bekreftelse";
+
+/* XBUT: banner message type desc, warning */
+"warning" = "advarsel";
+
+/* XBUT: banner message type desc, error */
+"error" = "feil";
+
+/* XBUT: banner message type desc, error */
+"AI notice" = "KI-merknad";
+
+/* XMSG: banner message type desc, offline */
+"offline" = "Offline";
+
+/* XMSG: information view style type, success */
+"success" = "utført";
+
+/* XBUT: Reset action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Reset" = "Tilbakestill";
+
+/* XBUT: Apply action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Apply" = "Bruk";
+
+/* XTIT: The alert message for `ListPickerDestination` pulldown dismissal */
+"Are you sure you want to discard your selections?" = "Er du sikker på at du vil forkaste utvalget?";
+
+/* XBUT: The alert Discard Changes action title for `ListPickerDestination` pulldown dismissal */
+"Discard Changes" = "Forkast endringer";
+
+/* XBUT: The alert Keep Editing action title for `ListPickerDestination` pulldown dismissal */
+"Keep Editing" = "Fortsett redigering";
+
+/* XBUT: The \"Select All\" button title on the List Picker header */
+"Select All" = "Merk alt";
+
+/* XBUT: The \"Deselect All\" button title on the List Picker header */
+"Deselect All" = "Opphev all merking";
+
+/* XBUT: The \"Selected\" title on the List Picker header */
+"Selected" = "Valgt";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"Text field, Double tap to edit" = "Tekstfelt, dobbelttrykk for å redigere";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d character left" = "%d tegn igjen.";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d characters left" = "%d tegn igjen.";
+
+/* XACT: The accessibility hint for Text Input Views, editing */
+"Text field, is editing" = "Tekstfelt, i redigeringsmodus";
+
+/* XACT: The accessibility hint for Text Input Views, editing, with clear button */
+"Text field, is editing. Double tap to clear text" = "Tekstfelt, redigerer. Dobbelttrykk for å fjerne tekst.";
+
+/* XACT: The default accessibility label for the custom action in TextFieldFormView if none was specified */
+"Custom Action" = "Egendefinert aktivitet";
+
+/* XBUT: Error messages shown to users in DocumentScannerView */
+"Failed to create PDF page from images" = "Kan ikke opprette PDF-side fra bilder.";
+
+/* XBUT: Cancel message shown to users in DocumentScannerView */
+"User cancelled the scan" = "Brukeren har avbrutt skanningen.";
+
+/* Progress Indicator accessibility label: processing */
+"Processing" = "Behandler";
+
+/* Progress Indicator accessibility label: loading pausable with indicator progress */
+"In progress with option to pause, %.0f" = "Under behandling, med mulighet til å sette på pause, %.0f";
+
+/* Progress Indicator accessibility label: loading stoppable with indicator progress */
+"In progress with option to stop, %.0f" = "Under behandling, med mulighet til å stoppe, %.0f";
+
+/* Progress Indicator accessibility label: progress halted with indicator progress */
+"Progress halted, %.0f" = "Behandling stoppet, %.0f";
+
+/* XACT: Slider accessibility label */
+"This is %@ slider whose maximum value is %@ and minimum value is %@" = "Dette er %@-glidebryteren som har maksimumsverdi %@ og minimumsverdi %@";
+
+/* XACT: Slider accessibility value */
+"Current value is %@" = "Aktuell verdi er %@";
+
+/* XACT: Range Slider lower thumb accessibility label */
+"lower range slider thumb, current value is" = "glidebryterposisjon for nedre område, aktuell verdi er";
+
+/* XACT: Range Slider lower thumb accessibility hint */
+"you can swipe up or down to change the lower value" = "du kan dra opp eller ned for å endre nedre verdi";
+
+/* XACT: Range Slider upper thumb accessibility label */
+"upper range slider thumb, current value is" = "glidebryterposisjon for øvre område, aktuell verdi er";
+
+/* XACT: Range Slider upper thumb accessibility hint */
+"you can swipe up or down to change the upper value" = "du kan dra opp eller ned for å endre øvre verdi";
+
+/* XACT: Single editable Slider thumb accessibility label */
+"slider thumb, current value is" = "glidebryterposisjon, aktuell verdi er";
+
+/* XACT: Single editable Slider thumb accessibility hint */
+"you can swipe up or down to change the value" = "du kan dra opp eller ned for å endre verdien";
+
+/* XACT: Single Slider accessibility label */
+"This is a slider, the minimum value is %@ and the maximum value is %@" = "Dette er en glidebryter. Minimumsverdien er %@ og maksimumsverdien er %@.";
+
+/* XACT: Range Slider accessibility label */
+"This is a range slider, the minimum value is %@ and the maximum value is %@" = "Dette er en glidebryter for området. Minimumsverdien er %@ og maksimumsverdien er %@.";
+
+/* XACT: Single editable Slider accessibility label */
+"This is a slider that is editable, the minimum value is %@ and the maximum value is %@" = "Dette er en glidebryter som kan redigeres. Minimumsverdien er %@ og maksimumsverdien er %@.";
+
+/* XACT: Single non-editable Slider accessibility label */
+"This is a slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Dette er en glidebryter som ikke kan redigeres. Minimumsverdien er %@ og maksimumsverdien er %@.";
+
+/* XACT: Range editable Slider accessibility label */
+"This is a range slider that is editable, the minimum value is %@ and the maximum value is %@" = "Dette er en glidebryter for område som kan redigeres. Minimumsverdien er %@ og maksimumsverdien er %@.";
+
+/* XACT: Range non-editable Slider accessibility label */
+"This is a range slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Dette er en glidebryter for område som ikke kan redigeres. Minimumsverdien er %@ og maksimumsverdien er %@.";
+
+/* XACT: Single editable Slider Text Field accessibility label */
+"slider value text field" = "tekstfelt for glidebryterverdi";
+
+/* XACT: Range editable Slider Lower Value Text Field accessibility label */
+"lower value text field" = "tekstfelt for nedre verdi";
+
+/* XACT: Range editable Slider Upper Value Text Field accessibility label */
+"upper value text field" = "tekstfelt for øvre verdi";
+
+/* XACT: Editable Slider Text Field accessibility hint */
+"You can double tap to input a specific value" = "Du kan dobbelttrykke for å oppgi en bestemt verdi";
+
+/* XACT: Editable Slider Text Field accessibility value */
+"current value is %@" = "aktuell verdi er %@";
+
+/* XACT: Range Editable Slider accessibility value */
+"current lower value is %@, upper value is %@" = "aktuell nedre verdi er %@, øvre verdi er %@";
+
+/* XTIT: Title of step progress indicator, see https://experience.sap.com/fiori-design-ios/article/step-progress-indicator/#adaptive-design */
+"All Steps" = "Alle trinn";
+
+/* XMSG: AI Notice message */
+"Suggested by AI. Verify before use. " = "Foreslått av KI. Verifiser før bruk. ";
+
+/* XBUT: Attachment operation menu item - Photos, which stands for Photo Library */
+"Photos" = "Bilder";
+
+/* XBUT: Attachment operation menu item - Files, which stands for documents available for upload residing in Files */
+"Files" = "Filer";
+
+/* XBUT: Attachment operation menu item - Camera, which can be used for taking photos and movies */
+"Camera" = "Kamera";
+
+/* XBUT: Attachment operation menu item - Scan. Use camera as scanner and generate PDF files */
+"Scan" = "Skann";
+
+/* XACT: The accessibility preview action for the attachment */
+"Preview" = "Forhåndsvisning";
+
+/* XTIT: Attachment title of deletion confirmation */
+"Delete Attachment?" = "Slette vedlegg?";
+
+/* XBUT: Attachment deletion confirmation button */
+"Delete" = "Slett";
+
+/* XBUT: Attachment add button */
+"Add attachment" = "Legg til vedlegg";
+
+/* XACT: The accessibility hint for add button */
+"Double tap to add attachment" = "Dobbelttrykk for å legge til vedlegg";
+
+/* XMSG: attachment section add new file successfully announcement */
+"New attachment added successfully" = "Nytt vedlegg lagt til";
+
+/* XMSG: attachment section add new file failed announcement */
+"File failed to attach" = "Kan ikke legge ved filen";
+
+/* XACT: The accessibility hint for attachment section */
+"read only" = "skrivebeskyttet";
+
+/* XACT: The accessibility hint for attachment section */
+"actions available" = "aktiviteter tilgjengelig";
+
+/* XMSG: Attachment thumbnail */
+"Thumbnail" = "Miniatyrbilde";
+
+/* XMSG: Attachment uploading */
+"Attachment uploading" = "Laster opp %@. Vent litt ...";
+
+/* XMSG: Attachment error */
+"Attachment error" = "Kan ikke laste opp %@. Feilmelding: %@.";
+
+/* XBUT: Sign In Action in the Authentication */
+"Sign In" = "Logg på";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"username" = "brukernavn";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"password" = "passord";
+
+/* XBUT: Submit action title in AI User Feedback */
+"Submit" = "Send";
+
+/* XMSG: Submission failed title in AI User Feedback */
+"Submission failed" = "Sending mislyktes";
+
+/* XMSG: Submission failed description in AI User Feedback */
+"An error has occurred. Please try again later." = "En feil har oppstått. Prøv igjen senere.";
+
+/* XBUT: Retry action title in AI User Feedback */
+"Retry" = "Prøv igjen";
+
+/* XACT: The accessibility label for the like button in AI User Feedback */
+"Positive feedback" = "Positiv tilbakemelding";
+
+/* XACT: The accessibility label for the dislike button in AI User Feedback */
+"Negative feedback" = "Negativ tilbakemelding";
+
+/* XACT: The accessibility label for the vote buttons in AI User Feedback */
+"enabled" = "aktivert";
+
+/* XMSG: Onboarding scan view title for scan unsuccessful */
+"Scan Unsuccessful" = "Skanning mislyktes";
+
+/* XMSG: Onboarding scan view hint for scan unsuccessful */
+"Please select a QR code image." = "Velg et QR-kodebilde.";
+
+/* XMSG: Onboarding scan view title for invalid QR code */
+"Invalid QR Code" = "Ugyldig QR-kode";
+
+/* XMSG: Onboarding scan view hint for invalid QR code */
+"The QR code was not recognized." = "QR-koden ble ikke gjenkjent.";
+
+/* XTIT: Onboarding scan view title for request access to photos library */
+"Allow Access to Photos" = "Tillat tilgang til bilder";
+
+/* XMSG: Onboarding scan view hint for request access to photos library */
+"To choose a QR code image, please give access to your photos in your device's privacy settings." = "For å velge et QR-kodebilde, må du gi tilgang til dine bilder under databeskyttelsesinnstillingene på enheten din.";
+
+/* XTIT: Onboarding scan view title for request access to camera */
+"Allow Access to Camera" = "Tillat tilgang til kamera";
+
+/* XMSG: Onboarding scan view hint for request access to camera */
+"To scan using the camera, please give access to your camera in your device's privacy settings." = "For å skanne med kamera, må du gi tilgang til kameraet i databeskyttelsesinnstillingene på enheten din.";
+
+/* XBUT: Onboarding scan view action title for the alert when the permission to access camera or photo library was not granted */
+"Settings" = "Innstillinger";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"down arrow" = "Pil ned";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"up arrow" = "Pil opp";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash deactivated" = "blits deaktivert";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash activated" = "blits aktivert";
+
+/* XACT: The accessibility hint for photos in onboarding photo picker view */
+"Photo %d" = "Bilde %d";
+
+/* XMSG: Onboarding confirm view success message */
+"Scan succeeded. You will be connected to:" = "Skanning utført. Du blir koblet til:";
+
+/* XBUT: Onboarding confirm view action title for continue button */
+"Continue" = "Fortsett";
+
+/* XTIT: Title for writing assistant */
+"Writing Assistant" = "Tekstassistent";
+
+/* XMSG: Writing assistant version control */
+"Version %d/%d" = "Versjon %d/%d";
+
+/* XBUT: Writing assistant undo action title */
+"Undo" = "Angre";
+
+/* XBUT: Writing assistant redo action title */
+"Redo" = "Gjør om";
+
+/* XTIT: Writing assistant cancel alert message */
+"Do you want to undo the edits made by the Writing Assistant and revert the text to its original state?" = "Vil du angre endringene som ble gjort av tekstassistenten og tilbakestille teksten til slik den var opprinnelig?";
+
+/* XTIT: Writing assistant cancel alert title */
+"Discard all changes?" = "Forkaste alle endringer?";
+
+/* XBUT: Writing assistant cancel alert action title for keep working */
+"Keep Working" = "Fortsett å arbeide";
+
+/* XBUT: Writing assistant cancel alert action title for discard */
+"Discard" = "Forkast";
+
+/* XMSG: A success toast message for feedback flow in writing assistant */
+"Thank you for your feedback" = "Takk for tilbakemeldingen";
+
+/* XTIT: Title for feedback downvote flow in writing assistant */
+"What didn’t you like about this version?" = "Hva likte du med denne versjonen?";
+
+/* XTIT: Subtitle for feedback downvote flow in writing assistant */
+"Please rate your experience to help us improve." = "Vurder opplevelsen din for å hjelpe oss med å bli bedre.";
+
+/* XTIT: Navigation bar title for feedback flow */
+"Feedback" = "Tilbakemelding";
+
+/* XTIT: Footnote text for feedback in writing assistant */
+"How was this response?" = "Hvordan var dette svaret?";
+
+/* XMSG: One date selected for .datesSelection style in Calendar view */
+"%d Date Selected" = "%d dato valgt";
+
+/* XMSG: Multiple dates selected for .datesSelection style in Calendar view */
+"%d Dates Selected" = "%d datoer valgt";
+
+/* XMSG: Has event, used in voice over in calendar view */
+"has event" = "har hendelse";
+
+/* XMSG: Double tap to change the selection, used in voice over in calendar view */
+"Double tap to change the selection" = "Dobbelttrykk for å endre utvalg";
+
+/* XMSG: Double tap to select, used in voice over in calendar view */
+"Double tap to select" = "Dobbelttrykk for å velge";
+
+/* XMSG: Double tap to unselect, used in voice over in calendar view */
+"Double tap to unselect" = "Dobbelttrykk for å oppheve valg";
+
+/* XMSG: Date selected, used in voiceOver in calendar view */
+"Date selected" = "Dato valgt";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Today" = "I dag";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Disabled date" = "Deaktivert dato";
+
+/* XMSG: Drag tips in .expandable style, used in voiceOver in calendar view */
+"Handle to switch from month view to week view" = "Bryter for å bytte fra månedsvisning til ukevisning";
+
+/* XMSG: Accessibility label for card container */
+"Card" = "Kort";
+
+/* XTIT: Title for card */
+"Card title" = "Korttittel";
+
+/* XTIT: Subtitle for card */
+"Card subtitle" = "Undertittel på kort";
+
+/* XTIT: HeaderAction for card */
+"Card header action" = "Toppaktivitet for kort";
+
+/* XACT: The accessibility label for the switchItem turn on button in FilterFeedbackBar */
+"Switch Item On" = "Trykk for å slå på";
+
+/* XACT: The accessibility label for the switchItem turn off button in FilterFeedbackBar */
+"Switch Item Off" = "Trykk for å slå av";
+
+/* XMSG: Writing assistant panel opening announcement */
+"AI Writing Assistant panel opened. Use provided prompts to refine your text content." = "Panelet for KI-tekstassistent er åpnet. Bruk de oppgitte ledetekstene for å justere tekstinnholdet.";
+
+/* XMSG: Writing assistant activation cell hint for accessibility */
+"Double tap to activate" = "Dobbelttrykk for å aktivere";
+
+/* XMSG: Writing assistant options entry cell hint for accessibility */
+"Open to see %@ options" = "Åpne for å se %@-alternativer";
+
+/* XMSG: Writing assistant undo announcement */
+"Undo to Version %d of %d" = "Angre for versjon %d av %d";
+
+/* XMSG: Writing assistant redo announcement */
+"Redo to Version %d of %d" = "Gjenta for versjon %d av %d";
+
+/* XMSG: Writing assistant version update announcement */
+"Text updated to Version %d of %d" = "Tekst oppdatert til versjon %d av %d";
+
+/* XTIT: Writing assistant title accessibility label */
+"AI Writing Assistant" = "KI-tekstassistent";
+
+/* XMSG: Writing assistant accessibility instruction for text editing */
+"double tap to open AI Writing Assistant and edit text" = "dobbelttrykk for å åpne KI-tekstassistent og redigere tekst";
+
+/* XBUT: Writing assistant undo accessibility label */
+"Undo change" = "Angre endring";
+
+/* XBUT: Writing assistant redo accessibility label */
+"Rodo change" = "Gjenta endring";
+
+/* XBUT: Close button title */
+"Close" = "Lukk";
+
+/* XMSG: Accessibility label for completed state in step progress indicator */
+"complete" = "fullført";
+
+/* XMSG: Accessibility label for active state in step progress indicator */
+"active" = "aktiv";
+
+/* XMSG: Accessibility label for error active state in step progress indicator */
+"error active" = "feil aktiv";
+
+/* XMSG: Accessibility label for read-only state in step progress indicator */
+"read-only" = "skrivebeskyttet";
+
+/* XACT: The accessibility value for Stepper decrement */
+"Decrease the value by %f" = "Reduser verdien med %f";
+
+/* XACT: The accessibility value for Stepper increment */
+"Increase the value by %f" = "Øk verdien med %f";
+
+/* XMSG: title used in DateRangePickerPopView */
+"Select Range" = "Velg intervall";
+
+/* XMSG: start date, used in DateRangePickerPopView */
+"Start Date" = "Startdato";
+
+/* XMSG: end date, used in DateRangePickerPopView */
+"End Date" = "Sluttdato";
+
+/* XBUT: title for picker form cell to open */
+"DoubleTapToOpenKey" = "Dobbelttrykk for å åpne";
+
+/* XBUT: title for picker form cell to collapse */
+"DoubleTapToCollapseKey" = "Dobbelttrykk for å komprimere";
+
+/* XTIT: On state for switch */
+"Switch On" = "På";
+
+/* XTIT: Off state for switch */
+"Switch Off" = "Av";
+
+/* Checkout Indicator accessibility label: failed */
+"failed" = "mislykket";
+
+/* Checkout Indicator accessibility label: AI processing */
+"AI processing" = "KI-behandling";
+
+/* Checkout Indicator accessibility label: Checkout Indicator */
+"Checkout Indicator" = "Utsjekkingsindikator";
+
+/* XMSG: More tag text shown when tags are truncated in MHStack, %d is the count of hidden tags */
+"+%d more" = "+%d til";
+
+/* XTIT: The title of the empty state view */
+"No Results Found" = "Ingen treff";
+
+/* XTIT: The description of the empty state view */
+"Check your search for any spelling errors or try a different search term." = "Kontroller om søket inneholder stavefeil eller prøv med en annen søkestreng.";
+
+/* XACT: The accessibility label for the checkbox */
+"Checkbox" = "Avmerkingsboks";
+
+/* XMSG: Passcode policy requirement - minimum length, %d is the required number of characters */
+"At least %d characters" = "Minst %d tegn";
+
+/* XMSG: Passcode policy requirement - minimum number of unique characters, %d is the required count */
+"At least %d unique characters" = "Minst %d unike tegn";
+
+/* XMSG: Passcode policy requirement - at least one digit */
+"At least one digit" = "Minst ett siffer";
+
+/* XMSG: Passcode policy requirement - at least one uppercase letter */
+"At least one uppercase letter" = "Minst én stor bokstav";
+
+/* XMSG: Passcode policy requirement - at least one lowercase letter */
+"At least one lowercase letter" = "Minst én liten bokstav";
+
+/* XMSG: Passcode policy requirement - at least one special character */
+"At least one special character" = "Minst ett spesialtegn";
+
+/* XMSG: Passcode policy requirement - digits only */
+"Digits only" = "Bare sifre";
+

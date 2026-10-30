@@ -1,0 +1,625 @@
+import FioriCharts
+import FioriSwiftUICore
+import MapKit
+import SwiftUI
+
+struct MobileCardExample: View {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @State private var isPresented: Bool = false
+    @State private var buttonWidthMode: Int = 0
+    
+    var body: some View {
+        List {
+            NavigationLink {
+                List {
+                    ForEach(0 ..< CardTests.cardSamples.count, id: \.self) { i in
+                        CardTests.cardSamples[i]
+                    }
+                    .listRowBackground(Color.preferredColor(.primaryGroupedBackground))
+                }
+                .environment(\.cardFooterButtonWidthMode, CardFooterButtonWidthMode(rawValue: self.buttonWidthMode) ?? .auto)
+                .cardStyle(.card)
+                .cardStyle(.intrinsicHeightCard)
+                .listStyle(.plain)
+                .navigationBarTitle("Cards in List", displayMode: .inline)
+            } label: {
+                Text("Cards in List")
+            }
+            
+            NavigationLink {
+                ScrollView(.vertical) {
+                    VStack(alignment: .leading, spacing: 16) {
+                        ForEach(0 ..< CardTests.cardSamples.count, id: \.self) { i in
+                            CardTests.cardSamples[i]
+                                .cardStyle(.card)
+                                .cardStyle(.intrinsicHeightCard)
+                        }
+                        .background(Color.preferredColor(.primaryGroupedBackground))
+                        .environment(\.cardFooterButtonWidthMode, CardFooterButtonWidthMode(rawValue: self.buttonWidthMode) ?? .auto)
+                    }.padding()
+                }
+                .navigationBarTitle("Cards in VStack", displayMode: .inline)
+            } label: {
+                Text("Cards in VStack")
+            }
+            
+            NavigationLink {
+                List {
+                    ForEach(0 ..< CardFooterTests.examples.count, id: \.self) { i in
+                        CardFooterTests.examples[i]
+                    }
+                    .listRowBackground(Color.preferredColor(.primaryGroupedBackground))
+                    .environment(\.cardFooterButtonWidthMode, CardFooterButtonWidthMode(rawValue: self.buttonWidthMode) ?? .auto)
+                }
+                .listStyle(.plain)
+                .navigationBarTitle("Footers", displayMode: .inline)
+            } label: {
+                Text("Footers")
+            }
+            
+            NavigationLink {
+                MasonryTestView()
+                    .environment(\.cardFooterButtonWidthMode, CardFooterButtonWidthMode(rawValue: self.buttonWidthMode) ?? .auto)
+                    .navigationBarTitle("Masonry", displayMode: .inline)
+            } label: {
+                Text("Masonry")
+            }
+            
+            NavigationLink {
+                CarouselTestView(self.horizontalSizeClass == .compact ? 1 : (UIDevice.current.localizedModel == "iPhone" ? 2 : 3))
+                    .navigationBarTitle("Carousel", displayMode: .inline)
+                    .environment(\.cardFooterButtonWidthMode, CardFooterButtonWidthMode(rawValue: self.buttonWidthMode) ?? .auto)
+            } label: {
+                Text("Carousel")
+            }
+            NavigationLink {
+                ScrollView {
+                    Section {
+                        Card(title: {
+                            Text("Kixo Q1 Deal ")
+                        }, subtitle: {
+                            Text("Company Name")
+                        }, detailImage: {
+                            Circle()
+                                .strokeBorder(.gray, lineWidth: 1)
+                                .background(Circle().fill(Color.gray.opacity(0.3)))
+                                .frame(width: 60, height: 60)
+                                .overlay {
+                                    Image(systemName: "bus.fill")
+                                        .font(.title)
+                                }
+                        }, headerAction: {
+                            Text("99")
+                                .font(.system(size: 22))
+                                .frame(width: 38, height: 36)
+                                .foregroundStyle(Color.white)
+                                .background(RoundedRectangle(cornerRadius: 12.0).fill(Color.red))
+                        }, row2: {
+                            Text("15 Jan,2025 • Discovery completed")
+                                .font(.callout)
+                        }, row3: {
+                            VStack {
+                                Text("in  progress")
+                                    .foregroundStyle(Color(hex: "#AA0808"))
+                                    .font(.subheadline)
+                            }
+                        })
+                        .padding()
+                        .cardStyle(.card)
+                    } header: {
+                        Text("custom elements on main header - headerAction ")
+                            .padding(.leading, 20)
+                            .fontWeight(.bold)
+                    }.padding(.bottom, 10)
+                    
+                    Section {
+                        Card(title: {
+                            Text("Kixo Q1 Deal ")
+                        }, subtitle: {
+                            Text("Company Name")
+                        }, detailImage: {
+                            Circle()
+                                .strokeBorder(.gray, lineWidth: 1)
+                                .background(Circle().fill(Color.gray.opacity(0.3)))
+                                .frame(width: 60, height: 60)
+                                .overlay {
+                                    Image(systemName: "bus.fill")
+                                        .font(.title)
+                                }
+                        }, counter: {
+                            Text("99")
+                                .font(.system(size: 22))
+                                .frame(width: 38, height: 36)
+                                .foregroundStyle(Color.white)
+                                .background(RoundedRectangle(cornerRadius: 12.0).fill(Color.red))
+                        }, row2: {
+                            Text("15 Jan,2025 • Discovery completed")
+                                .font(.callout)
+                        }, row3: {
+                            VStack {
+                                Text("in  progress")
+                                    .foregroundStyle(Color(hex: "#AA0808"))
+                                    .font(.subheadline)
+                            }
+                        })
+                        .padding()
+                        .cardStyle(.card)
+                    } header: {
+                        Text("custom elements on main header - counter")
+                            .padding(.leading, 20)
+                            .fontWeight(.bold)
+                    }.padding(.bottom, 10)
+                    
+                    Section {
+                        Card(title: {
+                            Text("Kixo Q1 Deal ")
+                        }, subtitle: {
+                            Text("Company Name")
+                        }, detailImage: {
+                            RoundedRectangle(cornerRadius: 8)
+                                .strokeBorder(.gray, lineWidth: 1)
+                                .frame(width: 60, height: 60)
+                                .overlay {
+                                    Image(systemName: "bus.fill")
+                                        .font(.title)
+                                }
+                        }, row1: {
+                            Tag("99").tagStyle(CustomTagStyle(textColor: .white, fillColor: .green))
+                        }, row2: {
+                            HStack {
+                                RoundedRectangle(cornerRadius: 4)
+                                    .strokeBorder(.gray, lineWidth: 1)
+                                    .frame(width: 16, height: 16)
+                                    .overlay {
+                                        Image(systemName: "hare.circle.fill")
+                                    }
+                                Text("Kixo Inc • Open")
+                                    .foregroundStyle(Color(hex: "#AA0808"))
+                                    .font(.subheadline)
+                            }
+                        }, row3: {
+                            HStack {
+                                Circle()
+                                    .strokeBorder(.gray, lineWidth: 1)
+                                    .background(Circle().fill(Color.gray.opacity(0.3)))
+                                    .frame(width: 16, height: 16)
+                                    .overlay {
+                                        Image(systemName: "tortoise.circle.fill")
+                                    }
+                                Text("Madlyn Riley Jackson")
+                                    .foregroundStyle(Color(hex: "#AA0808"))
+                                    .font(.subheadline)
+                            }
+                        }, kpiCaption: {
+                            VStack {
+                                Spacer()
+                                HStack {
+                                    Text("100.000")
+                                        .font(.system(size: 22))
+                                        .foregroundStyle(Color.preferredColor(.primaryLabel))
+                                    Text("USD")
+                                        .font(.system(size: 17))
+                                        .foregroundStyle(Color.preferredColor(.primaryLabel))
+                                }
+                            }
+                        })
+                        .padding()
+                        .cardStyle(.card)
+                    } header: {
+                        Text("custom elements for Tag Component")
+                            .padding(.leading, 20)
+                            .fontWeight(.bold)
+                    }.padding(.bottom, 10)
+                    
+                    Section {
+                        Card(title: {
+                            Text("Kixo Q1 Deal ")
+                        }, subtitle: {
+                            Text("Company Name")
+                        }, detailImage: {
+                            RoundedRectangle(cornerRadius: 8)
+                                .strokeBorder(.gray, lineWidth: 1)
+                                .frame(width: 60, height: 60)
+                                .overlay {
+                                    Image(systemName: "bus.fill")
+                                        .font(.title)
+                                }
+                        }, row2: {
+                            HStack {
+                                RoundedRectangle(cornerRadius: 4)
+                                    .strokeBorder(.gray, lineWidth: 1)
+                                    .frame(width: 16, height: 16)
+                                    .overlay {
+                                        Image(systemName: "hare.circle.fill")
+                                    }
+                                Text("Kixo Inc • Open")
+                                    .foregroundStyle(Color(hex: "#AA0808"))
+                                    .font(.subheadline)
+                            }
+                        }, row3: {
+                            HStack {
+                                Circle()
+                                    .strokeBorder(.gray, lineWidth: 1)
+                                    .background(Circle().fill(Color.gray.opacity(0.3)))
+                                    .frame(width: 16, height: 16)
+                                    .overlay {
+                                        Image(systemName: "tortoise.circle.fill")
+                                    }
+                                Text("Madlyn Riley Jackson")
+                                    .foregroundStyle(Color(hex: "#AA0808"))
+                                    .font(.subheadline)
+                            }
+                        }, kpiCaption: {
+                            Text("99")
+                                .frame(width: 48, height: 36)
+                                .font(.system(size: 22))
+                                .foregroundStyle(Color.white)
+                                .background(RoundedRectangle(cornerRadius: 12.0).fill(Color.green))
+                        })
+                        .padding()
+                        .cardStyle(.card)
+                    } header: {
+                        Text("custom elements for KPI Component - kpiCaption")
+                            .padding(.leading, 20)
+                            .fontWeight(.bold)
+                    }.padding(.bottom, 10)
+                }
+            } label: {
+                Text("Cards custom score component")
+            }
+            
+            NavigationLink {
+                FioriCard {
+                    FioriCardFeaturedContent(
+                        image: Image("card_image")
+                    ) {
+                        Card(title: "Title", subtitle: "Subtitle that goes to multiple lines before truncating just like that", headerAction: FioriButton(title: "..."), counter: "1 of 3")
+                    }
+                    .frame(maxHeight: 110)
+                }
+            } label: {
+                Text("Left image card using custom featured content")
+            }
+            
+            NavigationLink {
+                VStack {
+                    Card {
+                        EmptyView()
+                    } cardBody: {
+                        HStack(spacing: 0) {
+                            Image("card_image")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 110, height: 110)
+                                .clipped()
+                            
+                            Card {
+                                Text("Imageleft")
+                            } subtitle: {
+                                Text("Image at the left side of card body line limit 3").lineLimit(3)
+                            } headerAction: {
+                                Button {
+                                    print("tapped")
+                                } label: {
+                                    Text("...")
+                                }
+                            } counter: {
+                                Text("1 of 3")
+                            }
+                        }
+                    }
+                }
+                .cardStyle(.card)
+                .cardStyle(.intrinsicHeightCard)
+                .padding()
+            } label: {
+                Text("Left image card using cardBody")
+            }
+            
+            NavigationLink {
+                FioriCardFlexItem()
+            } label: {
+                Text("FlexItem within Card Header")
+            }
+        }
+        .navigationBarTitle("Cards and Layouts", displayMode: .inline)
+        .sheet(isPresented: self.$isPresented) {
+            Form {
+                Text("Card Footer Button Width Mode")
+                Picker("", selection: self.$buttonWidthMode) {
+                    Text("Auto").tag(0)
+                    Text("Equal").tag(1)
+                    Text("Intrinsic").tag(2)
+                }
+                .pickerStyle(.segmented)
+            }
+        }
+        .toolbar(content: {
+            FioriButton(title: "Options") { _ in
+                self.isPresented = true
+            }
+            .fioriButtonStyle(self.toolBarFioriButtonStyle())
+        })
+    }
+    
+    func toolBarFioriButtonStyle() -> some FioriButtonStyle {
+        if #available(iOS 26.0, macOS 26.0, tvOS 26.0, watchOS 26.0, *) {
+            #if !os(visionOS)
+                FioriGlassButtonStyle(glassEffect: .systemManaged).eraseToAnyFioriButtonStyle()
+            #else
+                FioriPrimaryButtonStyle().eraseToAnyFioriButtonStyle()
+            #endif
+        } else {
+            FioriPrimaryButtonStyle().eraseToAnyFioriButtonStyle()
+            // Fallback on earlier versions
+        }
+    }
+}
+
+struct FioriCardFlexItem: View {
+    @State private var buttonWidthMode: Int = 0
+    var body: some View {
+        List {
+            ForEach(0 ..< CardTests.flexItemCardSamples.count, id: \.self) { i in
+                CardTests.flexItemCardSamples[i]
+            }
+            .listRowBackground(Color.preferredColor(.primaryGroupedBackground))
+        }
+        .environment(\.cardFooterButtonWidthMode, CardFooterButtonWidthMode(rawValue: self.buttonWidthMode) ?? .auto)
+        .cardStyle(.card)
+        .listStyle(.plain)
+        .navigationBarTitle("FlexItem in card", displayMode: .inline)
+    }
+}
+
+struct FioriCardFeaturedContent<Content: View>: View {
+    let content: Content
+    let image: Image
+    
+    init(
+        image: Image,
+        @ViewBuilder content: () -> Content
+    ) {
+        self.image = image
+        self.content = content()
+    }
+    
+    var body: some View {
+        HStack(spacing: 0) {
+            self.image
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 110)
+                .clipped()
+            
+            self.content
+                .layoutPriority(999)
+                .frame(height: 110)
+                .padding(.top, 7)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+public struct FioriCard<Content: View>: View {
+    // MARK: - Elements of a card
+    
+    private let content: Content
+    
+    // MARK: - Initialiser
+    
+    /// Create a new card instance.
+    ///
+    /// - Parameters:
+    ///   - header: The header of the card.
+    ///   - content: The content of the card.
+    ///   - footer: The footer of the card.
+    public init(@ViewBuilder content: () -> Content = { EmptyView() }) {
+        self.content = content()
+    }
+    
+    // MARK: - Body
+    
+    public var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            self.content
+        }
+        #if os(visionOS)
+        .background(.regularMaterial)
+        #elseif os(iOS) || os(macOS)
+        .background(Color.preferredColor(.secondaryBackground))
+        #endif
+        .clipShape(.rect(cornerRadius: 16))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .inset(by: 0.3)
+                .stroke(Color.preferredColor(.tertiaryLabel).opacity(0.24), lineWidth: 0.3)
+        )
+        .clipShape(RoundedRectangle(cornerRadius: 26))
+        .shadow(color: Color.black.opacity(0.3).opacity(0.92), radius: 8, x: 0, y: 2)
+    }
+}
+
+struct CustomTagStyle: TagStyle {
+    /// text color
+    var textColor: Color = .preferredColor(.secondaryLabel)
+    
+    /// Color inside the tag
+    var fillColor: Color = .clear
+    
+    public init(textColor: Color, fillColor: Color) {
+        self.textColor = textColor
+        self.fillColor = fillColor
+    }
+    
+    public func makeBody(_ configuration: TagConfiguration) -> some View {
+        configuration
+            .tag
+            .font(.system(size: 18))
+            .foregroundColor(self.textColor)
+            .lineLimit(1)
+            .padding(EdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4))
+            .background(RoundedRectangle(cornerRadius: 8).fill(self.fillColor))
+    }
+}
+
+struct MasonryTestView: View {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
+    func numOfRows() -> Int {
+        if UIDevice.current.localizedModel == "iPhone" {
+            return self.horizontalSizeClass == .regular ? 2 : 1
+        } else if UIDevice.current.localizedModel == "iPad" {
+            return 3
+        } else {
+            return 1
+        }
+    }
+    
+    var body: some View {
+        let layout = MasonryLayout(numOfColumns: numOfRows(), spacing: 16, lineSpacing: 8)
+        
+        ScrollView {
+            layout {
+                ForEach(0 ..< CardTests.cardSamples.count, id: \.self) { i in
+                    CardTests.cardSamples[i]
+                }
+            }
+            .cardStyle(.card)
+        }
+        .padding()
+        .background(Color.preferredColor(.primaryGroupedBackground))
+    }
+}
+
+extension VerticalAlignment: @retroactive Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self)
+    }
+}
+
+struct CarouselTestView: View {
+    let defaultNumberOfColumns: Int
+    @State var isPresented: Bool = false
+    @State var isSameHeight: Bool = true
+    @State var isSnapping: Bool = true
+    @State var numberOfColumns: Int
+    @State var spacing = 16.0
+    @State var padding = 16.0
+    @State var alignment = 0
+    @State var cards = CardTests.cardSamples.prefix(8)
+    @Environment(\.layoutDirection) var layoutDirection
+    
+    init(_ n: Int = 1) {
+        self.defaultNumberOfColumns = n
+        self._numberOfColumns = State(initialValue: n)
+    }
+    
+    var body: some View {
+        ScrollView(.vertical) {
+            VStack(alignment: .leading, spacing: 24) {
+                ScrollViewReader { proxy in
+                    Carousel(numberOfColumns: self.numberOfColumns, contentInsets: EdgeInsets(top: 16, leading: self.padding, bottom: 16, trailing: self.padding), spacing: self.spacing, alignment: self.alignment == 0 ? .top : (self.alignment == 1 ? .center : .bottom), isSnapping: self.isSnapping, isSameHeight: self.isSameHeight) {
+                        ForEach(0 ..< self.cards.count, id: \.self) { i in
+                            NavigationLink {
+                                self.cards[i].cardStyle(.card).cardStyle(.intrinsicHeightCard).padding()
+                            } label: {
+                                self.cards[i]
+                                    .id(i)
+                                    .contextMenu {
+                                        Button("Delete") {
+                                            self.cards.remove(at: i)
+                                        }
+                                    }
+                            }
+                        }
+                    }
+                    .onAppear {
+                        DispatchQueue.main.async {
+                            proxy.scrollTo(0, anchor: self.layoutDirection == .rightToLeft ? .trailing : .leading)
+                        }
+                    }
+                }.cardStyle(.card)
+            }
+        }
+        .background(Color.preferredColor(.primaryGroupedBackground))
+        .sheet(isPresented: self.$isPresented, content: {
+            List {
+                Toggle("Same card height", isOn: self.$isSameHeight)
+                Picker("numberOfColumns", selection: self.$numberOfColumns) {
+                    ForEach(1 ... 3, id: \.self) {
+                        Text("\($0)").tag($0)
+                    }
+                }
+                HStack {
+                    Text("spacing: \(Int(self.spacing))")
+                    Slider(value: self.$spacing, in: 0 ... 20, step: 4)
+                }
+                HStack {
+                    Text("Alignment:")
+                    Spacer()
+                    Picker("Alignment", selection: self.$alignment) {
+                        Text("Top").tag(0)
+                        Text("Center").tag(1)
+                        Text("Bottom").tag(2)
+                    }
+                }
+                Toggle("isSnapping", isOn: self.$isSnapping)
+                
+                HStack {
+                    Text("contentInsets(top: 0, leading: \(Int(self.padding)), bottom: 0, trailing: \(Int(self.padding)))")
+                    Slider(value: self.$padding, in: 0 ... 24, step: 4)
+                }
+            }
+            .presentationDetents([.medium])
+        })
+        .toolbar(content: {
+            FioriButton(title: "Options") { _ in
+                self.isPresented = true
+            }
+        })
+    }
+}
+
+#Preview {
+    List {
+        ForEach(0 ..< CardTests.cardSamples.count, id: \.self) { i in
+            CardTests.cardSamples[i]
+        }
+    }
+    .cardStyle(.card)
+    .listStyle(.plain)
+}
+
+#Preview("LeftImageCard in cardBody") {
+    VStack {
+        Card {
+            EmptyView()
+        } cardBody: {
+            HStack(spacing: 0) {
+                Image("card_image")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 110, height: 110)
+                    .clipped()
+                
+                Card {
+                    Text("Imageleft")
+                } subtitle: {
+                    Text("Image at the left side of card body line limit 3").lineLimit(3)
+                } headerAction: {
+                    Button {
+                        print("tapped")
+                    } label: {
+                        Text("...")
+                    }
+                } counter: {
+                    Text("1 of 3")
+                }
+            }
+        }
+    }
+    .cardStyle(.card)
+    .cardStyle(.intrinsicHeightCard)
+    .padding()
+}

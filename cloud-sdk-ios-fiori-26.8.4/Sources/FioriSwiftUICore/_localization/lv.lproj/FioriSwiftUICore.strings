@@ -1,0 +1,753 @@
+/* XMSG: Placeholder text in chart when there is no data */
+"No Data" = "Nav datu";
+
+/* XBUT: Save action in inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Save" = "Saglabāt";
+
+/* XBUT: Re-enter action available in saved state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Re-enter Signature" = "Atkārtoti ievadīt parakstu";
+
+/* XBUT: Clear action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Clear" = "Notīrīt";
+
+/* XBUT: Cancel action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Cancel" = "Atcelt";
+
+/* XTIT: Title of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Signature" = "Paraksts";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Tap to Sign" = "Pieskarieties, lai parakstītu";
+
+/* XACT: The accessibility label for the signature area */
+"Signature Area" = "Parakstu apgabals";
+
+/* XACT: The accessibility hint for the signature area */
+"Double tap and drag to sign" = "Veiciet dubultskārienu un velciet, lai parakstītu";
+
+/* XACT: The accessibility label for the signature image */
+"Signature Image" = "Paraksta attēls";
+
+/* XACT: The accessibility label for the signature line */
+"Signature Line" = "Paraksta līnija";
+
+/* XACT: The accessibility label for the mandatory field */
+"Required Field" = "Obligātais lauks";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Canceled" = "Atcelts";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Next" = "Nākamais";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Ok" = "Labi";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Status" = "Statuss";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"User canceled Onboarding" = "Lietotājs atcēla integrāciju";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Without consent you will not be able to continue onboarding." = "Bez piekrišanas nevarēsit turpināt integrāciju.";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Give Consent" = "Sniegt piekrišanu";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Quit" = "Iziet";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Back" = "Atpakaļ";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Step" = "Solis";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"of" = "no";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Are you sure you want to quit the onboarding process?" = "Vai tiešām vēlaties beigt integrācijas procesu?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Want Data Privacy?" = "Vai vēlaties datu konfidencialitāti?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Be wise about your data" = "Ar datiem rīkojieties pārdomāti";
+
+/* XBUT: Not Now action title in UserConsentForm */
+"Not Now" = "Ne tagad";
+
+/* XBUT: Allow action title in UserConsentForm */
+"Allow" = "Atļaut";
+
+/* XBUT: Deny action title in UserConsentForm */
+"Deny" = "Noraidīt";
+
+/* XBUT: Agree action title in EULAView */
+"Agree" = "Piekrist";
+
+/* XBUT: Disagree action title in EULAView */
+"Disagree" = "Nepiekrist";
+
+/* XMSG: Placeholder text in DataTable for loading state */
+"Loading..." = "Ielāde...";
+
+/* XMSG: Placeholder text in DataTable when there is no data */
+"There is nothing to display yet" = "Vēl nav nekā, ko parādīt";
+
+/* XBUT: Default duration formatter in DataTable */
+"%d Hrs %d Min" = "%d h %d min";
+
+/* XBUT: Done action in keyboard toolbar for a Textfield in DataTable */
+"Done" = "Pabeigts";
+
+/* XBUT: Error messages shown to users in DataTable */
+"There are %d errors in the data table." = "Datu tabulā ir %d kļūda(s).";
+
+/* XBUT: voice over label for row header in DataTable */
+"row header" = "rindas galvene";
+
+/* XBUT: voice over label for row %d in DataTable */
+"row %d" = "rinda %d";
+
+/* XBUT: voice over label for column %d in DataTable */
+"column %d" = "kolonna %d";
+
+/* XBUT: voice over label for cell type of `leading accessory` in DataTable */
+"leading accessory" = "vadošais aksesuārs";
+
+/* XBUT: voice over label for cell type of `trailing accessory` in DataTable */
+"trailing accessory" = "noslēdzošais aksesuārs";
+
+/* XBUT: voice over label for cell type of `text` in DataTable */
+"text" = "teksts";
+
+/* XBUT: voice over label for cell type of `image` in DataTable */
+"image" = "attēls";
+
+/* XBUT: voice over label for cell type of `date` in DataTable */
+"date" = "datums";
+
+/* XBUT: voice over label for cell type of `time` in DataTable */
+"time" = "laiks";
+
+/* XBUT: voice over label for cell type of `duration` in DataTable */
+"duration" = "ilgums";
+
+/* XBUT: voice over label for cell type of `list item` in DataTable */
+"list item" = "saraksta elements";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"selected" = "atlasīts";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"not selected" = "nav atlasīts";
+
+/* Default value for DateTimePicker */
+"No date selected" = "Nav atlasīts neviens datums";
+
+/* Default value for DateRangePicker */
+"No range selected" = "Nav atlasīts diapazons";
+
+/* DateRangePicker press space to set a range value */
+"PressSpaceToSelectRangeKey" = "nospiediet atstarpes taustiņu, lai iestatītu diapazona vērtību";
+
+/* XBUT: calendar time component label */
+"Time" = "Laiks";
+
+/* XBUT: slider default value label formatter for integer */
+"Value: %d" = "Vērtība: %d";
+
+/* XMSG: a toast message for read-only cell in DataTable */
+"Tapped cell is read-only." = "Šūna, kam pieskārāties, ir tikai lasāma.";
+
+/* Default hint text for Read-only Field for NoteFormView and TextFieldFormView */
+"Read-only field" = "Tikai lasāms lauks";
+
+/* Default error text for when the character count reaches the maximum limit for NoteFormView and TextFieldFormView */
+"No more characters remaining" = "Vairs nav atlikusi neviena rakstzīme";
+
+/* Default error text for when the character count exceeds the maximum limit for NoteFormView and TextFieldFormView */
+"Reduce the number of characters" = "Samaziniet rakstzīmju skaitu";
+
+/* XBUT: voice over label for decrement action in stepper */
+"Stepper decrease" = "Stepera samazinājums";
+
+/* XBUT: voice over description for decrement action in stepper */
+"Decrease the value by %d" = "Samazināt vērtību par %d";
+
+/* XBUT: voice over label for increment action in stepper */
+"Stepper increase" = "Stepera palielinājums";
+
+/* XBUT: voice over description for increment action in stepper */
+"Increase the value by %d" = "Palielināt vērtību par %d";
+
+/* XBUT: voice over label for test field in stepper */
+"Select specific value" = "Atlasīt konkrētu vērtību";
+
+/* XBUT: View all action in MenuSelection */
+"View All (%d)" = "Skatīt visus (%d)";
+
+/* XACT: RatingControl accessibility label */
+"%d out of %d stars" = "%d no %d zvaigznēm";
+
+/* XBUT: timeline preview component see all label */
+"See All (%d)" = "Skatīt visus (%d)";
+
+/* XACT: Timeline preview items accessibility label */
+"See All" = "Redzēt visus";
+
+/* XACT: Timeline preview items accessibility value */
+"%d items" = "%d elementi";
+
+/* XACT: Timeline preview items accessibility hint */
+"Shows all timeline items in a list" = "Sarakstā rāda visus laika skalas elementus";
+
+/* XACT: Timeline preview item status: current accessibility value */
+"Current" = "Pašreizējs";
+
+/* XACT: Timeline preview item status: future accessibility value */
+"Future" = "Nākotnes";
+
+/* XACT: Timeline preview item status: past accessibility value */
+"Past" = "Pagātnes";
+
+/* XACT: Timeline preview item accessibility value */
+"Item %d of %d, %@, %@, %@" = "Elements %d no %d, %@, %@, %@";
+
+/* XACT: Timeline preview item node type: Start accessibility value */
+"Start" = "Sākums";
+
+/* XACT: Timeline preview item node type: End accessibility value */
+"End" = "Beigas";
+
+/* XACT: Timeline preview item node type: Completed accessibility value */
+"Completed" = "Pabeigts";
+
+/* XACT: Timeline preview item node type: Open accessibility value */
+"Open" = "Atvērts";
+
+/* XACT: Timeline preview item node type: Task accessibility value */
+"Task" = "Uzdevums";
+
+/* XACT: Timeline preview item accessibility label */
+"Item %d of %d" = "Elements %d no %d";
+
+/* XBUT: timeline preview component timestamp label */
+"Today, %@" = "Šodien, %@";
+
+/* XFLD: RatingControl value label format */
+"%d of %d" = "%d no %d";
+
+/* XFLD: RatingControl review count format */
+"%d reviews" = "%d novērtējumi";
+
+/* XFLD: RatingControl review count over ceiling format */
+"%d+ reviews" = "%d+ novērtējumi";
+
+/* XACT: RatingControl accessibility label */
+"Rating Control %d of %d" = "Vērtējuma kontrole, %d no %d";
+
+/* XACT: read-only RatingControl accessibility label: rating with review count */
+"Rating Control, rating %d of %d, %d reviews" = "Vērtējuma kontrole, vērtējums %d no %d, %d novērtējumi";
+
+/* XACT: read-only RatingControl accessibility label: average rating only */
+"Rating Control, average rating %.1f of %d" = "Vērtējuma kontrole, vidējais vērtējums %.1f no %d";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count */
+"Rating Control, average rating %.1f of %d, %d reviews" = "Vērtējuma kontrole, vidējais vērtējums %.1f no %d, %d novērtējumi";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count over ceiling */
+"Rating Control, average rating %.1f of %d, %d plus reviews" = "Vērtējuma kontrole, vidējais vērtējums %.1f no %d, vairāk par %d novērtējumiem";
+
+/* XBUT: View all messages in message banner sheet */
+"All" = "Visi";
+
+/* XBUT: messages count in the message banner sheet */
+"Messages (%d)" = "Ziņojumi (%d)";
+
+/* XBUT: view details in the message banner */
+"View Details" = "Skatīt detalizētu informāciju";
+
+/* XBUT: view different message in the message banner sheet item */
+"View %@" = "Skatīt %@";
+
+/* XBUT: banner message type desc, message */
+"message" = "ziņojums";
+
+/* XBUT: banner message type desc, information */
+"information" = "informācija";
+
+/* XBUT: banner message type desc, confirmation */
+"confirmation" = "apstiprinājums";
+
+/* XBUT: banner message type desc, warning */
+"warning" = "brīdinājums";
+
+/* XBUT: banner message type desc, error */
+"error" = "kļūda";
+
+/* XBUT: banner message type desc, error */
+"AI notice" = "MI paziņojums";
+
+/* XMSG: banner message type desc, offline */
+"offline" = "bezsaistē";
+
+/* XMSG: information view style type, success */
+"success" = "sekmīgi";
+
+/* XBUT: Reset action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Reset" = "Atiestatīt";
+
+/* XBUT: Apply action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Apply" = "Lietot";
+
+/* XTIT: The alert message for `ListPickerDestination` pulldown dismissal */
+"Are you sure you want to discard your selections?" = "Vai tiešām vēlaties atmest veiktās atlases?";
+
+/* XBUT: The alert Discard Changes action title for `ListPickerDestination` pulldown dismissal */
+"Discard Changes" = "Atmest izmaiņas";
+
+/* XBUT: The alert Keep Editing action title for `ListPickerDestination` pulldown dismissal */
+"Keep Editing" = "Turpināt rediģēšanu";
+
+/* XBUT: The \"Select All\" button title on the List Picker header */
+"Select All" = "Atlasīt visus";
+
+/* XBUT: The \"Deselect All\" button title on the List Picker header */
+"Deselect All" = "Noņemt atlasi visiem";
+
+/* XBUT: The \"Selected\" title on the List Picker header */
+"Selected" = "Atlasīts";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"Text field, Double tap to edit" = "Teksta lauks, veiciet dubultskārienu, lai rediģētu";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d character left" = "Atlikusi %d rakstzīme.";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d characters left" = "Atlikušas %d rakstzīmes.";
+
+/* XACT: The accessibility hint for Text Input Views, editing */
+"Text field, is editing" = "Teksta lauks, rediģēšanas režīmā";
+
+/* XACT: The accessibility hint for Text Input Views, editing, with clear button */
+"Text field, is editing. Double tap to clear text" = "Teksta lauks, notiek rediģēšana. Veiciet dubultskārienu, lai notīrītu tekstu";
+
+/* XACT: The default accessibility label for the custom action in TextFieldFormView if none was specified */
+"Custom Action" = "Pielāgota darbība";
+
+/* XBUT: Error messages shown to users in DocumentScannerView */
+"Failed to create PDF page from images" = "Neizdevās izveidot PDF lapu no attēliem.";
+
+/* XBUT: Cancel message shown to users in DocumentScannerView */
+"User cancelled the scan" = "Lietotājs atcēla skenēšanu.";
+
+/* Progress Indicator accessibility label: processing */
+"Processing" = "Notiek apstrāde";
+
+/* Progress Indicator accessibility label: loading pausable with indicator progress */
+"In progress with option to pause, %.0f" = "Notiek ar iespēju pauzēt, %.0f";
+
+/* Progress Indicator accessibility label: loading stoppable with indicator progress */
+"In progress with option to stop, %.0f" = "Notiek ar iespēju apturēt, %.0f";
+
+/* Progress Indicator accessibility label: progress halted with indicator progress */
+"Progress halted, %.0f" = "Progress aizturēts, %.0f";
+
+/* XACT: Slider accessibility label */
+"This is %@ slider whose maximum value is %@ and minimum value is %@" = "Šis ir %@ slīdnis, kura maksimālā vērtība ir %@, un minimālā vērtība ir %@";
+
+/* XACT: Slider accessibility value */
+"Current value is %@" = "Pašreizējā vērtība ir %@";
+
+/* XACT: Range Slider lower thumb accessibility label */
+"lower range slider thumb, current value is" = "apakšējā diapazona slīdņa sīktēls, pašreizējā vērtība ir";
+
+/* XACT: Range Slider lower thumb accessibility hint */
+"you can swipe up or down to change the lower value" = "varat vilkt uz augšu vai uz leju, lai mainītu apakšējo vērtību";
+
+/* XACT: Range Slider upper thumb accessibility label */
+"upper range slider thumb, current value is" = "augšējā diapazona slīdņa sīktēls, pašreizējā vērtība ir";
+
+/* XACT: Range Slider upper thumb accessibility hint */
+"you can swipe up or down to change the upper value" = "varat vilkt uz augšu vai uz leju, lai mainītu augšējo vērtību";
+
+/* XACT: Single editable Slider thumb accessibility label */
+"slider thumb, current value is" = "slīdņa sīktēls, pašreizējā vērtība ir";
+
+/* XACT: Single editable Slider thumb accessibility hint */
+"you can swipe up or down to change the value" = "varat vilkt uz augšu vai uz leju, lai mainītu vērtību";
+
+/* XACT: Single Slider accessibility label */
+"This is a slider, the minimum value is %@ and the maximum value is %@" = "Šis ir slīdnis, minimālā vērtība ir %@, un maksimālā vērtība ir %@";
+
+/* XACT: Range Slider accessibility label */
+"This is a range slider, the minimum value is %@ and the maximum value is %@" = "Šis ir diapazona slīdnis, minimālā vērtība ir %@, un maksimālā vērtība ir %@";
+
+/* XACT: Single editable Slider accessibility label */
+"This is a slider that is editable, the minimum value is %@ and the maximum value is %@" = "Šo slīdni var rediģēt, minimālā vērtība ir %@, un maksimālā vērtība ir %@";
+
+/* XACT: Single non-editable Slider accessibility label */
+"This is a slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Šo slīdni nevar rediģēt, minimālā vērtība ir %@, un maksimālā vērtība ir %@";
+
+/* XACT: Range editable Slider accessibility label */
+"This is a range slider that is editable, the minimum value is %@ and the maximum value is %@" = "Šo diapazona slīdni var rediģēt, minimālā vērtība ir %@, un maksimālā vērtība ir %@";
+
+/* XACT: Range non-editable Slider accessibility label */
+"This is a range slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Šo diapazona slīdni nevar rediģēt, minimālā vērtība ir %@, un maksimālā vērtība ir %@";
+
+/* XACT: Single editable Slider Text Field accessibility label */
+"slider value text field" = "slīdņa vērtības teksta lauks";
+
+/* XACT: Range editable Slider Lower Value Text Field accessibility label */
+"lower value text field" = "apakšējās vērtības teksta lauks";
+
+/* XACT: Range editable Slider Upper Value Text Field accessibility label */
+"upper value text field" = "augšējās vērtības teksta lauks";
+
+/* XACT: Editable Slider Text Field accessibility hint */
+"You can double tap to input a specific value" = "Varat veikt dubultskārienu, lai ievadītu specifisku vērtību";
+
+/* XACT: Editable Slider Text Field accessibility value */
+"current value is %@" = "pašreizējā vērtība ir %@";
+
+/* XACT: Range Editable Slider accessibility value */
+"current lower value is %@, upper value is %@" = "pašreizējā apakšējā vērtība ir %@, augšējā vērtība ir %@";
+
+/* XTIT: Title of step progress indicator, see https://experience.sap.com/fiori-design-ios/article/step-progress-indicator/#adaptive-design */
+"All Steps" = "Visi soļi";
+
+/* XMSG: AI Notice message */
+"Suggested by AI. Verify before use. " = "Ierosināja AI. Pārbaudiet pirms lietošanas. ";
+
+/* XBUT: Attachment operation menu item - Photos, which stands for Photo Library */
+"Photos" = "Fotoattēli";
+
+/* XBUT: Attachment operation menu item - Files, which stands for documents available for upload residing in Files */
+"Files" = "Faili";
+
+/* XBUT: Attachment operation menu item - Camera, which can be used for taking photos and movies */
+"Camera" = "Kamera";
+
+/* XBUT: Attachment operation menu item - Scan. Use camera as scanner and generate PDF files */
+"Scan" = "Skenēt";
+
+/* XACT: The accessibility preview action for the attachment */
+"Preview" = "Priekšskatīt";
+
+/* XTIT: Attachment title of deletion confirmation */
+"Delete Attachment?" = "Vai dzēst pielikumu?";
+
+/* XBUT: Attachment deletion confirmation button */
+"Delete" = "Dzēst";
+
+/* XBUT: Attachment add button */
+"Add attachment" = "Pievienot pielikumu";
+
+/* XACT: The accessibility hint for add button */
+"Double tap to add attachment" = "Veiciet dubultskārienu, lai pievienotu pielikumu";
+
+/* XMSG: attachment section add new file successfully announcement */
+"New attachment added successfully" = "Jauns pielikums pievienots sekmīgi";
+
+/* XMSG: attachment section add new file failed announcement */
+"File failed to attach" = "Failu neizdevās pievienot";
+
+/* XACT: The accessibility hint for attachment section */
+"read only" = "tikai lasāms";
+
+/* XACT: The accessibility hint for attachment section */
+"actions available" = "pieejamas darbības";
+
+/* XMSG: Attachment thumbnail */
+"Thumbnail" = "Sīktēls";
+
+/* XMSG: Attachment uploading */
+"Attachment uploading" = "Tiek augšupielādēts %@, lūdzu, uzgaidiet...";
+
+/* XMSG: Attachment error */
+"Attachment error" = "Neizdevās augšupielādēt %@. Kļūdas ziņojums: %@";
+
+/* XBUT: Sign In Action in the Authentication */
+"Sign In" = "Pierakstīties";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"username" = "lietotājvārds";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"password" = "parole";
+
+/* XBUT: Submit action title in AI User Feedback */
+"Submit" = "Iesniegt";
+
+/* XMSG: Submission failed title in AI User Feedback */
+"Submission failed" = "Iesniegšana neizdevās";
+
+/* XMSG: Submission failed description in AI User Feedback */
+"An error has occurred. Please try again later." = "Radās kļūda. Lūdzu, vēlāk mēģiniet vēlreiz.";
+
+/* XBUT: Retry action title in AI User Feedback */
+"Retry" = "Mēģināt vēlreiz";
+
+/* XACT: The accessibility label for the like button in AI User Feedback */
+"Positive feedback" = "Pozitīva atsauksme";
+
+/* XACT: The accessibility label for the dislike button in AI User Feedback */
+"Negative feedback" = "Negatīva atsauksme";
+
+/* XACT: The accessibility label for the vote buttons in AI User Feedback */
+"enabled" = "iespējots";
+
+/* XMSG: Onboarding scan view title for scan unsuccessful */
+"Scan Unsuccessful" = "Skenēšana nesekmīga";
+
+/* XMSG: Onboarding scan view hint for scan unsuccessful */
+"Please select a QR code image." = "Lūdzu, atlasiet kvadrātkoda attēlu.";
+
+/* XMSG: Onboarding scan view title for invalid QR code */
+"Invalid QR Code" = "Nederīgs kvadrātkods";
+
+/* XMSG: Onboarding scan view hint for invalid QR code */
+"The QR code was not recognized." = "Kvadrātkods netika atpazīts.";
+
+/* XTIT: Onboarding scan view title for request access to photos library */
+"Allow Access to Photos" = "Atļaut piekļuvi fotoattēliem";
+
+/* XMSG: Onboarding scan view hint for request access to photos library */
+"To choose a QR code image, please give access to your photos in your device's privacy settings." = "Lai izvēlētos kvadrātkoda attēlu, lūdzu, sniedziet piekļuvi jūsu fotoattēliem ierīces konfidencialitātes iestatījumos.";
+
+/* XTIT: Onboarding scan view title for request access to camera */
+"Allow Access to Camera" = "Atļaut piekļuvi kamerai";
+
+/* XMSG: Onboarding scan view hint for request access to camera */
+"To scan using the camera, please give access to your camera in your device's privacy settings." = "Lai skenētu, izmantojot kameru, lūdzu, sniedziet piekļuvi kamerai ierīces konfidencialitātes iestatījumos.";
+
+/* XBUT: Onboarding scan view action title for the alert when the permission to access camera or photo library was not granted */
+"Settings" = "Iestatījumi";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"down arrow" = "bultiņa uz leju";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"up arrow" = "bultiņa uz augšu";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash deactivated" = "Flash deaktivizēts";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash activated" = "Flash aktivizēts";
+
+/* XACT: The accessibility hint for photos in onboarding photo picker view */
+"Photo %d" = "Fotoattēls %d";
+
+/* XMSG: Onboarding confirm view success message */
+"Scan succeeded. You will be connected to:" = "Skenēšana sekmīga. Jums tiks izveidots savienojums ar:";
+
+/* XBUT: Onboarding confirm view action title for continue button */
+"Continue" = "Turpināt";
+
+/* XTIT: Title for writing assistant */
+"Writing Assistant" = "Rakstīšanas palīgs";
+
+/* XMSG: Writing assistant version control */
+"Version %d/%d" = "Versija %d/%d";
+
+/* XBUT: Writing assistant undo action title */
+"Undo" = "Atsaukt";
+
+/* XBUT: Writing assistant redo action title */
+"Redo" = "Atcelt atsaukšanu";
+
+/* XTIT: Writing assistant cancel alert message */
+"Do you want to undo the edits made by the Writing Assistant and revert the text to its original state?" = "Vai vēlaties atsaukt Rakstīšanas palīga veiktos rediģējumus atgriezt tekstu tā sākotnējā stāvoklī?";
+
+/* XTIT: Writing assistant cancel alert title */
+"Discard all changes?" = "Vai atmest visas izmaiņas?";
+
+/* XBUT: Writing assistant cancel alert action title for keep working */
+"Keep Working" = "Turpināt strādāt";
+
+/* XBUT: Writing assistant cancel alert action title for discard */
+"Discard" = "Atmest";
+
+/* XMSG: A success toast message for feedback flow in writing assistant */
+"Thank you for your feedback" = "Paldies par jūsu atsauksmi";
+
+/* XTIT: Title for feedback downvote flow in writing assistant */
+"What didn’t you like about this version?" = "Kas jums nepatika saistībā ar šo versiju?";
+
+/* XTIT: Subtitle for feedback downvote flow in writing assistant */
+"Please rate your experience to help us improve." = "Lūdzu, novērtējiet savu pieredzi, lai palīdzētu mums uzlaboties.";
+
+/* XTIT: Navigation bar title for feedback flow */
+"Feedback" = "Atsauksme";
+
+/* XTIT: Footnote text for feedback in writing assistant */
+"How was this response?" = "Kāda bija šī atbilde?";
+
+/* XMSG: One date selected for .datesSelection style in Calendar view */
+"%d Date Selected" = "%d datums atlasīts";
+
+/* XMSG: Multiple dates selected for .datesSelection style in Calendar view */
+"%d Dates Selected" = "%d datumi atlasīti";
+
+/* XMSG: Has event, used in voice over in calendar view */
+"has event" = "ir notikums";
+
+/* XMSG: Double tap to change the selection, used in voice over in calendar view */
+"Double tap to change the selection" = "Veiciet dubultskārienu, lai mainītu atlasi";
+
+/* XMSG: Double tap to select, used in voice over in calendar view */
+"Double tap to select" = "Veiciet dubultskārienu, lai atlasītu";
+
+/* XMSG: Double tap to unselect, used in voice over in calendar view */
+"Double tap to unselect" = "Veiciet dubultskārienu, lai noņemtu atlasi";
+
+/* XMSG: Date selected, used in voiceOver in calendar view */
+"Date selected" = "Datums atlasīts";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Today" = "Šodien";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Disabled date" = "Atspējots datums";
+
+/* XMSG: Drag tips in .expandable style, used in voiceOver in calendar view */
+"Handle to switch from month view to week view" = "Turis pārslēgšanai no mēneša skata uz nedēļas skatu";
+
+/* XMSG: Accessibility label for card container */
+"Card" = "Kartīte";
+
+/* XTIT: Title for card */
+"Card title" = "Kartītes virsraksts";
+
+/* XTIT: Subtitle for card */
+"Card subtitle" = "Kartītes apakšvirsraksts";
+
+/* XTIT: HeaderAction for card */
+"Card header action" = "Kartītes galvenes darbība";
+
+/* XACT: The accessibility label for the switchItem turn on button in FilterFeedbackBar */
+"Switch Item On" = "Pieskarieties, lai ieslēgtu";
+
+/* XACT: The accessibility label for the switchItem turn off button in FilterFeedbackBar */
+"Switch Item Off" = "Pieskarieties, lai izslēgtu";
+
+/* XMSG: Writing assistant panel opening announcement */
+"AI Writing Assistant panel opened. Use provided prompts to refine your text content." = "MI rakstīšanas palīga panelis atvērts. Izmantojiet nodrošinātās uzvednes, lai precizētu sava teksta saturu.";
+
+/* XMSG: Writing assistant activation cell hint for accessibility */
+"Double tap to activate" = "Veiciet dubultskārienu, lai aktivizētu";
+
+/* XMSG: Writing assistant options entry cell hint for accessibility */
+"Open to see %@ options" = "Atveriet, lai redzētu %@ iespējas";
+
+/* XMSG: Writing assistant undo announcement */
+"Undo to Version %d of %d" = "Atsaukt uz versiju %d no %d";
+
+/* XMSG: Writing assistant redo announcement */
+"Redo to Version %d of %d" = "Atcelt atsaukšanu uz versiju %d no %d";
+
+/* XMSG: Writing assistant version update announcement */
+"Text updated to Version %d of %d" = "Teksts atjaunināts uz versiju %d no %d";
+
+/* XTIT: Writing assistant title accessibility label */
+"AI Writing Assistant" = "MI rakstīšanas palīgs";
+
+/* XMSG: Writing assistant accessibility instruction for text editing */
+"double tap to open AI Writing Assistant and edit text" = "veiciet dubultskārienu, lai atvērtu MI rakstīšanas palīgu un rediģētu tekstu";
+
+/* XBUT: Writing assistant undo accessibility label */
+"Undo change" = "Atsaukt izmaiņas";
+
+/* XBUT: Writing assistant redo accessibility label */
+"Rodo change" = "Atcelt izmaiņu atsaukšanu";
+
+/* XBUT: Close button title */
+"Close" = "Aizvērt";
+
+/* XMSG: Accessibility label for completed state in step progress indicator */
+"complete" = "pabeigts";
+
+/* XMSG: Accessibility label for active state in step progress indicator */
+"active" = "aktīvs";
+
+/* XMSG: Accessibility label for error active state in step progress indicator */
+"error active" = "kļūda aktīva";
+
+/* XMSG: Accessibility label for read-only state in step progress indicator */
+"read-only" = "tikai lasāms";
+
+/* XACT: The accessibility value for Stepper decrement */
+"Decrease the value by %f" = "Samazināt vērtību par %f";
+
+/* XACT: The accessibility value for Stepper increment */
+"Increase the value by %f" = "Palielināt vērtību par %f";
+
+/* XMSG: title used in DateRangePickerPopView */
+"Select Range" = "Atlasīt diapazonu";
+
+/* XMSG: start date, used in DateRangePickerPopView */
+"Start Date" = "Sākuma datums";
+
+/* XMSG: end date, used in DateRangePickerPopView */
+"End Date" = "Beigu datums";
+
+/* XBUT: title for picker form cell to open */
+"DoubleTapToOpenKey" = "Veiciet dubultskārienu, lai atvērtu";
+
+/* XBUT: title for picker form cell to collapse */
+"DoubleTapToCollapseKey" = "Veiciet dubultskārienu, lai sakļautu";
+
+/* XTIT: On state for switch */
+"Switch On" = "Iesl.";
+
+/* XTIT: Off state for switch */
+"Switch Off" = "Izsl.";
+
+/* Checkout Indicator accessibility label: failed */
+"failed" = "neizdevās";
+
+/* Checkout Indicator accessibility label: AI processing */
+"AI processing" = "Notiek MI apstrādāšana";
+
+/* Checkout Indicator accessibility label: Checkout Indicator */
+"Checkout Indicator" = "Paņemšanas indikators";
+
+/* XMSG: More tag text shown when tags are truncated in MHStack, %d is the count of hidden tags */
+"+%d more" = "+ vēl %d";
+
+/* XTIT: The title of the empty state view */
+"No Results Found" = "Nekādi rezultāti nav atrasti";
+
+/* XTIT: The description of the empty state view */
+"Check your search for any spelling errors or try a different search term." = "Pārbaudiet, vai meklēšanas kritērijā nav pareizrakstības kļūdu, vai mēģiniet izmantot citu meklēšanas kritēriju.";
+
+/* XACT: The accessibility label for the checkbox */
+"Checkbox" = "Izvēles rūtiņa";
+
+/* XMSG: Passcode policy requirement - minimum length, %d is the required number of characters */
+"At least %d characters" = "Vismaz %d rakstzīmes";
+
+/* XMSG: Passcode policy requirement - minimum number of unique characters, %d is the required count */
+"At least %d unique characters" = "Vismaz %d unikālas rakstzīmes";
+
+/* XMSG: Passcode policy requirement - at least one digit */
+"At least one digit" = "Vismaz viens cipars";
+
+/* XMSG: Passcode policy requirement - at least one uppercase letter */
+"At least one uppercase letter" = "Vismaz viens lielais burts";
+
+/* XMSG: Passcode policy requirement - at least one lowercase letter */
+"At least one lowercase letter" = "Vismaz viens mazais burts";
+
+/* XMSG: Passcode policy requirement - at least one special character */
+"At least one special character" = "Vismaz viena speciālā rakstzīme";
+
+/* XMSG: Passcode policy requirement - digits only */
+"Digits only" = "Tikai cipari";
+

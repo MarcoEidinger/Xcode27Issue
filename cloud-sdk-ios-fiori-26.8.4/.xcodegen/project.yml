@@ -1,0 +1,178 @@
+name: FioriSwiftUI
+
+############
+# Options
+############
+
+options:
+  minimumXcodeGenVersion: 2.10
+  groupSortPosition: top
+  generateEmptyDirectories: true
+  deploymentTarget:
+    iOS: "17.0"
+    visionOS: "2.0"
+    watchOS: "7.0"
+
+############
+# Targets
+############
+
+targets:
+
+  # -----------
+  # FioriThemeManager
+  # -----------
+
+  FioriThemeManager:
+    name: FioriThemeManager
+    type: framework
+    supportedDestinations: [iOS, visionOS, watchOS, macCatalyst]
+
+    info:
+      path: SupportingFiles/FioriThemeManagerInfo.plist
+      properties:
+        CFBundleIdentifier: "com.sap.cp.sdk.ios.FioriThemeManager"
+        CFBundleExecutable: "FioriThemeManager"
+        CFBundleName: "FioriThemeManager"
+        CFBundleShortVersionString: ${FIORISWIFTUI_VERSION}
+        CFBundleVersion: ${FIORISWIFTUI_VERSION}
+        CFBundlePackageType: "FMWK"
+
+    # settings
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: "com.sap.cp.sdk.ios.FioriThemeManager"
+      BUILD_LIBRARY_FOR_DISTRIBUTION: true
+      OTHER_SWIFT_FLAGS: "-Xfrontend -empty-abi-descriptor"
+
+    # sources
+    sources:
+      - ../Sources/FioriThemeManager
+
+  # -----------
+  # FioriCharts
+  # -----------
+
+  FioriCharts:
+    name: FioriCharts
+    type: framework
+    supportedDestinations: [iOS, visionOS, macCatalyst]
+
+    info:
+      path: SupportingFiles/FioriChartsInfo.plist
+      properties:
+        CFBundleIdentifier: "com.sap.cp.sdk.ios.FioriCharts"
+        CFBundleExecutable: "FioriCharts"
+        CFBundleName: "FioriCharts"
+        CFBundleShortVersionString: ${FIORISWIFTUI_VERSION}
+        CFBundleVersion: ${FIORISWIFTUI_VERSION}
+        CFBundlePackageType: "FMWK"
+
+    # settings
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: "com.sap.cp.sdk.ios.FioriCharts"
+      BUILD_LIBRARY_FOR_DISTRIBUTION: true
+      OTHER_SWIFT_FLAGS: "-Xfrontend -empty-abi-descriptor"
+
+    # sources
+    sources:
+      - ../Sources/FioriCharts
+
+    dependencies:
+      - target: FioriThemeManager
+
+  # -----------
+  # FioriSwiftUICore
+  # -----------
+
+  FioriSwiftUICore:
+    name: FioriSwiftUICore
+    type: framework
+    supportedDestinations: [iOS, visionOS, macCatalyst]
+
+    info:
+      path: SupportingFiles/FioriSwiftUICoreInfo.plist
+      properties:
+        CFBundleIdentifier: "com.sap.cp.sdk.ios.FioriSwiftUICore"
+        CFBundleExecutable: "FioriSwiftUICore"
+        CFBundleName: "FioriSwiftUICore"
+        CFBundleShortVersionString: ${FIORISWIFTUI_VERSION}
+        CFBundleVersion: ${FIORISWIFTUI_VERSION}
+        CFBundlePackageType: "FMWK"
+
+    # settings
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: "com.sap.cp.sdk.ios.FioriSwiftUICore"
+      BUILD_LIBRARY_FOR_DISTRIBUTION: true
+      OTHER_SWIFT_FLAGS: "-Xfrontend -empty-abi-descriptor"
+
+    # sources
+    sources:
+      - ../Sources/FioriSwiftUICore
+
+    dependencies:
+      - target: FioriThemeManager
+      - target: FioriCharts
+
+aggregateTargets:
+  buildBinaryFramework:
+    buildScripts:
+      - name: Build xcframework
+        script: |
+          OUTPUT_DIR_PATH="${PROJECT_DIR}/XCFramework"
+          echo "OUTPUT_DIR_PATH: " ${OUTPUT_DIR_PATH}
+          echo "▸ Cleaning the output directory: ${OUTPUT_DIR_PATH}"
+          rm -rf $OUTPUT_DIR_PATH
+
+          # FioriThemeManager archives
+          xcodebuild archive -scheme FioriThemeManager -configuration $CONFIGURATION -destination 'generic/platform=iOS Simulator' ARCHS="arm64" -archivePath ${OUTPUT_DIR_PATH}/iphonesimulator/FioriThemeManager.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          xcodebuild archive -scheme FioriThemeManager -configuration $CONFIGURATION -destination 'generic/platform=iOS' -archivePath ${OUTPUT_DIR_PATH}/iphoneos/FioriThemeManager.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          xcodebuild archive -scheme FioriThemeManager -configuration $CONFIGURATION -destination 'platform=macOS,arch=arm64,variant=Mac Catalyst' -archivePath ${OUTPUT_DIR_PATH}/maccatalyst/FioriThemeManager.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          xcodebuild archive -scheme FioriThemeManager -configuration $CONFIGURATION -destination 'generic/platform=visionOS Simulator,name=Apple Vision Pro' ARCHS="arm64" -archivePath ${OUTPUT_DIR_PATH}/xrsimulator/FioriThemeManager.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          xcodebuild archive -scheme FioriThemeManager -configuration $CONFIGURATION -destination 'generic/platform=visionOS' -archivePath ${OUTPUT_DIR_PATH}/xros/FioriThemeManager.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          xcodebuild archive -scheme FioriThemeManager -configuration $CONFIGURATION -destination 'generic/platform=watchOS Simulator' ARCHS="arm64" -archivePath ${OUTPUT_DIR_PATH}/watchsimulator/FioriThemeManager.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          xcodebuild archive -scheme FioriThemeManager -configuration $CONFIGURATION -destination 'generic/platform=watchOS' ARCHS="arm64 arm64_32" -archivePath ${OUTPUT_DIR_PATH}/watchos/FioriThemeManager.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+
+          # FioriCharts archives
+          
+          xcodebuild archive -scheme FioriCharts -configuration $CONFIGURATION -destination 'generic/platform=iOS Simulator' ARCHS="arm64" -archivePath ${OUTPUT_DIR_PATH}/iphonesimulator/FioriCharts.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          xcodebuild archive -scheme FioriCharts -configuration $CONFIGURATION -destination 'generic/platform=iOS' -archivePath ${OUTPUT_DIR_PATH}/iphoneos/FioriCharts.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          xcodebuild archive -scheme FioriCharts -configuration $CONFIGURATION -destination 'platform=macOS,arch=arm64,variant=Mac Catalyst' -archivePath ${OUTPUT_DIR_PATH}/maccatalyst/FioriCharts.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          xcodebuild archive -scheme FioriCharts -configuration $CONFIGURATION -destination 'generic/platform=visionOS Simulator,name=Apple Vision Pro' ARCHS="arm64" -archivePath ${OUTPUT_DIR_PATH}/xrsimulator/FioriCharts.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          xcodebuild archive -scheme FioriCharts -configuration $CONFIGURATION -destination 'generic/platform=visionOS' -archivePath ${OUTPUT_DIR_PATH}/xros/FioriCharts.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+
+          # FioriSwiftUICore archives
+          xcodebuild archive -scheme FioriSwiftUICore -configuration $CONFIGURATION -destination 'generic/platform=iOS Simulator' ARCHS="arm64" -archivePath ${OUTPUT_DIR_PATH}/iphonesimulator/FioriSwiftUICore.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          xcodebuild archive -scheme FioriSwiftUICore -configuration $CONFIGURATION -destination 'generic/platform=iOS' -archivePath ${OUTPUT_DIR_PATH}/iphoneos/FioriSwiftUICore.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YE
+          xcodebuild archive -scheme FioriSwiftUICore -configuration $CONFIGURATION -destination 'platform=macOS,arch=arm64,variant=Mac Catalyst' -archivePath ${OUTPUT_DIR_PATH}/maccatalyst/FioriSwiftUICore.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          xcodebuild archive -scheme FioriSwiftUICore -configuration $CONFIGURATION -destination 'generic/platform=visionOS Simulator,name=Apple Vision Pro' ARCHS="arm64" -archivePath ${OUTPUT_DIR_PATH}/xrsimulator/FioriSwiftUICore.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          xcodebuild archive -scheme FioriSwiftUICore -configuration $CONFIGURATION -destination 'generic/platform=visionOS' -archivePath ${OUTPUT_DIR_PATH}/xros/FioriSwiftUICore.xcarchive -derivedDataPath ${HOME}/Library/Developer/Xcode/ SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+
+
+          # create FioriThemeManager.xcframework
+          xcodebuild -create-xcframework \
+               -framework ${OUTPUT_DIR_PATH}/iphonesimulator/FioriThemeManager.xcarchive/Products/Library/Frameworks/FioriThemeManager.framework \
+               -framework ${OUTPUT_DIR_PATH}/iphoneos/FioriThemeManager.xcarchive/Products/Library/Frameworks/FioriThemeManager.framework \
+               -framework ${OUTPUT_DIR_PATH}/maccatalyst/FioriThemeManager.xcarchive/Products/Library/Frameworks/FioriThemeManager.framework \
+               -framework ${OUTPUT_DIR_PATH}/xros/FioriThemeManager.xcarchive/Products/Library/Frameworks/FioriThemeManager.framework \
+               -framework ${OUTPUT_DIR_PATH}/xrsimulator/FioriThemeManager.xcarchive/Products/Library/Frameworks/FioriThemeManager.framework \
+               -framework ${OUTPUT_DIR_PATH}/watchos/FioriThemeManager.xcarchive/Products/Library/Frameworks/FioriThemeManager.framework \
+               -framework ${OUTPUT_DIR_PATH}/watchsimulator/FioriThemeManager.xcarchive/Products/Library/Frameworks/FioriThemeManager.framework \
+               -output ${OUTPUT_DIR_PATH}/FioriThemeManager.xcframework
+
+          # create FioriCharts.xcframework
+          xcodebuild -create-xcframework \
+              -framework ${OUTPUT_DIR_PATH}/iphonesimulator/FioriCharts.xcarchive/Products/Library/Frameworks/FioriCharts.framework \
+              -framework ${OUTPUT_DIR_PATH}/iphoneos/FioriCharts.xcarchive/Products/Library/Frameworks/FioriCharts.framework \
+              -framework ${OUTPUT_DIR_PATH}/maccatalyst/FioriCharts.xcarchive/Products/Library/Frameworks/FioriCharts.framework \
+              -framework ${OUTPUT_DIR_PATH}/xros/FioriCharts.xcarchive/Products/Library/Frameworks/FioriCharts.framework \
+              -framework ${OUTPUT_DIR_PATH}/xrsimulator/FioriCharts.xcarchive/Products/Library/Frameworks/FioriCharts.framework \
+              -output ${OUTPUT_DIR_PATH}/FioriCharts.xcframework
+
+          # create FioriSwiftUICore.xcframework
+          xcodebuild -create-xcframework \
+              -framework ${OUTPUT_DIR_PATH}/iphonesimulator/FioriSwiftUICore.xcarchive/Products/Library/Frameworks/FioriSwiftUICore.framework \
+              -framework ${OUTPUT_DIR_PATH}/iphoneos/FioriSwiftUICore.xcarchive/Products/Library/Frameworks/FioriSwiftUICore.framework \
+              -framework ${OUTPUT_DIR_PATH}/maccatalyst/FioriSwiftUICore.xcarchive/Products/Library/Frameworks/FioriSwiftUICore.framework \
+              -framework ${OUTPUT_DIR_PATH}/xros/FioriSwiftUICore.xcarchive/Products/Library/Frameworks/FioriSwiftUICore.framework \
+              -framework ${OUTPUT_DIR_PATH}/xrsimulator/FioriSwiftUICore.xcarchive/Products/Library/Frameworks/FioriSwiftUICore.framework \
+              -output ${OUTPUT_DIR_PATH}/FioriSwiftUICore.xcframework

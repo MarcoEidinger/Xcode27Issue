@@ -1,0 +1,1876 @@
+import SwiftUI
+import UIKit
+
+/// UI control types supporeted by Sort and Filter configuration
+public enum SortFilterItem: Identifiable, Hashable {
+    /// :nodoc:
+    public var id: String {
+        switch self {
+        case .picker(let item, _):
+            return item.id
+        case .filterfeedback(let item):
+            return item.id
+        case .switch(let item, _):
+            return item.id
+        case .slider(let item, _):
+            return item.id
+        case .datetime(let item, _):
+            return item.id
+        case .stepper(let item, _):
+            return item.id
+        case .title(let item, _):
+            return item.id
+        case .note(let item, _):
+            return item.id
+        case .durationPicker(let item, _):
+            return item.id
+        case .orderPicker(let item, _):
+            return item.id
+        }
+    }
+    
+    /// The type of UI control is used to build:
+    ///
+    /// 1. Sort & Filter's menu item associating with sub-menu items when the number of selectable options is less than 8,
+    /// or a popover containing a collection of selectable buttons when the number of selectable options is greater than 7.
+    ///
+    /// 2. A section of view containing a collection of selectable buttons
+    case picker(item: PickerItem, showsOnFilterFeedbackBar: Bool)
+    
+    /// The type of UI control is used to build:
+    ///
+    /// 1. Sort & Filter's menu items associated with one and another; the number of selectable items, mutual exclusion, and
+    /// empty selection can be controlled
+    ///
+    /// 2. A section of view containing a collection of selectable buttons
+    ///
+    /// Note: `filterfeedback` is always to be shown on menu bar
+    case filterfeedback(item: PickerItem)
+    
+    /// The type of UI control is used to build:
+    ///
+    /// 1. Sort & Filter's menu item to be toggled between selected and unselected states
+    ///
+    /// 2. A section of view containing a SwiftUI Toggle with Fiori style
+    case `switch`(item: SwitchItem, showsOnFilterFeedbackBar: Bool)
+    
+    /// The type of UI control is used to build:
+    ///
+    /// 1. Sort & Filter's menu item associated with a popover containing a SwiftUI Toggle with Fiori style
+    ///
+    /// 2. A section of view containing a SwiftUI Toggle with Fiori style
+    case slider(item: SliderItem, showsOnFilterFeedbackBar: Bool)
+    
+    /// The type of UI control is used to build:
+    ///
+    /// 1. Sort & Filter's menu item associated with a popover containing a SwiftUI Canlendar
+    ///
+    /// 2. A section of view containing a SwiftUI Canlendar
+    case datetime(item: DateTimeItem, showsOnFilterFeedbackBar: Bool)
+    
+    /// The type of UI control is used to build:
+    ///
+    /// 1. Sort & Filter's menu item associated with a popover containing a SwiftUI Stepper with Fiori style
+    ///
+    /// 2. A section of view containing a SwiftUI Stepper with Fiori style
+    case stepper(item: StepperItem, showsOnFilterFeedbackBar: Bool)
+        
+    /// The type of UI control is used to build:
+    ///
+    /// 1. Sort & Filter's menu item associated with a popover containing a SwiftUI TitleFormView with Fiori style
+    ///
+    /// 2. A section of view containing a SwiftUI TitleFormView with Fiori style
+    case title(item: TitleItem, showsOnFilterFeedbackBar: Bool)
+    
+    /// The type of UI control is used to build:
+    /// Typically not used in FilterFeedbackBar.
+    ///
+    /// 1. Sort & Filter's menu item associated with a popover containing a SwiftUI NoteFormView with Fiori style
+    ///
+    /// 2. A section of view containing a SwiftUI NoteFormView with Fiori style
+    case note(item: NoteItem, showsOnFilterFeedbackBar: Bool)
+    
+    /// The type of UI control is used to build:
+    ///
+    /// 1. Sort & Filter's menu item associated with a popover containing a SwiftUI DurationPicker with Fiori style
+    ///
+    /// 2. A section of view containing a SwiftUI DurationPicker with Fiori style
+    case durationPicker(item: DurationPickerItem, showsOnFilterFeedbackBar: Bool)
+    
+    /// The type of UI control is used to build:
+    ///
+    /// 1. Sort & Filter's menu item associated with a popover containing a SwiftUI OrderPicker with Fiori style
+    ///
+    /// 2. A section of view containing a SwiftUI OrderPicker with Fiori style
+    case orderPicker(item: OrderPickerItem, showsOnFilterFeedbackBar: Bool)
+
+    public var showsOnFilterFeedbackBar: Bool {
+        switch self {
+        case .picker(_, let showsOnFilterFeedbackBar):
+            return showsOnFilterFeedbackBar
+        case .filterfeedback:
+            return true
+        case .switch(_, let showsOnFilterFeedbackBar):
+            return showsOnFilterFeedbackBar
+        case .slider(_, let showsOnFilterFeedbackBar):
+            return showsOnFilterFeedbackBar
+        case .datetime(_, let showsOnFilterFeedbackBar):
+            return showsOnFilterFeedbackBar
+        case .stepper(_, let showsOnFilterFeedbackBar):
+            return showsOnFilterFeedbackBar
+        case .title(_, let showsOnFilterFeedbackBar):
+            return showsOnFilterFeedbackBar
+        case .note(_, let showsOnFilterFeedbackBar):
+            return showsOnFilterFeedbackBar
+        case .durationPicker(_, let showsOnFilterFeedbackBar):
+            return showsOnFilterFeedbackBar
+        case .orderPicker(_, let showsOnFilterFeedbackBar):
+            return showsOnFilterFeedbackBar
+        }
+    }
+    
+    /// :nodoc:
+    public func hash(into hasher: inout Hasher) {
+        switch self {
+        case .picker(let item, _):
+            hasher.combine(item.id)
+            hasher.combine(item.originalValue)
+            hasher.combine(item.workingValue)
+            hasher.combine(item.value)
+        case .filterfeedback(let item):
+            hasher.combine(item.id)
+            hasher.combine(item.originalValue)
+            hasher.combine(item.workingValue)
+            hasher.combine(item.value)
+        case .switch(let item, _):
+            hasher.combine(item.id)
+            hasher.combine(item.originalValue)
+            hasher.combine(item.workingValue)
+            hasher.combine(item.value)
+        case .slider(let item, _):
+            hasher.combine(item.id)
+            hasher.combine(item.originalValue)
+            hasher.combine(item.workingValue)
+            hasher.combine(item.value)
+        case .datetime(let item, _):
+            hasher.combine(item.id)
+            hasher.combine(item.originalValue)
+            hasher.combine(item.workingValue)
+            hasher.combine(item.value)
+        case .stepper(let item, _):
+            hasher.combine(item.id)
+            hasher.combine(item.originalValue)
+            hasher.combine(item.workingValue)
+            hasher.combine(item.value)
+        case .title(let item, _):
+            hasher.combine(item.id)
+            hasher.combine(item.originalText)
+            hasher.combine(item.workingText)
+            hasher.combine(item.text)
+        case .note(let item, _):
+            hasher.combine(item.id)
+            hasher.combine(item.originalText)
+            hasher.combine(item.workingText)
+            hasher.combine(item.text)
+        case .durationPicker(let item, _):
+            hasher.combine(item.id)
+            hasher.combine(item.originalValue)
+            hasher.combine(item.workingValue)
+            hasher.combine(item.value)
+        case .orderPicker(let item, _):
+            hasher.combine(item.id)
+            hasher.combine(item.originalValue)
+            hasher.combine(item.workingValue)
+            hasher.combine(item.value)
+        }
+    }
+}
+
+extension SortFilterItem {
+    var picker: PickerItem {
+        get {
+            switch self {
+            case .picker(let item, _):
+                return item
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+        
+        set {
+            switch self {
+            case .picker(_, let showsOnFilterFeedbackBar):
+                self = .picker(item: newValue, showsOnFilterFeedbackBar: showsOnFilterFeedbackBar)
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+    }
+    
+    var filterfeedback: PickerItem {
+        get {
+            switch self {
+            case .filterfeedback(let item):
+                return item
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+        
+        set {
+            switch self {
+            case .filterfeedback:
+                self = .filterfeedback(item: newValue)
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+    }
+    
+    var slider: SliderItem {
+        get {
+            switch self {
+            case .slider(let item, _):
+                return item
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+        
+        set {
+            switch self {
+            case .slider(_, let showsOnFilterFeedbackBar):
+                self = .slider(item: newValue, showsOnFilterFeedbackBar: showsOnFilterFeedbackBar)
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+    }
+    
+    var datetime: DateTimeItem {
+        get {
+            switch self {
+            case .datetime(let item, _):
+                return item
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+        
+        set {
+            switch self {
+            case .datetime(_, let showsOnFilterFeedbackBar):
+                self = .datetime(item: newValue, showsOnFilterFeedbackBar: showsOnFilterFeedbackBar)
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+    }
+    
+    var `switch`: SwitchItem {
+        get {
+            switch self {
+            case .switch(let item, _):
+                return item
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+        
+        set {
+            switch self {
+            case .switch(_, let showsOnFilterFeedbackBar):
+                self = .switch(item: newValue, showsOnFilterFeedbackBar: showsOnFilterFeedbackBar)
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+    }
+    
+    var stepper: StepperItem {
+        get {
+            switch self {
+            case .stepper(let item, _):
+                return item
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+        
+        set {
+            switch self {
+            case .stepper(_, let showsOnFilterFeedbackBar):
+                self = .stepper(item: newValue, showsOnFilterFeedbackBar: showsOnFilterFeedbackBar)
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+    }
+    
+    var title: TitleItem {
+        get {
+            switch self {
+            case .title(let item, _):
+                return item
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+        
+        set {
+            switch self {
+            case .title(_, let showsOnFilterFeedbackBar):
+                self = .title(item: newValue, showsOnFilterFeedbackBar: showsOnFilterFeedbackBar)
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+    }
+    
+    var note: NoteItem {
+        get {
+            switch self {
+            case .note(let item, _):
+                return item
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+        
+        set {
+            switch self {
+            case .note(_, let showsOnFilterFeedbackBar):
+                self = .note(item: newValue, showsOnFilterFeedbackBar: showsOnFilterFeedbackBar)
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+    }
+    
+    var durationPicker: DurationPickerItem {
+        get {
+            switch self {
+            case .durationPicker(let item, _):
+                return item
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+        
+        set {
+            switch self {
+            case .durationPicker(_, let showsOnFilterFeedbackBar):
+                self = .durationPicker(item: newValue, showsOnFilterFeedbackBar: showsOnFilterFeedbackBar)
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+    }
+    
+    var orderPicker: OrderPickerItem {
+        get {
+            switch self {
+            case .orderPicker(let item, _):
+                return item
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+        
+        set {
+            switch self {
+            case .orderPicker(_, let showsOnFilterFeedbackBar):
+                self = .orderPicker(item: newValue, showsOnFilterFeedbackBar: showsOnFilterFeedbackBar)
+            default:
+                fatalError("Unexpected value \(self)")
+            }
+        }
+    }
+    
+    var isChanged: Bool {
+        switch self {
+        case .picker(let item, _):
+            return item.isChanged
+        case .filterfeedback(let item):
+            return item.isChanged
+        case .switch(let item, _):
+            return item.isChanged
+        case .datetime(let item, _):
+            return item.isChanged
+        case .slider(let item, _):
+            return item.isChanged
+        case .stepper(let item, _):
+            return item.isChanged
+        case .title(let item, _):
+            return item.isChanged
+        case .note(let item, _):
+            return item.isChanged
+        case .durationPicker(let item, _):
+            return item.isChanged
+        case .orderPicker(let item, _):
+            return item.isChanged
+        }
+    }
+    
+    var isOriginal: Bool {
+        switch self {
+        case .picker(let item, _):
+            return item.isOriginal
+        case .filterfeedback(let item):
+            return item.isOriginal
+        case .switch(let item, _):
+            return item.isOriginal
+        case .datetime(let item, _):
+            return item.isOriginal
+        case .slider(let item, _):
+            return item.isOriginal
+        case .stepper(let item, _):
+            return item.isOriginal
+        case .title(let item, _):
+            return item.isOriginal
+        case .note(let item, _):
+            return item.isOriginal
+        case .durationPicker(let item, _):
+            return item.isOriginal
+        case .orderPicker(let item, _):
+            return item.isOriginal
+        }
+    }
+    
+    mutating func cancel() {
+        switch self {
+        case .picker(var item, _):
+            item.cancel()
+            self.picker = item
+        case .filterfeedback(var item):
+            item.cancel()
+            self.filterfeedback = item
+        case .switch(var item, _):
+            item.cancel()
+            self.switch = item
+        case .datetime(var item, _):
+            item.cancel()
+            self.datetime = item
+        case .slider(var item, _):
+            item.cancel()
+            self.slider = item
+        case .stepper(var item, _):
+            item.cancel()
+            self.stepper = item
+        case .title(var item, _):
+            item.cancel()
+            self.title = item
+        case .note(var item, _):
+            item.cancel()
+            self.note = item
+        case .durationPicker(var item, _):
+            item.cancel()
+            self.durationPicker = item
+        case .orderPicker(var item, _):
+            item.cancel()
+            self.orderPicker = item
+        }
+    }
+    
+    mutating func reset() {
+        switch self {
+        case .picker(var item, _):
+            item.reset()
+            self.picker = item
+        case .filterfeedback(var item):
+            item.reset()
+            self.filterfeedback = item
+        case .switch(var item, _):
+            item.reset()
+            self.switch = item
+        case .datetime(var item, _):
+            item.reset()
+            self.datetime = item
+        case .slider(var item, _):
+            item.reset()
+            self.slider = item
+        case .stepper(var item, _):
+            item.reset()
+            self.stepper = item
+        case .title(var item, _):
+            item.reset()
+            self.title = item
+        case .note(var item, _):
+            item.reset()
+            self.note = item
+        case .durationPicker(var item, _):
+            item.reset()
+            self.durationPicker = item
+        case .orderPicker(var item, _):
+            item.reset()
+            self.orderPicker = item
+        }
+    }
+    
+    mutating func apply() {
+        switch self {
+        case .picker(var item, _):
+            item.apply()
+            self.picker = item
+        case .filterfeedback(var item):
+            item.apply()
+            self.filterfeedback = item
+        case .switch(var item, _):
+            item.apply()
+            self.switch = item
+        case .datetime(var item, _):
+            item.apply()
+            self.datetime = item
+        case .slider(var item, _):
+            item.apply()
+            self.slider = item
+        case .stepper(var item, _):
+            item.apply()
+            self.stepper = item
+        case .title(var item, _):
+            item.apply()
+            self.title = item
+        case .note(var item, _):
+            item.apply()
+            self.note = item
+        case .durationPicker(var item, _):
+            item.apply()
+            self.durationPicker = item
+        case .orderPicker(var item, _):
+            item.apply()
+            self.orderPicker = item
+        }
+    }
+}
+
+/// Enum for FilterFeedbackBar ResetButton Type.
+public enum FilterFeedbackBarResetButtonType {
+    /// Reset to origin values.
+    case reset
+    /// Clear selected value, only effective for single selection.
+    case clearAll
+    /// Deactivate the filter and dismiss the popover. The chip becomes inactive (its label shows only the item's name) and any pending edits are committed as the inactive state.
+    case deactivate
+}
+
+extension CGRect {
+    /// Popover arrowEdge depends on bar item position,
+    /// only return `.top` or `.bottom` in this case
+    /// - Returns: Edge
+    func arrowDirection() -> Edge {
+        if self.minY > Screen.bounds.size.height / 2 {
+            return .bottom
+        }
+        return .top
+    }
+}
+
+// MARK: - String Extensions for Attributed Strings
+
+/// Extension on `String` to provide a convenient way to convert a non-optional string
+/// into an `AttributedString` (used for rich text in SwiftUI/UIKit).
+extension String {
+    /// Returns an `AttributedString` representation of this string, or `nil` if conversion fails.
+    var attributedString: AttributedString? {
+        AttributedString(self)
+    }
+}
+
+/// Extension on optional `String?` to safely convert to `AttributedString`.
+/// Handles the `nil` case by returning `nil` instead of crashing.
+extension String? {
+    /// Returns an `AttributedString` if the string is non-nil; otherwise returns `nil`.
+    var attributedString: AttributedString? {
+        guard let s = self else {
+            return nil
+        }
+        return AttributedString(s)
+    }
+}
+
+// MARK: - UIEdgeInsets Utilities
+
+/// Extension on `UIEdgeInsets` to provide a helper for retrieving the safe area insets
+/// of the current key window in the active scene.
+extension UIEdgeInsets {
+    /// Retrieves the safe area insets from the key window of the currently active foreground scene.
+    /// This is useful for adjusting layout to avoid notches, home indicators, etc.
+    ///
+    /// - Returns: The safe area insets of the key window, or `.zero` if no key window is found.
+    static func getSafeAreaInsets() -> UIEdgeInsets {
+        guard let keyWindow = UIApplication.shared.connectedScenes
+            .first(where: { $0.activationState == .foregroundActive })
+            .flatMap({ $0 as? UIWindowScene })?.windows
+            .first(where: \.isKeyWindow)
+        else {
+            return .zero
+        }
+        return keyWindow.safeAreaInsets
+    }
+}
+
+public struct FilterFeedbackBarResetButtonConfiguration: Equatable {
+    var type: FilterFeedbackBarResetButtonType
+    var title: String
+    var isHidden: Bool
+    
+    init(type: FilterFeedbackBarResetButtonType = .reset, title: String, isHidden: Bool = false) {
+        self.type = type
+        self.title = title
+        self.isHidden = isHidden
+    }
+    
+    /// Default FilterFeedbackBarResetButtonConfiguration
+    public init() {
+        self.init(type: .reset, title: NSLocalizedString("Reset", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: ""), isHidden: false)
+    }
+    
+    /// Customize FilterFeedbackBarResetButtonConfiguration
+    /// - Parameters:
+    ///   - type: Reset button type
+    ///   - title: Reset button title
+    ///   - isHidden: A Boolean value that determines whether reset button is hidden.
+    public init(with type: FilterFeedbackBarResetButtonType = .reset, title: String = "", isHidden: Bool = false) {
+        self.init(type: type, title: title == "" ? NSLocalizedString("Reset", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "") : title, isHidden: isHidden)
+    }
+    
+    /// :nodoc:
+    public static func == (lhs: FilterFeedbackBarResetButtonConfiguration, rhs: FilterFeedbackBarResetButtonConfiguration) -> Bool {
+        lhs.type == rhs.type && lhs.title == rhs.title && lhs.isHidden == rhs.isHidden
+    }
+}
+
+/// FilterFeedbackBar slider item value change handler
+public struct SliderValueChangeHandler: Equatable {
+    /// Slider description style type
+    public enum SliderInformationType {
+        case fiori
+        case error
+        case warning
+        case informational
+        case success
+    }
+    
+    public var onValueChange: (Double, Double) -> (SliderInformationType, String)
+    
+    /// Create init a SliderValueChangeHandler object.
+    /// - Parameter onValueChange: Call back for value changing.
+    public init(onValueChange: @escaping (Double, Double) -> (SliderInformationType, String)) {
+        self.onValueChange = onValueChange
+    }
+    
+    /// :nodoc:
+    public static func == (lhs: SliderValueChangeHandler, rhs: SliderValueChangeHandler) -> Bool {
+        true
+    }
+}
+
+/// Available OptionListPickerItem layout  types. Use this enum to define item layout type to present.
+public enum OptionListPickerItemLayoutType {
+    /// Fixed width
+    case fixed
+    /// Column width will be flexible
+    case flexible
+}
+
+public extension SortFilterItem {
+    /// Configuration for advanced PickerItem capabilities.
+    /// When provided, enables features like custom search, custom row content, and pagination.
+    struct PickerItemConfiguration: Equatable {
+        /// Custom search filter closure. Receives (displayText, searchText) and returns Bool.
+        /// When nil, the default `localizedCaseInsensitiveContains` is used.
+        public var searchFilter: ((String, String) -> Bool)?
+
+        /// Type-erased closure that produces a custom row view for a given option index.
+        /// When nil, the default `Text(valueOptions[index])` is used.
+        public var rowContentProvider: ((Int) -> AnyView)?
+
+        /// Callback invoked when the list scrolls near the end of current data.
+        /// The consumer should load more data and update `valueOptions` on the PickerItem.
+        public var onLoadMore: (() -> Void)?
+
+        /// Indicates whether more data is available for pagination.
+        public var hasMoreData: Bool
+
+        /// Create a PickerItemConfiguration.
+        /// - Parameters:
+        ///   - searchFilter: Custom search filter closure receiving (displayText, searchText).
+        ///   - rowContentProvider: Type-erased closure producing a custom row view for a given option index.
+        ///   - onLoadMore: Callback invoked when the list scrolls near the end of current data.
+        ///   - hasMoreData: Indicates whether more data is available for pagination.
+        public init(
+            searchFilter: ((String, String) -> Bool)? = nil,
+            rowContentProvider: ((Int) -> AnyView)? = nil,
+            onLoadMore: (() -> Void)? = nil,
+            hasMoreData: Bool = false
+        ) {
+            self.searchFilter = searchFilter
+            self.rowContentProvider = rowContentProvider
+            self.onLoadMore = onLoadMore
+            self.hasMoreData = hasMoreData
+        }
+
+        public static func == (lhs: PickerItemConfiguration, rhs: PickerItemConfiguration) -> Bool {
+            lhs.hasMoreData == rhs.hasMoreData
+        }
+    }
+
+    ///  Data structure for filter feedback, option list picker,
+    struct PickerItem: Identifiable, Equatable {
+        public let id: String
+        public var name: String
+        public var title: String?
+        public var value: [Int]
+        public var workingValue: [Int]
+        let originalValue: [Int]
+        
+        var valueOptions: [String]
+        public let allowsMultipleSelection: Bool
+        public let allowsEmptySelection: Bool
+        public var barItemDisplayMode: BarItemDisplayMode = .name
+        public let icon: String?
+        /// itemLayout is used when listPickerMode is filterFormCell, otherwise is ignored.
+        public var itemLayout: OptionListPickerItemLayoutType = .fixed
+        public var displayMode: DisplayMode = .automatic
+        /// If searchBar in list picker is shown. Default is `false`.
+        public var isSearchBarHidden: Bool = false
+        public var searchPrompt: String? = nil
+        var disableListEntriesSection: Bool = false
+        var disableListContentSection: Bool = false
+        var allowsDisplaySelectionCount: Bool = true
+        var resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = .init()
+
+        /// Advanced configuration for custom search, row content, and pagination.
+        public var configuration: PickerItemConfiguration?
+
+        var uuidValueOptions: [ValueOptionModel] = []
+        var workingValueSet: Set<UUID> = []
+        
+        /// Available OptionListPicker modes. Use this enum to define picker mode  to present.
+        public enum DisplayMode {
+            /// Decided by options count
+            case automatic
+            /// FilterFormCell
+            case filterFormCell
+            /// Menu
+            case menu
+            /// List
+            case list
+        }
+        
+        /// Enum for display mode of the FilterFeedbackBar item when only one value is selected for that item.
+        /// This is effective, regardless of that item allowing multiple selection or not
+        ///  The default value is `.name`.
+        public enum BarItemDisplayMode {
+            /// To show the name
+            case name
+            /// To show the value
+            case value
+            /// To show both the name and value
+            case nameAndValue
+        }
+        
+        /// Enum for list show entries section
+        ///  The default value is `.default`.
+        public enum ListEntriesSectionMode {
+            /// Depend on 'allowsMultipleSelection'
+            case `default`
+            /// Enable
+            case enable
+            /// Disable
+            case disable
+        }
+        
+        /// Model for valueOptions, add unique identifier and index for valueOptions
+        struct ValueOptionModel: Identifiable, Equatable {
+            let id = UUID()
+            let index: Int
+            let value: String
+            init(index: Int, value: String) {
+                self.index = index
+                self.value = value
+            }
+        }
+        
+        /// Create PickerItem for filter feedback.
+        /// When `displayMode` is `.filterFormCell`, the styles of options can be customized by some styles of FilterFormView, such as:
+        /// filterFormOptionAttributes, filterFormOptionMinHeight, filterFormOptionMinTouchHeight, filterFormOptionCornerRadius, filterFormOptionPadding, filterFormOptionTitleSpacing, filterFormOptionsItemSpacing, filterFormOptionsLineSpacing.
+        /// - Parameters:
+        ///   - id: The unique identifier for PickerItem.
+        ///   - name: Item name.
+        ///   - title: Title label of the options.
+        ///   - value: Item selected value.
+        ///   - valueOptions: Item options.
+        ///   - allowsEmptySelection: A boolean value to indicate to allow empty selections or not.
+        ///   - barItemDisplayMode: Name display mode for the bar.
+        ///   - isSearchBarHidden: A boolean value to indicate to search bar hidden or not.
+        ///   - icon: Icon at the leading side of the item.
+        ///   - itemLayout: Options layout type when `displayMode` is  `.filterFormCell`.
+        ///   - displayMode: Options display mode.
+        ///   - listEntriesSectionMode: List entries section mode when `displayMode` is  `.list`.
+        ///   - disableContentSection: A boolean value to control the display of the unselected area section.
+        ///   - allowsDisplaySelectionCount: A boolean value to indicate to allow display selection count or not.
+        ///   - resetButtonConfiguration: A configuration to customize the reset button.
+        ///   - configuration: Advanced configuration for custom search, row content, pagination, and display/data value separation.
+        public init(id: String = UUID().uuidString, name: String, title: String? = nil, value: Int, valueOptions: [String], allowsEmptySelection: Bool, barItemDisplayMode: BarItemDisplayMode = .name, searchPrompt: String? = nil, isSearchBarHidden: Bool = false, icon: String? = nil, itemLayout: OptionListPickerItemLayoutType = .fixed, displayMode: DisplayMode = .automatic, listEntriesSectionMode: ListEntriesSectionMode = .default, disableContentSection: Bool = false, allowsDisplaySelectionCount: Bool = true, resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = FilterFeedbackBarResetButtonConfiguration(), configuration: PickerItemConfiguration? = nil) {
+            self.init(id: id, name: name, title: title, value: [value], valueOptions: valueOptions, allowsMultipleSelection: false, allowsEmptySelection: allowsEmptySelection, barItemDisplayMode: barItemDisplayMode, searchPrompt: searchPrompt, isSearchBarHidden: isSearchBarHidden, icon: icon, itemLayout: itemLayout, displayMode: displayMode, listEntriesSectionMode: listEntriesSectionMode, disableContentSection: disableContentSection, allowsDisplaySelectionCount: allowsDisplaySelectionCount, resetButtonConfiguration: resetButtonConfiguration, configuration: configuration)
+        }
+        
+        /// Create PickerItem for filter feedback.
+        /// When `displayMode` is `.filterFormCell`, the styles of options can be customized by some styles of FilterFormView, such as:
+        /// filterFormOptionAttributes, filterFormOptionMinHeight, filterFormOptionMinTouchHeight, filterFormOptionCornerRadius, filterFormOptionPadding, filterFormOptionTitleSpacing, filterFormOptionsItemSpacing, filterFormOptionsLineSpacing.
+        /// - Parameters:
+        ///   - id: The unique identifier for PickerItem.
+        ///   - name: Item name.
+        ///   - title: Title label of the options.
+        ///   - value: Item selected value.
+        ///   - valueOptions: Item options.
+        ///   - allowsMultipleSelection: A boolean value to indicate to allow multiple selections or not.
+        ///   - allowsEmptySelection: A boolean value to indicate to allow empty selections or not.
+        ///   - barItemDisplayMode: Name display mode for the bar.
+        ///   - isSearchBarHidden: A boolean value to indicate to search bar hidden or not.
+        ///   - icon: Icon at the leading side of the item.
+        ///   - itemLayout: Options layout type when `displayMode` is  `.filterFormCell`.
+        ///   - displayMode: Options display mode.
+        ///   - listEntriesSectionMode: List entries section mode when `displayMode` is  `.list`.
+        ///   - disableContentSection: A boolean value to control the display of the unselected area section.
+        ///   - allowsDisplaySelectionCount: A boolean value to indicate to allow display selection count or not.
+        ///   - resetButtonConfiguration: A configuration to customize the reset button.
+        ///   - configuration: Advanced configuration for custom search, row content, pagination, and display/data value separation.
+        public init(id: String = UUID().uuidString, name: String, title: String? = nil, value: [Int], valueOptions: [String], allowsMultipleSelection: Bool, allowsEmptySelection: Bool, barItemDisplayMode: BarItemDisplayMode = .name, searchPrompt: String? = nil, isSearchBarHidden: Bool = false, icon: String? = nil, itemLayout: OptionListPickerItemLayoutType = .fixed, displayMode: DisplayMode = .automatic, listEntriesSectionMode: ListEntriesSectionMode = .default, disableContentSection: Bool = false, allowsDisplaySelectionCount: Bool = true, resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = FilterFeedbackBarResetButtonConfiguration(), configuration: PickerItemConfiguration? = nil) {
+            self.id = id
+            self.name = name
+            self.title = title
+            self.value = value
+            self.workingValue = value
+            self.originalValue = value
+            self.valueOptions = valueOptions
+            self.configuration = configuration
+            self.uuidValueOptions = valueOptions.enumerated().map { index, option in
+                ValueOptionModel(index: index, value: option)
+            }
+            
+            let workingValueSetArray: [UUID] = self.uuidValueOptions.filter { value.contains($0.index) }.map(\.id)
+            self.workingValueSet = Set(workingValueSetArray)
+            
+            self.allowsMultipleSelection = allowsMultipleSelection
+            self.allowsEmptySelection = allowsEmptySelection
+            self.searchPrompt = searchPrompt
+            self.isSearchBarHidden = isSearchBarHidden
+            self.barItemDisplayMode = barItemDisplayMode
+            self.icon = icon
+            self.itemLayout = itemLayout
+            self.displayMode = displayMode
+            
+            switch listEntriesSectionMode {
+            case .default:
+                self.disableListEntriesSection = allowsMultipleSelection ? false : true
+            case .disable:
+                self.disableListEntriesSection = true
+            case .enable:
+                self.disableListEntriesSection = false
+            }
+            self.disableListContentSection = disableContentSection
+            self.allowsDisplaySelectionCount = allowsDisplaySelectionCount
+            self.resetButtonConfiguration = resetButtonConfiguration
+        }
+        
+        mutating func onTap(option: String) {
+            guard let index = valueOptions.firstIndex(of: option) else { return }
+            if self.workingValue.contains(index) {
+                if self.workingValue.count > 1 {
+                    self.workingValue = self.workingValue.filter { $0 != index }
+                } else {
+                    if self.allowsEmptySelection {
+                        self.workingValue = []
+                    } else {
+                        self.workingValue = index == 1 ? [0] : [1]
+                    }
+                }
+            } else {
+                if self.allowsMultipleSelection {
+                    self.workingValue.append(index)
+                } else {
+                    self.workingValue = [index]
+                }
+            }
+        }
+        
+        mutating func optionOnTap(_ index: Int) {
+            if self.workingValue.contains(index) {
+                if self.workingValue.count > 1 {
+                    self.workingValue = self.workingValue.filter { $0 != index }
+                } else {
+                    if self.allowsEmptySelection {
+                        self.workingValue = []
+                    } else {
+                        self.workingValue = index == 1 ? [0] : [1]
+                    }
+                }
+            } else {
+                if self.allowsMultipleSelection {
+                    self.workingValue.append(index)
+                } else {
+                    self.workingValue = [index]
+                }
+            }
+        }
+        
+        mutating func cancel() {
+            self.workingValue = self.value.map { $0 }
+        }
+        
+        mutating func reset() {
+            self.workingValue = self.originalValue.map { $0 }
+            
+            let workingValueArray = self.originalValue.flatMap { originalValue in
+                self.uuidValueOptions.filter { $0.index == originalValue }.map(\.id)
+            }
+            self.workingValueSet = Set(workingValueArray)
+        }
+        
+        mutating func clearAll() {
+            self.workingValue.removeAll()
+            self.workingValueSet.removeAll()
+        }
+
+        mutating func deactivate() {
+            self.workingValue = []
+            self.workingValueSet = []
+            self.value = []
+        }
+
+        mutating func apply() {
+            self.value = self.workingValue.map { $0 }
+        }
+        
+        func isOptionSelected(_ option: String) -> Bool {
+            guard let idx = valueOptions.firstIndex(of: option) else { return false }
+            return self.workingValue.contains(idx)
+        }
+        
+        func isOptionSelected(index: Int) -> Bool {
+            self.workingValue.contains(index)
+        }
+        
+        mutating func selectAll(_ isAll: Bool) {
+            self.workingValue.removeAll()
+            if isAll {
+                for i in 0 ..< self.valueOptions.count {
+                    self.workingValue.append(i)
+                }
+            }
+        }
+        
+        var isChecked: Bool {
+            !self.value.isEmpty
+        }
+        
+        var label: String {
+            if self.value.count == 1 {
+                switch self.barItemDisplayMode {
+                case .name:
+                    return self.name
+                case .value:
+                    return self.valueOptions[self.value[0]]
+                case .nameAndValue:
+                    return self.name + ": " + self.valueOptions[self.value[0]]
+                }
+            } else {
+                if self.allowsMultipleSelection, self.value.count >= 1 {
+                    return "\(self.name) (\(self.value.count))"
+                } else {
+                    return self.name
+                }
+            }
+        }
+        
+        var isChanged: Bool {
+            self.value != self.workingValue
+        }
+        
+        var isOriginal: Bool {
+            self.workingValue == self.originalValue
+        }
+
+        /// Append new options to the picker without resetting selection state.
+        /// Use this for pagination scenarios where data is loaded incrementally.
+        /// - Parameters:
+        ///   - newOptions: Display texts to append.
+        ///   - hasMoreData: Whether more data is still available after this append.
+        public mutating func appendOptions(_ newOptions: [String], hasMoreData: Bool = false) {
+            let startIndex = self.valueOptions.count
+            self.valueOptions.append(contentsOf: newOptions)
+            let newModels = newOptions.enumerated().map { offset, option in
+                ValueOptionModel(index: startIndex + offset, value: option)
+            }
+            self.uuidValueOptions.append(contentsOf: newModels)
+            self.configuration?.hasMoreData = hasMoreData
+        }
+    }
+    
+    /// Data structure for boolean type
+    struct SwitchItem: Identifiable, Equatable {
+        public var id: String
+        public var name: String
+        public var value: Bool?
+        var workingValue: Bool?
+        let originalValue: Bool?
+        public let icon: String?
+        public let hint: String?
+        
+        public init(id: String = UUID().uuidString, name: String, value: Bool?, icon: String? = nil, hint: String? = nil) {
+            self.id = id
+            self.name = name
+            self.value = value
+            self.workingValue = value
+            self.originalValue = value
+            self.icon = icon
+            self.hint = hint
+        }
+        
+        mutating func reset() {
+            self.workingValue = self.originalValue
+        }
+        
+        mutating func cancel() {
+            self.workingValue = self.value
+        }
+        
+        mutating func apply() {
+            self.value = self.workingValue
+        }
+        
+        var isChecked: Bool {
+            self.value ?? false
+        }
+        
+        var isChanged: Bool {
+            self.value != self.workingValue
+        }
+        
+        var isOriginal: Bool {
+            self.workingValue == self.originalValue
+        }
+    }
+    
+    ///  Data structure for integer type slider
+    struct SliderItem: Identifiable, Equatable {
+        public let id: String
+        public var name: String
+        public var value: Double?
+        var workingValue: Double?
+        let originalValue: Double?
+        
+        public var lowerValue: Double?
+        public var upperValue: Double?
+        var workingLowerValue: Double?
+        var workingUpperValue: Double?
+        let originalLowerValue: Double?
+        let originalUpperValue: Double?
+
+        let range: ClosedRange<Double>
+        let step: Double
+        let decimalPlaces: Int
+        
+        public let minimumValue: Double
+        public let maximumValue: Double
+        let formatter: String?
+        public let icon: String?
+        public let hint: String?
+        
+        public var onValueChange: SliderValueChangeHandler?
+
+        /// Configuration of the Reset button in the popover. Defaults to `.reset` type (restore original value).
+        /// Set its `type` to `.deactivate` to make the Reset button deactivate the chip and dismiss the popover.
+        var resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = .init()
+
+        let sliderMode: SliderMode
+        /// Enum for slider mode of the FilterFeedbackBar SliderItem.
+        /// The  value is inited in func init().
+        enum SliderMode {
+            case single
+            case range
+        }
+        
+        /// Create a single slider with Int type value and selection range
+        /// - Parameters:
+        ///   - id: Item id
+        ///   - name: Item name
+        ///   - value: Item selected value
+        ///   - minimumValue: Lower bound for selection
+        ///   - maximumValue: Upper bound for selection
+        ///   - formatter: The title formatter of the slider
+        ///   - icon: The icon image in the item bar
+        ///   - hint: The hint text of the slider
+        ///   - resetButtonConfiguration: A configuration to customize the reset button.
+        public init(id: String = UUID().uuidString, name: String, value: Int? = nil, minimumValue: Int, maximumValue: Int, formatter: String? = nil, icon: String? = nil, hint: String? = nil, resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = FilterFeedbackBarResetButtonConfiguration()) {
+            self.id = id
+            self.name = name
+            self.value = Double(value ?? minimumValue)
+            self.workingValue = Double(value ?? minimumValue)
+            self.originalValue = Double(value ?? minimumValue)
+            self.minimumValue = Double(minimumValue)
+            self.maximumValue = Double(maximumValue)
+            self.formatter = formatter
+            self.icon = icon
+            self.hint = hint
+            
+            self.originalLowerValue = nil
+            self.originalUpperValue = nil
+            
+            self.range = Double(minimumValue) ... Double(maximumValue)
+            self.step = 1
+            self.decimalPlaces = 0
+            self.sliderMode = .single
+            self.onValueChange = nil
+            self.resetButtonConfiguration = resetButtonConfiguration
+        }
+        
+        /// Create a single slider with Double type value and selection range
+        /// - Parameters:
+        ///   - id: Item id
+        ///   - name: Item name
+        ///   - value: Item selected value
+        ///   - range: Range for selection
+        ///   - step: Incremental/decremental value when the thumb changes its position. The default is `1`.
+        ///   - decimalPlaces: This property specifies the number of digits that should appear after the decimal point in the Double value for slider value. It controls the precision of the numerical representation by determining how many decimal places are displayed or used in calculations, rounding the Double accordingly. The default is `0`.
+        ///   - formatter: The title formatter of the slider
+        ///   - icon: The icon image in the item bar
+        ///   - hint: The hint text of the slider
+        ///   - resetButtonConfiguration: A configuration to customize the reset button.
+        public init(id: String = UUID().uuidString, name: String, value: Double? = nil, range: ClosedRange<Double> = 0 ... 100, step: Double = 1, decimalPlaces: Int = 0, formatter: String? = nil, icon: String? = nil, hint: String? = nil, resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = FilterFeedbackBarResetButtonConfiguration()) {
+            self.id = id
+            self.name = name
+            self.value = value
+            self.workingValue = value
+            self.originalValue = value
+            self.minimumValue = range.lowerBound
+            self.maximumValue = range.upperBound
+            self.formatter = formatter
+            self.icon = icon
+            self.hint = hint
+            self.onValueChange = nil
+            
+            self.originalLowerValue = nil
+            self.originalUpperValue = nil
+            
+            self.range = range
+            self.step = step
+            self.decimalPlaces = decimalPlaces
+            self.sliderMode = .single
+            self.resetButtonConfiguration = resetButtonConfiguration
+        }
+        
+        /// Create a range slider with Double type value and selection range
+        /// - Parameters:
+        ///   - id: Item id
+        ///   - name: Item name
+        ///   - lowerValue: The lower value of range slider
+        ///   - upperValue: The upper value of range slider
+        ///   - range: Range for selection
+        ///   - step: Incremental/decremental value when the thumb changes its position. The default is `1`.
+        ///   - decimalPlaces: This property specifies the number of digits that should appear after the decimal point in the Double value for slider value. It controls the precision of the numerical representation by determining how many decimal places are displayed or used in calculations, rounding the Double accordingly. The default is `0`.
+        ///   - formatter: The title formatter of the slider.
+        ///   - icon: The icon image in the item bar
+        ///   - hint: The hint text of the slider
+        ///   - onValueChange: The call back for value changing, return a tuple (hint style type, hint description), if the hint description has value, the hint label will show this value in stead of hint.
+        ///   - resetButtonConfiguration: A configuration to customize the reset button.
+        public init(id: String = UUID().uuidString, name: String, lowerValue: Double? = nil, upperValue: Double? = nil, range: ClosedRange<Double> = 0 ... 100, step: Double = 1, decimalPlaces: Int = 0, formatter: String? = nil, icon: String? = nil, hint: String? = nil, onValueChange: SliderValueChangeHandler? = nil, resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = FilterFeedbackBarResetButtonConfiguration()) {
+            self.id = id
+            self.name = name
+            self.lowerValue = lowerValue
+            self.upperValue = upperValue
+            
+            self.workingLowerValue = lowerValue
+            self.workingUpperValue = upperValue
+            self.originalLowerValue = lowerValue
+            self.originalUpperValue = upperValue
+            
+            self.minimumValue = range.lowerBound
+            self.maximumValue = range.upperBound
+            self.formatter = formatter
+            self.icon = icon
+            self.hint = hint
+            self.onValueChange = onValueChange
+            
+            self.originalValue = nil
+            
+            self.range = range
+            self.step = step
+            self.decimalPlaces = decimalPlaces
+            self.sliderMode = .range
+            self.resetButtonConfiguration = resetButtonConfiguration
+        }
+        
+        mutating func reset() {
+            if self.sliderMode == .single {
+                self.workingValue = self.originalValue
+            } else {
+                self.workingLowerValue = self.originalLowerValue
+                self.workingUpperValue = self.originalUpperValue
+            }
+        }
+        
+        mutating func cancel() {
+            if self.sliderMode == .single {
+                self.workingValue = self.value
+            } else {
+                self.workingLowerValue = self.lowerValue
+                self.workingUpperValue = self.upperValue
+            }
+        }
+        
+        mutating func apply() {
+            if self.sliderMode == .single {
+                self.value = self.workingValue
+            } else {
+                self.lowerValue = self.workingLowerValue
+                self.upperValue = self.workingUpperValue
+            }
+        }
+
+        mutating func deactivate() {
+            if self.sliderMode == .single {
+                self.workingValue = nil
+                self.value = nil
+            } else {
+                self.workingLowerValue = nil
+                self.workingUpperValue = nil
+                self.lowerValue = nil
+                self.upperValue = nil
+            }
+        }
+
+        var isChecked: Bool {
+            if self.sliderMode == .single {
+                self.value != nil
+            } else {
+                self.lowerValue != nil && self.upperValue != nil
+            }
+        }
+        
+        var label: String {
+            if self.sliderMode == .single {
+                if let value = self.value {
+                    return "\(self.name): \(String(format: "%.\(self.decimalPlaces)f", value))"
+                }
+                return self.name
+            } else {
+                if let lowerValue = self.lowerValue, let upperValue = self.upperValue {
+                    return "\(self.name): (\(String(format: "%.\(self.decimalPlaces)f", lowerValue)) - \(String(format: "%.\(self.decimalPlaces)f", upperValue)))"
+                }
+                return self.name
+            }
+        }
+        
+        mutating func setValue(newValue: SliderItem) {
+            if self.sliderMode == .single {
+                self.value = newValue.value
+            } else {
+                self.lowerValue = newValue.lowerValue
+                self.upperValue = newValue.upperValue
+            }
+        }
+        
+        var isChanged: Bool {
+            if self.sliderMode == .single {
+                self.value != self.workingValue
+            } else {
+                self.lowerValue != self.workingLowerValue || self.upperValue != self.workingUpperValue
+            }
+        }
+        
+        var isOriginal: Bool {
+            if self.sliderMode == .single {
+                self.workingValue == self.originalValue
+            } else {
+                self.workingLowerValue == self.originalLowerValue && self.workingUpperValue == self.originalUpperValue
+            }
+        }
+    }
+    
+    /// Data structure for datetime data
+    struct DateTimeItem: Equatable, Hashable {
+        public let id: String
+        public var name: String
+        public var value: Date?
+        var workingValue: Date?
+        let originalValue: Date?
+        public var icon: String?
+        public let formatter: String?
+        public let components: DatePickerComponents
+
+        /// Configuration of the Reset button in the popover. Defaults to `.reset` type (restore original value).
+        /// Set its `type` to `.deactivate` to make the Reset button deactivate the chip and dismiss the popover.
+        var resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = .init()
+
+        /// Convenience init to create DateTimeItem with custom date picker components.
+        /// - Parameters:
+        ///   - id: Unique identifier for the DateTimeItem.
+        ///   - name: Name of the DateTimeItem.
+        ///   - value: Date value of the DateTimeItem.
+        ///   - formatter: Formatter string for the date value.
+        ///   - icon: Icon name for the DateTimeItem. Default value is `nil`.
+        ///   - resetButtonConfiguration: A configuration to customize the reset button.
+        public init(id: String = UUID().uuidString,
+                    name: String,
+                    value: Date?,
+                    formatter: String? = nil,
+                    icon: String? = nil,
+                    resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = FilterFeedbackBarResetButtonConfiguration())
+        {
+            self.id = id
+            self.name = name
+            self.value = value
+            self.workingValue = value
+            self.originalValue = value
+            self.formatter = formatter
+            self.icon = icon
+            self.components = [.hourAndMinute, .date]
+            self.resetButtonConfiguration = resetButtonConfiguration
+        }
+        
+        /// Convenience init to create DateTimeItem with custom date picker components.
+        /// - Parameters:
+        ///   - id: Unique identifier for the DateTimeItem.
+        ///   - name: Name of the DateTimeItem.
+        ///   - value: Date value of the DateTimeItem.
+        ///   - formatter: Formatter string for the date value.
+        ///   - icon: Icon name for the DateTimeItem. Default value is `nil`.
+        ///   - components: Date picker components to display in view hierarchy. If set to `.date`, the "Hour and Minute" field will not show up in the picker. Default value is `[.hourAndMinute, .date]`.
+        ///   - resetButtonConfiguration: A configuration to customize the reset button.
+        public init(id: String = UUID().uuidString,
+                    name: String,
+                    value: Date?,
+                    formatter: String? = nil,
+                    icon: String? = nil,
+                    components: DatePickerComponents = [.hourAndMinute, .date],
+                    resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = FilterFeedbackBarResetButtonConfiguration())
+        {
+            self.id = id
+            self.name = name
+            self.value = value
+            self.workingValue = value
+            self.originalValue = value
+            self.formatter = formatter
+            self.icon = icon
+            self.components = components
+            self.resetButtonConfiguration = resetButtonConfiguration
+        }
+        
+        public func hash(into hasher: inout Hasher) {
+            hasher.combine(self.id)
+            hasher.combine(self.name)
+            hasher.combine(self.value)
+            hasher.combine(self.workingValue)
+            hasher.combine(self.originalValue)
+            hasher.combine(self.icon)
+            hasher.combine(self.formatter)
+            hasher.combine(self.components.rawValue)
+        }
+        
+        mutating func reset() {
+            self.workingValue = self.originalValue
+        }
+        
+        mutating func apply() {
+            self.value = self.workingValue
+        }
+        
+        mutating func cancel() {
+            self.workingValue = self.value
+        }
+
+        mutating func deactivate() {
+            self.workingValue = nil
+            self.value = nil
+        }
+
+        var isChecked: Bool {
+            self.value != nil
+        }
+        
+        var label: String {
+            if let value = self.value {
+                if let format = self.formatter {
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = format
+                    return formatter.string(from: value)
+                } else {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateStyle = .long
+                    dateFormatter.timeStyle = .short
+                    return dateFormatter.string(from: value)
+                }
+            } else {
+                return self.name
+            }
+        }
+        
+        var isChanged: Bool {
+            self.value != self.workingValue
+        }
+        
+        var isOriginal: Bool {
+            self.workingValue == self.originalValue
+        }
+    }
+    
+    ///  Data structure for integer type stepper
+    struct StepperItem: Identifiable, Equatable {
+        public let id: String
+        public var name: String
+        public var value: Double?
+        var workingValue: Double?
+        let originalValue: Double?
+        public let icon: String?
+
+        public let stepperTitle: String
+        /// The step value
+        public let step: Double
+        /// a range of values
+        public let stepRange: ClosedRange<Double>
+        /// Indicates whether the stepper field  supports decimal values. Default is false.
+        public let isDecimalSupported: Bool
+        public let incrementActionActive: Bool
+        public let decrementActionActive: Bool
+        public let stepperIcon: UIImage?
+        public let description: String?
+
+        /// Configuration of the Reset button in the popover. Defaults to `.reset` type (restore original value).
+        /// Set its `type` to `.deactivate` to make the Reset button deactivate the chip and dismiss the popover.
+        var resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = .init()
+
+        public init(id: String = UUID().uuidString, name: String, stepperTitle: String, value: Double? = nil, step: Double = 1, stepRange: ClosedRange<Double>, isDecimalSupported: Bool = false, incrementActionActive: Bool = true, decrementActionActive: Bool = true, icon: String? = nil, stepperIcon: UIImage? = nil, description: String? = nil, resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = FilterFeedbackBarResetButtonConfiguration()) {
+            self.id = id
+            self.name = name
+            self.value = value
+            self.workingValue = value
+            self.originalValue = value
+            self.stepperTitle = stepperTitle
+            self.step = step
+            self.stepRange = stepRange
+            self.isDecimalSupported = isDecimalSupported
+            self.incrementActionActive = incrementActionActive
+            self.decrementActionActive = decrementActionActive
+            self.icon = icon
+            self.stepperIcon = stepperIcon
+            self.description = description
+            self.resetButtonConfiguration = resetButtonConfiguration
+        }
+        
+        mutating func reset() {
+            self.workingValue = self.originalValue
+        }
+        
+        mutating func cancel() {
+            self.workingValue = self.value
+        }
+        
+        mutating func apply() {
+            self.value = self.workingValue
+        }
+
+        mutating func deactivate() {
+            self.workingValue = nil
+            self.value = nil
+        }
+
+        var isChecked: Bool {
+            self.value != nil
+        }
+        
+        var label: String {
+            guard let v = self.value else { return self.name }
+            return self.isDecimalSupported
+                ? "\(self.name): \(String(describing: v))"
+                : "\(self.name): \(String(describing: Int(v)))"
+        }
+        
+        mutating func setValue(newValue: StepperItem) {
+            self.value = newValue.value
+        }
+        
+        var isChanged: Bool {
+            self.value != self.workingValue
+        }
+        
+        var isOriginal: Bool {
+            self.workingValue == self.originalValue
+        }
+    }
+    
+    /// Data structure for title type
+    struct TitleItem: Identifiable, Equatable {
+        public var id: String
+        public var name: String
+        public let icon: String?
+        
+        public var text: String
+        var workingText: String
+        let originalText: String
+        public var isSecureEnabled: Bool? = false
+        public var placeholder: String?
+        public var controlState: ControlState = .normal
+        public var errorMessage: String?
+        public var maxTextLength: Int?
+        public let hintText: String?
+        public let hidesReadOnlyHint: Bool
+        public let isCharCountEnabled: Bool
+        public let allowsBeyondLimit: Bool
+        public let charCountReachLimitMessage: String?
+        public let charCountBeyondLimitMsg: String?
+
+        /// Configuration of the Reset button in the popover. Defaults to `.reset` type (restore original value).
+        /// Set its `type` to `.deactivate` to make the Reset button deactivate the chip and dismiss the popover.
+        var resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = .init()
+
+        /// Create a textfiled.
+        /// - Parameters:
+        ///   - id: The unique identifier for TitleItem.
+        ///   - name: Item name.
+        ///   - text: The text in textfield.
+        ///   - isSecureEnabled: A boolean value to indicate to whether the textfield is secure textfield.
+        ///   - placeholder: A text for placeholder of textfield.
+        ///   - controlState: A state for textfield.
+        ///   - errorMessage: A text when the text of textfield not satisfy conditions.
+        ///   - maxTextLength: A maximum value for text length.
+        ///   - hidesReadOnlyHint: A boolean value to indicate to hide read only hint or not.
+        ///   - isCharCountEnabled: A boolean value to indicate to display char count or not.
+        ///   - allowsBeyondLimit: A boolean value to indicate to allows inputting text beyond maximum char count limit or not.
+        ///   - charCountReachLimitMessage: A text for char count reach maximum limit.
+        ///   - charCountBeyondLimitMsg: A text for char beyond maximum limit.
+        ///   - icon: The icon image in the item bar.
+        ///   - hintText: The hint text of the textfiled.
+        public init(id: String = UUID().uuidString, name: String, text: String, isSecureEnabled: Bool? = false, placeholder: String? = nil, controlState: ControlState = .normal, errorMessage: String? = nil, maxTextLength: Int? = nil, hidesReadOnlyHint: Bool = false, isCharCountEnabled: Bool = false, allowsBeyondLimit: Bool = false, charCountReachLimitMessage: String? = nil, charCountBeyondLimitMsg: String? = nil, icon: String? = nil, hintText: String? = nil, resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = FilterFeedbackBarResetButtonConfiguration()) {
+            self.id = id
+            self.name = name
+            self.text = text
+            self.workingText = text
+            self.originalText = text
+            self.icon = icon
+            self.isSecureEnabled = isSecureEnabled
+            self.placeholder = placeholder
+            self.controlState = controlState
+            self.errorMessage = errorMessage
+            self.maxTextLength = maxTextLength
+            self.hidesReadOnlyHint = hidesReadOnlyHint
+            self.isCharCountEnabled = isCharCountEnabled
+            self.allowsBeyondLimit = allowsBeyondLimit
+            self.charCountReachLimitMessage = charCountReachLimitMessage
+            self.charCountBeyondLimitMsg = charCountBeyondLimitMsg
+            self.hintText = hintText
+            self.resetButtonConfiguration = resetButtonConfiguration
+        }
+        
+        mutating func reset() {
+            self.workingText = self.originalText
+        }
+        
+        mutating func cancel() {
+            self.workingText = self.text
+        }
+        
+        mutating func apply() {
+            self.text = self.workingText
+        }
+        
+        var isChecked: Bool {
+            !self.text.isEmpty
+        }
+        
+        var isChanged: Bool {
+            self.text != self.workingText
+        }
+        
+        var isOriginal: Bool {
+            self.workingText == self.originalText
+        }
+        
+        var label: String {
+            "\(self.name): \(self.text)"
+        }
+
+        mutating func deactivate() {
+            self.workingText = ""
+            self.text = ""
+        }
+    }
+    
+    /// Data structure for note type
+    struct NoteItem: Identifiable, Equatable {
+        public var id: String
+        public var name: String
+        public let icon: String?
+        
+        public var text: String
+        var workingText: String
+        let originalText: String
+        public var placeholder: String?
+        public var controlState: ControlState = .normal
+        public var errorMessage: String?
+        public var maxTextLength: Int?
+        public let hintText: String?
+        public let hidesReadOnlyHint: Bool
+        public let isCharCountEnabled: Bool
+        public let allowsBeyondLimit: Bool
+        public let charCountReachLimitMessage: String?
+        public let charCountBeyondLimitMsg: String?
+        public let minTextEditorHeight: CGFloat?
+        public let maxTextEditorHeight: CGFloat?
+
+        /// Configuration of the Reset button in the popover. Defaults to `.reset` type (restore original value).
+        /// Set its `type` to `.deactivate` to make the Reset button deactivate the chip and dismiss the popover.
+        var resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = .init()
+
+        /// Create a textfiled.
+        /// - Parameters:
+        ///   - id: The unique identifier for TitleItem.
+        ///   - name: Item name.
+        ///   - text: The text in textfield.
+        ///   - placeholder: A text for placeholder of textfield.
+        ///   - controlState: A state for textfield.
+        ///   - errorMessage: A text when the text of textfield not satisfy conditions.
+        ///   - minTextEditorHeight: The minimum height of the TextEditor. It needs to be greater than 44. Otherwise, it is ignored.
+        ///   - maxTextEditorHeight The maximum height of the TextEditor.
+        ///   - maxTextLength: A maximum value for text length.
+        ///   - hidesReadOnlyHint: A boolean value to indicate to hide read only hint or not.
+        ///   - isCharCountEnabled: A boolean value to indicate to display char count or not.
+        ///   - allowsBeyondLimit: A boolean value to indicate to allows inputting text beyond maximum char count limit or not.
+        ///   - charCountReachLimitMessage: A text for char count reach maximum limit.
+        ///   - charCountBeyondLimitMsg: A text for char beyond maximum limit.
+        ///   - icon: The icon image in the item bar.
+        ///   - hintText: The hint text of the textfiled.
+        public init(id: String = UUID().uuidString, name: String, text: String, isSecureEnabled: Bool? = false, placeholder: String? = nil, controlState: ControlState = .normal, errorMessage: String? = nil, minTextEditorHeight: CGFloat? = nil, maxTextEditorHeight: CGFloat? = nil, maxTextLength: Int? = nil, hidesReadOnlyHint: Bool = false, isCharCountEnabled: Bool = false, allowsBeyondLimit: Bool = false, charCountReachLimitMessage: String? = nil, charCountBeyondLimitMsg: String? = nil, icon: String? = nil, hintText: String? = nil, resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = FilterFeedbackBarResetButtonConfiguration()) {
+            self.id = id
+            self.name = name
+            self.text = text
+            self.workingText = text
+            self.originalText = text
+            self.icon = icon
+            self.placeholder = placeholder
+            self.controlState = controlState
+            self.minTextEditorHeight = minTextEditorHeight
+            self.maxTextEditorHeight = maxTextEditorHeight
+            self.errorMessage = errorMessage
+            self.maxTextLength = maxTextLength
+            self.hidesReadOnlyHint = hidesReadOnlyHint
+            self.isCharCountEnabled = isCharCountEnabled
+            self.allowsBeyondLimit = allowsBeyondLimit
+            self.charCountReachLimitMessage = charCountReachLimitMessage
+            self.charCountBeyondLimitMsg = charCountBeyondLimitMsg
+            self.hintText = hintText
+            self.resetButtonConfiguration = resetButtonConfiguration
+        }
+        
+        mutating func reset() {
+            self.workingText = self.originalText
+        }
+        
+        mutating func cancel() {
+            self.workingText = self.text
+        }
+        
+        mutating func apply() {
+            self.text = self.workingText
+        }
+        
+        var isChecked: Bool {
+            !self.text.isEmpty
+        }
+        
+        var isChanged: Bool {
+            self.text != self.workingText
+        }
+        
+        var isOriginal: Bool {
+            self.workingText == self.originalText
+        }
+        
+        var label: String {
+            "\(self.name): \(self.text)"
+        }
+
+        mutating func deactivate() {
+            self.workingText = ""
+            self.text = ""
+        }
+    }
+    
+    ///  Data structure for integer type durantion picker
+    struct DurationPickerItem: Identifiable, Equatable {
+        public let id: String
+        public var name: String
+        public var value: Int?
+        var workingValue: Int?
+        let originalValue: Int?
+        public let icon: String?
+        
+        public let maximumMinutes: Int
+        public let minimumMinutes: Int
+        public let minuteInterval: Int
+        public let measurementFormatter: MeasurementFormatter
+
+        /// Configuration of the Reset button in the popover. Defaults to `.reset` type (restore original value).
+        /// Set its `type` to `.deactivate` to make the Reset button deactivate the chip and dismiss the popover.
+        var resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = .init()
+
+        public init(id: String = UUID().uuidString, name: String, value: Int? = nil, maximumMinutes: Int = 1439, minimumMinutes: Int = 0, minuteInterval: Int = 1, measurementFormatter: MeasurementFormatter = MeasurementFormatter(), icon: String? = nil, resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = FilterFeedbackBarResetButtonConfiguration()) {
+            self.id = id
+            self.name = name
+            self.value = value
+            self.workingValue = value
+            self.originalValue = value
+            self.maximumMinutes = maximumMinutes
+            self.minimumMinutes = minimumMinutes
+            self.minuteInterval = minuteInterval
+            self.measurementFormatter = measurementFormatter
+            self.icon = icon
+            self.resetButtonConfiguration = resetButtonConfiguration
+        }
+        
+        mutating func reset() {
+            self.workingValue = self.originalValue
+        }
+        
+        mutating func cancel() {
+            self.workingValue = self.value
+        }
+        
+        mutating func apply() {
+            self.value = self.workingValue
+        }
+
+        mutating func deactivate() {
+            self.workingValue = nil
+            self.value = nil
+        }
+
+        var isChecked: Bool {
+            self.value != nil
+        }
+
+        var label: String {
+            guard let v = self.value else { return self.name }
+            let hour = v / 60
+            let min = v % 60
+            var durationString = ""
+
+            if v == 0 {
+                durationString = "0" + " " + self.measurementFormatter.string(from: UnitDuration.minutes)
+            } else {
+                if hour > 0 {
+                    durationString = "\(hour)" + " " + self.measurementFormatter.string(from: UnitDuration.hours)
+                }
+                if !durationString.isEmpty {
+                    durationString += " "
+                }
+                if min > 0 {
+                    durationString += "\(min)" + " " + self.measurementFormatter.string(from: UnitDuration.minutes)
+                }
+            }
+            
+            return "\(self.name): \(durationString)"
+        }
+        
+        mutating func setValue(newValue: DurationPickerItem) {
+            self.value = newValue.value
+        }
+        
+        var isChanged: Bool {
+            self.value != self.workingValue
+        }
+        
+        var isOriginal: Bool {
+            self.workingValue == self.originalValue
+        }
+    }
+    
+    ///  Data structure for integer type order picker
+    struct OrderPickerItem: Identifiable, Equatable {
+        public let id: String
+        public var name: String
+        public var title: AttributedString?
+        public var value: [OrderPickerItemModel]
+        var workingValue: [OrderPickerItemModel]
+        let originalValue: [OrderPickerItemModel]
+        public let icon: String?
+        
+        public let isAtLeastOneSelected: Bool
+        public let controlState: ControlState
+
+        /// Configuration of the Reset button in the popover. Defaults to `.reset` type (restore original value).
+        /// Set its `type` to `.deactivate` to make the Reset button deactivate the chip and dismiss the popover.
+        var resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = .init()
+
+        /// True when the user has explicitly deactivated the chip via the Reset button (in `.deactivate` mode).
+        /// Unlike other item types, OrderPickerItem cannot use empty `value` to signal inactive — its `value`
+        /// array carries both configuration (criterion names, ascending labels) and per-row selection state,
+        /// so clearing it would lose the criteria themselves. We track activation as a separate flag instead.
+        var isInactive: Bool = false
+        var workingIsInactive: Bool = false
+
+        /// Create a order picker item.
+        /// - Parameters:
+        ///   - id: Item id.
+        ///   - name: Item name for item.
+        ///   - title: The title for order picker.
+        ///   - value: The value for order picker.
+        ///   - isAtLeastOneSelected: Whether At least one sort criterion should be selected. The default is `true`.
+        ///   - controlState: The `ControlState` of the  view. Currently, `.disabled`, `.normal` and `.readOnly` are supported. The default is `normal`.
+        ///   - icon: The icon image in the item bar.
+        public init(id: String = UUID().uuidString, name: String, title: AttributedString? = nil, value: [OrderPickerItemModel], isAtLeastOneSelected: Bool = true, controlState: ControlState = .normal, icon: String? = nil, resetButtonConfiguration: FilterFeedbackBarResetButtonConfiguration = FilterFeedbackBarResetButtonConfiguration()) {
+            self.id = id
+            self.name = name
+            self.title = title
+            self.value = value
+            self.workingValue = value
+            self.originalValue = value
+            self.icon = icon
+            self.isAtLeastOneSelected = isAtLeastOneSelected
+            self.controlState = controlState
+            self.resetButtonConfiguration = resetButtonConfiguration
+        }
+        
+        mutating func reset() {
+            self.workingValue = self.originalValue
+            self.workingIsInactive = false
+        }
+        
+        mutating func cancel() {
+            self.workingValue = self.value
+            self.workingIsInactive = self.isInactive
+        }
+        
+        mutating func apply() {
+            self.value = self.workingValue
+            self.isInactive = self.workingIsInactive
+        }
+
+        mutating func deactivate() {
+            self.workingIsInactive = true
+            self.isInactive = true
+        }
+
+        var isChecked: Bool {
+            !self.isInactive
+        }
+
+        var label: String {
+            self.name
+        }
+        
+        mutating func setValue(newValue: OrderPickerItem) {
+            self.value = newValue.value
+        }
+        
+        var isChanged: Bool {
+            self.value != self.workingValue || self.isInactive != self.workingIsInactive
+        }
+        
+        var isOriginal: Bool {
+            self.workingValue == self.originalValue && !self.workingIsInactive
+        }
+    }
+}

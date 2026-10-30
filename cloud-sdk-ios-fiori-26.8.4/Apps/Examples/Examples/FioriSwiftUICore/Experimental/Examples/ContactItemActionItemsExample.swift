@@ -1,0 +1,125 @@
+import FioriSwiftUICore
+import SwiftUI
+
+struct ContactItemActionItemsExample: View {
+    @ObservedObject var viewModel = ContactItemActionItemsExampleViewModel()
+    @State private var useCompositeControl = false
+    var body: some View {
+        VStack {
+            ScrollView {
+                ExpHeaderView("Action Items", subtitle: "Option: ViewBuilder init - arbitrary use", desc: "pass an arbitrary view to represent actionItems")
+
+                ContactItem {
+                    Text("Title")
+                } subtitle: {
+                    Text("SubTitle")
+                } description: {
+                    Text("Description")
+                } detailImage: {
+                    EmptyView()
+                } activityItems: {
+                    LibraryPreviewData.Person.laurelosborn.actionItemsView
+                }
+                .exampleHighlighting()
+
+                ExpHeaderView(nil, subtitle: "Option: ViewBuilder init - SDK reuse", desc: "pass an SDK standard composite view (control / container) to represent actionItems", back: .green, textColor: .white)
+                
+                ContactItem {
+                    Text("Title")
+                } subtitle: {
+                    Text("SubTitle")
+                } description: {
+                    Text("Description")
+                } activityItems: {
+                    ActivityControlLayoutContainer(self.viewModel.actionItems?.actionItems ?? []) { activity in
+                        ActivityButtonView(activity) {
+                            self.viewModel.selectedActivity = activity
+                        }
+                    }
+                }
+                .exampleHighlighting()
+
+                ExpHeaderView(nil, subtitle: "Option: Type-based init", desc: "SDK will internally choose and initialize the control handling action items")
+
+                ContactItem(
+                    title: AttributedString(self.viewModel.title),
+                    subtitle: AttributedString(self.viewModel.subtitle ?? ""),
+                    description: AttributedString(self.viewModel.descriptionText ?? ""),
+                    detailImage: self.viewModel.detailImage,
+                    activityItems: self.viewModel.actionItems?.actionItems ?? []
+                ).exampleHighlighting()
+                    .subtitleStyle { config in
+                        Subtitle(config)
+                            .lineLimit(nil)
+                    }
+
+                ExpHeaderView(nil, subtitle: "Option: Protocol/Model-based init", desc: "conform your model to protocol `ContactItemModel`")
+
+                ContactItem(
+                    title: AttributedString(self.viewModel.title),
+                    subtitle: AttributedString(self.viewModel.subtitle ?? ""),
+                    description: AttributedString(self.viewModel.descriptionText ?? ""),
+                    detailImage: self.viewModel.detailImage,
+                    activityItems: self.viewModel.actionItems?.actionItems ?? []
+                ).exampleHighlighting()
+                    .alert(isPresented: self.$viewModel.showingAlert, content: {
+                        Alert(title: Text("Important message"), message: Text("Sending email to \(self.viewModel.selectedActivity?.data ?? "unknown")"), dismissButton: .default(Text("Got it!")))
+                    })
+                    .subtitleStyle { config in
+                        Subtitle(config)
+                            .lineLimit(nil)
+                    }
+            }
+        }
+    }
+}
+
+// MARK: Port
+
+class ContactItemActionItemsExampleViewModel: ObservableObject {
+    var model = LibraryPreviewData.Person.laurelosborn
+    
+    lazy var actionItems: ActionItemsComponent? = {
+        let items: [ActivityItemDataType] = [
+            .init(type: .email, data: "Laurel@example.com", accessibilityValueText: "Work mail"),
+            .init(type: .custom(Image(systemName: "mail")), data: "Laurel@contoso.com")
+        ]
+        
+        return ActivityItemsDataModel(actionItems: items) { activityItem in
+            switch activityItem.type {
+            case .email:
+                print("send email to \(activityItem.data ?? "unknown")")
+                self.selectedActivity = activityItem
+            default:
+                print("don't know how to handle this activity")
+            }
+        }
+    }()
+    
+    @Published var showingAlert = false
+    @Published var selectedActivity: ActivityItemDataType? = nil {
+        didSet {
+            self.showingAlert.toggle()
+        }
+    }
+}
+
+extension ContactItemActionItemsExampleViewModel: ActionItemsComponent {
+    var title: String { self.model.title }
+    var subtitle: String? { self.model.subtitle }
+    var descriptionText: String? { self.model.descriptionText }
+    var detailImage: Image? { self.model.detailImage }
+    
+    struct ActivityItemsDataModel: ActionItemsComponent {
+        let actionItems: [ActivityItemDataType]?
+        let didSelectActivityItem: ((ActivityItemDataType) -> Void)?
+    }
+}
+
+// MARK: Preview
+
+struct ContactItemActionItemsExample_Previews: PreviewProvider {
+    static var previews: some View {
+        ContactItemActionItemsExample()
+    }
+}

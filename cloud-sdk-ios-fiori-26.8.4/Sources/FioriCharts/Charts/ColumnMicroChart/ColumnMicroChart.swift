@@ -1,0 +1,147 @@
+import SwiftUI
+
+struct ColumnMicroChart: View {
+    @ObservedObject var model: ChartModel
+    @Environment(\.sizeCategory) var sizeCategory
+
+    public var body: some View {
+        GeometryReader { proxy in
+            self.columnsView(in: proxy.size)
+        }.padding(4)
+    }
+    
+    func columnsView(in size: CGSize) -> some View {
+        let (barWidth, barSpace) = self.columnWidthAndSpace(in: size)
+        
+        let dateLabelsHeight: CGFloat = 18
+        var negativeLabelsHeight: CGFloat = 0
+        if self.existNegativeValues() {
+            negativeLabelsHeight = 16
+        }
+        let positiveLablesHeight: CGFloat = 16
+        
+        let wholeBarsHeight: CGFloat = size.height - dateLabelsHeight - negativeLabelsHeight - positiveLablesHeight
+        
+        var minVal: CGFloat = 0
+        var valueRange: CGFloat = 1
+        if let range = model.ranges.first {
+            minVal = CGFloat(range.lowerBound > 0 ? 0 : range.lowerBound)
+            valueRange = CGFloat(range.upperBound) - minVal
+        }
+        
+        let negativeBarsHeight: CGFloat = minVal >= 0 ? 0 : wholeBarsHeight * abs(minVal) / valueRange
+        let positiveBarsHeight: CGFloat = wholeBarsHeight - negativeBarsHeight
+        let columns = self.model.dataItemsIn(seriesIndex: 0)
+        
+        return VStack(alignment: .center, spacing: 0) {
+            if columns.isEmpty {
+                NoDataView()
+            } else {
+                // positive value columns and their value column labels
+                HStack(alignment: .bottom, spacing: barSpace) {
+                    ForEach(columns) { item in
+                        VStack(alignment: .center, spacing: 0) {
+                            Spacer(minLength: 0)
+                            
+                            if positiveLablesHeight > 0, self.columnLabel(for: item, positive: true) != nil {
+                                Text(self.columnLabel(for: item, positive: true) ?? "")
+                                    .lineLimit(1)
+                                    .font(.fiori(forTextStyle: .caption1))
+                                    .foregroundColor(item.color)
+                            }
+                            
+                            Rectangle()
+                                .fill(item.color)
+                                .frame(width: barWidth,
+                                       height: wholeBarsHeight * abs(max(0, item.value)) / valueRange)
+                        }.frame(width: barWidth, height: positiveBarsHeight + positiveLablesHeight)
+                    }
+                }.frame(width: size.width, height: positiveBarsHeight + positiveLablesHeight)
+                
+                // negative value columns and their value column labels
+                if self.existNegativeValues() {
+                    HStack(alignment: .top, spacing: barSpace) {
+                        ForEach(columns) { item in
+                            VStack(alignment: .center, spacing: 0) {
+                                Rectangle()
+                                    .fill(item.value > 0 ? Color.clear : item.color)
+                                    .frame(width: barWidth, height: wholeBarsHeight * abs(item.value) / valueRange)
+                                
+                                if negativeLabelsHeight > 0, self.columnLabel(for: item, positive: false) != nil {
+                                    Text(self.columnLabel(for: item, positive: false) ?? "")
+                                        .lineLimit(1)
+                                        .font(.fiori(forTextStyle: .caption1))
+                                        .foregroundColor(item.color)
+                                }
+                                
+                                Spacer(minLength: 0)
+                            }.frame(width: barWidth, height: negativeBarsHeight + negativeLabelsHeight)
+                        }
+                    }.frame(width: size.width, height: negativeBarsHeight + negativeLabelsHeight)
+                }
+                
+                // date column labels
+                if dateLabelsHeight > 0 {
+                    HStack(alignment: .bottom, spacing: barSpace) {
+                        ForEach(columns) { item in
+                            Text(item.label ?? "")
+                                .lineLimit(1)
+                                .font(.fiori(forTextStyle: .caption1))
+                        }.frame(width: barWidth)
+                    }
+                }
+            }
+        }
+    }
+    
+    func columnLabel(for item: MicroChartDataItem, positive: Bool) -> String? {
+        if positive {
+            return item.value >= 0 ? item.displayValue : nil
+        } else {
+            return item.value < 0 ? item.displayValue : nil
+        }
+    }
+    
+    func normalizedValue(for value: Double, range: CGFloat) -> CGFloat {
+        abs(CGFloat(value)) / range
+    }
+    
+    func existNegativeValues() -> Bool {
+        if let range = model.ranges.first {
+            if range.lowerBound < 0 {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    // n + (n-1) * 0.2 = n + (n - 1)/5 = (6n -1)/5
+    func columnWidthAndSpace(in size: CGSize) -> (CGFloat, CGFloat) {
+        let count = self.model.data[0].count
+        var width = size.width * 5 / (CGFloat(6 * count) - 1)
+        var space = width * 0.2
+        if space < 2 {
+            space = 2
+        } else if space > 5 {
+            space = 5
+        } else {
+            space = ceil(space)
+        }
+        width = (size.width - CGFloat(count - 1) * space) / CGFloat(max(count, 1))
+        
+        return (width, space)
+    }
+}
+
+struct ColumnMicroChart_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            ForEach(Tests.columnModels) {
+                ColumnMicroChart(model: $0)
+                    .frame(width: 330, height: 220, alignment: .topLeading)
+                    .previewLayout(.sizeThatFits)
+            }
+        }
+    }
+}

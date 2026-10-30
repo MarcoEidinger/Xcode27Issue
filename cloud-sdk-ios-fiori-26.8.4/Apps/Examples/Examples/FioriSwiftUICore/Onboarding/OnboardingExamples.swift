@@ -1,0 +1,199 @@
+import SwiftUI
+
+struct OnboardingExamples: View {
+    var body: some View {
+        List {
+            NavigationLink(
+                destination: WelcomeExamples())
+            {
+                Text("WelcomeScreen Examples")
+            }
+            
+            NavigationLink(
+                destination: ActivationScreenExamples())
+            {
+                Text("ActivationScreen")
+            }
+            
+            NavigationLink(
+                destination: InfoViewExamples())
+            {
+                Text("InfoView Examples")
+            }
+            
+            NavigationLink(
+                destination: EULAExamples())
+            {
+                Text("EULA Examples")
+            }
+            
+            NavigationLink(
+                destination: UserConsentExamples())
+            {
+                Text("User Consent Form Examples")
+            }
+            
+            NavigationLink(
+                destination: AuthenticationExamples())
+            {
+                Text("AuthenticationScreen Examples")
+            }
+           
+            NavigationLink(
+                destination: WhatsNewExample())
+            {
+                Text("What's New")
+            }
+        }.navigationBarTitle("Onboarding")
+    }
+}
+
+struct WelcomeExamples: View {
+    var body: some View {
+        List {
+            Section {
+                NavigationLink {
+                    OnBoardingWelcomeScreenExamples()
+                } label: {
+                    Text("OnBoarding - WelcomeScreen")
+                }
+            } header: {
+                Text("Extra Examples")
+                    .textCase(.none)
+            }
+            
+        }.navigationBarTitle("Welcome Examples", displayMode: .inline)
+    }
+}
+
+struct ActivationScreenExamples: View {
+    @State private var showsIllustratedMessage = false
+
+    var body: some View {
+        List {
+            NavigationLink(
+                destination: ActivationScreenSample(showsIllustratedMessage: self.showsIllustratedMessage))
+            {
+                Text("ActivationScreen")
+            }
+            
+            NavigationLink(
+                destination: ActivationScreenCustomizedSample(showsIllustratedMessage: self.showsIllustratedMessage))
+            {
+                Text("Customized")
+            }
+            
+            Toggle("Use Illustration Message", isOn: self.$showsIllustratedMessage)
+                .tint(Color.preferredColor(.tintColor))
+        }.navigationBarTitle("Onboarding", displayMode: .inline)
+    }
+}
+
+struct InfoViewExamples: View {
+    var body: some View {
+        List {
+            NavigationLink {
+                InfoViewSample()
+            } label: {
+                Text("InfoView")
+            }
+            NavigationLink {
+                InfoViewWithLoadingLabel()
+            } label: {
+                Text("InfoView With Loading Label")
+            }
+            
+            NavigationLink {
+                InfoViewCustomized()
+            } label: {
+                Text("InfoView Customized")
+            }
+        }.navigationBarTitle("InfoView Examples", displayMode: .inline)
+    }
+}
+
+struct EULAExamples: View {
+    var body: some View {
+        List {
+            NavigationLink {
+                EULAViewSample()
+            } label: {
+                Text("EULA Example")
+            }
+            
+            NavigationLink {
+                EULALongHtmlSample()
+            } label: {
+                Text("Long HTML")
+            }
+            
+            NavigationLink {
+                EULAShortHtmlSample()
+            } label: {
+                Text("Short HTML")
+            }
+            
+            NavigationLink {
+                EULAConcatSample()
+            } label: {
+                Text("Concat Attributed Strings")
+            }
+            
+            NavigationLink {
+                EULAWithLinkSample()
+            } label: {
+                Text("Short HTML with Link")
+            }
+            
+            NavigationLink {
+                EULAShortWithLinkSample()
+            } label: {
+                Text("Short Attributed Strings with Link")
+            }
+            
+            NavigationLink {
+                EULAViewCustomized()
+            } label: {
+                Text("Customized EULA Example")
+            }
+            
+        }.navigationBarTitle("EULA Examples", displayMode: .inline)
+    }
+}
+
+struct UserConsentExamples: View {
+    var body: some View {
+        List {
+            NavigationLink(
+                destination: UserConsentSinglePageM())
+            {
+                Text("Single Page Form(Mandatory)")
+            }
+            
+            NavigationLink(
+                destination: UserConsentSinglePageO())
+            {
+                Text("Single Page Form(Optional, Long RTF)")
+            }
+            
+            NavigationLink(
+                destination: UserConsentViewBuilderExample())
+            {
+                Text("Multiple Forms(ViewBuilder)")
+            }
+            
+            NavigationLink(
+                destination: UserConsentCustomized())
+            {
+                Text("Multiple Forms(Customized)")
+            }
+            
+        }.navigationBarTitle("User Consent Examples", displayMode: .inline)
+    }
+}
+
+struct OnboardingExamples_Previews: PreviewProvider {
+    static var previews: some View {
+        OnboardingExamples().environment(\.horizontalSizeClass, .compact)
+    }
+}

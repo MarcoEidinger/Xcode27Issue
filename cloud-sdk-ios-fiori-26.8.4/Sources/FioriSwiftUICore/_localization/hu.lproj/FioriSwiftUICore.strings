@@ -1,0 +1,753 @@
+/* XMSG: Placeholder text in chart when there is no data */
+"No Data" = "Nincs adat";
+
+/* XBUT: Save action in inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Save" = "Mentés";
+
+/* XBUT: Re-enter action available in saved state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Re-enter Signature" = "Aláírás ismételt megadása";
+
+/* XBUT: Clear action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Clear" = "Törlés";
+
+/* XBUT: Cancel action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Cancel" = "Mégse";
+
+/* XTIT: Title of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Signature" = "Aláírás";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Tap to Sign" = "Koppintson az aláíráshoz";
+
+/* XACT: The accessibility label for the signature area */
+"Signature Area" = "Aláíró felület";
+
+/* XACT: The accessibility hint for the signature area */
+"Double tap and drag to sign" = "Aláírás dupla koppintással és húzással";
+
+/* XACT: The accessibility label for the signature image */
+"Signature Image" = "Aláíráskép";
+
+/* XACT: The accessibility label for the signature line */
+"Signature Line" = "Aláírásvonal";
+
+/* XACT: The accessibility label for the mandatory field */
+"Required Field" = "Kötelező mező";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Canceled" = "Megszakadt";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Next" = "Tovább";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Ok" = "OK";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Status" = "Állapot";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"User canceled Onboarding" = "A felhasználó megszakította a beléptetést";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Without consent you will not be able to continue onboarding." = "Hozzájárulás nélkül nem tudja folytatni az előkészítést.";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Give Consent" = "Hozzájárulás megadása";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Quit" = "Kilépés";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Back" = "Vissza";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Step" = "Lépés";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"of" = "/";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Are you sure you want to quit the onboarding process?" = "Valóban szeretne kilépni az előkészítési folyamatból?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Want Data Privacy?" = "Szeretne adatvédelmet?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Be wise about your data" = "Vigyázzon adataira";
+
+/* XBUT: Not Now action title in UserConsentForm */
+"Not Now" = "Most nem";
+
+/* XBUT: Allow action title in UserConsentForm */
+"Allow" = "Engedélyezés";
+
+/* XBUT: Deny action title in UserConsentForm */
+"Deny" = "Elutasítás";
+
+/* XBUT: Agree action title in EULAView */
+"Agree" = "Elfogadom";
+
+/* XBUT: Disagree action title in EULAView */
+"Disagree" = "Elutasítom";
+
+/* XMSG: Placeholder text in DataTable for loading state */
+"Loading..." = "Betöltés...";
+
+/* XMSG: Placeholder text in DataTable when there is no data */
+"There is nothing to display yet" = "Még nincs megjelenítenivaló";
+
+/* XBUT: Default duration formatter in DataTable */
+"%d Hrs %d Min" = "%d óra %d perc";
+
+/* XBUT: Done action in keyboard toolbar for a Textfield in DataTable */
+"Done" = "Kész";
+
+/* XBUT: Error messages shown to users in DataTable */
+"There are %d errors in the data table." = "Az adattáblában %d hiba található.";
+
+/* XBUT: voice over label for row header in DataTable */
+"row header" = "sorfejléc";
+
+/* XBUT: voice over label for row %d in DataTable */
+"row %d" = "%d. sor";
+
+/* XBUT: voice over label for column %d in DataTable */
+"column %d" = "%d. oszlop";
+
+/* XBUT: voice over label for cell type of `leading accessory` in DataTable */
+"leading accessory" = "nyitó kiegészítő";
+
+/* XBUT: voice over label for cell type of `trailing accessory` in DataTable */
+"trailing accessory" = "záró kiegészítő";
+
+/* XBUT: voice over label for cell type of `text` in DataTable */
+"text" = "szöveg";
+
+/* XBUT: voice over label for cell type of `image` in DataTable */
+"image" = "kép";
+
+/* XBUT: voice over label for cell type of `date` in DataTable */
+"date" = "dátum";
+
+/* XBUT: voice over label for cell type of `time` in DataTable */
+"time" = "időpont";
+
+/* XBUT: voice over label for cell type of `duration` in DataTable */
+"duration" = "időtartam";
+
+/* XBUT: voice over label for cell type of `list item` in DataTable */
+"list item" = "listaelem";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"selected" = "kiválasztott";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"not selected" = "nem kijelölt";
+
+/* Default value for DateTimePicker */
+"No date selected" = "Nincs kiválasztva dátum";
+
+/* Default value for DateRangePicker */
+"No range selected" = "Nincs kiválasztva tartomány";
+
+/* DateRangePicker press space to set a range value */
+"PressSpaceToSelectRangeKey" = "nyomja meg a szóközt a tartományérték beállításához";
+
+/* XBUT: calendar time component label */
+"Time" = "Időpont";
+
+/* XBUT: slider default value label formatter for integer */
+"Value: %d" = "Érték: %d";
+
+/* XMSG: a toast message for read-only cell in DataTable */
+"Tapped cell is read-only." = "A kiválasztott cella írásvédett.";
+
+/* Default hint text for Read-only Field for NoteFormView and TextFieldFormView */
+"Read-only field" = "Írásvédett mező";
+
+/* Default error text for when the character count reaches the maximum limit for NoteFormView and TextFieldFormView */
+"No more characters remaining" = "Nem maradt több karakter";
+
+/* Default error text for when the character count exceeds the maximum limit for NoteFormView and TextFieldFormView */
+"Reduce the number of characters" = "Csökkentse a karakterek számát";
+
+/* XBUT: voice over label for decrement action in stepper */
+"Stepper decrease" = "Értékszabályzó - csökkentés";
+
+/* XBUT: voice over description for decrement action in stepper */
+"Decrease the value by %d" = "Érték csökkentése a következővel: %d";
+
+/* XBUT: voice over label for increment action in stepper */
+"Stepper increase" = "Értékszabályzó - növelés";
+
+/* XBUT: voice over description for increment action in stepper */
+"Increase the value by %d" = "Érték növelése a következővel: %d";
+
+/* XBUT: voice over label for test field in stepper */
+"Select specific value" = "Specifikus érték kiválasztása";
+
+/* XBUT: View all action in MenuSelection */
+"View All (%d)" = "Összes megtekintése (%d)";
+
+/* XACT: RatingControl accessibility label */
+"%d out of %d stars" = "%d csillagból %d";
+
+/* XBUT: timeline preview component see all label */
+"See All (%d)" = "Összes megjelenítése (%d)";
+
+/* XACT: Timeline preview items accessibility label */
+"See All" = "Összes megtekintése";
+
+/* XACT: Timeline preview items accessibility value */
+"%d items" = "%d elem";
+
+/* XACT: Timeline preview items accessibility hint */
+"Shows all timeline items in a list" = "Az összes idővonalelemet listában jeleníti meg";
+
+/* XACT: Timeline preview item status: current accessibility value */
+"Current" = "Jelenlegi";
+
+/* XACT: Timeline preview item status: future accessibility value */
+"Future" = "Jövőbeli";
+
+/* XACT: Timeline preview item status: past accessibility value */
+"Past" = "Múltbeli";
+
+/* XACT: Timeline preview item accessibility value */
+"Item %d of %d, %@, %@, %@" = "%d/%d, %@, %@, %@ elem";
+
+/* XACT: Timeline preview item node type: Start accessibility value */
+"Start" = "Kezdés";
+
+/* XACT: Timeline preview item node type: End accessibility value */
+"End" = "Befejezés";
+
+/* XACT: Timeline preview item node type: Completed accessibility value */
+"Completed" = "Befejezve";
+
+/* XACT: Timeline preview item node type: Open accessibility value */
+"Open" = "Nyitott";
+
+/* XACT: Timeline preview item node type: Task accessibility value */
+"Task" = "Feladat";
+
+/* XACT: Timeline preview item accessibility label */
+"Item %d of %d" = "%d/%d tétel";
+
+/* XBUT: timeline preview component timestamp label */
+"Today, %@" = "Ma, %@";
+
+/* XFLD: RatingControl value label format */
+"%d of %d" = "%d / %d";
+
+/* XFLD: RatingControl review count format */
+"%d reviews" = "%d vélemény";
+
+/* XFLD: RatingControl review count over ceiling format */
+"%d+ reviews" = "%d+ vélemény";
+
+/* XACT: RatingControl accessibility label */
+"Rating Control %d of %d" = "Értékelésvezérlő %d / %d";
+
+/* XACT: read-only RatingControl accessibility label: rating with review count */
+"Rating Control, rating %d of %d, %d reviews" = "Értékelésvezérlő, %d / %d értékelés, %d vélemény";
+
+/* XACT: read-only RatingControl accessibility label: average rating only */
+"Rating Control, average rating %.1f of %d" = "Értékelésvezérlő, %.1f / %d átlagos értékelés";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count */
+"Rating Control, average rating %.1f of %d, %d reviews" = "Értékelésvezérlő, %.1f / %d átlagos értékelés, %d vélemény";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count over ceiling */
+"Rating Control, average rating %.1f of %d, %d plus reviews" = "Értékelésvezérlő, %.1f / %d átlagos értékelés, több mint %d vélemény";
+
+/* XBUT: View all messages in message banner sheet */
+"All" = "Összes";
+
+/* XBUT: messages count in the message banner sheet */
+"Messages (%d)" = "Üzenetek (%d)";
+
+/* XBUT: view details in the message banner */
+"View Details" = "Részletek megtekintése";
+
+/* XBUT: view different message in the message banner sheet item */
+"View %@" = "%@ megtekintése";
+
+/* XBUT: banner message type desc, message */
+"message" = "üzenet";
+
+/* XBUT: banner message type desc, information */
+"information" = "információ";
+
+/* XBUT: banner message type desc, confirmation */
+"confirmation" = "visszaigazolás";
+
+/* XBUT: banner message type desc, warning */
+"warning" = "figyelmeztetés";
+
+/* XBUT: banner message type desc, error */
+"error" = "hiba";
+
+/* XBUT: banner message type desc, error */
+"AI notice" = "AI-közlemény";
+
+/* XMSG: banner message type desc, offline */
+"offline" = "offline";
+
+/* XMSG: information view style type, success */
+"success" = "sikeres";
+
+/* XBUT: Reset action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Reset" = "Visszaállítás";
+
+/* XBUT: Apply action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Apply" = "Alkalmazás";
+
+/* XTIT: The alert message for `ListPickerDestination` pulldown dismissal */
+"Are you sure you want to discard your selections?" = "Biztosan elveti a kiválasztásokat?";
+
+/* XBUT: The alert Discard Changes action title for `ListPickerDestination` pulldown dismissal */
+"Discard Changes" = "Módosítások elvetése";
+
+/* XBUT: The alert Keep Editing action title for `ListPickerDestination` pulldown dismissal */
+"Keep Editing" = "Szerkesztés folytatása";
+
+/* XBUT: The \"Select All\" button title on the List Picker header */
+"Select All" = "Összes kiválasztása";
+
+/* XBUT: The \"Deselect All\" button title on the List Picker header */
+"Deselect All" = "Összes kiválasztás törlése";
+
+/* XBUT: The \"Selected\" title on the List Picker header */
+"Selected" = "Kiválasztva";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"Text field, Double tap to edit" = "Szövegmező, koppintson duplán a szerkesztéshez";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d character left" = "%d karakter maradt.";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d characters left" = "%d karakter maradt.";
+
+/* XACT: The accessibility hint for Text Input Views, editing */
+"Text field, is editing" = "Szövegmező, szerkesztés módban";
+
+/* XACT: The accessibility hint for Text Input Views, editing, with clear button */
+"Text field, is editing. Double tap to clear text" = "Szövegmező, szerkesztés folyamatban. Koppintson duplán a szöveg törléséhez";
+
+/* XACT: The default accessibility label for the custom action in TextFieldFormView if none was specified */
+"Custom Action" = "Egyéni művelet";
+
+/* XBUT: Error messages shown to users in DocumentScannerView */
+"Failed to create PDF page from images" = "Nem sikerült PDF-oldalt létrehozni a képekből.";
+
+/* XBUT: Cancel message shown to users in DocumentScannerView */
+"User cancelled the scan" = "A felhasználó megszakította a szkennelést.";
+
+/* Progress Indicator accessibility label: processing */
+"Processing" = "Feldolgozás alatt";
+
+/* Progress Indicator accessibility label: loading pausable with indicator progress */
+"In progress with option to pause, %.0f" = "Folyamatban szüneteltetési lehetőséggel, %.0f";
+
+/* Progress Indicator accessibility label: loading stoppable with indicator progress */
+"In progress with option to stop, %.0f" = "Folyamatban leállítási lehetőséggel, %.0f";
+
+/* Progress Indicator accessibility label: progress halted with indicator progress */
+"Progress halted, %.0f" = "Előrehaladás leállítva, %.0f";
+
+/* XACT: Slider accessibility label */
+"This is %@ slider whose maximum value is %@ and minimum value is %@" = "Ez egy %@ csúszka, melynek maximális értéke %@, minimumértéke pedig %@";
+
+/* XACT: Slider accessibility value */
+"Current value is %@" = "Az aktuális érték %@";
+
+/* XACT: Range Slider lower thumb accessibility label */
+"lower range slider thumb, current value is" = "Alsó sávcsúszka gomb, aktuális érték";
+
+/* XACT: Range Slider lower thumb accessibility hint */
+"you can swipe up or down to change the lower value" = "Az alsó érték fel- és lehúzással módosítható";
+
+/* XACT: Range Slider upper thumb accessibility label */
+"upper range slider thumb, current value is" = "Felső sávcsúszka gomb, aktuális érték";
+
+/* XACT: Range Slider upper thumb accessibility hint */
+"you can swipe up or down to change the upper value" = "A felső érték fel- és lehúzással módosítható";
+
+/* XACT: Single editable Slider thumb accessibility label */
+"slider thumb, current value is" = "Csúszkagomb, aktuális érték";
+
+/* XACT: Single editable Slider thumb accessibility hint */
+"you can swipe up or down to change the value" = "Az érték fel- és lehúzással módosítható";
+
+/* XACT: Single Slider accessibility label */
+"This is a slider, the minimum value is %@ and the maximum value is %@" = "Ez egy csúszka, amelynek minimumértéke %@, maximális értéke pedig %@";
+
+/* XACT: Range Slider accessibility label */
+"This is a range slider, the minimum value is %@ and the maximum value is %@" = "Ez egy sávcsúszka, amelynek minimumértéke %@, maximális értéke pedig %@";
+
+/* XACT: Single editable Slider accessibility label */
+"This is a slider that is editable, the minimum value is %@ and the maximum value is %@" = "Ez egy szerkeszthető csúszka, amelynek minimumértéke %@, maximális értéke pedig %@";
+
+/* XACT: Single non-editable Slider accessibility label */
+"This is a slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Ez egy nem szerkeszthető csúszka, amelynek minimumértéke %@, maximális értéke pedig %@";
+
+/* XACT: Range editable Slider accessibility label */
+"This is a range slider that is editable, the minimum value is %@ and the maximum value is %@" = "Ez egy szerkeszthető sávcsúszka, amelynek minimumértéke %@, maximális értéke pedig %@";
+
+/* XACT: Range non-editable Slider accessibility label */
+"This is a range slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Ez egy nem szerkeszthető sávcsúszka, amelynek minimumértéke %@, maximális értéke pedig %@";
+
+/* XACT: Single editable Slider Text Field accessibility label */
+"slider value text field" = "Csúszkaérték szövegmezője";
+
+/* XACT: Range editable Slider Lower Value Text Field accessibility label */
+"lower value text field" = "Alsó érték szövegmezője";
+
+/* XACT: Range editable Slider Upper Value Text Field accessibility label */
+"upper value text field" = "Felső érték szövegmezője";
+
+/* XACT: Editable Slider Text Field accessibility hint */
+"You can double tap to input a specific value" = "Dupla koppintással vihet be specifikus értéket";
+
+/* XACT: Editable Slider Text Field accessibility value */
+"current value is %@" = "Az aktuális érték %@";
+
+/* XACT: Range Editable Slider accessibility value */
+"current lower value is %@, upper value is %@" = "Az aktuális alsó érték %@, a felső érték %@";
+
+/* XTIT: Title of step progress indicator, see https://experience.sap.com/fiori-design-ios/article/step-progress-indicator/#adaptive-design */
+"All Steps" = "Minden lépés";
+
+/* XMSG: AI Notice message */
+"Suggested by AI. Verify before use. " = "AI általi javaslat. Használat előtt ellenőrizze. ";
+
+/* XBUT: Attachment operation menu item - Photos, which stands for Photo Library */
+"Photos" = "Fotók";
+
+/* XBUT: Attachment operation menu item - Files, which stands for documents available for upload residing in Files */
+"Files" = "Fájlok";
+
+/* XBUT: Attachment operation menu item - Camera, which can be used for taking photos and movies */
+"Camera" = "Kamera";
+
+/* XBUT: Attachment operation menu item - Scan. Use camera as scanner and generate PDF files */
+"Scan" = "Szkennelés";
+
+/* XACT: The accessibility preview action for the attachment */
+"Preview" = "Előnézet";
+
+/* XTIT: Attachment title of deletion confirmation */
+"Delete Attachment?" = "Törli a mellékletet?";
+
+/* XBUT: Attachment deletion confirmation button */
+"Delete" = "Törlés";
+
+/* XBUT: Attachment add button */
+"Add attachment" = "Melléklet hozzáadása";
+
+/* XACT: The accessibility hint for add button */
+"Double tap to add attachment" = "Melléklet hozzáadásához koppintson duplán";
+
+/* XMSG: attachment section add new file successfully announcement */
+"New attachment added successfully" = "Új csatolmány sikeresen hozzáadva";
+
+/* XMSG: attachment section add new file failed announcement */
+"File failed to attach" = "Nem sikerült csatolni a fájlt";
+
+/* XACT: The accessibility hint for attachment section */
+"read only" = "írásvédett";
+
+/* XACT: The accessibility hint for attachment section */
+"actions available" = "műveletek érhetők el";
+
+/* XMSG: Attachment thumbnail */
+"Thumbnail" = "Bélyegkép";
+
+/* XMSG: Attachment uploading */
+"Attachment uploading" = "%@ feltöltése folyamatban, kis türelmet...";
+
+/* XMSG: Attachment error */
+"Attachment error" = "%@ feltöltése sikertelen. Hibaüzenet: %@";
+
+/* XBUT: Sign In Action in the Authentication */
+"Sign In" = "Bejelentkezés";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"username" = "felhasználónév";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"password" = "jelszó";
+
+/* XBUT: Submit action title in AI User Feedback */
+"Submit" = "Küldés";
+
+/* XMSG: Submission failed title in AI User Feedback */
+"Submission failed" = "A küldés sikertelen";
+
+/* XMSG: Submission failed description in AI User Feedback */
+"An error has occurred. Please try again later." = "Hiba történt. Próbálkozzon később.";
+
+/* XBUT: Retry action title in AI User Feedback */
+"Retry" = "Újra";
+
+/* XACT: The accessibility label for the like button in AI User Feedback */
+"Positive feedback" = "Pozitív visszajelzés";
+
+/* XACT: The accessibility label for the dislike button in AI User Feedback */
+"Negative feedback" = "Negatív visszajelzés";
+
+/* XACT: The accessibility label for the vote buttons in AI User Feedback */
+"enabled" = "engedélyezve";
+
+/* XMSG: Onboarding scan view title for scan unsuccessful */
+"Scan Unsuccessful" = "Sikertelen beolvasás";
+
+/* XMSG: Onboarding scan view hint for scan unsuccessful */
+"Please select a QR code image." = "Kérjük, válasszon ki QR-kód képet.";
+
+/* XMSG: Onboarding scan view title for invalid QR code */
+"Invalid QR Code" = "Érvénytelen QR-kód";
+
+/* XMSG: Onboarding scan view hint for invalid QR code */
+"The QR code was not recognized." = "Nem sikerült felismerni a QR-kódot.";
+
+/* XTIT: Onboarding scan view title for request access to photos library */
+"Allow Access to Photos" = "A fényképekhez való hozzáférés engedélyezése";
+
+/* XMSG: Onboarding scan view hint for request access to photos library */
+"To choose a QR code image, please give access to your photos in your device's privacy settings." = "Hogy ki lehessen választani a QR-kód képét, kérjük, adjon hozzáférést a fényképekhez a készülék adatvédelmi beállításaiban.";
+
+/* XTIT: Onboarding scan view title for request access to camera */
+"Allow Access to Camera" = "A kamerához való hozzáférés engedélyezése";
+
+/* XMSG: Onboarding scan view hint for request access to camera */
+"To scan using the camera, please give access to your camera in your device's privacy settings." = "A kamerával való szkenneléshez, kérjük, adjon hozzáférést a kamerához a készülék adatvédelmi beállításaiban.";
+
+/* XBUT: Onboarding scan view action title for the alert when the permission to access camera or photo library was not granted */
+"Settings" = "Beállítások";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"down arrow" = "lefelé mutató nyíl";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"up arrow" = "felfelé mutató nyíl";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash deactivated" = "vaku inaktiválva";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash activated" = "vaku aktiválva";
+
+/* XACT: The accessibility hint for photos in onboarding photo picker view */
+"Photo %d" = "%d. fénykép";
+
+/* XMSG: Onboarding confirm view success message */
+"Scan succeeded. You will be connected to:" = "A szkennelés sikerült. Össze lesz kapcsolva a következővel:";
+
+/* XBUT: Onboarding confirm view action title for continue button */
+"Continue" = "Folytatás";
+
+/* XTIT: Title for writing assistant */
+"Writing Assistant" = "Írási asszisztens";
+
+/* XMSG: Writing assistant version control */
+"Version %d/%d" = "%d/%d verzió";
+
+/* XBUT: Writing assistant undo action title */
+"Undo" = "Visszavonás";
+
+/* XBUT: Writing assistant redo action title */
+"Redo" = "Helyreállítás";
+
+/* XTIT: Writing assistant cancel alert message */
+"Do you want to undo the edits made by the Writing Assistant and revert the text to its original state?" = "Vissza szeretné vonni az Írási asszisztens által végzett szerkesztéseket, és vissza szeretné állítani a szöveg eredeti állapotát?";
+
+/* XTIT: Writing assistant cancel alert title */
+"Discard all changes?" = "Elveti az összes módosítást?";
+
+/* XBUT: Writing assistant cancel alert action title for keep working */
+"Keep Working" = "Munka folytatása";
+
+/* XBUT: Writing assistant cancel alert action title for discard */
+"Discard" = "Elvetés";
+
+/* XMSG: A success toast message for feedback flow in writing assistant */
+"Thank you for your feedback" = "Köszönjük visszajelzését";
+
+/* XTIT: Title for feedback downvote flow in writing assistant */
+"What didn’t you like about this version?" = "Mit nem kedvelt ebben a verzióban?";
+
+/* XTIT: Subtitle for feedback downvote flow in writing assistant */
+"Please rate your experience to help us improve." = "Kérjük, értékelje tapasztalatait, segítsen, hogy fejlődjünk.";
+
+/* XTIT: Navigation bar title for feedback flow */
+"Feedback" = "Visszajelzés";
+
+/* XTIT: Footnote text for feedback in writing assistant */
+"How was this response?" = "Milyen volt ez a válasz?";
+
+/* XMSG: One date selected for .datesSelection style in Calendar view */
+"%d Date Selected" = "%d dátum kiválasztva";
+
+/* XMSG: Multiple dates selected for .datesSelection style in Calendar view */
+"%d Dates Selected" = "%d dátum kiválasztva";
+
+/* XMSG: Has event, used in voice over in calendar view */
+"has event" = "van eseménye";
+
+/* XMSG: Double tap to change the selection, used in voice over in calendar view */
+"Double tap to change the selection" = "Dupla koppintás a kiválasztás módosításához";
+
+/* XMSG: Double tap to select, used in voice over in calendar view */
+"Double tap to select" = "Dupla koppintás kiválasztáshoz";
+
+/* XMSG: Double tap to unselect, used in voice over in calendar view */
+"Double tap to unselect" = "Dupla koppintás kiválasztás megszüntetéséhez";
+
+/* XMSG: Date selected, used in voiceOver in calendar view */
+"Date selected" = "Dátum kiválasztva";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Today" = "Ma";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Disabled date" = "Letiltott dátum";
+
+/* XMSG: Drag tips in .expandable style, used in voiceOver in calendar view */
+"Handle to switch from month view to week view" = "Kezelő a hónap-hét nézet váltásához";
+
+/* XMSG: Accessibility label for card container */
+"Card" = "Kártya";
+
+/* XTIT: Title for card */
+"Card title" = "Kártya címe";
+
+/* XTIT: Subtitle for card */
+"Card subtitle" = "Kártya alcíme";
+
+/* XTIT: HeaderAction for card */
+"Card header action" = "Kártyafejléc-művelet";
+
+/* XACT: The accessibility label for the switchItem turn on button in FilterFeedbackBar */
+"Switch Item On" = "Koppintson a bekapcsoláshoz";
+
+/* XACT: The accessibility label for the switchItem turn off button in FilterFeedbackBar */
+"Switch Item Off" = "Koppintson a kikapcsoláshoz";
+
+/* XMSG: Writing assistant panel opening announcement */
+"AI Writing Assistant panel opened. Use provided prompts to refine your text content." = "Megnyílt az AI írási asszisztens panel. Használja a megadott utasításokat a szöveg tartalmának finomításához.";
+
+/* XMSG: Writing assistant activation cell hint for accessibility */
+"Double tap to activate" = "Az aktiváláshoz koppintson duplán";
+
+/* XMSG: Writing assistant options entry cell hint for accessibility */
+"Open to see %@ options" = "Nyissa meg a(z) %@ opciók megtekintéséhez";
+
+/* XMSG: Writing assistant undo announcement */
+"Undo to Version %d of %d" = "Vonja vissza erre a verzióra: %d/%d";
+
+/* XMSG: Writing assistant redo announcement */
+"Redo to Version %d of %d" = "Állítsa vissza erre a verzióra: %d/%d";
+
+/* XMSG: Writing assistant version update announcement */
+"Text updated to Version %d of %d" = "Szöveg frissítve erre a verzióra: %d/%d";
+
+/* XTIT: Writing assistant title accessibility label */
+"AI Writing Assistant" = "AI írási asszisztens";
+
+/* XMSG: Writing assistant accessibility instruction for text editing */
+"double tap to open AI Writing Assistant and edit text" = "koppintson duplán az AI írási asszisztens megnyitásához és a szöveg szerkesztéséhez";
+
+/* XBUT: Writing assistant undo accessibility label */
+"Undo change" = "Módosítás visszavonása";
+
+/* XBUT: Writing assistant redo accessibility label */
+"Rodo change" = "Módosítás visszaállítása";
+
+/* XBUT: Close button title */
+"Close" = "Bezárás";
+
+/* XMSG: Accessibility label for completed state in step progress indicator */
+"complete" = "befejezve";
+
+/* XMSG: Accessibility label for active state in step progress indicator */
+"active" = "aktív";
+
+/* XMSG: Accessibility label for error active state in step progress indicator */
+"error active" = "hiba aktív";
+
+/* XMSG: Accessibility label for read-only state in step progress indicator */
+"read-only" = "írásvédett";
+
+/* XACT: The accessibility value for Stepper decrement */
+"Decrease the value by %f" = "Érték csökkentése a következővel: %f";
+
+/* XACT: The accessibility value for Stepper increment */
+"Increase the value by %f" = "Érték növelése a következővel: %f";
+
+/* XMSG: title used in DateRangePickerPopView */
+"Select Range" = "Tartomány kiválasztása";
+
+/* XMSG: start date, used in DateRangePickerPopView */
+"Start Date" = "Kezdő dátum";
+
+/* XMSG: end date, used in DateRangePickerPopView */
+"End Date" = "Záró dátum";
+
+/* XBUT: title for picker form cell to open */
+"DoubleTapToOpenKey" = "Dupla koppintás megnyitáshoz";
+
+/* XBUT: title for picker form cell to collapse */
+"DoubleTapToCollapseKey" = "Dupla koppintás visszazáráshoz";
+
+/* XTIT: On state for switch */
+"Switch On" = "Be";
+
+/* XTIT: Off state for switch */
+"Switch Off" = "Ki";
+
+/* Checkout Indicator accessibility label: failed */
+"failed" = "sikertelen";
+
+/* Checkout Indicator accessibility label: AI processing */
+"AI processing" = "AI feldolgozás folyamatban";
+
+/* Checkout Indicator accessibility label: Checkout Indicator */
+"Checkout Indicator" = "Folyamatjelző";
+
+/* XMSG: More tag text shown when tags are truncated in MHStack, %d is the count of hidden tags */
+"+%d more" = "+%d további";
+
+/* XTIT: The title of the empty state view */
+"No Results Found" = "Nincs találat";
+
+/* XTIT: The description of the empty state view */
+"Check your search for any spelling errors or try a different search term." = "Ellenőrizze, nem tartalmaz-e a keresés elütést, vagy próbáljon meg más keresőkifejezést használni.";
+
+/* XACT: The accessibility label for the checkbox */
+"Checkbox" = "Jelölőnégyzet";
+
+/* XMSG: Passcode policy requirement - minimum length, %d is the required number of characters */
+"At least %d characters" = "Legalább %d  karakter";
+
+/* XMSG: Passcode policy requirement - minimum number of unique characters, %d is the required count */
+"At least %d unique characters" = "Legalább %d egyedi karakter";
+
+/* XMSG: Passcode policy requirement - at least one digit */
+"At least one digit" = "Legalább egy számjegy";
+
+/* XMSG: Passcode policy requirement - at least one uppercase letter */
+"At least one uppercase letter" = "Legalább egy nagybetű";
+
+/* XMSG: Passcode policy requirement - at least one lowercase letter */
+"At least one lowercase letter" = "Legalább egy kisbetű";
+
+/* XMSG: Passcode policy requirement - at least one special character */
+"At least one special character" = "Legalább egy speciális karakter";
+
+/* XMSG: Passcode policy requirement - digits only */
+"Digits only" = "Csak számjegyek";
+

@@ -1,0 +1,577 @@
+import FioriSwiftUICore
+import SwiftUI
+
+struct ListPickerGroupedItem: ListPickerSectionModel {
+    let title: String
+    let items: [String]
+}
+
+struct ListPickerItemExample: View {
+    enum DataType {
+        case text
+        case frameworks
+        case object
+        case grouped
+    }
+    
+    private let model = ListPickerItemDataModel.data
+    private let stringsModel = ["One", "Two", "Three, this is a very very very very very very very very very very very very very very long text", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen"]
+    
+    private let groupedModel = [
+        ListPickerGroupedItem(title: "Fruit", items: ["Apple", "Banana", "Orange", "PineApple"]),
+        ListPickerGroupedItem(title: "Number", items: ["First", "Second", "Third", "Fourth", "Fifth"])
+    ]
+    
+    @State var selections: Set<String> = []
+    @State var selection: String? = nil
+    @State var noneEmptySelection: String = "One"
+    
+    @State var uuidSelections: Set<UUID> = []
+    @State var uuidSelection: UUID? = nil
+    @State var uuidNoneEmptySelection: UUID = .init()
+
+    @State var axis: Axis = .horizontal
+    @State var dataType: DataType = .text
+    
+    @State var multiSelections: Bool = false
+    @State var isTrackingLiveChanges: Bool = false
+    @State var allowSearch: Bool = false
+    @State var customDestination: Bool = false
+    @State var disableEntriesSection: Bool = false
+    @State var disableContentSection: Bool = false
+    @State var allowEmpty: Bool = false
+    @State var autoDismissDestination: Bool = false
+    @State var customSearchEmptyView: Bool = false
+    @State var alwaysShowSearchBar: Bool = false
+    @State var dirtyStateSheetPresented: Bool = false
+    @State var isPickerDirty: Bool = false
+    @State var showDiscardAlert: Bool = false
+    
+    @State var isRequired = false
+    @State var state: ControlState = .normal
+    @State var showsErrorMessage = false
+    @State var showsPrompt = false
+    @State var showAINotice: Bool = false
+    @State var destinationDisplayMode: DestinationDisplayMode = .push
+
+    enum ConfirmationDialogMode: String, CaseIterable {
+        case defaultMode = "Default"
+        case customLabels = "Custom Labels"
+        case withCallback = "With Callback"
+        case disabled = "Disabled"
+    }
+
+    @State var confirmationDialogMode: ConfirmationDialogMode = .defaultMode
+    
+    var value: AttributedString? {
+        self.defaultValue()
+    }
+
+    var body: some View {
+        List {
+            Group {
+                if self.dataType == .frameworks || self.dataType == .text {
+                    // Use default Value
+                    ListPickerItem(title: "Title", value: self.value, description: "Read-only field", isRequired: self.isRequired, controlState: self.state, axis: self.axis,
+                                   destination: {
+                                       self.destinationViewGroup()
+                                   })
+                } else {
+                    // Use custom Value
+                    ListPickerItem(title: {
+                        HStack(spacing: 0) {
+                            Text("Title")
+                            if self.isRequired {
+                                TextOrIconView(.text("*"))
+                            }
+                            Spacer()
+                        }
+                    }, value: { self.valueView }, description: { Text("Read-only field") }, controlState: self.state, axis: self.axis, destination: {
+                        self.destinationViewGroup()
+                    })
+                }
+            }
+            .destinationDisplayMode(self.destinationDisplayMode)
+            .onChange(of: self.dataType) {
+                self.selections.removeAll()
+                self.uuidSelections.removeAll()
+                self.selection = nil
+                switch self.dataType {
+                case .text:
+                    self.noneEmptySelection = "One"
+                case .frameworks:
+                    self.noneEmptySelection = "UIKit"
+                case .object:
+                    self.uuidNoneEmptySelection = UUID()
+                    self.noneEmptySelection = "UIKit"
+                case .grouped:
+                    self.noneEmptySelection = "PineApple"
+                }
+            }
+            .informationView(isPresented: self.$showsErrorMessage, description: "Validation message")
+            .informationViewStyle(.informational)
+            .aiNoticeView(isPresented: self.$showAINotice)
+            .disabled(self.state == .disabled)
+            
+            Section("Pannel") {
+                Picker("Axis", selection: self.$axis) {
+                    Text("Horizontal").tag(Axis.horizontal)
+                    Text("Vertical").tag(Axis.vertical)
+                }
+                
+                Picker("Data Type", selection: self.$dataType) {
+                    Text("Text").tag(DataType.text)
+                    Text("Frameworks").tag(DataType.frameworks)
+                    Text("Object").tag(DataType.object)
+                    Text("Grouped").tag(DataType.grouped)
+                }
+                
+                Toggle("Multi Selections", isOn: self.$multiSelections)
+                
+                Toggle("Tracking Live Changes", isOn: self.$isTrackingLiveChanges)
+                
+                Toggle("Search Support", isOn: self.$allowSearch)
+
+                Toggle("Custom Search Empty View", isOn: self.$customSearchEmptyView)
+
+                Toggle("Always Show Search Bar", isOn: self.$alwaysShowSearchBar)
+
+                Toggle("Custom Destination", isOn: self.$customDestination)
+
+                Toggle("Disable Entries Section", isOn: self.$disableEntriesSection)
+                
+                Toggle("Disable Content Section", isOn: self.$disableContentSection)
+                
+                Toggle("Allow Empty", isOn: self.$allowEmpty)
+                
+                Toggle("Auto Dismiss Destination(Only for Single Selection and isTrackingLiveChanges is true)", isOn: self.$autoDismissDestination)
+                
+                Toggle("Mandatory Field", isOn: self.$isRequired)
+                
+                Toggle("Shows Error Message", isOn: self.$showsErrorMessage)
+                
+                Toggle("Shows Prompt", isOn: self.$showsPrompt)
+                
+                Picker("State", selection: self.$state) {
+                    Text("Normal").tag(ControlState.normal)
+                    Text("Disabled").tag(ControlState.disabled)
+                    Text("Readonly").tag(ControlState.readOnly)
+                }
+                
+                Toggle("AI Notice", isOn: self.$showAINotice)
+                
+                Picker("Destination display mode", selection: self.$destinationDisplayMode) {
+                    Text("Push").tag(DestinationDisplayMode.push)
+                    Text("Present").tag(DestinationDisplayMode.sheet)
+                }
+
+                Picker("Confirmation Dialog", selection: self.$confirmationDialogMode) {
+                    ForEach(ConfirmationDialogMode.allCases, id: \.self) { mode in
+                        Text(mode.rawValue).tag(mode)
+                    }
+                }
+            }
+
+            Section("Dirty State Tracking") {
+                Text("Demonstrates `.listPickerDirtyState($isDirty)`. Open the sheet and toggle some items WITHOUT tapping Apply — the indicator in the toolbar flips to `Dirty` (red). Then either swipe down or tap Close: a discard confirmation dialog is shown so the user does not silently lose unsaved changes.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                Button("Open Picker In Sheet") {
+                    self.dirtyStateSheetPresented = true
+                }
+            }
+        }
+        .navigationTitle("List Picker Item")
+        .sheet(isPresented: self.$dirtyStateSheetPresented) {
+            NavigationStack {
+                ListPickerDestination(self.stringsModel,
+                                      id: \.self,
+                                      selections: self.$selections,
+                                      allowEmpty: true,
+                                      isTrackingLiveChanges: false)
+                { e in
+                    self.rowContent(e)
+                        .accessibilityAddTraits(.isButton)
+                }
+                .navigationTitle("Tap items to make dirty")
+                .listPickerDirtyState(self.$isPickerDirty)
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button("Close") {
+                            self.attemptCloseDirtySheet()
+                        }
+                    }
+                    // Live indicator that visualizes the value the SDK is writing
+                    // into the $isPickerDirty binding as the user toggles rows.
+                    ToolbarItem(placement: .principal) {
+                        Text(self.isPickerDirty ? "● Dirty" : "○ Clean")
+                            .font(.caption.bold())
+                            .foregroundStyle(self.isPickerDirty ? Color.red : Color.secondary)
+                    }
+                }
+            }
+            // Block the swipe-to-dismiss gesture only while there are unsaved changes,
+            // so we can route the user through our discard confirmation instead.
+            .interactiveDismissDisabled(self.isPickerDirty)
+            .alert("Discard changes?", isPresented: self.$showDiscardAlert) {
+                Button("Discard", role: .destructive) {
+                    self.isPickerDirty = false
+                    self.dirtyStateSheetPresented = false
+                }
+                Button("Keep Editing", role: .cancel) {}
+            } message: {
+                Text("You have unsaved selections. Closing now will lose them.")
+            }
+        }
+    }
+
+    /// Decide what to do when the consumer-owned sheet is being closed.
+    /// If the picker reports dirty state, show the discard alert instead of dismissing immediately.
+    private func attemptCloseDirtySheet() {
+        if self.isPickerDirty {
+            self.showDiscardAlert = true
+        } else {
+            self.dirtyStateSheetPresented = false
+        }
+    }
+    
+    func destinationViewGroup() -> some View {
+        self.destinationView
+            .disableEntriesSection(self.disableEntriesSection)
+            .disableContentSection(self.disableContentSection)
+            .autoDismissDestination(self.autoDismissDestination)
+            .navigationTitle("Destination Title")
+            .ifApply(self.customSearchEmptyView) {
+                $0.listPickerSearchResultsEmptyView {
+                    VStack(spacing: 12) {
+                        Image(systemName: "magnifyingglass")
+                            .font(.system(size: 48))
+                            .foregroundStyle(Color.preferredColor(.tintColor))
+                        Text("Custom Empty View")
+                            .font(.headline)
+                        Text("This is a custom view injected via .listPickerSearchResultsEmptyView modifier.")
+                            .font(.subheadline)
+                            .foregroundStyle(Color.preferredColor(.secondaryLabel))
+                            .multilineTextAlignment(.center)
+                    }
+                }
+            }
+            .listPickerSearchBarDisplayMode(self.alwaysShowSearchBar ? .always : .automatic)
+            .ifApply(self.confirmationDialogMode == .customLabels) {
+                $0.confirmationDialogConfiguration(
+                    ConfirmationDialogConfiguration(
+                        title: "Unsaved changes will be lost."
+                    ) { dismiss in
+                        Button(role: .destructive) {
+                            dismiss()
+                        } label: {
+                            Text("Discard")
+                        }
+                    }
+                )
+            }
+            .ifApply(self.confirmationDialogMode == .withCallback) {
+                $0.confirmationDialogConfiguration(
+                    ConfirmationDialogConfiguration(
+                        title: "Are you sure?"
+                    ) { dismiss in
+                        Button(role: .destructive) {
+                            print("User discarded selections")
+                            dismiss()
+                        } label: {
+                            Text("Discard Changes")
+                        }
+                    }
+                )
+            }
+            .ifApply(self.confirmationDialogMode == .disabled) {
+                $0.confirmationDialogConfiguration(.disabled)
+            }
+            .ifApply(self.customDestination) {
+                $0.cancelActionStyle { _ in
+                    Button {
+                        print("This is dismiss without selections")
+                    } label: {
+                        Image(systemName: "chevron.left")
+                    }
+                }
+                .applyActionStyle { _ in
+                    Button {
+                        print("This is dismiss with selections")
+                    } label: {
+                        Image(systemName: "checkmark")
+                    }
+                }
+                .allEntriesSectionTitleStyle { _ in
+                    Text("All Entries Title")
+                }
+                .selectedEntriesSectionTitleStyle { _ in
+                    Text("Selected Entries Title")
+                }
+                .selectAllActionStyle { _ in
+                    FioriButton(title: "Select All Action") { _ in }
+                }
+                .deselectAllActionStyle { _ in
+                    FioriButton(title: "Deselect All Action") { _ in }
+                }
+                .promptStyle { c in
+                    c.prompt.foregroundStyle(Color.red)
+                }
+                .listStyle(.plain)
+            }
+    }
+    
+    var promptValue: AttributedString? {
+        self.showsPrompt ? "This is prompt text." : nil
+    }
+    
+    @ViewBuilder var valueView: some View {
+        if self.multiSelections {
+            if self.dataType == .object {
+                let str = Array(uuidSelections).compactMap { uuid in
+                    if let framework = ListPickerItemDataModel.getFramwork(with: uuid) {
+                        return framework.name
+                    }
+                    
+                    return nil
+                }.joined(separator: ", ")
+                Text(str)
+            } else {
+                let str = Array(selections).joined(separator: ", ")
+                Text(str)
+            }
+        } else {
+            if self.dataType == .object {
+                if self.allowEmpty {
+                    if let uuid = uuidSelection {
+                        let framework = ListPickerItemDataModel.getFramwork(with: uuid)
+                        Text(framework?.name ?? "No Selection")
+                    } else {
+                        Text("No Selection")
+                    }
+                } else {
+                    let framework = ListPickerItemDataModel.getFramwork(with: self.uuidNoneEmptySelection)
+                    Text(framework?.name ?? "Wrong UUID")
+                }
+            } else {
+                if self.allowEmpty {
+                    Text(self.selection ?? "No Selection")
+                } else {
+                    Text(self.noneEmptySelection)
+                }
+            }
+        }
+    }
+
+    func defaultValue() -> AttributedString {
+        if self.multiSelections {
+            return AttributedString(Array(self.selections).joined(separator: ", "))
+        } else {
+            if self.allowEmpty {
+                return AttributedString(self.selection ?? "No Selection")
+            } else {
+                return AttributedString(self.noneEmptySelection)
+            }
+        }
+    }
+
+    @ViewBuilder var destinationView: some View {
+        switch self.dataType {
+        case .text:
+            let filter: (String, String) -> Bool = { f, s in f.contains(s) }
+            if self.multiSelections {
+                ListPickerDestination(self.stringsModel,
+                                      id: \.self,
+                                      selections: self.$selections,
+                                      allowEmpty: self.allowEmpty,
+                                      isTrackingLiveChanges: self.isTrackingLiveChanges,
+                                      prompt: self.promptValue,
+                                      searchFilter: self.allowSearch ? filter : nil)
+                { e in
+                    self.rowContent(e)
+                        .accessibilityAddTraits(.isButton)
+                }
+            } else {
+                if self.allowEmpty {
+                    ListPickerDestination(self.stringsModel,
+                                          id: \.self,
+                                          selection: self.$selection,
+                                          isTrackingLiveChanges: self.isTrackingLiveChanges,
+                                          prompt: self.promptValue,
+                                          searchFilter: self.allowSearch ? filter : nil)
+                    { e in
+                        self.rowContent(e)
+                            .accessibilityAddTraits(.isButton)
+                    }
+                } else {
+                    ListPickerDestination(self.stringsModel,
+                                          id: \.self,
+                                          selection: self.$noneEmptySelection,
+                                          isTrackingLiveChanges: self.isTrackingLiveChanges,
+                                          prompt: self.promptValue,
+                                          searchFilter: self.allowSearch ? filter : nil)
+                    { e in
+                        self.rowContent(e)
+                            .accessibilityAddTraits(.isButton)
+                    }
+                }
+            }
+        case .frameworks:
+            let filter: ((ListPickerItemDataModel.Framework, String) -> Bool) = { f, s in
+                if s.count > 0 {
+                    return f.name.localizedCaseInsensitiveContains(s)
+                } else {
+                    return true
+                }
+            }
+            
+            if self.multiSelections {
+                ListPickerDestination(self.model,
+                                      id: \.name,
+                                      children: \.children,
+                                      selections: self.$selections,
+                                      allowEmpty: self.allowEmpty,
+                                      isTrackingLiveChanges: self.isTrackingLiveChanges,
+                                      prompt: self.promptValue,
+                                      searchFilter: self.allowSearch ? filter : nil)
+                { e in
+                    self.rowContent(e.name)
+                        .accessibilityAddTraits(.isButton)
+                }
+            } else {
+                if self.allowEmpty {
+                    ListPickerDestination(self.model,
+                                          id: \.name,
+                                          children: \.children,
+                                          selection: self.$selection,
+                                          isTrackingLiveChanges: self.isTrackingLiveChanges,
+                                          prompt: self.promptValue,
+                                          searchFilter: self.allowSearch ? filter : nil)
+                    { e in
+                        self.rowContent(e.name)
+                            .accessibilityAddTraits(.isButton)
+                    }
+                } else {
+                    ListPickerDestination(self.model,
+                                          id: \.name,
+                                          children: \.children,
+                                          selection: self.$noneEmptySelection,
+                                          isTrackingLiveChanges: self.isTrackingLiveChanges,
+                                          prompt: self.promptValue,
+                                          searchFilter: self.allowSearch ? filter : nil)
+                    { e in
+                        self.rowContent(e.name)
+                            .accessibilityAddTraits(.isButton)
+                    }
+                }
+            }
+        case .object:
+            let filter: ((ListPickerItemDataModel.Framework, String) -> Bool) = { f, s in
+                if s.count > 0 {
+                    return f.name.localizedCaseInsensitiveContains(s)
+                } else {
+                    return true
+                }
+            }
+            
+            if self.multiSelections {
+                ListPickerDestination(self.model,
+                                      id: \.id,
+                                      children: \.children,
+                                      selections: self.$uuidSelections,
+                                      allowEmpty: self.allowEmpty,
+                                      isTrackingLiveChanges: self.isTrackingLiveChanges,
+                                      prompt: self.promptValue,
+                                      searchFilter: self.allowSearch ? filter : nil)
+                { framework in
+                    self.rowContent(framework.name, isObject: true)
+                }
+            } else {
+                if self.allowEmpty {
+                    ListPickerDestination(self.model,
+                                          id: \.id,
+                                          children: \.children,
+                                          selection: self.$uuidSelection,
+                                          isTrackingLiveChanges: self.isTrackingLiveChanges,
+                                          prompt: self.promptValue,
+                                          searchFilter: self.allowSearch ? filter : nil)
+                    { framework in
+                        self.rowContent(framework.name, isObject: true)
+                    }
+                } else {
+                    ListPickerDestination(self.model,
+                                          id: \.id,
+                                          children: \.children,
+                                          selection: self.$uuidNoneEmptySelection,
+                                          isTrackingLiveChanges: self.isTrackingLiveChanges,
+                                          prompt: self.promptValue,
+                                          searchFilter: self.allowSearch ? filter : nil)
+                    { framework in
+                        self.rowContent(framework.name, isObject: true)
+                    }
+                }
+            }
+        case .grouped:
+            let filter: (String, String) -> Bool = { f, s in f.contains(s) }
+            if self.multiSelections {
+                ListPickerDestination(self.groupedModel,
+                                      id: \.self,
+                                      selections: self.$selections,
+                                      allowEmpty: self.allowEmpty,
+                                      isTrackingLiveChanges: self.isTrackingLiveChanges,
+                                      prompt: self.promptValue,
+                                      searchFilter: self.allowSearch ? filter : nil)
+                { e in
+                    self.rowContent(e)
+                        .accessibilityAddTraits(.isButton)
+                }
+            } else {
+                if self.allowEmpty {
+                    ListPickerDestination(self.groupedModel,
+                                          id: \.self,
+                                          selection: self.$selection,
+                                          isTrackingLiveChanges: self.isTrackingLiveChanges,
+                                          prompt: self.promptValue,
+                                          searchFilter: self.allowSearch ? filter : nil)
+                    { e in
+                        self.rowContent(e)
+                            .accessibilityAddTraits(.isButton)
+                    }
+                } else {
+                    ListPickerDestination(self.groupedModel,
+                                          id: \.self,
+                                          selection: self.$noneEmptySelection,
+                                          isTrackingLiveChanges: self.isTrackingLiveChanges,
+                                          prompt: self.promptValue,
+                                          searchFilter: self.allowSearch ? filter : nil)
+                    { e in
+                        self.rowContent(e)
+                            .accessibilityAddTraits(.isButton)
+                    }
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder func rowContent(_ s: String, isObject: Bool = false) -> some View {
+        if isObject {
+            ObjectItem {
+                Text(s)
+            } description: {
+                Text("description")
+            } status: {
+                Image(systemName: "sun.min")
+            } detailImage: {
+                Image(systemName: "mail")
+            }
+            .ifApply(self.customDestination) {
+                $0.destinationRowBackgroundColor(s == "CloudKit" ? Color.indigo : Color.blue)
+            }
+        } else {
+            Text(s)
+                .ifApply(self.customDestination) {
+                    $0.destinationRowBackgroundColor(s == "First" ? Color.indigo : Color.blue)
+                }
+        }
+    }
+}

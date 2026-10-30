@@ -1,0 +1,244 @@
+import FioriThemeManager
+import Foundation
+import SwiftUI
+
+// Base Layout style
+public struct DateTimePickerBaseStyle: DateTimePickerStyle {
+    @Environment(\.dynamicTypeSize) var dynamicTypeSize
+    @Environment(\.dateTimePickerAutoSelected) var autoSelected
+    @Environment(\.isLoading) var isLoading
+    @Environment(\.pickerSeparator) private var pickerSeparatorConfiguration
+
+    @State private var selectedDate: Date = .now
+
+    public func makeBody(_ configuration: DateTimePickerConfiguration) -> some View {
+        SkeletonLoadingContainer {
+            VStack {
+                VStack(spacing: 0) {
+                    Group {
+                        if self.dynamicTypeSize >= .accessibility3 {
+                            self.configureMainStack(configuration, isVertical: true)
+                        } else {
+                            ViewThatFits(in: .horizontal) {
+                                self.configureMainStack(configuration, isVertical: false)
+                                self.configureMainStack(configuration, isVertical: true)
+                            }
+                        }
+                    }
+                    .animation(nil, value: configuration.pickerVisible)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                    .padding(.top, 8)
+
+                    if configuration.pickerVisible, !self.isLoading {
+                        LazyVStack {
+                            if !configuration.hidesSeparator, self.pickerSeparatorConfiguration.showSeparator {
+                                self.pickerSeparatorConfiguration.color
+                                    .frame(height: self.pickerSeparatorConfiguration.lineWidth)
+                                    .padding(.top, 14)
+                            }
+                            self.showPicker(configuration)
+                        }
+                        .transition(.opacity.combined(with: .scale(scale: 1.0, anchor: .top)))
+                    }
+                }
+                .animation(.easeInOut(duration: 0.3), value: configuration.pickerVisible)
+            }
+            .onAppear {
+                if let configuredDate = configuration.selectedDate {
+                    self.selectedDate = configuredDate
+                }
+            }
+            .ifApply(FioriLocale.shared.locale != nil) {
+                let fioriLocale = FioriLocale.shared.locale ?? .current
+                return $0.environment(\.locale, fioriLocale)
+                    .environment(\.calendar, fioriLocale.calendar)
+            }
+            .onChange(of: configuration.selectedDate) { _, _ in
+                if let configuredDate = configuration.selectedDate {
+                    self.selectedDate = configuredDate
+                }
+            }
+        }
+    }
+
+    func configureMainStack(_ configuration: DateTimePickerConfiguration, isVertical: Bool) -> some View {
+        let mainStack = isVertical ? AnyLayout(VStackLayout(alignment: .leading, spacing: 3)) : AnyLayout(HStackLayout())
+        return mainStack {
+            configuration.title
+            if !isVertical {
+                Spacer()
+            } else {
+                Divider().hidden()
+            }
+            ValueLabel(valueLabel: AttributedString(self.getValueLabel(configuration)))
+                .foregroundStyle(self.getFontColor(configuration))
+                .font(.fiori(forTextStyle: .body))
+                .accessibilityLabel(self.getValueLabel(configuration))
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityHint(self.mainStackAccessibilityHint(configuration))
+        .contentShape(Rectangle())
+        .ifApply(configuration.controlState != .disabled && configuration.controlState != .readOnly && !self.isLoading) {
+            $0.onTapGesture(perform: {
+                if configuration.selectedDate == Date(timeIntervalSince1970: 0.0) {
+                    configuration.selectedDate = Date()
+                    self.selectedDate = Date()
+                } else if configuration.selectedDate == nil,
+                          self.autoSelected
+                {
+                    configuration.selectedDate = self.selectedDate
+                }
+                configuration.pickerVisible.toggle()
+            })
+        }
+    }
+    
+    func mainStackAccessibilityHint(_ configuration: DateTimePickerConfiguration) -> String {
+        if configuration.controlState != .disabled, configuration.controlState != .readOnly {
+            configuration.pickerVisible ? "DoubleTapToCollapseKey".localizedFioriString() : "DoubleTapToOpenKey".localizedFioriString()
+        } else {
+            ""
+        }
+    }
+
+    func getValueLabel(_ configuration: DateTimePickerConfiguration) -> String {
+        if let selectedDate = configuration.selectedDate {
+            if let dateFormatter = configuration.dateFormatter {
+                return dateFormatter.string(from: selectedDate)
+            }
+            
+            let formattedDate = selectedDate.formatted(date: configuration.dateStyle, time: .omitted)
+            let formattedTime = selectedDate.formatted(date: .omitted, time: configuration.timeStyle)
+            if configuration.pickerComponents == .date {
+                return formattedDate
+            } else if configuration.pickerComponents == .hourAndMinute {
+                return formattedTime
+            } else {
+                return formattedDate + "   " + formattedTime
+            }
+        } else {
+            return configuration.noDateSelectedString ?? NSLocalizedString("No date selected", tableName: "FioriSwiftUICore", bundle: Bundle.accessor, comment: "")
+        }
+    }
+    
+    func getFontColor(_ configuration: DateTimePickerConfiguration) -> Color {
+        if configuration.controlState == .disabled {
+            return .preferredColor(.separator)
+        } else if configuration.pickerVisible {
+            return .preferredColor(.tintColor)
+        } else {
+            return .preferredColor(.primaryLabel)
+        }
+    }
+    
+    func showPicker(_ configuration: DateTimePickerConfiguration) -> some View {
+        let configSelectedDate = configuration.$selectedDate
+        let selection: Binding<Date> = Binding {
+            self.selectedDate
+        } set: {
+            self.selectedDate = $0
+            configSelectedDate.wrappedValue = $0
+        }
+
+        if let range = configuration.range {
+            return DatePicker("", selection: selection, in: range, displayedComponents: configuration.pickerComponents)
+                .datePickerStyle(.graphical)
+                .setOnChange(of: configuration.selectedDate) {
+                    _ = self.getValueLabel(configuration)
+                }
+        } else {
+            return DatePicker("", selection: selection, displayedComponents: configuration.pickerComponents)
+                .datePickerStyle(.graphical)
+                .setOnChange(of: configuration.selectedDate) {
+                    _ = self.getValueLabel(configuration)
+                }
+        }
+    }
+}
+
+// Default fiori styles
+extension DateTimePickerFioriStyle {
+    struct ContentFioriStyle: DateTimePickerStyle {
+        func makeBody(_ configuration: DateTimePickerConfiguration) -> some View {
+            DateTimePicker(configuration)
+        }
+    }
+
+    struct TitleFioriStyle: TitleStyle {
+        let dateTimePickerConfiguration: DateTimePickerConfiguration
+        @Environment(\.isLoading) var isLoading
+
+        func makeBody(_ configuration: TitleConfiguration) -> some View {
+            Title(configuration)
+                .foregroundStyle(Color.preferredColor(self.isLoading ? .separator : (self.dateTimePickerConfiguration.controlState == .disabled ? .quaternaryLabel : .primaryLabel)))
+                .font(.fiori(forTextStyle: .subheadline, weight: .semibold))
+        }
+    }
+
+    struct ValueLabelFioriStyle: ValueLabelStyle {
+        let dateTimePickerConfiguration: DateTimePickerConfiguration
+        @Environment(\.isLoading) var isLoading
+
+        func makeBody(_ configuration: ValueLabelConfiguration) -> some View {
+            ValueLabel(configuration)
+                .ifApply(self.isLoading) {
+                    $0.foregroundStyle(Color.preferredColor(.separator))
+                }
+        }
+    }
+    
+    struct FormViewFioriStyle: FormViewStyle {
+        let dateTimePickerConfiguration: DateTimePickerConfiguration
+        
+        func makeBody(_ configuration: FormViewConfiguration) -> some View {
+            FormView(configuration)
+        }
+    }
+}
+
+struct DateTimePickerAutoSelectedKey: EnvironmentKey {
+    public static let defaultValue: Bool = false
+}
+
+public extension EnvironmentValues {
+    /// If this property is true and selectedDate's initial value is nil,  selectedDate will be set to  .now by default when the date picker opens.
+    /// Default value is false.
+    var dateTimePickerAutoSelected: Bool {
+        get { self[DateTimePickerAutoSelectedKey.self] }
+        set { self[DateTimePickerAutoSelectedKey.self] = newValue }
+    }
+}
+
+/// Predefined skeleton loading patterns for `DateTimePicker`.
+///
+/// Apply the ``EnvironmentValues/isLoading`` environment value to trigger the shimmer effect:
+///
+/// ```swift
+/// DateTimePickerSkeletonLoadingPattern.dateAndTime
+///     .environment(\.isLoading, true)
+/// ```
+public enum DateTimePickerSkeletonLoadingPattern {
+    /// A skeleton pattern that displays both a date and a time value.
+    public static let dateAndTime = DateTimePicker(
+        title: { Text("Date & Time") },
+        selectedDate: .constant(Date()),
+        pickerComponents: [.date, .hourAndMinute],
+        pickerVisible: .constant(false)
+    )
+
+    /// A skeleton pattern that displays only a date value.
+    public static let dateOnly = DateTimePicker(
+        title: { Text("Date") },
+        selectedDate: .constant(Date()),
+        pickerComponents: [.date],
+        pickerVisible: .constant(false)
+    )
+
+    /// A skeleton pattern that displays only a time value.
+    public static let timeOnly = DateTimePicker(
+        title: { Text("Time") },
+        selectedDate: .constant(Date()),
+        pickerComponents: [.hourAndMinute],
+        pickerVisible: .constant(false)
+    )
+}

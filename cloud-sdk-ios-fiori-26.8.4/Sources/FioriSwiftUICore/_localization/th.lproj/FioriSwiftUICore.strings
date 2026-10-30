@@ -1,0 +1,753 @@
+/* XMSG: Placeholder text in chart when there is no data */
+"No Data" = "ไม่มีข้อมูล";
+
+/* XBUT: Save action in inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Save" = "เก็บบันทึก";
+
+/* XBUT: Re-enter action available in saved state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Re-enter Signature" = "ป้อนลายเซ็นอีกครั้ง";
+
+/* XBUT: Clear action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Clear" = "ล้าง";
+
+/* XBUT: Cancel action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Cancel" = "ยกเลิก";
+
+/* XTIT: Title of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Signature" = "ลายเซ็น";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Tap to Sign" = "แตะเพื่อลงลายเซ็น";
+
+/* XACT: The accessibility label for the signature area */
+"Signature Area" = "พื้นที่ของลายเซ็น";
+
+/* XACT: The accessibility hint for the signature area */
+"Double tap and drag to sign" = "แตะสองครั้งแล้วลากเพื่อลงลายเซ็น";
+
+/* XACT: The accessibility label for the signature image */
+"Signature Image" = "รูปภาพลายเซ็น";
+
+/* XACT: The accessibility label for the signature line */
+"Signature Line" = "บรรทัดลายเซ็น";
+
+/* XACT: The accessibility label for the mandatory field */
+"Required Field" = "ฟิลด์ที่ต้องป้อนข้อมูล";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Canceled" = "ถูกยกเลิก";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Next" = "ถัดไป";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Ok" = "ตกลง";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Status" = "สถานะ";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"User canceled Onboarding" = "การจัดเตรียมระบบถูกยกเลิกโดยผู้ใช้";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Without consent you will not be able to continue onboarding." = "หากไม่มีความยินยอม คุณจะไม่สามารถดำเนินการจัดเตรียมระบบต่อได้";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Give Consent" = "ให้ความยินยอม";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Quit" = "ออก";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Back" = "ย้อนกลับ";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Step" = "ขั้นตอน";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"of" = "จาก";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Are you sure you want to quit the onboarding process?" = "คุณแน่ใจหรือไม่ว่าต้องการออกจากกระบวนการจัดเตรียมระบบ?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Want Data Privacy?" = "ต้องการการคุ้มครองข้อมูลส่วนบุคคลหรือไม่?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Be wise about your data" = "ระมัดระวังข้อมูลของคุณ";
+
+/* XBUT: Not Now action title in UserConsentForm */
+"Not Now" = "ภายหลัง";
+
+/* XBUT: Allow action title in UserConsentForm */
+"Allow" = "อนุญาต";
+
+/* XBUT: Deny action title in UserConsentForm */
+"Deny" = "ปฏิเสธ";
+
+/* XBUT: Agree action title in EULAView */
+"Agree" = "ยอมรับ";
+
+/* XBUT: Disagree action title in EULAView */
+"Disagree" = "ไม่ยอมรับ";
+
+/* XMSG: Placeholder text in DataTable for loading state */
+"Loading..." = "กำลังโหลด...";
+
+/* XMSG: Placeholder text in DataTable when there is no data */
+"There is nothing to display yet" = "ยังไม่มีอะไรที่จะแสดง";
+
+/* XBUT: Default duration formatter in DataTable */
+"%d Hrs %d Min" = "%d ชั่วโมง %d นาที";
+
+/* XBUT: Done action in keyboard toolbar for a Textfield in DataTable */
+"Done" = "เสร็จสิ้น";
+
+/* XBUT: Error messages shown to users in DataTable */
+"There are %d errors in the data table." = "มีข้อผิดพลาด %d รายการในตารางข้อมูล";
+
+/* XBUT: voice over label for row header in DataTable */
+"row header" = "ส่วนหัวของแถว";
+
+/* XBUT: voice over label for row %d in DataTable */
+"row %d" = "แถว %d";
+
+/* XBUT: voice over label for column %d in DataTable */
+"column %d" = "คอลัมน์ %d";
+
+/* XBUT: voice over label for cell type of `leading accessory` in DataTable */
+"leading accessory" = "อุปกรณ์เสริมนำหน้า";
+
+/* XBUT: voice over label for cell type of `trailing accessory` in DataTable */
+"trailing accessory" = "อุปกรณ์เสริมต่อท้าย";
+
+/* XBUT: voice over label for cell type of `text` in DataTable */
+"text" = "ข้อความ";
+
+/* XBUT: voice over label for cell type of `image` in DataTable */
+"image" = "รูปภาพ";
+
+/* XBUT: voice over label for cell type of `date` in DataTable */
+"date" = "วันที่";
+
+/* XBUT: voice over label for cell type of `time` in DataTable */
+"time" = "เวลา";
+
+/* XBUT: voice over label for cell type of `duration` in DataTable */
+"duration" = "ระยะเวลา";
+
+/* XBUT: voice over label for cell type of `list item` in DataTable */
+"list item" = "รายการในลิสต์";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"selected" = "เลือกแล้ว";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"not selected" = "ไม่ได้เลือก";
+
+/* Default value for DateTimePicker */
+"No date selected" = "ไม่ได้เลือกวันที่";
+
+/* Default value for DateRangePicker */
+"No range selected" = "ไม่ได้เลือกช่วง";
+
+/* DateRangePicker press space to set a range value */
+"PressSpaceToSelectRangeKey" = "กด Space เพื่อกำหนดค่าของช่วง";
+
+/* XBUT: calendar time component label */
+"Time" = "เวลา";
+
+/* XBUT: slider default value label formatter for integer */
+"Value: %d" = "ค่า: %d";
+
+/* XMSG: a toast message for read-only cell in DataTable */
+"Tapped cell is read-only." = "เซลล์ที่แตะเป็นแบบอ่านอย่างเดียว";
+
+/* Default hint text for Read-only Field for NoteFormView and TextFieldFormView */
+"Read-only field" = "ฟิลด์แบบอ่านอย่างเดียว";
+
+/* Default error text for when the character count reaches the maximum limit for NoteFormView and TextFieldFormView */
+"No more characters remaining" = "ไม่มีอักขระคงเหลือ";
+
+/* Default error text for when the character count exceeds the maximum limit for NoteFormView and TextFieldFormView */
+"Reduce the number of characters" = "ลดจำนวนอักขระ";
+
+/* XBUT: voice over label for decrement action in stepper */
+"Stepper decrease" = "การลดใน Stepper";
+
+/* XBUT: voice over description for decrement action in stepper */
+"Decrease the value by %d" = "ลดค่าทีละ %d";
+
+/* XBUT: voice over label for increment action in stepper */
+"Stepper increase" = "การเพิ่มใน Stepper";
+
+/* XBUT: voice over description for increment action in stepper */
+"Increase the value by %d" = "เพิ่มค่าทีละ %d";
+
+/* XBUT: voice over label for test field in stepper */
+"Select specific value" = "เลือกค่าเฉพาะ";
+
+/* XBUT: View all action in MenuSelection */
+"View All (%d)" = "ดูทั้งหมด (%d)";
+
+/* XACT: RatingControl accessibility label */
+"%d out of %d stars" = "%d จาก %d ดาว";
+
+/* XBUT: timeline preview component see all label */
+"See All (%d)" = "ดูทั้งหมด (%d)";
+
+/* XACT: Timeline preview items accessibility label */
+"See All" = "ดูทั้งหมด";
+
+/* XACT: Timeline preview items accessibility value */
+"%d items" = "%d รายการ";
+
+/* XACT: Timeline preview items accessibility hint */
+"Shows all timeline items in a list" = "แสดงรายการไทม์ไลน์ทั้งหมดในลิสต์";
+
+/* XACT: Timeline preview item status: current accessibility value */
+"Current" = "ปัจจุบัน";
+
+/* XACT: Timeline preview item status: future accessibility value */
+"Future" = "อนาคต";
+
+/* XACT: Timeline preview item status: past accessibility value */
+"Past" = "อดีต";
+
+/* XACT: Timeline preview item accessibility value */
+"Item %d of %d, %@, %@, %@" = "รายการ %d จาก %d, %@, %@, %@";
+
+/* XACT: Timeline preview item node type: Start accessibility value */
+"Start" = "เริ่มต้น";
+
+/* XACT: Timeline preview item node type: End accessibility value */
+"End" = "สิ้นสุด";
+
+/* XACT: Timeline preview item node type: Completed accessibility value */
+"Completed" = "เสร็จสมบูรณ์";
+
+/* XACT: Timeline preview item node type: Open accessibility value */
+"Open" = "เปิด";
+
+/* XACT: Timeline preview item node type: Task accessibility value */
+"Task" = "งาน";
+
+/* XACT: Timeline preview item accessibility label */
+"Item %d of %d" = "รายการ %d จาก %d";
+
+/* XBUT: timeline preview component timestamp label */
+"Today, %@" = "วันนี้ %@";
+
+/* XFLD: RatingControl value label format */
+"%d of %d" = "%d จาก %d";
+
+/* XFLD: RatingControl review count format */
+"%d reviews" = "%d รีวิว";
+
+/* XFLD: RatingControl review count over ceiling format */
+"%d+ reviews" = "%d+ รีวิว";
+
+/* XACT: RatingControl accessibility label */
+"Rating Control %d of %d" = "การควบคุมการให้คะแนน %d จาก %d";
+
+/* XACT: read-only RatingControl accessibility label: rating with review count */
+"Rating Control, rating %d of %d, %d reviews" = "การควบคุมการให้คะแนน, คะแนน %d จาก %d, %d รีวิว";
+
+/* XACT: read-only RatingControl accessibility label: average rating only */
+"Rating Control, average rating %.1f of %d" = "การควบคุมการให้คะแนน, คะแนนเฉลี่ย %.1f จาก %d";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count */
+"Rating Control, average rating %.1f of %d, %d reviews" = "การควบคุมการให้คะแนน, คะแนนเฉลี่ย %.1f จาก %d, %d รีวิว";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count over ceiling */
+"Rating Control, average rating %.1f of %d, %d plus reviews" = "การควบคุมการให้คะแนน, คะแนนเฉลี่ย %.1f จาก %d, มากกว่า %d รีวิว";
+
+/* XBUT: View all messages in message banner sheet */
+"All" = "ทั้งหมด";
+
+/* XBUT: messages count in the message banner sheet */
+"Messages (%d)" = "ข้อความ (%d)";
+
+/* XBUT: view details in the message banner */
+"View Details" = "ดูรายละเอียด";
+
+/* XBUT: view different message in the message banner sheet item */
+"View %@" = "ดู %@";
+
+/* XBUT: banner message type desc, message */
+"message" = "ข้อความ";
+
+/* XBUT: banner message type desc, information */
+"information" = "ข้อมูล";
+
+/* XBUT: banner message type desc, confirmation */
+"confirmation" = "การยืนยัน";
+
+/* XBUT: banner message type desc, warning */
+"warning" = "คำเตือน";
+
+/* XBUT: banner message type desc, error */
+"error" = "ข้อผิดพลาด";
+
+/* XBUT: banner message type desc, error */
+"AI notice" = "ประกาศเกี่ยวกับ AI";
+
+/* XMSG: banner message type desc, offline */
+"offline" = "ออฟไลน์";
+
+/* XMSG: information view style type, success */
+"success" = "สำเร็จ";
+
+/* XBUT: Reset action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Reset" = "รีเซ็ต";
+
+/* XBUT: Apply action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Apply" = "นำไปใช้";
+
+/* XTIT: The alert message for `ListPickerDestination` pulldown dismissal */
+"Are you sure you want to discard your selections?" = "คุณแน่ใจหรือไม่ว่าต้องการละทิ้งรายการที่เลือก?";
+
+/* XBUT: The alert Discard Changes action title for `ListPickerDestination` pulldown dismissal */
+"Discard Changes" = "ละทิ้งการเปลี่ยนแปลง";
+
+/* XBUT: The alert Keep Editing action title for `ListPickerDestination` pulldown dismissal */
+"Keep Editing" = "แก้ไขต่อไป";
+
+/* XBUT: The \"Select All\" button title on the List Picker header */
+"Select All" = "เลือกทั้งหมด";
+
+/* XBUT: The \"Deselect All\" button title on the List Picker header */
+"Deselect All" = "ยกเลิกการเลือกทั้งหมด";
+
+/* XBUT: The \"Selected\" title on the List Picker header */
+"Selected" = "รายการที่เลือก";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"Text field, Double tap to edit" = "ฟิลด์ข้อความ, แตะสองครั้งเพื่อแก้ไข";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d character left" = "เหลือ %d อักขระ";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d characters left" = "เหลือ %d อักขระ";
+
+/* XACT: The accessibility hint for Text Input Views, editing */
+"Text field, is editing" = "ฟิลด์ข้อความ ในโหมดการแก้ไข";
+
+/* XACT: The accessibility hint for Text Input Views, editing, with clear button */
+"Text field, is editing. Double tap to clear text" = "ฟิลด์ข้อความ, กำลังแก้ไข แตะสองครั้งเพื่อล้างข้อความ";
+
+/* XACT: The default accessibility label for the custom action in TextFieldFormView if none was specified */
+"Custom Action" = "การดำเนินการที่ปรับแต่งได้";
+
+/* XBUT: Error messages shown to users in DocumentScannerView */
+"Failed to create PDF page from images" = "ไม่สามารถสร้างหน้า PDF จากรูปภาพ";
+
+/* XBUT: Cancel message shown to users in DocumentScannerView */
+"User cancelled the scan" = "ผู้ใช้ยกเลิกการสแกนแล้ว";
+
+/* Progress Indicator accessibility label: processing */
+"Processing" = "กำลังดำเนินการ";
+
+/* Progress Indicator accessibility label: loading pausable with indicator progress */
+"In progress with option to pause, %.0f" = "อยู่ระหว่างดำเนินการโดยมีตัวเลือกในการหยุดชั่วคราว, %.0f";
+
+/* Progress Indicator accessibility label: loading stoppable with indicator progress */
+"In progress with option to stop, %.0f" = "อยู่ระหว่างดำเนินการโดยมีตัวเลือกในการหยุด, %.0f";
+
+/* Progress Indicator accessibility label: progress halted with indicator progress */
+"Progress halted, %.0f" = "ความคืบหน้าหยุดชั่วคราว, %.0f";
+
+/* XACT: Slider accessibility label */
+"This is %@ slider whose maximum value is %@ and minimum value is %@" = "นี่คือแถบเลื่อน %@ ที่มีค่าสูงสุดคือ %@ และค่าต่ำสุดคือ %@";
+
+/* XACT: Slider accessibility value */
+"Current value is %@" = "ค่าปัจจุบันคือ %@";
+
+/* XACT: Range Slider lower thumb accessibility label */
+"lower range slider thumb, current value is" = "ปุ่มบนแถบเลื่อนของช่วงล่าง ค่าปัจจุบันคือ";
+
+/* XACT: Range Slider lower thumb accessibility hint */
+"you can swipe up or down to change the lower value" = "คุณสามารถปัดขึ้นหรือลงเพื่อเปลี่ยนค่าล่าง";
+
+/* XACT: Range Slider upper thumb accessibility label */
+"upper range slider thumb, current value is" = "ปุ่มบนแถบเลื่อนของช่วงบน ค่าปัจจุบันคือ";
+
+/* XACT: Range Slider upper thumb accessibility hint */
+"you can swipe up or down to change the upper value" = "คุณสามารถปัดขึ้นหรือลงเพื่อเปลี่ยนค่าบน";
+
+/* XACT: Single editable Slider thumb accessibility label */
+"slider thumb, current value is" = "ปุ่มบนแถบเลื่อน ค่าปัจจุบันคือ";
+
+/* XACT: Single editable Slider thumb accessibility hint */
+"you can swipe up or down to change the value" = "คุณสามารถปัดขึ้นหรือลงเพื่อเปลี่ยนค่า";
+
+/* XACT: Single Slider accessibility label */
+"This is a slider, the minimum value is %@ and the maximum value is %@" = "นี่คือแถบเลื่อน ค่าต่ำสุดคือ %@ และค่าสูงสุดคือ %@";
+
+/* XACT: Range Slider accessibility label */
+"This is a range slider, the minimum value is %@ and the maximum value is %@" = "นี่คือแถบเลื่อนช่วง ค่าต่ำสุดคือ %@ และค่าสูงสุดคือ %@";
+
+/* XACT: Single editable Slider accessibility label */
+"This is a slider that is editable, the minimum value is %@ and the maximum value is %@" = "นี่คือแถบเลื่อนที่สามารถแก้ไขได้ ค่าต่ำสุดคือ %@ และค่าสูงสุดคือ %@";
+
+/* XACT: Single non-editable Slider accessibility label */
+"This is a slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "นี่คือแถบเลื่อนที่ไม่สามารถแก้ไขได้ ค่าต่ำสุดคือ %@ และค่าสูงสุดคือ %@";
+
+/* XACT: Range editable Slider accessibility label */
+"This is a range slider that is editable, the minimum value is %@ and the maximum value is %@" = "นี่คือแถบเลื่อนช่วงที่สามารถแก้ไขได้ ค่าต่ำสุดคือ %@ และค่าสูงสุดคือ %@";
+
+/* XACT: Range non-editable Slider accessibility label */
+"This is a range slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "นี่คือแถบเลื่อนช่วงที่ไม่สามารถแก้ไขได้ ค่าต่ำสุดคือ %@ และค่าสูงสุดคือ %@";
+
+/* XACT: Single editable Slider Text Field accessibility label */
+"slider value text field" = "ฟิลด์ข้อความของค่าแถบเลื่อน";
+
+/* XACT: Range editable Slider Lower Value Text Field accessibility label */
+"lower value text field" = "ฟิลด์ข้อความของค่าล่าง";
+
+/* XACT: Range editable Slider Upper Value Text Field accessibility label */
+"upper value text field" = "ฟิลด์ข้อความของค่าบน";
+
+/* XACT: Editable Slider Text Field accessibility hint */
+"You can double tap to input a specific value" = "คุณสามารถแตะสองครั้งเพื่อป้อนค่าที่ต้องการ";
+
+/* XACT: Editable Slider Text Field accessibility value */
+"current value is %@" = "ค่าปัจจุบันคือ %@";
+
+/* XACT: Range Editable Slider accessibility value */
+"current lower value is %@, upper value is %@" = "ค่าล่างปัจจุบันคือ %@ ค่าบนคือ %@";
+
+/* XTIT: Title of step progress indicator, see https://experience.sap.com/fiori-design-ios/article/step-progress-indicator/#adaptive-design */
+"All Steps" = "ทุกขั้นตอน";
+
+/* XMSG: AI Notice message */
+"Suggested by AI. Verify before use. " = "แนะนำโดย AI กรุณาตรวจสอบก่อนใช้ ";
+
+/* XBUT: Attachment operation menu item - Photos, which stands for Photo Library */
+"Photos" = "รูปถ่าย";
+
+/* XBUT: Attachment operation menu item - Files, which stands for documents available for upload residing in Files */
+"Files" = "ไฟล์";
+
+/* XBUT: Attachment operation menu item - Camera, which can be used for taking photos and movies */
+"Camera" = "กล้อง";
+
+/* XBUT: Attachment operation menu item - Scan. Use camera as scanner and generate PDF files */
+"Scan" = "สแกน";
+
+/* XACT: The accessibility preview action for the attachment */
+"Preview" = "แสดงตัวอย่าง";
+
+/* XTIT: Attachment title of deletion confirmation */
+"Delete Attachment?" = "ลบสิ่งที่แนบหรือไม่?";
+
+/* XBUT: Attachment deletion confirmation button */
+"Delete" = "ลบ";
+
+/* XBUT: Attachment add button */
+"Add attachment" = "เพิ่มสิ่งที่แนบ";
+
+/* XACT: The accessibility hint for add button */
+"Double tap to add attachment" = "แตะสองครั้งเพื่อเพิ่มสิ่งที่แนบ";
+
+/* XMSG: attachment section add new file successfully announcement */
+"New attachment added successfully" = "เพิ่มสิ่งที่แนบใหม่ได้สำเร็จ";
+
+/* XMSG: attachment section add new file failed announcement */
+"File failed to attach" = "ไม่สามารถแนบไฟล์ได้";
+
+/* XACT: The accessibility hint for attachment section */
+"read only" = "อ่านอย่างเดียว";
+
+/* XACT: The accessibility hint for attachment section */
+"actions available" = "การดำเนินการที่มีอยู่";
+
+/* XMSG: Attachment thumbnail */
+"Thumbnail" = "รูปขนาดย่อ";
+
+/* XMSG: Attachment uploading */
+"Attachment uploading" = "กำลังอัพโหลด '%@' กรุณารอสักครู่...";
+
+/* XMSG: Attachment error */
+"Attachment error" = "การอัพโหลด '%@' ล้มเหลว ข้อความแสดงข้อผิดพลาด: %@";
+
+/* XBUT: Sign In Action in the Authentication */
+"Sign In" = "ลงชื่อเข้าใช้";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"username" = "ชื่อผู้ใช้";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"password" = "รหัสผ่าน";
+
+/* XBUT: Submit action title in AI User Feedback */
+"Submit" = "ส่ง";
+
+/* XMSG: Submission failed title in AI User Feedback */
+"Submission failed" = "การส่งล้มเหลว";
+
+/* XMSG: Submission failed description in AI User Feedback */
+"An error has occurred. Please try again later." = "มีข้อผิดพลาดเกิดขึ้น กรุณาลองอีกครั้งภายหลัง";
+
+/* XBUT: Retry action title in AI User Feedback */
+"Retry" = "ลองใหม่";
+
+/* XACT: The accessibility label for the like button in AI User Feedback */
+"Positive feedback" = "ข้อเสนอแนะเชิงบวก";
+
+/* XACT: The accessibility label for the dislike button in AI User Feedback */
+"Negative feedback" = "ข้อเสนอแนะเชิงลบ";
+
+/* XACT: The accessibility label for the vote buttons in AI User Feedback */
+"enabled" = "เปิดใช้งาน";
+
+/* XMSG: Onboarding scan view title for scan unsuccessful */
+"Scan Unsuccessful" = "การสแกนไม่สำเร็จ";
+
+/* XMSG: Onboarding scan view hint for scan unsuccessful */
+"Please select a QR code image." = "กรุณาเลือกรูปภาพรหัส QR";
+
+/* XMSG: Onboarding scan view title for invalid QR code */
+"Invalid QR Code" = "รหัส QR ไม่ถูกต้อง";
+
+/* XMSG: Onboarding scan view hint for invalid QR code */
+"The QR code was not recognized." = "ไม่รู้จักรหัส QR";
+
+/* XTIT: Onboarding scan view title for request access to photos library */
+"Allow Access to Photos" = "อนุญาตให้เข้าถึงรูปถ่าย";
+
+/* XMSG: Onboarding scan view hint for request access to photos library */
+"To choose a QR code image, please give access to your photos in your device's privacy settings." = "เมื่อต้องการเลือกรูปภาพรหัส QR กรุณาให้สิทธิการเข้าถึงรูปถ่ายในการกำหนดค่าความเป็นส่วนตัวของอุปกรณ์ของคุณ";
+
+/* XTIT: Onboarding scan view title for request access to camera */
+"Allow Access to Camera" = "อนุญาตให้เข้าถึงกล้อง";
+
+/* XMSG: Onboarding scan view hint for request access to camera */
+"To scan using the camera, please give access to your camera in your device's privacy settings." = "เมื่อต้องการสแกนโดยใช้กล้อง กรุณาให้สิทธิการเข้าถึงกล้องในการกำหนดค่าความเป็นส่วนตัวของอุปกรณ์ของคุณ";
+
+/* XBUT: Onboarding scan view action title for the alert when the permission to access camera or photo library was not granted */
+"Settings" = "การกำหนดค่า";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"down arrow" = "ลูกศรลง";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"up arrow" = "ลูกศรขึ้น";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash deactivated" = "ปิดใช้งานแฟลชแล้ว";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash activated" = "เปิดใช้งานแฟลชแล้ว";
+
+/* XACT: The accessibility hint for photos in onboarding photo picker view */
+"Photo %d" = "รูปถ่าย %d รูป";
+
+/* XMSG: Onboarding confirm view success message */
+"Scan succeeded. You will be connected to:" = "การสแกนทำได้สำเร็จ คุณจะเชื่อมต่อกับ:";
+
+/* XBUT: Onboarding confirm view action title for continue button */
+"Continue" = "ดำเนินการต่อ";
+
+/* XTIT: Title for writing assistant */
+"Writing Assistant" = "ตัวช่วยเขียน";
+
+/* XMSG: Writing assistant version control */
+"Version %d/%d" = "เวอร์ชัน %d/%d";
+
+/* XBUT: Writing assistant undo action title */
+"Undo" = "เลิกทำ";
+
+/* XBUT: Writing assistant redo action title */
+"Redo" = "ทำซ้ำ";
+
+/* XTIT: Writing assistant cancel alert message */
+"Do you want to undo the edits made by the Writing Assistant and revert the text to its original state?" = "คุณต้องการเลิกทำการแก้ไขที่ทำโดยตัวช่วยเขียนและแปลงข้อความกลับเป็นสถานะเดิมหรือไม่?";
+
+/* XTIT: Writing assistant cancel alert title */
+"Discard all changes?" = "ละทิ้งการเปลี่ยนแปลงทั้งหมดหรือไม่?";
+
+/* XBUT: Writing assistant cancel alert action title for keep working */
+"Keep Working" = "ทำงานต่อ";
+
+/* XBUT: Writing assistant cancel alert action title for discard */
+"Discard" = "ละทิ้ง";
+
+/* XMSG: A success toast message for feedback flow in writing assistant */
+"Thank you for your feedback" = "ขอบคุณสำหรับข้อเสนอแนะของคุณ";
+
+/* XTIT: Title for feedback downvote flow in writing assistant */
+"What didn’t you like about this version?" = "คุณไม่ชอบอะไรเกี่ยวกับเวอร์ชันนี้?";
+
+/* XTIT: Subtitle for feedback downvote flow in writing assistant */
+"Please rate your experience to help us improve." = "กรุณาให้คะแนนประสบการณ์ใช้งานของคุณเพื่อช่วยเราปรับปรุง";
+
+/* XTIT: Navigation bar title for feedback flow */
+"Feedback" = "ข้อเสนอแนะ";
+
+/* XTIT: Footnote text for feedback in writing assistant */
+"How was this response?" = "การตอบกลับนี้เป็นอย่างไร?";
+
+/* XMSG: One date selected for .datesSelection style in Calendar view */
+"%d Date Selected" = "วันที่ที่เลือก %d วัน";
+
+/* XMSG: Multiple dates selected for .datesSelection style in Calendar view */
+"%d Dates Selected" = "วันที่ที่เลือก %d วัน";
+
+/* XMSG: Has event, used in voice over in calendar view */
+"has event" = "มีเหตุการณ์";
+
+/* XMSG: Double tap to change the selection, used in voice over in calendar view */
+"Double tap to change the selection" = "แตะสองครั้งเพื่อเปลี่ยนแปลงการเลือก";
+
+/* XMSG: Double tap to select, used in voice over in calendar view */
+"Double tap to select" = "แตะสองครั้งเพื่อเลือก";
+
+/* XMSG: Double tap to unselect, used in voice over in calendar view */
+"Double tap to unselect" = "แตะสองครั้งเพื่อยกเลิกการเลือก";
+
+/* XMSG: Date selected, used in voiceOver in calendar view */
+"Date selected" = "วันที่ที่เลือก";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Today" = "วันนี้";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Disabled date" = "วันที่ปิดใช้งาน";
+
+/* XMSG: Drag tips in .expandable style, used in voiceOver in calendar view */
+"Handle to switch from month view to week view" = "แตะเพื่อสลับจากมุมมองเดือนเป็นมุมมองสัปดาห์";
+
+/* XMSG: Accessibility label for card container */
+"Card" = "บัตร";
+
+/* XTIT: Title for card */
+"Card title" = "ชื่อบัตร";
+
+/* XTIT: Subtitle for card */
+"Card subtitle" = "ชื่อรองของบัตร";
+
+/* XTIT: HeaderAction for card */
+"Card header action" = "การดำเนินการในส่วนหัวของบัตร";
+
+/* XACT: The accessibility label for the switchItem turn on button in FilterFeedbackBar */
+"Switch Item On" = "แตะเพื่อเปิด";
+
+/* XACT: The accessibility label for the switchItem turn off button in FilterFeedbackBar */
+"Switch Item Off" = "แตะเพื่อปิด";
+
+/* XMSG: Writing assistant panel opening announcement */
+"AI Writing Assistant panel opened. Use provided prompts to refine your text content." = "เปิดแผงผู้ช่วยเขียน AI แล้ว ใช้พร้อมท์ที่มีให้เพื่อปรับปรุงเนื้อหาข้อความของคุณ";
+
+/* XMSG: Writing assistant activation cell hint for accessibility */
+"Double tap to activate" = "แตะสองครั้งเพื่อเปิดใช้งาน";
+
+/* XMSG: Writing assistant options entry cell hint for accessibility */
+"Open to see %@ options" = "เปิดเพื่อดูตัวเลือกของ %@";
+
+/* XMSG: Writing assistant undo announcement */
+"Undo to Version %d of %d" = "เลิกทำสำหรับเวอร์ชัน %d ของ %d";
+
+/* XMSG: Writing assistant redo announcement */
+"Redo to Version %d of %d" = "ทำซ้ำสำหรับเวอร์ชัน %d ของ %d";
+
+/* XMSG: Writing assistant version update announcement */
+"Text updated to Version %d of %d" = "อัพเดทข้อความแล้วสำหรับเวอร์ชัน %d ของ %d";
+
+/* XTIT: Writing assistant title accessibility label */
+"AI Writing Assistant" = "ผู้ช่วย AI ในการเขียน";
+
+/* XMSG: Writing assistant accessibility instruction for text editing */
+"double tap to open AI Writing Assistant and edit text" = "แตะสองครั้งเพื่อเปิดผู้ช่วย AI ในการเขียน แล้วแก้ไขข้อความ";
+
+/* XBUT: Writing assistant undo accessibility label */
+"Undo change" = "เลิกทำการเปลี่ยนแปลง";
+
+/* XBUT: Writing assistant redo accessibility label */
+"Rodo change" = "ทำซ้ำการเปลี่ยนแปลง";
+
+/* XBUT: Close button title */
+"Close" = "ปิด";
+
+/* XMSG: Accessibility label for completed state in step progress indicator */
+"complete" = "เสร็จสมบูรณ์";
+
+/* XMSG: Accessibility label for active state in step progress indicator */
+"active" = "ใช้งาน";
+
+/* XMSG: Accessibility label for error active state in step progress indicator */
+"error active" = "ใช้งานโดยมีข้อผิดพลาด";
+
+/* XMSG: Accessibility label for read-only state in step progress indicator */
+"read-only" = "อ่านอย่างเดียว";
+
+/* XACT: The accessibility value for Stepper decrement */
+"Decrease the value by %f" = "ลดค่าทีละ %f";
+
+/* XACT: The accessibility value for Stepper increment */
+"Increase the value by %f" = "เพิ่มค่าทีละ %f";
+
+/* XMSG: title used in DateRangePickerPopView */
+"Select Range" = "เลือกช่วง";
+
+/* XMSG: start date, used in DateRangePickerPopView */
+"Start Date" = "วันที่เริ่มต้น";
+
+/* XMSG: end date, used in DateRangePickerPopView */
+"End Date" = "วันที่สิ้นสุด";
+
+/* XBUT: title for picker form cell to open */
+"DoubleTapToOpenKey" = "แตะสองครั้งเพื่อเปิด";
+
+/* XBUT: title for picker form cell to collapse */
+"DoubleTapToCollapseKey" = "แตะสองครั้งเพื่อย่อรวม";
+
+/* XTIT: On state for switch */
+"Switch On" = "เปิด";
+
+/* XTIT: Off state for switch */
+"Switch Off" = "ปิด";
+
+/* Checkout Indicator accessibility label: failed */
+"failed" = "ล้มเหลว";
+
+/* Checkout Indicator accessibility label: AI processing */
+"AI processing" = "การประมวลผลด้วย AI";
+
+/* Checkout Indicator accessibility label: Checkout Indicator */
+"Checkout Indicator" = "ตัวบ่งชี้การเช็คเอาท์";
+
+/* XMSG: More tag text shown when tags are truncated in MHStack, %d is the count of hidden tags */
+"+%d more" = "และอีก %d รายการ";
+
+/* XTIT: The title of the empty state view */
+"No Results Found" = "ไม่พบผลลัพธ์";
+
+/* XTIT: The description of the empty state view */
+"Check your search for any spelling errors or try a different search term." = "ตรวจสอบการค้นหาของคุณเพื่อดูข้อผิดพลาดในการสะกดคำหรือลองใช้คำที่ใช้ค้นหาอื่น";
+
+/* XACT: The accessibility label for the checkbox */
+"Checkbox" = "เช็คบ็อกซ์";
+
+/* XMSG: Passcode policy requirement - minimum length, %d is the required number of characters */
+"At least %d characters" = "อย่างน้อย %d อักขระ";
+
+/* XMSG: Passcode policy requirement - minimum number of unique characters, %d is the required count */
+"At least %d unique characters" = "อย่างน้อย %d อักขระที่ไม่ซ้ำกัน";
+
+/* XMSG: Passcode policy requirement - at least one digit */
+"At least one digit" = "ตัวเลขอย่างน้อยหนึ่งตัว";
+
+/* XMSG: Passcode policy requirement - at least one uppercase letter */
+"At least one uppercase letter" = "ตัวพิมพ์ใหญ่อย่างน้อยหนึ่งตัว";
+
+/* XMSG: Passcode policy requirement - at least one lowercase letter */
+"At least one lowercase letter" = "ตัวพิมพ์เล็กอย่างน้อยหนึ่งตัว";
+
+/* XMSG: Passcode policy requirement - at least one special character */
+"At least one special character" = "อักขระพิเศษอย่างน้อยหนึ่งตัว";
+
+/* XMSG: Passcode policy requirement - digits only */
+"Digits only" = "ตัวเลขเท่านั้น";
+

@@ -1,0 +1,753 @@
+/* XMSG: Placeholder text in chart when there is no data */
+"No Data" = "Žiadne dáta";
+
+/* XBUT: Save action in inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Save" = "Uložiť";
+
+/* XBUT: Re-enter action available in saved state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Re-enter Signature" = "Znova zadať podpis";
+
+/* XBUT: Clear action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Clear" = "Vymazať";
+
+/* XBUT: Cancel action of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Cancel" = "Zrušiť";
+
+/* XTIT: Title of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Signature" = "Podpis";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Tap to Sign" = "Ťuknutím sa prihláste";
+
+/* XACT: The accessibility label for the signature area */
+"Signature Area" = "Oblasť podpisu";
+
+/* XACT: The accessibility hint for the signature area */
+"Double tap and drag to sign" = "Podpíšte sa dvojitým klepnutím a potiahnutím";
+
+/* XACT: The accessibility label for the signature image */
+"Signature Image" = "Podpis";
+
+/* XACT: The accessibility label for the signature line */
+"Signature Line" = "Riadok podpisu";
+
+/* XACT: The accessibility label for the mandatory field */
+"Required Field" = "Povinné pole";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Canceled" = "Zrušené";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Next" = "Ďalej";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Ok" = "OK";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Status" = "Status";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"User canceled Onboarding" = "Používateľ zrušil aktiváciu";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Without consent you will not be able to continue onboarding." = "Bez súhlasu nebudete môcť pokračovať v aktivácii.";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Give Consent" = "Dať súhlas";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Quit" = "Skončiť";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Back" = "Späť";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Step" = "Krok";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"of" = "z";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Are you sure you want to quit the onboarding process?" = "Naozaj chcete ukončiť proces aktivácie?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Want Data Privacy?" = "Chcete ochranu dát?";
+
+/* XBUT: Action available in inactive state of inline signature form cell, see https://experience.sap.com/fiori-design-ios/article/in-line-signature-form-cell/#behavior-and-interaction */
+"Be wise about your data" = "Ohľadne svojich údajov buďte opatrný";
+
+/* XBUT: Not Now action title in UserConsentForm */
+"Not Now" = "Nie teraz";
+
+/* XBUT: Allow action title in UserConsentForm */
+"Allow" = "Povoliť";
+
+/* XBUT: Deny action title in UserConsentForm */
+"Deny" = "Odmietnuť";
+
+/* XBUT: Agree action title in EULAView */
+"Agree" = "Súhlasím";
+
+/* XBUT: Disagree action title in EULAView */
+"Disagree" = "Nesúhlasím";
+
+/* XMSG: Placeholder text in DataTable for loading state */
+"Loading..." = "Načítava sa...";
+
+/* XMSG: Placeholder text in DataTable when there is no data */
+"There is nothing to display yet" = "Ešte tu nie je nič na zobrazenie";
+
+/* XBUT: Default duration formatter in DataTable */
+"%d Hrs %d Min" = "%d hod. %d min.";
+
+/* XBUT: Done action in keyboard toolbar for a Textfield in DataTable */
+"Done" = "Hotovo";
+
+/* XBUT: Error messages shown to users in DataTable */
+"There are %d errors in the data table." = "V tabuľke údajov je %d chýb.";
+
+/* XBUT: voice over label for row header in DataTable */
+"row header" = "hlavička riadka";
+
+/* XBUT: voice over label for row %d in DataTable */
+"row %d" = "riadok %d";
+
+/* XBUT: voice over label for column %d in DataTable */
+"column %d" = "stĺpec %d";
+
+/* XBUT: voice over label for cell type of `leading accessory` in DataTable */
+"leading accessory" = "hlavný doplnok";
+
+/* XBUT: voice over label for cell type of `trailing accessory` in DataTable */
+"trailing accessory" = "vedľajší doplnok";
+
+/* XBUT: voice over label for cell type of `text` in DataTable */
+"text" = "text";
+
+/* XBUT: voice over label for cell type of `image` in DataTable */
+"image" = "obrázok";
+
+/* XBUT: voice over label for cell type of `date` in DataTable */
+"date" = "dátum";
+
+/* XBUT: voice over label for cell type of `time` in DataTable */
+"time" = "čas";
+
+/* XBUT: voice over label for cell type of `duration` in DataTable */
+"duration" = "trvanie";
+
+/* XBUT: voice over label for cell type of `list item` in DataTable */
+"list item" = "položka zoznamu";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"selected" = "vybrané";
+
+/* XBUT: voice over label for row selection status in DataTable */
+"not selected" = "nevybrané";
+
+/* Default value for DateTimePicker */
+"No date selected" = "Nevybraný žiadny dátum";
+
+/* Default value for DateRangePicker */
+"No range selected" = "Nevybratý žiadny rozsah";
+
+/* DateRangePicker press space to set a range value */
+"PressSpaceToSelectRangeKey" = "stlačte medzerník pre nastavenie hodnoty rozsahu";
+
+/* XBUT: calendar time component label */
+"Time" = "čas";
+
+/* XBUT: slider default value label formatter for integer */
+"Value: %d" = "Hodnota :%d";
+
+/* XMSG: a toast message for read-only cell in DataTable */
+"Tapped cell is read-only." = "Ťuknutá bunka je len na čítanie.";
+
+/* Default hint text for Read-only Field for NoteFormView and TextFieldFormView */
+"Read-only field" = "Pole len na čítanie";
+
+/* Default error text for when the character count reaches the maximum limit for NoteFormView and TextFieldFormView */
+"No more characters remaining" = "Nezostávajú žiadne ďalšie znaky";
+
+/* Default error text for when the character count exceeds the maximum limit for NoteFormView and TextFieldFormView */
+"Reduce the number of characters" = "Znížte počet znakov";
+
+/* XBUT: voice over label for decrement action in stepper */
+"Stepper decrease" = "Krokový pokles";
+
+/* XBUT: voice over description for decrement action in stepper */
+"Decrease the value by %d" = "Znížiť hodnotu o %d";
+
+/* XBUT: voice over label for increment action in stepper */
+"Stepper increase" = "Krokový nárast";
+
+/* XBUT: voice over description for increment action in stepper */
+"Increase the value by %d" = "Zvýšiť hodnotu o %d";
+
+/* XBUT: voice over label for test field in stepper */
+"Select specific value" = "Vyberte špecifickú hodnotu";
+
+/* XBUT: View all action in MenuSelection */
+"View All (%d)" = "Zobraziť všetko (%d)";
+
+/* XACT: RatingControl accessibility label */
+"%d out of %d stars" = "%d z %d hviezdičiek";
+
+/* XBUT: timeline preview component see all label */
+"See All (%d)" = "Zobraziť všetko (%d)";
+
+/* XACT: Timeline preview items accessibility label */
+"See All" = "Zobraziť všetko";
+
+/* XACT: Timeline preview items accessibility value */
+"%d items" = "%d položiek";
+
+/* XACT: Timeline preview items accessibility hint */
+"Shows all timeline items in a list" = "Zobrazí položky časovej osi v zozname";
+
+/* XACT: Timeline preview item status: current accessibility value */
+"Current" = "Aktuálne";
+
+/* XACT: Timeline preview item status: future accessibility value */
+"Future" = "Budúce";
+
+/* XACT: Timeline preview item status: past accessibility value */
+"Past" = "Minulé";
+
+/* XACT: Timeline preview item accessibility value */
+"Item %d of %d, %@, %@, %@" = "Položka %d z %d, %@, %@, %@";
+
+/* XACT: Timeline preview item node type: Start accessibility value */
+"Start" = "Spustiť";
+
+/* XACT: Timeline preview item node type: End accessibility value */
+"End" = "Ukončiť";
+
+/* XACT: Timeline preview item node type: Completed accessibility value */
+"Completed" = "Dokončené";
+
+/* XACT: Timeline preview item node type: Open accessibility value */
+"Open" = "Otvoriť";
+
+/* XACT: Timeline preview item node type: Task accessibility value */
+"Task" = "Úloha";
+
+/* XACT: Timeline preview item accessibility label */
+"Item %d of %d" = "Položka %d z %d";
+
+/* XBUT: timeline preview component timestamp label */
+"Today, %@" = "Dnes, %@";
+
+/* XFLD: RatingControl value label format */
+"%d of %d" = "%d z %d";
+
+/* XFLD: RatingControl review count format */
+"%d reviews" = "%d hodnotení ";
+
+/* XFLD: RatingControl review count over ceiling format */
+"%d+ reviews" = "%d+ hodnotení";
+
+/* XACT: RatingControl accessibility label */
+"Rating Control %d of %d" = "Riadenie hodnotenia %d z %d";
+
+/* XACT: read-only RatingControl accessibility label: rating with review count */
+"Rating Control, rating %d of %d, %d reviews" = "Riadenie hodnotenia, hodnotenie %d z %d, %d hodnotení";
+
+/* XACT: read-only RatingControl accessibility label: average rating only */
+"Rating Control, average rating %.1f of %d" = "Riadenie hodnotenia, priemerné hodnotenie %.1f z %d";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count */
+"Rating Control, average rating %.1f of %d, %d reviews" = "Riadenie hodnotenia, priemerné hodnotenie %.1f z %d, %d hodnotení";
+
+/* XACT: read-only RatingControl accessibility label: average rating with review count over ceiling */
+"Rating Control, average rating %.1f of %d, %d plus reviews" = "Riadenie hodnotenia, priemerné hodnotenie %.1f z %d, %d plus hodnotení";
+
+/* XBUT: View all messages in message banner sheet */
+"All" = "Všetko";
+
+/* XBUT: messages count in the message banner sheet */
+"Messages (%d)" = "Hlásenia (%d)";
+
+/* XBUT: view details in the message banner */
+"View Details" = "Zobraziť podrobnosti";
+
+/* XBUT: view different message in the message banner sheet item */
+"View %@" = "Zobraziť %@";
+
+/* XBUT: banner message type desc, message */
+"message" = "správa";
+
+/* XBUT: banner message type desc, information */
+"information" = "informácie";
+
+/* XBUT: banner message type desc, confirmation */
+"confirmation" = "potvrdenie";
+
+/* XBUT: banner message type desc, warning */
+"warning" = "upozornenie";
+
+/* XBUT: banner message type desc, error */
+"error" = "chyba";
+
+/* XBUT: banner message type desc, error */
+"AI notice" = "Upozornenie umelej inteligencie";
+
+/* XMSG: banner message type desc, offline */
+"offline" = "Offline";
+
+/* XMSG: information view style type, success */
+"success" = "úspech";
+
+/* XBUT: Reset action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Reset" = "Resetovať";
+
+/* XBUT: Apply action of filter feedback bar, see https://experience.sap.com/fiori-design-ios/article/filter-feedback-bar/#behavior-and-interaction */
+"Apply" = "Použiť";
+
+/* XTIT: The alert message for `ListPickerDestination` pulldown dismissal */
+"Are you sure you want to discard your selections?" = "Naozaj chcete zahodiť svoje výbery?";
+
+/* XBUT: The alert Discard Changes action title for `ListPickerDestination` pulldown dismissal */
+"Discard Changes" = "Zahodiť zmeny";
+
+/* XBUT: The alert Keep Editing action title for `ListPickerDestination` pulldown dismissal */
+"Keep Editing" = "Pokračovať v úpravách";
+
+/* XBUT: The \"Select All\" button title on the List Picker header */
+"Select All" = "Vybrať všetko";
+
+/* XBUT: The \"Deselect All\" button title on the List Picker header */
+"Deselect All" = "Zrušiť výber všetkého";
+
+/* XBUT: The \"Selected\" title on the List Picker header */
+"Selected" = "Vybrané";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"Text field, Double tap to edit" = "Textové pole, upravte dvojitým klepnutím";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d character left" = "Počet zostávajúcich znakov: %d.";
+
+/* XACT: The accessibility hint for Text Input Views, editable */
+"%d characters left" = "Počet zostávajúcich znakov: %d.";
+
+/* XACT: The accessibility hint for Text Input Views, editing */
+"Text field, is editing" = "Textové pole, v režime úprav";
+
+/* XACT: The accessibility hint for Text Input Views, editing, with clear button */
+"Text field, is editing. Double tap to clear text" = "Textové pole, spracováva sa. Vymažte text dvojitým klepnutím";
+
+/* XACT: The default accessibility label for the custom action in TextFieldFormView if none was specified */
+"Custom Action" = "Vlastná akcia";
+
+/* XBUT: Error messages shown to users in DocumentScannerView */
+"Failed to create PDF page from images" = "Vytvorenie stránky PDF z obrázkov zlyhalo.";
+
+/* XBUT: Cancel message shown to users in DocumentScannerView */
+"User cancelled the scan" = "Používateľ zrušil sken.";
+
+/* Progress Indicator accessibility label: processing */
+"Processing" = "Spracovanie";
+
+/* Progress Indicator accessibility label: loading pausable with indicator progress */
+"In progress with option to pause, %.0f" = "Prebieha s možnosťou pozastavenia, %.0f";
+
+/* Progress Indicator accessibility label: loading stoppable with indicator progress */
+"In progress with option to stop, %.0f" = "Prebieha s možnosťou zastavenia, %.0f";
+
+/* Progress Indicator accessibility label: progress halted with indicator progress */
+"Progress halted, %.0f" = "Priebeh sa zastavil, %.0f";
+
+/* XACT: Slider accessibility label */
+"This is %@ slider whose maximum value is %@ and minimum value is %@" = "Toto je %@ posúvač, ktorého maximálna hodnota je %@ a minimálna hodnota %@";
+
+/* XACT: Slider accessibility value */
+"Current value is %@" = "Aktuálna hodnota je %@";
+
+/* XACT: Range Slider lower thumb accessibility label */
+"lower range slider thumb, current value is" = "jazdec posúvača dolného rozsahu, aktuálna hodnota je";
+
+/* XACT: Range Slider lower thumb accessibility hint */
+"you can swipe up or down to change the lower value" = "môžete potiahnutím prstom nahor/nadol zmeniť dolnú hodnotu";
+
+/* XACT: Range Slider upper thumb accessibility label */
+"upper range slider thumb, current value is" = "jazdec posúvača horného rozsahu, aktuálna hodnota je";
+
+/* XACT: Range Slider upper thumb accessibility hint */
+"you can swipe up or down to change the upper value" = "môžete potiahnutím prstom nahor/nadol zmeniť hornú hodnotu";
+
+/* XACT: Single editable Slider thumb accessibility label */
+"slider thumb, current value is" = "jazdec posúvača, aktuálna hodnota je";
+
+/* XACT: Single editable Slider thumb accessibility hint */
+"you can swipe up or down to change the value" = "môžete potiahnutím prstom nahor/nadol zmeniť hodnotu";
+
+/* XACT: Single Slider accessibility label */
+"This is a slider, the minimum value is %@ and the maximum value is %@" = "Toto je posúvač, ktorého minimálna hodnota je %@ a maximálna hodnota je %@";
+
+/* XACT: Range Slider accessibility label */
+"This is a range slider, the minimum value is %@ and the maximum value is %@" = "Toto je posúvač rozsahu, ktorého minimálna hodnota je %@ a maximálna hodnota je %@";
+
+/* XACT: Single editable Slider accessibility label */
+"This is a slider that is editable, the minimum value is %@ and the maximum value is %@" = "Toto je posúvač, ktorý je možné upravovať. Minimálna hodnota je %@ a maximálna hodnota je %@";
+
+/* XACT: Single non-editable Slider accessibility label */
+"This is a slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Toto je posúvač, ktorý nie je možné upravovať. Minimálna hodnota je %@ a maximálna hodnota je %@";
+
+/* XACT: Range editable Slider accessibility label */
+"This is a range slider that is editable, the minimum value is %@ and the maximum value is %@" = "Toto je posúvač rozsahu, ktorý je možné upravovať, minimálna hodnota je %@ a maximálna hodnota je %@";
+
+/* XACT: Range non-editable Slider accessibility label */
+"This is a range slider that can't be edited, the minimum value is %@ and the maximum value is %@" = "Toto je posúvač rozsahu, ktorý nie je možné upravovať, minimálna hodnota je %@ a maximálna hodnota je %@";
+
+/* XACT: Single editable Slider Text Field accessibility label */
+"slider value text field" = "textové pole hodnoty posúvača";
+
+/* XACT: Range editable Slider Lower Value Text Field accessibility label */
+"lower value text field" = "textové pole dolnej hodnoty";
+
+/* XACT: Range editable Slider Upper Value Text Field accessibility label */
+"upper value text field" = "textové pole hornej hodnoty";
+
+/* XACT: Editable Slider Text Field accessibility hint */
+"You can double tap to input a specific value" = "Dvojitým klepnutím môžete zadať určitú hodnotu";
+
+/* XACT: Editable Slider Text Field accessibility value */
+"current value is %@" = "aktuálna hodnota je %@";
+
+/* XACT: Range Editable Slider accessibility value */
+"current lower value is %@, upper value is %@" = "aktuálna dolná hodnota je %@, horná hodnota je %@";
+
+/* XTIT: Title of step progress indicator, see https://experience.sap.com/fiori-design-ios/article/step-progress-indicator/#adaptive-design */
+"All Steps" = "Všetky kroky";
+
+/* XMSG: AI Notice message */
+"Suggested by AI. Verify before use. " = "Navrhnuté umelou inteligenciou (AI). Pred použitím skontrolujte. ";
+
+/* XBUT: Attachment operation menu item - Photos, which stands for Photo Library */
+"Photos" = "Fotografie";
+
+/* XBUT: Attachment operation menu item - Files, which stands for documents available for upload residing in Files */
+"Files" = "Súbory";
+
+/* XBUT: Attachment operation menu item - Camera, which can be used for taking photos and movies */
+"Camera" = "Fotoaparát";
+
+/* XBUT: Attachment operation menu item - Scan. Use camera as scanner and generate PDF files */
+"Scan" = "Skenovať";
+
+/* XACT: The accessibility preview action for the attachment */
+"Preview" = "Ukážka";
+
+/* XTIT: Attachment title of deletion confirmation */
+"Delete Attachment?" = "Odstrániť prílohu?";
+
+/* XBUT: Attachment deletion confirmation button */
+"Delete" = "Odstrániť";
+
+/* XBUT: Attachment add button */
+"Add attachment" = "Pridať prílohu";
+
+/* XACT: The accessibility hint for add button */
+"Double tap to add attachment" = "Dvojitým klepnutím pridáte prílohu";
+
+/* XMSG: attachment section add new file successfully announcement */
+"New attachment added successfully" = "Nová príloha úspešne pridaná";
+
+/* XMSG: attachment section add new file failed announcement */
+"File failed to attach" = "Súbor sa nepodarilo priložiť";
+
+/* XACT: The accessibility hint for attachment section */
+"read only" = "len na čítanie";
+
+/* XACT: The accessibility hint for attachment section */
+"actions available" = "akcie dostupné";
+
+/* XMSG: Attachment thumbnail */
+"Thumbnail" = "Miniatúra";
+
+/* XMSG: Attachment uploading */
+"Attachment uploading" = "Prebieha odovzdanie %@, čakajte...";
+
+/* XMSG: Attachment error */
+"Attachment error" = "Odovzdanie %@ zlyhalo. Chybová správa: %@";
+
+/* XBUT: Sign In Action in the Authentication */
+"Sign In" = "Prihlásiť sa";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"username" = "meno používateľa";
+
+/* XMSG: Placeholder text for inputView in the Authentication */
+"password" = "heslo";
+
+/* XBUT: Submit action title in AI User Feedback */
+"Submit" = "Odoslať";
+
+/* XMSG: Submission failed title in AI User Feedback */
+"Submission failed" = "Odoslanie neúspešné";
+
+/* XMSG: Submission failed description in AI User Feedback */
+"An error has occurred. Please try again later." = "Vyskytla sa chyba, skúste to neskôr znovu";
+
+/* XBUT: Retry action title in AI User Feedback */
+"Retry" = "Znova";
+
+/* XACT: The accessibility label for the like button in AI User Feedback */
+"Positive feedback" = "Pozitívna spätná väzba";
+
+/* XACT: The accessibility label for the dislike button in AI User Feedback */
+"Negative feedback" = "Negatívna spätná väzba";
+
+/* XACT: The accessibility label for the vote buttons in AI User Feedback */
+"enabled" = "aktivované";
+
+/* XMSG: Onboarding scan view title for scan unsuccessful */
+"Scan Unsuccessful" = "Skenovanie bolo neúspešné";
+
+/* XMSG: Onboarding scan view hint for scan unsuccessful */
+"Please select a QR code image." = "Vyberte obrázok QR kódu.";
+
+/* XMSG: Onboarding scan view title for invalid QR code */
+"Invalid QR Code" = "Neplatný QR kód";
+
+/* XMSG: Onboarding scan view hint for invalid QR code */
+"The QR code was not recognized." = "QR kód nebol rozpoznaný.";
+
+/* XTIT: Onboarding scan view title for request access to photos library */
+"Allow Access to Photos" = "Povoliť prístup k fotografiám";
+
+/* XMSG: Onboarding scan view hint for request access to photos library */
+"To choose a QR code image, please give access to your photos in your device's privacy settings." = "Ak chcete vybrať obrázok QR kódu, poskytnite prístup k svojim fotografiám v nastaveniach  ochrany osobných údajov v zariadení.";
+
+/* XTIT: Onboarding scan view title for request access to camera */
+"Allow Access to Camera" = "Povoliť prístup k fotoaparátu";
+
+/* XMSG: Onboarding scan view hint for request access to camera */
+"To scan using the camera, please give access to your camera in your device's privacy settings." = "Ak chcete skenovať pomocou fotoaparátu, umožnite prístup k fotoaparátu v nastaveniach ochrany osobných údajov zariadenia vo vašom zariadení.";
+
+/* XBUT: Onboarding scan view action title for the alert when the permission to access camera or photo library was not granted */
+"Settings" = "Nastavenia";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"down arrow" = "šípka dole";
+
+/* XACT: The accessibility hint for arrow button in onboarding scan view */
+"up arrow" = "šípka hore";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash deactivated" = "blesk deaktivovaný";
+
+/* XACT: The accessibility hint for flash in onboarding scan view */
+"flash activated" = "blesk aktivovaný";
+
+/* XACT: The accessibility hint for photos in onboarding photo picker view */
+"Photo %d" = "Fotografia %d";
+
+/* XMSG: Onboarding confirm view success message */
+"Scan succeeded. You will be connected to:" = "Skenovanie bolo úspešné: Budete pripojení k:";
+
+/* XBUT: Onboarding confirm view action title for continue button */
+"Continue" = "Pokračovať";
+
+/* XTIT: Title for writing assistant */
+"Writing Assistant" = "Sprievodca písaním";
+
+/* XMSG: Writing assistant version control */
+"Version %d/%d" = "Verzia %d/%d";
+
+/* XBUT: Writing assistant undo action title */
+"Undo" = "Späť";
+
+/* XBUT: Writing assistant redo action title */
+"Redo" = "Opakovať";
+
+/* XTIT: Writing assistant cancel alert message */
+"Do you want to undo the edits made by the Writing Assistant and revert the text to its original state?" = "Chcete vrátiť späť úpravy vykonané pomocou asistenta písania a vrátiť text do pôvodného stavu?";
+
+/* XTIT: Writing assistant cancel alert title */
+"Discard all changes?" = "Zrušiť všetky zmeny?";
+
+/* XBUT: Writing assistant cancel alert action title for keep working */
+"Keep Working" = "Pracovať ďalej";
+
+/* XBUT: Writing assistant cancel alert action title for discard */
+"Discard" = "Zrušiť";
+
+/* XMSG: A success toast message for feedback flow in writing assistant */
+"Thank you for your feedback" = "Ďakujeme vám za spätnú väzbu";
+
+/* XTIT: Title for feedback downvote flow in writing assistant */
+"What didn’t you like about this version?" = "Čo sa vám na tejto verzii nepáčilo?";
+
+/* XTIT: Subtitle for feedback downvote flow in writing assistant */
+"Please rate your experience to help us improve." = "Ohodnoťte, prosím, svoju skúsenosť, aby ste nám pomohli zlepšiť sa.";
+
+/* XTIT: Navigation bar title for feedback flow */
+"Feedback" = "Spätná väzba";
+
+/* XTIT: Footnote text for feedback in writing assistant */
+"How was this response?" = "Aká bola táto reakcia?";
+
+/* XMSG: One date selected for .datesSelection style in Calendar view */
+"%d Date Selected" = "%d Dátum vybratý";
+
+/* XMSG: Multiple dates selected for .datesSelection style in Calendar view */
+"%d Dates Selected" = "%d Dátumy vybraté";
+
+/* XMSG: Has event, used in voice over in calendar view */
+"has event" = "má udalosť";
+
+/* XMSG: Double tap to change the selection, used in voice over in calendar view */
+"Double tap to change the selection" = "Dvojitým klepnutím zmeňte výber";
+
+/* XMSG: Double tap to select, used in voice over in calendar view */
+"Double tap to select" = "Poklepaním vyberte";
+
+/* XMSG: Double tap to unselect, used in voice over in calendar view */
+"Double tap to unselect" = "Poklepaním zrušte výber";
+
+/* XMSG: Date selected, used in voiceOver in calendar view */
+"Date selected" = "Dátum vybratý";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Today" = "Dnes";
+
+/* XMSG: Date is today, used in voiceOver in calendar view */
+"Disabled date" = "Dátum deaktivácie";
+
+/* XMSG: Drag tips in .expandable style, used in voiceOver in calendar view */
+"Handle to switch from month view to week view" = "Handle na prepínanie z mesačného zobrazenia na týždenné zobrazenie";
+
+/* XMSG: Accessibility label for card container */
+"Card" = "Karta";
+
+/* XTIT: Title for card */
+"Card title" = "Nadpis karty";
+
+/* XTIT: Subtitle for card */
+"Card subtitle" = "Podnadpis karty";
+
+/* XTIT: HeaderAction for card */
+"Card header action" = "Akcia hlavičky karty";
+
+/* XACT: The accessibility label for the switchItem turn on button in FilterFeedbackBar */
+"Switch Item On" = "Klepnutím zapnite";
+
+/* XACT: The accessibility label for the switchItem turn off button in FilterFeedbackBar */
+"Switch Item Off" = "Klepnutím vypnite";
+
+/* XMSG: Writing assistant panel opening announcement */
+"AI Writing Assistant panel opened. Use provided prompts to refine your text content." = "Panel asistenta písania s umelou inteligenciou bol otvorený. Na spresnenie textového obsahu použite poskytnuté pokyny.";
+
+/* XMSG: Writing assistant activation cell hint for accessibility */
+"Double tap to activate" = "Aktivujte dvojitým klepnutím";
+
+/* XMSG: Writing assistant options entry cell hint for accessibility */
+"Open to see %@ options" = "Otvorte a uvidíte %@ možnosti";
+
+/* XMSG: Writing assistant undo announcement */
+"Undo to Version %d of %d" = "Vrátiť späť na verziu %d z %d";
+
+/* XMSG: Writing assistant redo announcement */
+"Redo to Version %d of %d" = "Znovu na verziu %d z %d";
+
+/* XMSG: Writing assistant version update announcement */
+"Text updated to Version %d of %d" = "Text aktualizovaný na verziu %d z %d";
+
+/* XTIT: Writing assistant title accessibility label */
+"AI Writing Assistant" = "Sprievodca písaním s AI";
+
+/* XMSG: Writing assistant accessibility instruction for text editing */
+"double tap to open AI Writing Assistant and edit text" = "Dvojitým klepnutím otvoríte asistenta písania s umelou inteligenciou a upravíte text";
+
+/* XBUT: Writing assistant undo accessibility label */
+"Undo change" = "Zmenu vrátiť späť";
+
+/* XBUT: Writing assistant redo accessibility label */
+"Rodo change" = "Zopakovať zmenu";
+
+/* XBUT: Close button title */
+"Close" = "Zavrieť";
+
+/* XMSG: Accessibility label for completed state in step progress indicator */
+"complete" = "dokončiť";
+
+/* XMSG: Accessibility label for active state in step progress indicator */
+"active" = "aktívne";
+
+/* XMSG: Accessibility label for error active state in step progress indicator */
+"error active" = "chyba aktívna";
+
+/* XMSG: Accessibility label for read-only state in step progress indicator */
+"read-only" = "iba na čítanie";
+
+/* XACT: The accessibility value for Stepper decrement */
+"Decrease the value by %f" = "Znížiť hodnotu o %f";
+
+/* XACT: The accessibility value for Stepper increment */
+"Increase the value by %f" = "Zvýšiť hodnotu o %f";
+
+/* XMSG: title used in DateRangePickerPopView */
+"Select Range" = "Vybrať rozsah";
+
+/* XMSG: start date, used in DateRangePickerPopView */
+"Start Date" = "Dátum začiatku";
+
+/* XMSG: end date, used in DateRangePickerPopView */
+"End Date" = "Dátum skončenia";
+
+/* XBUT: title for picker form cell to open */
+"DoubleTapToOpenKey" = "Otvoríte dvojitým klepnutím";
+
+/* XBUT: title for picker form cell to collapse */
+"DoubleTapToCollapseKey" = "Zbalíte dvojitým klepnutím";
+
+/* XTIT: On state for switch */
+"Switch On" = "Zap.";
+
+/* XTIT: Off state for switch */
+"Switch Off" = "Vyp.";
+
+/* Checkout Indicator accessibility label: failed */
+"failed" = "neúspešné";
+
+/* Checkout Indicator accessibility label: AI processing */
+"AI processing" = "Spracovanie umelou inteligenciou";
+
+/* Checkout Indicator accessibility label: Checkout Indicator */
+"Checkout Indicator" = "Znak výstupnej kontroly";
+
+/* XMSG: More tag text shown when tags are truncated in MHStack, %d is the count of hidden tags */
+"+%d more" = "+%d ďalších";
+
+/* XTIT: The title of the empty state view */
+"No Results Found" = "Nenašli sa žiadne výsledky";
+
+/* XTIT: The description of the empty state view */
+"Check your search for any spelling errors or try a different search term." = "Skontrolujte, či sa vo vyhľadávaní nenachádzajú pravopisné chyby, alebo skúste iný hľadaný výraz.";
+
+/* XACT: The accessibility label for the checkbox */
+"Checkbox" = "Začiarkavacie pole";
+
+/* XMSG: Passcode policy requirement - minimum length, %d is the required number of characters */
+"At least %d characters" = "Aspoň %d znakov";
+
+/* XMSG: Passcode policy requirement - minimum number of unique characters, %d is the required count */
+"At least %d unique characters" = "Aspoň %d jedinečných znakov";
+
+/* XMSG: Passcode policy requirement - at least one digit */
+"At least one digit" = "Aspoň jedna číslica";
+
+/* XMSG: Passcode policy requirement - at least one uppercase letter */
+"At least one uppercase letter" = "Aspoň jedno veľké písmeno";
+
+/* XMSG: Passcode policy requirement - at least one lowercase letter */
+"At least one lowercase letter" = "Aspoň jedno malé písmeno";
+
+/* XMSG: Passcode policy requirement - at least one special character */
+"At least one special character" = "Aspoň jeden špeciálny znak";
+
+/* XMSG: Passcode policy requirement - digits only */
+"Digits only" = "Iba číslice";
+
