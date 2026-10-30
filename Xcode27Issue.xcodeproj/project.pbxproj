@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		192C549B3094CC47009B6303 /* FioriSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 192C549A3094CC47009B6303 /* FioriSwiftUI */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		192C54853094CA80009B6303 /* Xcode27Issue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xcode27Issue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192C549B3094CC47009B6303 /* FioriSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = Xcode27Issue;
 			packageProductDependencies = (
+				192C549A3094CC47009B6303 /* FioriSwiftUI */,
 			);
 			productName = Xcode27Issue;
 			productReference = 192C54853094CA80009B6303 /* Xcode27Issue.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 192C547C3094CA80009B6303;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				192C54993094CC46009B6303 /* XCLocalSwiftPackageReference "cloud-sdk-ios-fiori-26.8.4" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 192C54863094CA80009B6303 /* Products */;
 			projectDirPath = "";
@@ -338,6 +347,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		192C54993094CC46009B6303 /* XCLocalSwiftPackageReference "cloud-sdk-ios-fiori-26.8.4" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "cloud-sdk-ios-fiori-26.8.4";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		192C549A3094CC47009B6303 /* FioriSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FioriSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 192C547D3094CA80009B6303 /* Project object */;
 }
